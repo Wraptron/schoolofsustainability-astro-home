@@ -1,0 +1,295 @@
+---
+
+---
+
+<style>
+  /* Reset default styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  /* Enhanced Navbar styles */
+  .navbar {
+    background-color: rgba(255, 255, 255, 0.98);
+    padding: 0.8rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+  }
+
+  /* Navbar scroll effect */
+  .navbar.scrolled {
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Enhanced Logo styles */
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+
+  .logo:hover {
+    transform: translateY(-2px);
+  }
+
+  .logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .logo img {
+    max-width: 190px;
+    height: 50px;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+  }
+
+  .logo img:hover {
+    filter: brightness(1.1);
+  }
+
+  /* Enhanced Navigation list styles */
+  .nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-item a {
+    color: #2d3748;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+    letter-spacing: 0.3px;
+  }
+
+  /* Underline effect */
+  .nav-item a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #c7b304, #c7b304);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .nav-item a:hover {
+    color: #c7b304;
+  }
+
+  .nav-item a:hover::after {
+    width: 100%;
+  }
+
+  /* Active state for current page */
+  .nav-item a.active {
+    color: #c7b304;
+  }
+
+  .nav-item a.active::after {
+    width: 100%;
+    background: linear-gradient(90deg, rgb(222, 231, 90), #c7b304);
+  }
+
+  /* Enhanced Hamburger menu styles */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+
+  .hamburger:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .hamburger div {
+    width: 28px;
+    height: 2px;
+    background-color: #2d3748;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  /* Enhanced Mobile responsive styles */
+  @media (max-width: 768px) {
+    .nav-list {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: white;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      gap: 1.2rem;
+      border-radius: 0 0 16px 16px;
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .nav-list.active {
+      display: flex;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .nav-item a {
+      display: block;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-item a:hover {
+      background-color: rgba(0, 123, 255, 0.1);
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    /* Enhanced hamburger animation */
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+  }
+
+  /* Enhanced desktop styles */
+  @media (min-width: 769px) {
+    .nav-list {
+      display: flex !important;
+      flex-direction: row;
+    }
+
+    /* Hover effect for desktop */
+    .nav-item a:hover {
+      transform: translateY(-1px);
+    }
+  }
+
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .navbar {
+      background-color: rgba(23, 25, 35, 0.98);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-item a {
+      color: #e2e8f0;
+    }
+
+    .hamburger div {
+      background-color: #e2e8f0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-list {
+        background-color: rgb(23, 25, 35);
+      }
+
+      .nav-item a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+</style>
+
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo">
+      <a href="/">
+        <img src="/assets/logo.png" alt="Logo" />
+      </a>
+    </div>
+
+    <button class="hamburger" aria-label="Menu" id="navbar-toggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+
+    <ul class="nav-list" id="nav-list">
+      <li class="nav-item">
+        <a href="/" class="active">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="/Aboutus">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a href="/Publications">Our Publications</a>
+      </li>
+      <li class="nav-item">
+        <a href="/ResearcherProfiles">Researcher Profiles</a>
+      </li>
+      <li class="nav-item"><a href="/Collaborators">Collaborators</a></li>
+      <li class="nav-item"><a href="/News&Events">News & Events</a></li>
+      <li class="nav-item"><a href="/Contactus">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const navbarToggle = document.getElementById("navbar-toggle");
+  const navList = document.getElementById("nav-list");
+
+  if (navbarToggle && navList) {
+    navbarToggle.addEventListener("click", () => {
+      navList.classList.toggle("active");
+      navbarToggle.classList.toggle("active");
+    });
+  }
+
+  // Scroll effect
+</script>
