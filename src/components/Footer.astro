@@ -3,6 +3,7 @@
 interface Props {
   email?: string;
   address?: string;
+  titleName?: string;
   quickLinks?: Array<{
     title: string;
     href: string;
@@ -24,7 +25,7 @@ const {
     { title: "Sustainability @IITM", href: "/sustainability-iitm" },
   ],
   logoPath = "/public/SoS.svg",
-  logoAlt = "School of Sustainability logo",
+  logoAlt = "School of Sustainability",
 } = Astro.props;
 
 const currentYear = new Date().getFullYear();
