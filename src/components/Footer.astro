@@ -1,9 +1,15 @@
 ---
+import { string } from 'astro:schema';
+
 interface Props {
   email?: string;
   address?: string;
   titleName?: string;
   quickLinks?: Array<{
+    title: string;
+    href: string;
+  }>;
+  policy?: Array<{
     title: string;
     href: string;
   }>;
@@ -23,6 +29,14 @@ const {
     { title: "Knowledge Hub", href: "/knowledge-hub" },
     { title: "Sustainability @IITM", href: "/sustainability-iitm" },
   ],
+  policy = [
+    {title: "Organization", href: "/organization"},
+    {title: "Program Offered", href: "/publications"},
+    {title: "Outreach", href: "/initiatives"},
+    {title: "Knowledge hub", href: "/research-development"},
+    {title: "Sustainability @ IITM", href: "/projects"},
+    {title: "Competitions", href: "/media"}
+  ],
   logoPath = "/public/SoS.svg",
   logoAlt = "School of Sustainability",
 } = Astro.props;
@@ -32,9 +46,9 @@ const currentYear = new Date().getFullYear();
 
 <footer class="bg-white w-full">
   <div
-    class="grid grid-cols-1 md:grid-cols-4 px-4 md:px-16 pt-12 md:pt-24 pb-12 md:pb-20 gap-8"
+    class="grid grid-cols-1 md:grid-cols-4 px-4 md:px-8 pt-12 md:pt-24 pb-12 md:pb-20 gap-5"
   >
-    <div class="col-span-2">
+    <div class="col-span-2 ">
       <h2 class="text-black text-lg md:text-xl flex gap-4">
         <img src={logoPath} alt={logoAlt} class="w-10" />
         <div>{titleName}</div>
@@ -51,7 +65,7 @@ const currentYear = new Date().getFullYear();
           ></path>
         </svg>
         <a
-          class="text-white text-sm md:text-base font-light block transition-colors hover:text-yellow-300"
+          class="text-black text-sm md:text-base font-light block transition-colors hover:text-yellow-300"
           href={`mailto:${email}`}
         >
           {email}
@@ -68,27 +82,46 @@ const currentYear = new Date().getFullYear();
             d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
           ></path>
         </svg>
-        <p class="text-white text-sm md:text-base font-light">
+        <p class="text-black text-sm md:text-base font-light">
           {address}
         </p>
       </div>
     </div>
-    <div class="text-left grid-cols-2 text-zinc-100">
-      <h4 class="text-sm md:text-base font-bold mb-4">Quick links</h4>
-      <ul class="text-left mt-2 space-y-2">
-        {
-          quickLinks.map((link) => (
-            <li>
-              <a
-                href={link.href}
-                class="text-white text-sm md:text-base hover:text-yellow-300 transition-colors"
-              >
-                {link.title}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+    <div class="text-left col-span-2 flex justify-between text-zinc-100">
+        <div>
+          <h4 class="text-sm md:text-base font-bold mb-4 text-black">Quick links</h4>
+          <ul class="text-left mt-2 space-y-2">
+            {
+              quickLinks.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="text-black text-sm md:text-base hover:text-yellow-300 transition-colors"
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="">
+          <h4 class="text-sm md:text-base font-bold mb-4 text-black">Policies</h4>
+              <ul class="text-left mt-2 space-y-2">
+                {
+                  policy.map((link) => (
+                    <li>
+                      <a
+                        href={link.href}
+                        class="text-black text-sm md:text-base hover:text-yellow-300 transition-colors"
+                      >
+                        {link.title}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+        </div>
     </div>
   </div>
   <div class="border-t border-zinc-800 py-6">
