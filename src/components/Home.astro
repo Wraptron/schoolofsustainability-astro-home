@@ -8,9 +8,19 @@ import exploreImg from '../assets/Talk_Andrew Forrest Talk 1.svg';
 import ecofriendly from '../assets/eco-friendly-wind-power-project-layout-desk 1.svg';
 import profkamakoti from '../assets/prof-kamakoti.png';
 import rajnishkumar from '../assets/Rajnish-Kumarv2 1.svg';
+import homesvg from '../assets/Screenshot 2025-04-02 074919 1.svg';
 ---
-<div class="mt-2">
-    <div class="bg-[#032A03]">
+<div class="">
+    <div class="relative">
+        <img src={homesvg.src} class="w-full pt-[67px]"/>
+        <div class="absolute text-white font-semibold w-full top-55 right-[370px] text-center mt-[250px]">
+                  <span class="font-semibold text-3xl">Lorem ipsum dolor sit amet, consectetuer</span><br>adipiscing elit. Aenean commodo ligula eget dolor.
+        </div>
+        <div class="top-20 absolute mt-10 left-[900px] border w-90">
+                cksjc
+        </div>
+    </div>
+    <div class="bg-[#032A03] mt-10">
         <div class="flex justify-start items-center text-white p-3 text-xl ">Themes</div>
         <div class="mx-5 mb-5 pb-5">
               <div class="grid grid-cols-4 mt-2">
@@ -42,7 +52,7 @@ import rajnishkumar from '../assets/Rajnish-Kumarv2 1.svg';
                 <div class="">
                       <div class="text-xl font-semibold">Events</div>
                       <div class="mt-5">Join us for insightful events that drive meaningful conversations on sustainability. From expert-led seminars to hands-on workshops, our events foster innovation, collaboration, and real-world impact. Stay updated and be part of the change!</div>
-                      <div class="absolute  bottom-0  left-[550px]">
+                      <div class="bottom-0  left-[550px] mt-4">
                             <button class="bg-[#3DAA6F] px-3 text-white rounded-lg py-2">View Events</button>
                       </div>
                 </div>
@@ -106,7 +116,17 @@ import rajnishkumar from '../assets/Rajnish-Kumarv2 1.svg';
           </div>
       </div>
     </div>
-    <div class="mt-2" id="contact-us">
-          
+    <div class="mt-2 " id="contact-us">
+          <div class="text-xl px-5 font-semibold">Contact Us</div>
+          <div class="flex gap-5 px-5">
+                <div>G Link: </div>
+                <div>Lorem ispum dolar sit ametm consectetuer elit</div>
+          </div>
+          <div class="flex gap-5 px-5">
+              <div class="font-semibold">Newsletter</div>
+              <input type="text" placeholder="Name"/>
+              <input type="text" placeholder="Email"/>
+              <button class="bg-[#032A03] px-4 rounded-lg text-white">SUBSCRIBE</button>
+          </div>
     </div>
 </div>
