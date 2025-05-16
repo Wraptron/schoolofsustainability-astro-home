@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import NewLetter from "../components/Newletter.astro";
+import Home from "../components/Home.astro";
+import "../styles/global.css";
+import "../styles/global.css";
+import natureobserv from '../assets/nature.svg'
+---
+
+<Layout>
+  <Navbar />
+    <div class="">
+        <div class="text-white py-20">
+              <div class="flex justify-center items-center gap-8 text-[#3DAA6F] mt-10">
+                    <div>Events</div>
+                    <div>|</div>
+                    <div>Media</div>
+                    <div>|</div>
+                    <div>Initiative</div>
+              </div>
+        </div>
+        <div class="flex justify-between items-center gap-10 mx-5">
+                <div class="text-2xl font-semibold">Events</div>
+                <div class="flex font-semibold text-lg gap-5">
+                    <div>Upcoming / Past</div>
+                    <div>Year: 0000</div>
+                </div>
+        </div>
+        <div class="grid grid-cols-3 gap-5 mx-5">
+                    <div class="border">
+                                <img src={natureobserv.src} />
+                    </div>
+                    <div></div>
+                    <div></div>
+        </div>
+    </div>
+  <Footer />
+</Layout>

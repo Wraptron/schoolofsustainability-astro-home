@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import NewLetter from "../components/Newletter.astro";
+import Home from "../components/Home.astro";
+import "../styles/global.css";
+import aboutcover from '../assets/Rectangle 2.svg';
+---
+<Layout>
+  <Navbar />
+    <div class="">
+      <div class="relative">
+                <img src={aboutcover.src} class="w-full pt-[67px]"/>
+                <div class="absolute text-white font-semibold w-full top-55 right-[370px] text-center mt-[250px]">
+                        <span class="font-bold text-3xl">Lorem ipsum dolor sit amet, consectetuer</span><br>adipiscing elit. Aenean commodo ligula eget dolor.
+                </div>
+                <div class="top-20 absolute mt-10 left-[950px] border w-90 opacity-50 bg-black">
+                        <div class="text-white flex justify-center items-center">What's News</div>
+                        <ol class="text-white text-sm mx-2">
+                            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenea commodo ligula eget dolor.</li>
+                            <li class="pt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
+                            <li class="pt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
+                            <li class="pt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
+                            <li class="pt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
+                        </ol>
+                </div>
+       </div>
+       <div class="text-white py-20">
+                    <div class="flex justify-center items-center gap-8 text-[#3DAA6F] mt-10">
+                        <div>WHO WE ARE</div>
+                        <div>|</div>
+                        <div>OUR VISION</div>
+                        <div>|</div>
+                        <div>OUR MISSION</div>
+                    </div>
+        </div>
+    </div>
+  <Footer />
+</Layout>
