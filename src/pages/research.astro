@@ -1,13 +1,84 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
-import Footer from '../components/Footer.astro';
+import Footer from "../components/Footer.astro";
 import '../styles/global.css';
+import cover from '../assets/researchcover.svg';
+import project1 from '../assets/project1.svg';
+import project4 from '../assets/project4.svg';
+import projectcover from '../assets/wind-farms-fields 1.svg';
+import projectcovercover from '../assets/abstract-creative-3d-sphere-with-vegetation 1.svg';
 ---
+
 <Layout>
-    <Navbar>
-        <div>
-            uhuh
+  <Navbar />
+  <section class="relative">
+    <img src={cover.src} alt="Hero Image" class="w-full object-cover pt-[67px] h-96" />
+    <div class="absolute top-[310px] left-[20px] bg-green-200 bg-opacity-80 p-6 w-1/2">
+      <h1 class="text-2xl font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+      <p class="text-md mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </section>
+  <div class="text-center text-sm text-gray-600 mt-20 flex justify-center item-center gap-5 text-[#3DAA6F]">
+        <div>Research & Development</div>  
+        <div>|</div>  
+        <div>Projects</div> 
+        <div>|</div>  
+        <div>Affiliated Centers</div>
+  </div>
+  <section class="px-8 py-12">
+    <h2 class="text-xl font-bold mb-6">Research & Development</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          <div class="bg-[#F1F1F1]">
+              <img src={project1.src} class="rounded-lg px-4 py-4"/>
+              <div class="underline px-4 py-2">LINK : Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Aenean commodo ligula eget dolor. Aenean massa</div>
+          </div>
+          <div class="bg-[#F1F1F1]">
+                <img src={project4.src} class="rounded-lg px-4 py-4"/>
+                <div class="underline px-4 py-2">LINK : Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Aenean commodo ligula eget dolor. Aenean massa</div>
+          </div>
+          <div class="bg-[#F1F1F1] mt-2">
+                <img src={project4.src} class="rounded-lg px-4 py-4"/>
+                <div class="underline px-4 py-2">LINK : Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Aenean commodo ligula eget dolor. Aenean massa</div>
+          </div>
+          <div class="bg-[#F1F1F1] mt-2">
+                <img src={project4.src} class="rounded-lg px-4 py-4"/>
+                <div class="underline px-4 py-2">LINK : Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Aenean commodo ligula eget dolor. Aenean massa</div>
+          </div>
+    </div>
+  </section>
+  <section class=" py-12 bg-gray-100">
+    <h2 class="text-xl font-bold mb-6 px-8">Projects</h2>
+    <div class="relative">
+        <img src={projectcover.src} class="w-full object-cover"/>
+        <div class="absolute top-1/3 left-1/4 bg-opacity-80 p-6 w-1/2 text-white">
+                <h1 class="text-2xl font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+                <p class="text-md mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="relative">
+                      <img src={projectcovercover.src} class="h-96"/>
+                      <div class="absolute text-white text-2xl top-1/3 left-1/4 bg-opacity-80 p-6 text-sm">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Aenean commodo ligula eget dolor.</div>
+                </div>
         </div>
-    <Footer>
+        <div class="absolute top-2/3 left-1/4 bg-opacity-80 p-6 w-1/2 text-white">
+                <!-- <h1 class="text-2xl font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+                <p class="text-md mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+        </div>
+    </div>
+  </section>
+  <section class="px-8 py-12">
+    <h2 class="text-xl font-bold mb-6">Affiliated Centers</h2>
+    <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {Array(9).fill(0).map(() => `<div class="bg-gray-200 h-10"></div>`).join('')}
+    </div> -->
+  </section>
+  <section class="px-8 py-12 bg-gray-100">
+    <h2 class="text-xl font-bold mb-4">Contact Us</h2>
+    <p class="mb-4 text-sm"><strong>G Link:</strong> <a href="#" class="text-blue-600 underline">Lorem ipsum dolor sit amet, consectetur elit.</a></p>
+    <form class="flex flex-col sm:flex-row gap-4 items-start sm:items-end">
+      <input type="text" placeholder="Name" class="border px-4 py-2 w-full sm:w-auto" />
+      <input type="email" placeholder="Email" class="border px-4 py-2 w-full sm:w-auto" />
+      <button type="submit" class="bg-[#3DAA6F] text-white px-6 py-1 rounded-xl">SUBSCRIBE</button>
+    </form>
+  </section>
+  <Footer />
 </Layout>
