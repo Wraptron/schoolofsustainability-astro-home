@@ -5,10 +5,16 @@ import Footer from "../components/Footer.astro";
 import NewLetter from "../components/Newletter.astro";
 import Home from "../components/Home.astro";
 import "../styles/global.css";
-import "../styles/global.css";
-import natureobserv from '../assets/nature.svg'
+// import "../styles/global.css";
+import naturesvg from '../assets/nature.svg';
+import naturesvg2 from '../assets/renewable.svg';
+import naturesvg3 from '../assets/Copy of EE Instrumentation Facility Visit 1 1.svg';
+import indu from '../assets/Indu Photos 1.svg';
+import kamaimage from '../assets/WhatsApp Image 2025-05-05 at 21.43.22_281d4de7.jpg';
+import summit from '../assets/Summit on Sustainability .jpg';
+import stem from '../assets/stem1.svg';
+import school from '../assets/school.svg';
 ---
-
 <Layout>
   <Navbar />
     <div class="">
@@ -28,13 +34,106 @@ import natureobserv from '../assets/nature.svg'
                     <div>Year: 0000</div>
                 </div>
         </div>
-        <div class="grid grid-cols-3 gap-5 mx-5">
-                    <div class="border">
-                                <img src={natureobserv.src} />
+        <div class="grid grid-cols-3 gap-5 mx-10">
+                    <div class="border mt-10">
+                                <img src={naturesvg.src} class="w-full" />
+                                <div class="pt-5 px-5 text-xl">SustainX - ACE 2025 & 4th CO2India Meet - Call for abstracts and registration is now open!</div>
+                                <div class="px-5 flex justify-end items-center font-semibold pt-2">23 Jun 2025</div>
                     </div>
-                    <div></div>
-                    <div></div>
+                    <div class="border mt-10">
+                            <img src={naturesvg2.src} class="w-full" />
+                            <div class="pt-5 px-5 text-xl">SustainX - ACE 2025 & 4th CO2India Meet - Symposium registration is now open!</div>
+                            <div class="px-5 flex justify-end items-center font-semibold pt-2">23 Jun 2025</div>
+                    </div>   
+                    <div class="border mt-10">
+                      <img src={naturesvg3.src} class="w-full" />
+                      <div class="pt-5 px-5 text-xl">SustainX - ACE 2025 & 4th CO2India Meet - Symposium registration is now open!</div>
+                      <div class="px-5 flex justify-end items-center font-semibold pt-2">23 Jun 2025</div>
+              </div>        
         </div>
+        <!-- media start -->
+        <div class="px-4 py-8 max-w-7xl mx-auto">
+          <h2 class="text-2xl font-bold mb-6">Media</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Large Left Image -->
+            <div class="relative group">
+              <img src={kamaimage.src} alt="Media 1" class="w-full h-full object-cover rounded-lg" />
+              <div class="absolute bottom-0 left-0 w-full bg-opacity-50 text-white p-4 text-sm md:text-base">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+              </div>
+              <div class="absolute bottom-4 right-4 text-white cursor-pointer opacity-80 hover:opacity-100">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a3.268 3.268 0 000-1.4l7.05-4.11a2.99 2.99 0 10-.96-1.68l-7.06 4.12a2.99 2.99 0 100 4.78l7.05 4.11c.52-.48 1.2-.77 1.96-.77a3 3 0 100-6z"/>
+                </svg>
+              </div>
+            </div>
+        
+            <!-- Two Right Images -->
+            <div class="grid grid-cols-1 gap-4">
+              <!-- Top Right -->
+              <div class="relative group">
+                <img src={summit.src} alt="Media 2" class="w-full h-full object-cover rounded-lg" />
+                <div class="absolute bottom-0 left-0 w-full bg-opacity-50 text-white p-3 text-sm">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor.
+                </div>
+                <div class="absolute bottom-3 right-3 text-white cursor-pointer opacity-80 hover:opacity-100">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a3.268 3.268 0 000-1.4l7.05-4.11a2.99 2.99 0 10-.96-1.68l-7.06 4.12a2.99 2.99 0 100 4.78l7.05 4.11c.52-.48 1.2-.77 1.96-.77a3 3 0 100-6z"/>
+                  </svg>
+                </div>
+              </div>
+        
+              <!-- Bottom Right -->
+              <div class="relative group">
+                <img src={indu.src} alt="Media 3" class="w-full h-full object-cover rounded-lg" />
+                
+                <div class="absolute bottom-3 right-3 text-white cursor-pointer opacity-80 hover:opacity-100">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a3.268 3.268 0 000-1.4l7.05-4.11a2.99 2.99 0 10-.96-1.68l-7.06 4.12a2.99 2.99 0 100 4.78l7.05 4.11c.52-.48 1.2-.77 1.96-.77a3 3 0 100-6z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <!-- media ends -->
+
+        <!-- next phase -->
+
+<div class="px-4 py-8 max-w-7xl mx-auto">
+  <!-- Initiatives -->
+  <h2 class="text-2xl font-bold mb-6">Initiatives</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+    <!-- Initiative Card 1 -->
+    <div class="text-center">
+      <img src={stem.src} alt="Initiative 1" class="rounded-lg w-full object-cover h-60 mb-4" />
+      <p class="mb-4 text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor.</p>
+      <button class="bg-[#3DAA6F] text-white px-6 py-1 rounded-2xl hover:bg-green-600 transition">Learn More</button>
+    </div>
+    
+    <!-- Initiative Card 2 -->
+    <div class="text-center">
+      <img src={school.src} alt="Initiative 2" class="rounded-lg w-full object-cover h-60 mb-4" />
+      <p class="mb-4 text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor.</p>
+      <button class="bg-[#3DAA6F] text-white px-6 py-1 rounded-2xl hover:bg-green-600 transition">Learn More</button>
+    </div>
+  </div>
+
+  <!-- Entrepreneurship -->
+  <h2 class="text-2xl font-bold mb-6">Entrepreneurship</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <a href="https://indusdc.com/" target="_blank" class="border border-green-400 p-6 rounded-lg hover:bg-green-50 transition">
+      <h3 class="text-lg font-semibold mb-2">Sustainability Venture Studios</h3>
+      <p class="text-gray-600 text-sm">https://indusdc.com/</p>
+    </a>
+    <a href="https://czeroc.in/" target="_blank" class="border border-green-400 p-6 rounded-lg hover:bg-green-50 transition">
+      <h3 class="text-lg font-semibold mb-2">Competitions</h3>
+      <p class="text-gray-600 text-sm">https://czeroc.in/</p>
+    </a>
+  </div>
+</div>
+
+        <!-- next phase ends -->
     </div>
   <Footer />
 </Layout>
