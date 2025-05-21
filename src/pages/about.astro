@@ -5,36 +5,83 @@ import Footer from "../components/Footer.astro";
 import NewLetter from "../components/Newletter.astro";
 import Home from "../components/Home.astro";
 import "../styles/global.css";
-import aboutcover from '../assets/Rectangle 2.svg';
+import aboutcover from '../assets/IOER Conference Group Photo (1).svg';
 ---
 <Layout>
   <Navbar />
-    <div class="">
-      <div class="relative">
-                <img src={aboutcover.src} class="w-full pt-[67px]"/>
-                <div class="absolute text-white font-semibold w-full top-55 right-[370px] text-center mt-[250px]">
-                        <span class="font-bold text-3xl">Lorem ipsum dolor sit amet, consectetuer</span><br>adipiscing elit. Aenean commodo ligula eget dolor.
-                </div>
-                <div class="top-20 absolute mt-10 left-[950px] border w-90 opacity-50 bg-black">
-                        <div class="text-white flex justify-center items-center">What's News</div>
-                        <ol class="text-white text-sm mx-2">
-                            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenea commodo ligula eget dolor.</li>
-                            <li class="pt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
-                            <li class="pt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
-                            <li class="pt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
-                            <li class="pt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
-                        </ol>
-                </div>
-       </div>
-       <div class="text-white py-20">
-                    <div class="flex justify-center items-center gap-8 text-[#3DAA6F] mt-10">
-                        <div>WHO WE ARE</div>
-                        <div>|</div>
-                        <div>OUR VISION</div>
-                        <div>|</div>
-                        <div>OUR MISSION</div>
-                    </div>
-        </div>
+    <div class="relative">
+    <img src={aboutcover.src} class="w-full pt-[67px]" alt="About Cover" />
+    <div class="absolute text-white font-semibold w-full text-center top-[150px]">
+      <span class="font-bold text-3xl">Shaping a Sustainable Future Through Knowledge and Innovation</span><br />
+      <span class="text-lg">We aim to drive sustainability by blending interdisciplinary learning, research, and real-world impact.</span>
     </div>
+
+    <!-- <div class="absolute mt-10 left-[950px] border w-96 opacity-50 bg-black p-4">
+      <div class="text-white text-center font-semibold mb-2">What's News</div>
+      <ol class="text-white text-sm list-disc pl-5">
+        <li>Inauguration of the School of Sustainability at IIT Madras.</li>
+        <li class="pt-2">Collaborations launched with global institutions on climate research.</li>
+        <li class="pt-2">Student-led sustainability hackathon winners announced.</li>
+        <li class="pt-2">MoU signed with policy think tanks for joint research.</li>
+        <li class="pt-2">Upcoming workshop: 'Net Zero and Beyond'.</li>
+      </ol>
+    </div> -->
+  </div>
+
+  <div class="text-white py-10">
+    <div class="flex justify-center items-center gap-8 text-[#3DAA6F] font-semibold">
+      <div>WHO WE ARE</div>
+      <div>|</div>
+      <div>OUR VISION</div>
+      <div>|</div>
+      <div>OUR MISSION</div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Who We Are -->
+      <section id="who-we-are" class="flex flex-col md:flex-row items-center bg-gray-900 text-white p-8 rounded-lg mb-8">
+        <div class="md:w-1/2">
+          <h3 class="text-3xl font-semibold mb-4">Who We Are</h3>
+          <p>
+            The School of Sustainability at IIT Madras is a hub for interdisciplinary learning and research. We bring together experts, students, and communities to address complex environmental challenges. Our focus lies in integrating technology, policy, and societal perspectives for sustainable solutions. Through education, collaboration, and innovation, we aim to shape responsible future leaders. We believe sustainability is not a subject—it’s a way of thinking, living, and progressing.
+          </p>
+        </div>
+        <div class="md:w-1/2">
+          <!-- Placeholder for background graphic -->
+        </div>
+      </section>
+
+      <!-- Our Vision -->
+      <section id="our-vision" class="flex flex-col md:flex-row-reverse items-center bg-gray-900 text-white p-8 rounded-lg mb-8">
+        <div class="md:w-1/2">
+          <h3 class="text-3xl font-semibold mb-4">Our Vision</h3>
+          <p>
+            The school’s vision is to be the go-to place for policymakers and researchers for an understanding of sustainability-related technologies and policy implications. The school aims to be recognized as a leader for sustainability teaching and research in the global south.
+          </p>
+        </div>
+        <div class="md:w-1/2">
+          <!-- Placeholder for background graphic -->
+        </div>
+      </section>
+
+      <!-- Our Mission -->
+      <section id="our-mission" class="flex flex-col md:flex-row items-center bg-gray-900 text-white p-8 rounded-lg">
+        <div class="md:w-1/2">
+          <h3 class="text-3xl font-semibold mb-4">Our Mission</h3>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Foster interactive and innovative teaching approaches for students and professionals to deepen our understanding of sustainability.</li>
+            <li>Drive integrated, interdisciplinary research on sustainability in areas such as climate change, decarbonization, sustainable settlements, and behavioral change.</li>
+            <li>Create impactful change by collaborating with industry, engaging in policy dialogues, and helping implement solutions on the ground.</li>
+          </ul>
+        </div>
+        <div class="md:w-1/2">
+          <!-- Placeholder for background graphic -->
+        </div>
+      </section>
+    </main>
+
+
   <Footer />
 </Layout>
