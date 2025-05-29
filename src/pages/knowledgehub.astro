@@ -9,29 +9,30 @@ import publicationcharuta from '../assets/Publication_Charuta 1.svg';
 import publicationsantosh from '../assets/Publication_Santosh 1.svg';
 import screenshot from '../assets/Screenshot 2025-05-05 194551 1.svg'
 import newsletter from '../assets/Screenshot 2025-05-05 085703 1.svg';
-import publication from '../assets/SfIB Cohort_1 3.svg'
+import publication from '../assets/SfIB Cohort_1 3.svg';
+import kh from '../assets/knowledge hub page 1 image.jpg'
 ---
 <Layout>
   <Navbar />
   <!-- Hero Slider -->
   <section class="relative">
-    <img src="" alt="Hero Image" class="w-full h-96 object-cover" />
-    <div class="absolute inset-0 bg-gray-100 bg-opacity-50 flex items-center justify-center text-white text-2xl font-semibold">
+    <img src={kh.src} alt="Hero Image" class="w-full h-96 object-cover" />
+    <div class="absolute inset-0 bg-gray-100 flex items-center justify-center text-white text-2xl font-semibold">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </div>
   </section>
 
   <!-- Tabs -->
-  <div class="flex justify-center mt-4 space-x-4 text-green-600 font-medium">
-    <a href="#articles">Articles</a>
-    <a href="#publications">Publication</a>
-    <a href="#newsletter">Newsletter</a>
-    <a href="#report">Reports</a>
-    <a href="#whitepaper">White Paper</a>
-  </div>
+            <div class="flex justify-center items-center gap-8 text-[#3DAA6F] mt-10 text-[21px]">
+                    <div>Events</div>
+                    <div>↓</div>
+                    <div>Media</div>
+                    <div>↓</div>
+                    <div>Initiative</div>
+              </div>
 
   <!-- Articles Section -->
-  <section id="articles" class="max-w-7xl mx-auto px-4 py-10">
+  <section id="articles" class="mx-auto px-9 py-10">
     <h2 class="text-2xl font-bold mb-6">Articles</h2>
     <div class="grid md:grid-cols-2 gap-6">
       <div class="border">
@@ -54,7 +55,7 @@ import publication from '../assets/SfIB Cohort_1 3.svg'
   </section>
 
   <!-- Publications Section -->
-  <section id="publications" class="max-w-7xl mx-auto px-4 py-10">
+  <section id="publications" class="px-9 py-10">
     <h2 class="text-2xl font-bold mb-6">Publications</h2>
     <div class="grid md:grid-cols-3 gap-6">
       <img src={publicationcharuta.src} alt="Publication 1" class="rounded-lg w-full h-72" />
@@ -64,16 +65,17 @@ import publication from '../assets/SfIB Cohort_1 3.svg'
   </section>
 
   <!-- Newsletter Section -->
-  <section id="newsletter" class="max-w-7xl mx-auto px-4 py-10">
+  <section id="newsletter" class="px-9 py-10">
     <h2 class="text-2xl font-bold mb-6">Newsletter</h2>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div>
+    <div class="grid md:grid-cols-3 gap-8 pt-8">
+      <div class="col-span-1">
         <img src={newsletter.src} alt="Newsletter" class="rounded-lg h-80 w-full" />
       </div>
-      <div>
-        <p class="text-gray-700 mb-4">
+      <div class="col-span-2">
+        <p class="text-gray-700 mb-4 text-[24px]">
           Tuesday, April 1, 2025<br />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor...
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor...<br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor...<br> 
         </p>
         <form class="space-y-4">
           <div>
@@ -92,23 +94,23 @@ import publication from '../assets/SfIB Cohort_1 3.svg'
 
   <!-- Report Section -->
   <section id="report" class="text-black py-10">
-    <div class="max-w-7xl mx-auto ">
-      <h2 class="text-2xl font-bold mb-4">Report</h2>
-      <p class="mb-6 bg-[#032A03] text-white px-2">
+    <div class="">
+      <h2 class="text-[32px] font-bold mb-4 px-9">Report</h2>
+      <p class="mb-6 bg-[#032A03] text-white px-9 py-20 text-[24px]">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...
 
       </p>
-      <div class="grid md:grid-cols-3 gap-6">
-        <img src={publication.src} alt="Report Image" class="rounded-lg h-56 object-cover w-full" />
-        <img src={publication.src} alt="Report Image" class="rounded-lg h-56 object-cover w-full" />
-        <img src={publication.src} alt="Report Image" class="rounded-lg h-56 object-cover w-full" />
+      <div class="grid md:grid-cols-3 gap-6 px-9">
+        <img src={publication.src} alt="Report Image" class="h-56 object-cover w-full" />
+        <img src={publication.src} alt="Report Image" class="h-56 object-cover w-full" />
+        <img src={publication.src} alt="Report Image" class="h-56 object-cover w-full" />
       </div>
     </div>
   </section>
 
   <!-- White Paper Section -->
-  <section id="whitepaper" class="max-w-7xl mx-auto px-4 py-10">
+  <section id="whitepaper" class="px-9 py-10">
     <h2 class="text-2xl font-bold mb-6">White Paper</h2>
     <div class="grid md:grid-cols-4 gap-4">
       {Array(4).fill(0).map(() => (
@@ -123,17 +125,19 @@ import publication from '../assets/SfIB Cohort_1 3.svg'
   </section>
 
   <!-- Contact Us -->
-  <section class="max-w-7xl mx-auto px-4 py-12">
-    <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
-    <p class="mb-4">
-      🔗 Link: <a href="#" class="text-green-600 underline">Lorem ipsum dolor sit amet, consectetur elit.</a>
-    </p>
-    <form class="flex space-x-4 max-w-md">
-      <input type="text" placeholder="Name" class="flex-1 border px-4 py-2 rounded" />
-      <input type="email" placeholder="Email" class="flex-1 border px-4 py-2 rounded" />
-      <button class="bg-green-600 text-white px-6 py-2 rounded">SUBSCRIBE</button>
-    </form>
-  </section>
+  <div class="mt-2 " id="contact-us">
+                    <div class="text-xl px-5 font-semibold text-[32px]">Contact Us</div>
+                    <div class="flex gap-5 px-5 mt-3">
+                            <div class="text-[24px]">G Link: </div>
+                            <div class="text-[24px] underline">Lorem ipsum dolor sit amet, consectetuer elit. </div>
+                    </div>
+                    <div class="flex gap-5 px-5 mt-3">
+                        <div class="font-semibold text-[24px]">Newsletter</div>
+                        <input type="text" placeholder="Name" class=""/>
+                        <input type="text" placeholder="Email" class=""/>
+                        <button class="bg-[#3DAA6F] w-[255px] h-[40px] rounded-lg text-white rounded-[30px] text-[24px]">SUBSCRIBE</button>
+                    </div>
+            </div> 
 
   <!-- Footer -->
   <Footer />
