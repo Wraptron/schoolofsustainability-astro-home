@@ -5,17 +5,13 @@ import Footer from "../components/Footer.astro";
 import NewLetter from "../components/Newletter.astro";
 import Home from "../components/Home.astro";
 import "../styles/global.css";
-import aboutcover from '../assets/IOER Conference Group Photo (1).svg';
+import aboutcover from '../assets/ri_12 1.svg';
+import ourmission from '../assets/our mission BG img (1).png';
 ---
 <Layout>
   <Navbar />
     <div class="relative">
-    <img src={aboutcover.src} class="w-full pt-[67px]" alt="About Cover" />
-    <div class="absolute text-white font-semibold w-full text-center top-[150px]">
-      <span class="font-bold text-3xl">Shaping a Sustainable Future Through Knowledge and Innovation</span><br />
-      <span class="text-lg">We aim to drive sustainability by blending interdisciplinary learning, research, and real-world impact.</span>
-    </div>
-
+    <img src={aboutcover.src} class="w-full" alt="About Cover" />
     <!-- <div class="absolute mt-10 left-[950px] border w-96 opacity-50 bg-black p-4">
       <div class="text-white text-center font-semibold mb-2">What's News</div>
       <ol class="text-white text-sm list-disc pl-5">
@@ -27,7 +23,6 @@ import aboutcover from '../assets/IOER Conference Group Photo (1).svg';
       </ol>
     </div> -->
   </div>
-
   <div class="text-white py-10">
     <div class="flex justify-center items-center gap-8 text-[#3DAA6F] font-semibold">
       <div>WHO WE ARE</div>
@@ -37,49 +32,24 @@ import aboutcover from '../assets/IOER Conference Group Photo (1).svg';
       <div>OUR MISSION</div>
     </div>
   </div>
-
-  <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <!-- Who We Are -->
-      <section id="who-we-are" class="flex flex-col md:flex-row items-center text-black p-8 rounded-lg mb-8">
-        <div class="md:w-1/2">
-          <!-- <h3 class="text-3xl font-semibold mb-4">Who We Are</h3> -->
-          <p>
-            The School of Sustainability at IIT Madras is a hub for interdisciplinary learning and research. We bring together experts, students, and communities to address complex environmental challenges. Our focus lies in integrating technology, policy, and societal perspectives for sustainable solutions. Through education, collaboration, and innovation, we aim to shape responsible future leaders. We believe sustainability is not a subject—it’s a way of thinking, living, and progressing.
-          </p>
-        </div>
-        <div class="md:w-1/2">
-          <!-- Placeholder for background graphic -->
-        </div>
-      </section>
-
-      <!-- Our Vision -->
-      <section id="our-vision" class="flex flex-col md:flex-row-reverse items-center text-black p-8 rounded-lg mb-8">
-        <div class="md:w-1/2">
-          <!-- <h3 class="text-3xl font-semibold mb-4">Our Vision</h3> -->
-          <p>
-            The school’s vision is to be the go-to place for policymakers and researchers for an understanding of sustainability-related technologies and policy implications. The school aims to be recognized as a leader for sustainability teaching and research in the global south.
-          </p>
-        </div>
-        <div class="md:w-1/2">
-          <!-- Placeholder for background graphic -->
-        </div>
-      </section>
-
-      <!-- Our Mission -->
-      <section id="our-mission" class="flex flex-col md:flex-row items-center text-black p-8 rounded-lg">
-        <div class="md:w-1/2">
-          <!-- <h3 class="text-3xl font-semibold mb-4">Our Mission</h3> -->
-          <ul class="list-disc list-inside space-y-2">
-            <li>Foster interactive and innovative teaching approaches for students and professionals to deepen our understanding of sustainability.</li>
-            <li>Drive integrated, interdisciplinary research on sustainability in areas such as climate change, decarbonization, sustainable settlements, and behavioral change.</li>
-            <li>Create impactful change by collaborating with industry, engaging in policy dialogues, and helping implement solutions on the ground.</li>
-          </ul>
-        </div>
-        <div class="md:w-1/2">
-          <!-- Placeholder for background graphic -->
-        </div>
-      </section>
-    </main>
+  <main>
+      <div class="relative">
+          <div class="flex justify-end item-center"><img src={ourmission.src} class=""/></div>
+          <div class="absolute top-1/3 [@media(min-width:1400px)]:left-[333px] left-[100px] text-[32px] font-[700]">WHO <span class="text-white">WE ARE</span></div>
+          <div class="absolute top-1/3 [@media(min-width:1400px)]:left-[800px] left-[400px] text-white text-[24px]">The School of Sustainability at IIT Madras is a hub for interdisciplinary learning and research. We bring together experts, students, and communities to address complex environmental challenges. Our focus lies in integrating technology, policy, and societal perspectives for sustainable solutions. Through education, collaboration, and innovation, we aim to shape responsible future leaders. We believe sustainability is not a subject—it's a way of thinking, living, and progressing.</div>
+      </div>
+      <div class="relative mt-8">
+          <div class="flex justify-start item-center"><img src={ourmission.src} class=""/></div>
+          <div class="absolute top-1/3 [@media(min-width:1400px)]:right-[289px] right-[65px] text-[32px] font-[700]"><span class="text-white">OUR</span> <span class="text-black">VISION</span></div>
+          <div class="absolute top-1/3 [@media(min-width:1400px)]:right-[200px] right-[50px] text-white pr-[300px] px-3 flex justify-center item-center text-[24px]">The school’s vision is to be the go-to place for policymakers and researchers for an understanding of sustainability related technologies and policy implications. The school aims to be recognized as a leader for sustainability teaching and research in the global south.</div>
+      </div>
+      <div class="relative mt-8">
+          <div class="flex justify-end item-center"><img src={ourmission.src} class=""/></div>
+          <div class="absolute top-1/3 [@media(min-width:1400px)]:left-[333px] left-[110px] text-[32px] font-[700]">OUR <span class="text-white">MISSION</span></div>
+          <div class="absolute top-1/3 [@media(min-width:1400px)]:left-[800px] left-[400px] text-white text-[24px]">Foster interactive and innovative teaching approaches for students and professionals to deepen our understanding of sustainability.
+Drive integrated, interdisciplinary research on sustainability in areas such as climate change, decarbonization, sustainable settlements, and behavioral change.
+Create impactful change by collaborating with industry, engaging in policy dialogues, and helping implement solutions on the ground.</div>
+      </div>
+  </main>
   <Footer />
 </Layout>
