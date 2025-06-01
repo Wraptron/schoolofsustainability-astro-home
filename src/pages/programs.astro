@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import andrew from '../assets/Talk_Andrew Forrest Talk 2 (1).svg';
+import man from '../assets/medium-shot-man-with-paperwork.svg';
+import female from '../assets/female-student.svg';
+import cert1 from '../assets/front-view-woman-holding-tablet-hand-looking-aside 1 (1).svg';
+import Santosh from '../assets/Santosh Photos 1.svg';
+import sstownhall from '../assets/SS Townhall  1.svg';
+import "../styles/global.css";
+---
+<Layout>
+<Navbar />
+            <div>
+                <section class="relative">
+                    <img src={andrew.src} alt="Hero Image" class="w-full object-cover  h-96" />
+                </section>
+                <!-- <Navbar> -->
+            <section class=" py-10 mx-auto">
+                <!-- Tabs -->
+                <div class="flex justify-center items-center space-x-4 mb-8 text-green-500 font-medium text-[21px]">
+                <span>Certificate Courses</span>
+                <span>|</span>
+                <span>Degree Programs</span>
+                </div>
+            
+                <!-- Certificate Courses -->
+                <h2 class="text-2xl font-bold mb-6 mx-9">Certificate Courses</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2  mb-12">
+                <!-- Left image -->
+                        <img src={cert1.src} alt="Certificate Course" class="rounded-lg w-full h-100" />
+            
+                <!-- Right text -->
+                <div class="flex flex-col justify-center">
+                    <p class="text-gray-700 mb-4">
+                            We offer a Minor in Sustainability to all the matriculated undergraduate students of IITM. Availing any 4 out of a basket of ~30 ongoing courses gives students an opportunity to build a multidimensional understanding of sustainability by delving deeper into environmental, social, and economic challenges of the day. Learn “Why is this Minor for you!” <br>@ https://sustainability.iitm.ac.in/Minor-in-Sustainability-Final-compressed.pdf
+                    </p>
+                    <button class="bg-[#3DAA6F] text-white px-6 py-2 rounded hover:bg-green-600 transition w-fit">View Brochure</button>
+                </div>
+                </div>
+            
+                <!-- Additional Certificate Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 mx-9">
+                <div class="">
+                    <img src={man.src} alt="Course 2" class="w-full" /><br>
+                    <div class="bottom-0 left-0 right-0 text-black rounded-b-lg">
+                                <span class="text-[24px] font-[600]">ID Core Course: Ecology and Environment</span><br><br>
+                                <span class="text-[18px]">The mandatory undergraduate course "ID1200 Ecology and Environment" is designed for sensitizing students towards real-world sustainability scenarios. Offered as a flipped classroom, this interdisciplinary course renders the fundamentals of sustainability (e.g., climate change, ecosystems, energy, waste, economics, and ethics) as well as their applied aspects (e.g., natural resource management, environmental impact assessment, Life Cycle Analysis). @ https://sustainability.iitm.ac.in/Course-ID1200%20Ecology_and_Environment_SoS_SemesterAgnostic.pdf</span>
+                    </div>
+                </div>
+                <div class="">
+                    <img src={female.src} alt="Course 3" class="w-full" /><br>
+                    <div class=" bottom-0 left-0 right-0 text-black rounded-b-lg">
+                                <span class="text-[24px] font-[600] mt-4">Executive Education</span><br><br>
+                                <span class="text-[18px]">The mandatory undergraduate course "ID1200 Ecology and Environment" is designed for sensitizing students towards real-world sustainability scenarios. Offered as a flipped classroom, this interdisciplinary course renders the fundamentals of sustainability (e.g., climate change, ecosystems, energy, waste, economics, and ethics) as well as their applied aspects (e.g., natural resource management, environmental impact assessment, Life Cycle Analysis). @ https://sustainability.iitm.ac.in/Course-ID1200%20Ecology_and_Environment_SoS_SemesterAgnostic.pdf</span>
+                    </div>
+                </div>
+                </div>
+            
+                <!-- Degree Programs -->
+                <h2 class="text-2xl font-bold mb-6 mx-9">Degree Programs</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-16 mx-9">
+                <div class="">
+                    <img src={Santosh.src} alt="Degree 1" class="w-full h-100 object-cover" /><br>
+                    <div class="bottom-0 left-0 right-0 text-black rounded-b-lg text-[24px] underline">
+                            LINK : Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Aenean commodo ligula eget dolor. Aenean massa                    </div>
+                    </div>
+                <div class="">
+                    <img src={sstownhall.src} alt="Degree 2" class="w-full h-100 object-cover" /><br>
+                    <div class="bottom-0 left-0 right-0 text-black rounded-b-lg text-[24px] underline">
+                            LINK : Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Aenean commodo ligula eget dolor. Aenean massa                    </div>
+                    </div>
+                </div>
+                </div>
+            </section> 
+            <div class="mt-2 " id="contact-us">
+                    <div class="text-xl px-5 font-semibold text-[32px]">Contact Us</div>
+                    <div class="flex gap-5 px-5 mt-3">
+                            <div class="text-[24px]">G Link: </div>
+                            <div class="text-[24px]">Lorem ipsum dolor sit amet, consectetuer elit. </div>
+                    </div>
+                    <div class="flex gap-5 px-5 mt-3">
+                        <div class="font-semibold text-[24px]">Newsletter</div>
+                        <input type="text" placeholder="Name" class=""/>
+                        <input type="text" placeholder="Email" class=""/>
+                        <button class="bg-[#3DAA6F] w-[255px] h-[40px] rounded-lg text-white rounded-[30px] text-[24px]">SUBSCRIBE</button>
+                    </div>
+            </div> 
+        </div>
+<Footer>
+</Layout>

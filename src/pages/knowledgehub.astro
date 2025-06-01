@@ -1,0 +1,143 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "@/components/Footer.astro";
+import "../styles/global.css";
+import summmit from '../assets/Summit on Sustainability .jpg';
+import icssrconf from '../assets/ICSSR Conference_2 (1) 1.svg'
+import publicationcharuta from '../assets/Publication_Charuta 1.svg';
+import publicationsantosh from '../assets/Publication_Santosh 1.svg';
+import screenshot from '../assets/Screenshot 2025-05-05 194551 1.svg'
+import newsletter from '../assets/Screenshot 2025-05-05 085703 1.svg';
+import publication from '../assets/SfIB Cohort_1 3.svg';
+import kh from '../assets/knowledge hub page 1 image.jpg'
+---
+<Layout>
+  <Navbar />
+  <!-- Hero Slider -->
+  <section class="relative">
+    <img src={kh.src} alt="Hero Image" class="w-full h-96 object-cover" />
+    <div class="absolute inset-0 bg-gray-100 flex items-center justify-center text-white text-2xl font-semibold">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </div>
+  </section>
+  
+  <!-- Tabs -->
+            <div class="flex justify-center items-center gap-8 text-[#3DAA6F] mt-10 text-[21px]">
+                    <div>Events</div>
+                    <div>↓</div>
+                    <div>Media</div>
+                    <div>↓</div>
+                    <div>Initiative</div>
+              </div>
+
+  <!-- Articles Section -->
+  <section id="articles" class="mx-auto px-9 py-10">
+    <h2 class="text-2xl font-bold mb-6">Articles</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="border">
+        <img src={summmit.src} alt="Article 1" class="h-56 object-cover w-full" />
+        <p class="mt-2 text-sm px-2 font-semibold">Tuesday, April 1, 2025</p>
+        <h3 class="text-lg font-semibold mt-1 px-2">A Cost Effective Method to Treat Pollutants</h3>
+        <p class="text-sm text-gray-600 px-2 mb-2">
+          Treatment of dye effluents and tannery effluents using advanced processes...
+        </p>
+      </div>
+      <div class="border">
+        <img src={icssrconf.src} alt="Article 2" class="h-56 object-cover w-full" />
+        <p class="mt-2 text-sm text-gray-500">Tuesday, April 1, 2025</p>
+        <h3 class="text-lg font-semibold mt-1">The Right Price</h3>
+        <p class="text-sm text-gray-600">
+          With global climate changes, does a firm lean towards reduced emissions?
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications Section -->
+  <section id="publications" class="px-9 py-10">
+    <h2 class="text-2xl font-bold mb-6">Publications</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <img src={publicationcharuta.src} alt="Publication 1" class="rounded-lg w-full h-72" />
+      <img src={publicationsantosh.src} alt="Publication 2" class="rounded-lg w-full h-72" />
+      <img src={screenshot.src} alt="Publication 3" class="rounded-lg w-full h-72 " />
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section id="newsletter" class="px-9 py-10">
+    <h2 class="text-2xl font-bold mb-6">Newsletter</h2>
+    <div class="grid md:grid-cols-3 gap-8 pt-8">
+      <div class="col-span-1">
+        <img src={newsletter.src} alt="Newsletter" class="rounded-lg h-80 w-full" />
+      </div>
+      <div class="col-span-2">
+        <p class="text-gray-700 mb-4 text-[24px]">
+          Tuesday, April 1, 2025<br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor...<br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor...<br> 
+        </p>
+        <form class="space-y-4">
+          <div>
+            <label class="block mb-1">Name</label>
+            <input type="text" class="w-full border px-4 py-2 rounded" />
+          </div>
+          <div>
+            <label class="block mb-1">Email</label>
+            <input type="email" class="w-full border px-4 py-2 rounded" />
+          </div>
+          <div class="flex justify-end items-center"> <button class="bg-green-600 text-white px-6 py-1 rounded-xl">SUBSCRIBE</button></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Report Section -->
+  <section id="report" class="text-black py-10">
+    <div class="">
+      <h2 class="text-[32px] font-bold mb-4 px-9">Report</h2>
+      <p class="mb-6 bg-[#032A03] text-white px-9 py-20 text-[24px]">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...
+
+      </p>
+      <div class="grid md:grid-cols-3 gap-6 px-9">
+        <img src={publication.src} alt="Report Image" class="h-56 object-cover w-full" />
+        <img src={publication.src} alt="Report Image" class="h-56 object-cover w-full" />
+        <img src={publication.src} alt="Report Image" class="h-56 object-cover w-full" />
+      </div>
+    </div>
+  </section>
+
+  <!-- White Paper Section -->
+  <section id="whitepaper" class="px-9 py-10">
+    <h2 class="text-2xl font-bold mb-6">White Paper</h2>
+    <div class="grid md:grid-cols-4 gap-4">
+      {Array(4).fill(0).map(() => (
+        <div class="relative group">
+          <img src="/images/whitepaper.jpg" class="rounded-lg h-56 w-full object-cover" />
+          <div class="absolute inset-0 bg-black bg-opacity-40 text-white p-3 flex items-end rounded-lg opacity-0 group-hover:opacity-100 transition">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Contact Us -->
+  <div class="mt-2 " id="contact-us">
+                    <div class="text-xl px-5 font-semibold text-[32px]">Contact Us</div>
+                    <div class="flex gap-5 px-5 mt-3">
+                            <div class="text-[24px]">G Link: </div>
+                            <div class="text-[24px] underline">Lorem ipsum dolor sit amet, consectetuer elit. </div>
+                    </div>
+                    <div class="flex gap-5 px-5 mt-3">
+                        <div class="font-semibold text-[24px]">Newsletter</div>
+                        <input type="text" placeholder="Name" class=""/>
+                        <input type="text" placeholder="Email" class=""/>
+                        <button class="bg-[#3DAA6F] w-[255px] h-[40px] rounded-lg text-white rounded-[30px] text-[24px]">SUBSCRIBE</button>
+                    </div>
+            </div> 
+  <!-- Footer -->
+  <Footer />
+</Layout>

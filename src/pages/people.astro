@@ -1,0 +1,343 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import NewLetter from "../components/Newletter.astro";
+import Home from "../components/Home.astro";
+import "../styles/global.css";
+import peoplecover from '../assets/IOER Conference Group Photo (1).svg';
+import Rajnish from "../assets/Rajnish-Kumarv2 1.svg";
+import satyaseshadri from "../assets/Satyanarayanan Seshadri 1.svg";
+import webglobe from "../assets/web logo small(1) 2.svg";
+import charutaphoto from '../assets/resource (2) 1.svg';
+import rahulphoto from '../assets/resource (1) 1.svg';
+import sivaphoto from '../assets/resource 1.svg';
+import vishakha from '../assets/resource (4) 1.svg'
+import linkedin from '../assets/LinkedIn 4.svg';
+import twitter from '../assets/x twitter logo small 2.svg';
+import associatefac1 from '../assets/1 (1).png';
+import associatefac2 from '../assets/2.svg';
+import associatefac3 from '../assets/3.svg';
+import associatefac4 from '../assets/4.svg';
+import associatefac5 from '../assets/5.svg';
+import associatefac6 from '../assets/6.svg';
+import associatefac7 from '../assets/7.svg';
+import associatefac8 from '../assets/8.svg';
+import afffac1 from '../assets/A.svg';
+import afffac2 from '../assets/B.svg';
+import afffac3 from '../assets/C.svg';
+import afffac4 from '../assets/D.svg';
+import afffac5 from '../assets/E.svg';
+import afffac6 from '../assets/F.svg';
+import afffac7 from '../assets/G.svg';
+import afffac8 from '../assets/H.svg';
+import advisor1 from '../assets/05.svg';
+import advisor2 from '../assets/01.svg';
+import advisor3 from '../assets/02.svg';
+import advisor4 from '../assets/03.svg';
+import advisor5 from '../assets/04.svg';
+import "../styles/global.css";
+---
+
+<Layout>
+  <Navbar />
+    <div class="">
+          <!-- <div class="relative"> -->
+            <!-- <img src={peoplecover.src} class="w-full"/> -->
+            <!-- <div class="absolute text-white font-semibold w-full top-55 right-[370px] text-center mt-[250px]">
+                      <span class="font-bold text-3xl">Lorem ipsum dolor sit amet, consectetuer</span><br>adipiscing elit. Aenean commodo ligula eget dolor.
+            </div>
+            <div class="top-20 absolute mt-10 left-[950px] border w-90 opacity-50 bg-black">
+                    <div class="text-white flex justify-center items-center">What's News</div>
+                    <ol class="text-white text-sm mx-2">
+                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
+                        <li class="pt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
+                        <li class="pt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
+                        <li class="pt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
+                        <li class="pt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
+                    </ol>
+            </div> -->
+        <!-- </div> -->
+        <div class="text-white py-20">
+              <div class="flex justify-center items-center gap-8 text-[#3DAA6F] mt-10">
+                    <div>TEAM</div>
+                    <div>|</div>
+                    <div>ASSOCIATE FACULTY</div>
+                    <div>|</div>
+                    <div>AFFILIATE FELLOW</div>
+                    <div>|</div>
+                    <div>ADVISORS</div>
+              </div>
+        </div>
+        <div class="" id="Faculty">
+              <div class="font-semibold flex justify-start item-center px-5 text-2xl">Team</div>
+              <div class="grid grid-cols-2 mx-5">
+                      <div>
+                            <div class="flex justify-center items-center"><img src={Rajnish.src} class="w-50"/></div>
+                            <div class="flex justify-center items-center text-xl font-semibold pt-3">Rajnish Kumar</div>
+                            <div class="flex justify-center items-center pt-2">Head, School of Sustainability</div>
+                            <div class="flex justify-center items-center gap-2 pt-2">
+                                  <div class=""><img src={webglobe.src} /></div>
+                                  <div>https://che.iitm.ac.in</div>
+                            </div>
+                      </div>
+                      <div class="">
+                        <div class="flex justify-center items-center"><img src={satyaseshadri.src} class="w-45"/></div>
+                        <div class="flex justify-center items-center text-xl font-semibold pt-3">Satyanarayanan Seshadri</div>
+                        <div class="flex justify-center items-center pt-2">Associate Head, School of Sustainability</div>
+                        <div class="flex justify-center items-center gap-2 pt-2">
+                            <div class=""><img src={linkedin.src} /></div>
+                            <div>https://energyconsortium.org</div>
+                        </div>
+                      </div>
+              </div>
+        </div>
+        <div class="bg-gray-200 mt-10" id="Team">
+              <div class="grid grid-cols-4 mx-5 py-10">
+                    <div>
+                          <div class="flex justify-center items-center"><img src={charutaphoto.src} class="w-50"/></div>
+                          <div class="flex justify-center items-center text-xl font-semibold pt-3">Charuta Kulkarni</div>
+                          <div class="flex justify-center items-center pt-2 text-sm">Head, School of Sustainability</div>
+                          <div class="flex justify-center items-center gap-2 pt-2">
+                                <div class="text-sm"><img src={linkedin.src} /></div>
+                                <div>https://che.iitm.ac.in</div>
+                          </div>
+                    </div>
+                    <div class="">
+                      <div class="flex justify-center items-center"><img src={rahulphoto.src} class="w-45"/></div>
+                      <div class="flex justify-center items-center text-xl font-semibold pt-3">Rahul Muralidharan</div>
+                      <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                      <div class="flex justify-center items-center gap-2 pt-2">
+                          <div class="text-sm"><img src={linkedin.src} /></div>
+                          <div>https://energyconsortium.org</div>
+                      </div>
+                    </div>
+                    <div class="">
+                      <div class="flex justify-center items-center"><img src={sivaphoto.src} class="w-45"/></div>
+                      <div class="flex justify-center items-center text-xl font-semibold pt-3">Siva Barathi A</div>
+                      <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                      <div class="flex justify-center items-center gap-2 pt-2">
+                          <div class="text-sm"><img src={linkedin.src} /></div>
+                          <div>https://energyconsortium.org</div>
+                      </div>
+                    </div>
+                    <div class="">
+                      <div class="flex justify-center items-center"><img src={vishakha.src} class="w-45"/></div>
+                      <div class="flex justify-center items-center text-xl font-semibold pt-3">Vishakha Shankar</div>
+                      <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                      <div class="flex justify-center items-center gap-2 pt-2">
+                          <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                          <div>https://energyconsortium.org</div>
+                      </div>
+                    </div>
+              </div>
+        </div>
+        <div class="mt-4">
+            <div class="font-semibold flex justify-start item-center px-5 text-2xl">Associate Faculty</div>
+              <div class="grid grid-cols-4 mx-5 py-10">
+                  <div>
+                        <div class="flex justify-center items-center"><img src={associatefac1.src} class="w-45"/></div>
+                        <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                        <div class="flex justify-center items-center pt-2 text-sm">Head, School of Sustainability</div>
+                        <div class="flex justify-center items-center gap-2 pt-2">
+                              <div class="text-sm"><img src={linkedin.src} /></div>
+                              <div>https://che.iitm.ac.in</div>
+                        </div>
+                  </div>
+                  <div class="">
+                    <div class="flex justify-center items-center"><img src={associatefac2.src} class="w-45"/></div>
+                    <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                    <div class="flex justify-center items-center pt-2 text-sm">Department</div>
+                    <div class="flex justify-center items-center gap-2 pt-2">
+                        <div class="text-sm"><img src={linkedin.src} /></div>
+                        <div>https://energyconsortium.org</div>
+                    </div>
+                  </div>
+                  <div class="">
+                    <div class="flex justify-center items-center"><img src={associatefac3.src} class="w-45"/></div>
+                    <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                    <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                    <div class="flex justify-center items-center gap-2 pt-2">
+                        <div class="text-sm"><img src={linkedin.src} /></div>
+                        <div>https://energyconsortium.org</div>
+                    </div>
+                  </div>
+                  <div class="">
+                      <div class="flex justify-center items-center"><img src={associatefac4.src} class="w-45"/></div>
+                      <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                      <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                      <div class="flex justify-center items-center gap-2 pt-2">
+                          <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                          <div>https://energyconsortium.org</div>
+                      </div>
+                  </div>
+                  <div class="mt-10">
+                      <div class="flex justify-center items-center"><img src={associatefac5.src} class="w-45"/></div>
+                      <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                      <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                      <div class="flex justify-center items-center gap-2 pt-2">
+                          <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                          <div>https://energyconsortium.org</div>
+                      </div>
+                  </div>
+                  <div class="mt-10">
+                      <div class="flex justify-center items-center"><img src={associatefac6.src} class="w-45"/></div>
+                      <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                      <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                      <div class="flex justify-center items-center gap-2 pt-2">
+                          <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                          <div>https://energyconsortium.org</div>
+                      </div>
+                   </div>
+                   <div class="mt-10">
+                      <div class="flex justify-center items-center"><img src={associatefac7.src} class="w-45"/></div>
+                      <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                      <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                      <div class="flex justify-center items-center gap-2 pt-2">
+                          <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                          <div>https://energyconsortium.org</div>
+                      </div>
+                   </div>
+                   <div class="mt-10">
+                           <div class="flex justify-center items-center"><img src={associatefac8.src} class="w-45"/></div>
+                           <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                           <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                            <div class="flex justify-center items-center gap-2 pt-2">
+                                <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                                <div>https://energyconsortium.org</div>
+                            </div>
+                   </div>
+              <!-- </div> -->
+            </div>
+        </div>
+        <div class="" id="Affiliate">
+              <div class="mx-5 text-2xl font-semibold">Affilate Fellows</div>
+              <div class="mt-4 bg-gray-400 grid grid-cols-4 mx-5 py-10">
+                      <div class="">
+                            <div class="flex justify-center items-center"><img src={afffac1.src} class="w-45"/></div>
+                            <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                            <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                            <div class="flex justify-center items-center gap-2 pt-2">
+                                <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                                <div>https://energyconsortium.org</div>
+                            </div>
+                      </div>
+                      <div class="">
+                            <div class="flex justify-center items-center"><img src={afffac2.src} class="w-45"/></div>
+                            <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                            <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                            <div class="flex justify-center items-center gap-2 pt-2">
+                                <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                                <div>https://energyconsortium.org</div>
+                            </div>
+                      </div>
+                      <div class="">
+                            <div class="flex justify-center items-center"><img src={afffac3.src} class="w-45"/></div>
+                            <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                            <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                            <div class="flex justify-center items-center gap-2 pt-2">
+                                <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                                <div>https://energyconsortium.org</div>
+                            </div>
+                      </div>
+                      <div class="">
+                            <div class="flex justify-center items-center"><img src={afffac4.src} class="w-45"/></div>
+                            <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                            <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                            <div class="flex justify-center items-center gap-2 pt-2">
+                                <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                                <div>https://energyconsortium.org</div>
+                            </div>
+                       </div>
+                       <div class="mt-10">
+                            <div class="flex justify-center items-center"><img src={afffac5.src} class="w-45"/></div>
+                            <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                            <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                            <div class="flex justify-center items-center gap-2 pt-2">
+                                <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                                <div>https://energyconsortium.org</div>
+                            </div>
+                       </div>
+                       <div class="mt-10">
+                            <div class="flex justify-center items-center"><img src={afffac6.src} class="w-45"/></div>
+                            <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                            <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                            <div class="flex justify-center items-center gap-2 pt-2">
+                                <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                                <div>https://energyconsortium.org</div>
+                            </div>
+                       </div>
+                       <div class="mt-10">
+                            <div class="flex justify-center items-center"><img src={afffac7.src} class="w-45"/></div>
+                            <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                            <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                            <div class="flex justify-center items-center gap-2 pt-2">
+                                <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                                <div>https://energyconsortium.org</div>
+                            </div>
+                       </div>
+                       <div class="mt-10">
+                          <div class="flex justify-center items-center"><img src={afffac8.src} class="w-45"/></div>
+                          <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                          <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                          <div class="flex justify-center items-center gap-2 pt-2">
+                              <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                              <div>https://energyconsortium.org</div>
+                          </div>
+                       </div>
+              </div>  
+        </div>
+
+        <div class="mt-10" id="Advisor">
+          <div class="mx-5 text-2xl font-semibold">Advisors</div>
+          <div class="mt-4 grid grid-cols-4 mx-5 py-10">
+                  <div class="">
+                        <div class="flex justify-center items-center"><img src={advisor1.src} class="w-45"/></div>
+                        <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                        <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                        <div class="flex justify-center items-center gap-2 pt-2">
+                            <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                            <div>https://energyconsortium.org</div>
+                        </div>
+                  </div>
+                  <div class="">
+                        <div class="flex justify-center items-center"><img src={advisor2.src} class="w-45"/></div>
+                        <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                        <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                        <div class="flex justify-center items-center gap-2 pt-2">
+                            <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                            <div>https://energyconsortium.org</div>
+                        </div>
+                  </div>
+                  <div class="">
+                        <div class="flex justify-center items-center"><img src={advisor3.src} class="w-45"/></div>
+                        <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                        <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                        <div class="flex justify-center items-center gap-2 pt-2">
+                            <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                            <div>https://energyconsortium.org</div>
+                        </div>
+                  </div>
+                  <div class="">
+                        <div class="flex justify-center items-center"><img src={advisor4.src} class="w-45"/></div>
+                        <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                        <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                        <div class="flex justify-center items-center gap-2 pt-2">
+                            <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                            <div>https://energyconsortium.org</div>
+                        </div>
+                   </div>
+                   <div class="mt-10">
+                        <div class="flex justify-center items-center"><img src={advisor5.src} class="w-45"/></div>
+                        <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
+                        <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
+                        <div class="flex justify-center items-center gap-2 pt-2">
+                            <div class="text-sm"><img src={linkedin.src} class=""/></div>
+                            <div>https://energyconsortium.org</div>
+                        </div>
+                   </div>
+          </div>  
+    </div>
+    </div>
+  <Footer />
+</Layout>
