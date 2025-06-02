@@ -14,148 +14,99 @@ import "../styles/global.css";
 <Layout>
   <Navbar />
 
-  <main class="min-h-screen scroll-smooth">
-    <!-- Hero Section -->
-    <section class="relative w-full">
-      <img
-        src={andrew.src}
-        alt="Andrew Forrest Talk - Sustainability Education"
-        class="w-full h-64 sm:h-80 md:h-96 object-cover"
-        loading="eager"
-      />
-    </section>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden">
+    <img
+      src={cover.src}
+      alt="School of Sustainability IIT Madras"
+      class="w-full h-80 sm:h-96 lg:h-[500px] object-cover"
+      loading="eager"
+    />
+    <div
+      class="absolute inset-x-4 bottom-4 sm:bottom-8 lg:top-[320px] lg:left-8 bg-green-600 p-6 sm:p-8 lg:w-1/2 rounded-lg"
+    >
+      <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
+        School of Sustainability IIT Madras
+      </h1>
+      <p class="text-sm sm:text-base mt-3 text-gray-100">
+        Leading research and innovation in sustainable technologies and
+        environmental solutions.
+      </p>
+    </div>
+  </section>
 
-    <!-- Main Content -->
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
-      <!-- Navigation Tabs -->
-      <section class="mb-8 lg:mb-12">
-        <nav
-          class="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 text-center"
-          role="navigation"
-          aria-label="Course sections"
-        >
-          <a
-            href="#certificate-courses"
-            class="text-green-600 hover:text-green-700 hover:-translate-y-0.5 font-medium text-lg sm:text-xl lg:text-2xl transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-2 py-1"
-            aria-label="Navigate to Certificate Courses section"
-          >
-            Certificate Courses
-          </a>
-          <span class="hidden sm:inline text-green-600">|</span>
-          <a
-            href="#degree-programs"
-            class="text-green-600 hover:text-green-700 hover:-translate-y-0.5 font-medium text-lg sm:text-xl lg:text-2xl transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-2 py-1"
-            aria-label="Navigate to Degree Programs section"
-          >
-            Degree Programs
-          </a>
-        </nav>
-      </section>
+  <!-- Navigation Links -->
+  <nav class="mt-8 sm:mt-20">
+    <div
+      class="flex flex-wrap justify-center items-center gap-3 sm:gap-5 text-xs sm:text-sm text-[#3DAA6F] px-4"
+    >
+      <a
+        href="#research"
+        class="hover:text-green-600 transition-colors cursor-pointer"
+        >Research & Development</a
+      >
+      <span class="text-gray-400">|</span>
+      <a
+        href="#projects"
+        class="hover:text-green-600 transition-colors cursor-pointer"
+        >Projects</a
+      >
+      <span class="text-gray-400">|</span>
+      <a
+        href="#centers"
+        class="hover:text-green-600 transition-colors cursor-pointer"
+        >Affiliated Centers</a
+      >
+    </div>
+  </nav>
 
-      <!-- Certificate Courses Section -->
-      <section id="certificate-courses" class="mb-12 lg:mb-16 scroll-mt-16">
-        <h2 class="text-2xl lg:text-3xl font-bold mb-6 lg:mb-8 text-gray-900">
-          Certificate Courses
-        </h2>
-
-        <!-- Featured Certificate Course -->
-        <div
-          class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-8 lg:mb-12"
-        >
-          <div class="order-2 lg:order-1">
-            <img
-              src={cert1.src}
-              alt="Student with tablet - Certificate Course"
-              class="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-lg shadow-md"
-              loading="lazy"
-            />
-          </div>
-
-          <div
-            class="order-1 lg:order-2 flex flex-col justify-center space-y-4 lg:space-y-6"
-          >
-            <div class="prose prose-gray max-w-none">
-              <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
-                We offer a Minor in Sustainability to all the matriculated
-                undergraduate students of IITM. Availing any 4 out of a basket
-                of ~30 ongoing courses gives students an opportunity to build a
-                multidimensional understanding of sustainability by delving
-                deeper into environmental, social, and economic challenges of
-                the day.
-              </p>
-              <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
-                Learn "Why is this Minor for you!" at:
-                <a
-                  href="https://sustainability.iitm.ac.in/Minor-in-Sustainability-Final-compressed.pdf"
-                  class="text-green-600 hover:text-green-700 underline break-all"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  sustainability.iitm.ac.in/Minor-in-Sustainability-Final-compressed.pdf
-                </a>
-              </p>
-            </div>
-            <button
-              class="bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-lg transition-colors duration-200 w-fit focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-              aria-label="View sustainability minor brochure"
+  <!-- Research & Development Section -->
+  <section id="research" class="px-4 sm:px-8 py-8 sm:py-12">
+    <h2 class="text-lg sm:text-xl font-bold mb-6">Research & Development</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+      {
+        [
+          {
+            image: project1,
+            title: "Sponsored Projects",
+            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=392541364&single=true",
+          },
+          {
+            image: project4,
+            title: "Consultancy Projects",
+            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=591462497&single=true",
+          },
+          {
+            image: project4,
+            title: "Patents Filed",
+            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=1624878732&single=true",
+          },
+          {
+            image: project4,
+            title: "Patents Granted",
+            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=1624878732&single=true",
+          },
+        ].map((project, index) => (
+          <article class="bg-gray-100 rounded-lg overflow-hidden hover:shadow-lg transition-shadow group">
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block"
             >
-              View Brochure
-            </button>
-          </div>
-        </div>
-
-        <!-- Additional Certificate Courses -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          <!-- ID Core Course -->
-          <article class="bg-white rounded-lg shadow-sm overflow-hidden">
-            <img
-              src={man.src}
-              alt="Man with paperwork - ID Core Course"
-              class="w-full h-48 sm:h-56 object-cover"
-              loading="lazy"
-            />
-            <div class="p-4 lg:p-6">
-              <h3
-                class="text-xl lg:text-2xl font-semibold text-gray-900 mb-3 lg:mb-4"
-              >
-                ID Core Course: Ecology and Environment
-              </h3>
-              <div class="prose prose-gray max-w-none">
-                <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
-                  The mandatory undergraduate course "ID1200 Ecology and
-                  Environment" is designed for sensitizing students towards
-                  real-world sustainability scenarios. Offered as a flipped
-                  classroom, this interdisciplinary course renders the
-                  fundamentals of sustainability (e.g., climate change,
-                  ecosystems, energy, waste, economics, and ethics) as well as
-                  their applied aspects (e.g., natural resource management,
-                  environmental impact assessment, Life Cycle Analysis).
-                </p>
-                <p class="text-sm lg:text-base">
-                  <a
-                    href="https://sustainability.iitm.ac.in/Course-ID1200%20Ecology_and_Environment_SoS_SemesterAgnostic.pdf"
-                    class="text-green-600 hover:text-green-700 underline break-all"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Course Details
-                  </a>
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Executive Education -->
-          <article class="bg-white rounded-lg shadow-sm overflow-hidden">
-            <img
-              src={female.src}
-              alt="Female student - Executive Education"
-              class="w-full h-48 sm:h-56 object-cover"
-              loading="lazy"
-            />
-            <div class="p-4 lg:p-6">
-              <h3
-                class="text-xl lg:text-2xl font-semibold text-gray-900 mb-3 lg:mb-4"
+              <img
+                src={project.image.src}
+                alt={project.title}
+                class="w-full h-40 sm:h-48 object-cover p-4 group-hover:scale-105 transition-transform cursor-pointer"
+                loading="lazy"
+              />
+            </a>
+            <div class="p-4">
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm font-medium text-blue-600 hover:text-blue-800 underline transition-colors block"
               >
                 Executive Education
               </h3>
