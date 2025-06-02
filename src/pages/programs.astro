@@ -2,91 +2,304 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "@/components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import andrew from '../assets/Talk_Andrew Forrest Talk 2 (1).svg';
-import man from '../assets/medium-shot-man-with-paperwork.svg';
-import female from '../assets/female-student.svg';
-import cert1 from '../assets/front-view-woman-holding-tablet-hand-looking-aside 1 (1).svg';
-import Santosh from '../assets/Santosh Photos 1.svg';
-import sstownhall from '../assets/SS Townhall  1.svg';
+import andrew from "../assets/Talk_Andrew Forrest Talk 2 (1).svg";
+import man from "../assets/medium-shot-man-with-paperwork.svg";
+import female from "../assets/female-student.svg";
+import cert1 from "../assets/front-view-woman-holding-tablet-hand-looking-aside 1 (1).svg";
+import Santosh from "../assets/Santosh Photos 1.svg";
+import sstownhall from "../assets/SS Townhall  1.svg";
 import "../styles/global.css";
 ---
+
 <Layout>
-<Navbar />
-            <div>
-                <section class="relative">
-                    <img src={andrew.src} alt="Hero Image" class="w-full object-cover  h-96" />
-                </section>
-                <!-- <Navbar> -->
-            <section class=" py-10 mx-auto">
-                <!-- Tabs -->
-                <div class="flex justify-center items-center space-x-4 mb-8 text-green-500 font-medium text-[21px]">
-                <span>Certificate Courses</span>
-                <span>|</span>
-                <span>Degree Programs</span>
-                </div>
-            
-                <!-- Certificate Courses -->
-                <h2 class="text-2xl font-bold mb-6 mx-9">Certificate Courses</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2  mb-12">
-                <!-- Left image -->
-                        <img src={cert1.src} alt="Certificate Course" class="rounded-lg w-full h-100" />
-            
-                <!-- Right text -->
-                <div class="flex flex-col justify-center">
-                    <p class="text-gray-700 mb-4">
-                            We offer a Minor in Sustainability to all the matriculated undergraduate students of IITM. Availing any 4 out of a basket of ~30 ongoing courses gives students an opportunity to build a multidimensional understanding of sustainability by delving deeper into environmental, social, and economic challenges of the day. Learn “Why is this Minor for you!” <br>@ https://sustainability.iitm.ac.in/Minor-in-Sustainability-Final-compressed.pdf
-                    </p>
-                    <button class="bg-[#3DAA6F] text-white px-6 py-2 rounded hover:bg-green-600 transition w-fit">View Brochure</button>
-                </div>
-                </div>
-            
-                <!-- Additional Certificate Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 mx-9">
-                <div class="">
-                    <img src={man.src} alt="Course 2" class="w-full" /><br>
-                    <div class="bottom-0 left-0 right-0 text-black rounded-b-lg">
-                                <span class="text-[24px] font-[600]">ID Core Course: Ecology and Environment</span><br><br>
-                                <span class="text-[18px]">The mandatory undergraduate course "ID1200 Ecology and Environment" is designed for sensitizing students towards real-world sustainability scenarios. Offered as a flipped classroom, this interdisciplinary course renders the fundamentals of sustainability (e.g., climate change, ecosystems, energy, waste, economics, and ethics) as well as their applied aspects (e.g., natural resource management, environmental impact assessment, Life Cycle Analysis). @ https://sustainability.iitm.ac.in/Course-ID1200%20Ecology_and_Environment_SoS_SemesterAgnostic.pdf</span>
-                    </div>
-                </div>
-                <div class="">
-                    <img src={female.src} alt="Course 3" class="w-full" /><br>
-                    <div class=" bottom-0 left-0 right-0 text-black rounded-b-lg">
-                                <span class="text-[24px] font-[600] mt-4">Executive Education</span><br><br>
-                                <span class="text-[18px]">The mandatory undergraduate course "ID1200 Ecology and Environment" is designed for sensitizing students towards real-world sustainability scenarios. Offered as a flipped classroom, this interdisciplinary course renders the fundamentals of sustainability (e.g., climate change, ecosystems, energy, waste, economics, and ethics) as well as their applied aspects (e.g., natural resource management, environmental impact assessment, Life Cycle Analysis). @ https://sustainability.iitm.ac.in/Course-ID1200%20Ecology_and_Environment_SoS_SemesterAgnostic.pdf</span>
-                    </div>
-                </div>
-                </div>
-            
-                <!-- Degree Programs -->
-                <h2 class="text-2xl font-bold mb-6 mx-9">Degree Programs</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-16 mx-9">
-                <div class="">
-                    <img src={Santosh.src} alt="Degree 1" class="w-full h-100 object-cover" /><br>
-                    <div class="bottom-0 left-0 right-0 text-black rounded-b-lg text-[24px] underline">
-                            LINK : Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Aenean commodo ligula eget dolor. Aenean massa                    </div>
-                    </div>
-                <div class="">
-                    <img src={sstownhall.src} alt="Degree 2" class="w-full h-100 object-cover" /><br>
-                    <div class="bottom-0 left-0 right-0 text-black rounded-b-lg text-[24px] underline">
-                            LINK : Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Aenean commodo ligula eget dolor. Aenean massa                    </div>
-                    </div>
-                </div>
-                </div>
-            </section> 
-            <div class="mt-2 " id="contact-us">
-                    <div class="text-xl px-5 font-semibold text-[32px]">Contact Us</div>
-                    <div class="flex gap-5 px-5 mt-3">
-                            <div class="text-[24px]">G Link: </div>
-                            <div class="text-[24px]">Lorem ipsum dolor sit amet, consectetuer elit. </div>
-                    </div>
-                    <div class="flex gap-5 px-5 mt-3">
-                        <div class="font-semibold text-[24px]">Newsletter</div>
-                        <input type="text" placeholder="Name" class=""/>
-                        <input type="text" placeholder="Email" class=""/>
-                        <button class="bg-[#3DAA6F] w-[255px] h-[40px] rounded-lg text-white rounded-[30px] text-[24px]">SUBSCRIBE</button>
-                    </div>
-            </div> 
+  <Navbar />
+
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative w-full">
+      <img
+        src={andrew.src}
+        alt="Andrew Forrest Talk - Sustainability Education"
+        class="w-full h-64 sm:h-80 md:h-96 object-cover"
+        loading="eager"
+      />
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+      <!-- Navigation Tabs -->
+      <section class="mb-8 lg:mb-12">
+        <div
+          class="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 text-center"
+        >
+          <span
+            class="text-green-600 font-medium text-lg sm:text-xl lg:text-2xl"
+            >Certificate Courses</span
+          >
+          <span class="hidden sm:inline text-green-600">|</span>
+          <span
+            class="text-green-600 font-medium text-lg sm:text-xl lg:text-2xl"
+            >Degree Programs</span
+          >
         </div>
-<Footer>
+      </section>
+
+      <!-- Certificate Courses Section -->
+      <section class="mb-12 lg:mb-16">
+        <h2 class="text-2xl lg:text-3xl font-bold mb-6 lg:mb-8 text-gray-900">
+          Certificate Courses
+        </h2>
+
+        <!-- Featured Certificate Course -->
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-8 lg:mb-12"
+        >
+          <div class="order-2 lg:order-1">
+            <img
+              src={cert1.src}
+              alt="Student with tablet - Certificate Course"
+              class="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-lg shadow-md"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            class="order-1 lg:order-2 flex flex-col justify-center space-y-4 lg:space-y-6"
+          >
+            <div class="prose prose-gray max-w-none">
+              <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                We offer a Minor in Sustainability to all the matriculated
+                undergraduate students of IITM. Availing any 4 out of a basket
+                of ~30 ongoing courses gives students an opportunity to build a
+                multidimensional understanding of sustainability by delving
+                deeper into environmental, social, and economic challenges of
+                the day.
+              </p>
+              <p class="text-gray-700 text-base lg:text-lg leading-relaxed">
+                Learn "Why is this Minor for you!" at:
+                <a
+                  href="https://sustainability.iitm.ac.in/Minor-in-Sustainability-Final-compressed.pdf"
+                  class="text-green-600 hover:text-green-700 underline break-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  sustainability.iitm.ac.in/Minor-in-Sustainability-Final-compressed.pdf
+                </a>
+              </p>
+            </div>
+            <button
+              class="bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-lg transition-colors duration-200 w-fit focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+              aria-label="View sustainability minor brochure"
+            >
+              View Brochure
+            </button>
+          </div>
+        </div>
+
+        <!-- Additional Certificate Courses -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          <!-- ID Core Course -->
+          <article class="bg-white rounded-lg shadow-sm overflow-hidden">
+            <img
+              src={man.src}
+              alt="Man with paperwork - ID Core Course"
+              class="w-full h-48 sm:h-56 object-cover"
+              loading="lazy"
+            />
+            <div class="p-4 lg:p-6">
+              <h3
+                class="text-xl lg:text-2xl font-semibold text-gray-900 mb-3 lg:mb-4"
+              >
+                ID Core Course: Ecology and Environment
+              </h3>
+              <div class="prose prose-gray max-w-none">
+                <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                  The mandatory undergraduate course "ID1200 Ecology and
+                  Environment" is designed for sensitizing students towards
+                  real-world sustainability scenarios. Offered as a flipped
+                  classroom, this interdisciplinary course renders the
+                  fundamentals of sustainability (e.g., climate change,
+                  ecosystems, energy, waste, economics, and ethics) as well as
+                  their applied aspects (e.g., natural resource management,
+                  environmental impact assessment, Life Cycle Analysis).
+                </p>
+                <p class="text-sm lg:text-base">
+                  <a
+                    href="https://sustainability.iitm.ac.in/Course-ID1200%20Ecology_and_Environment_SoS_SemesterAgnostic.pdf"
+                    class="text-green-600 hover:text-green-700 underline break-all"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Course Details
+                  </a>
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Executive Education -->
+          <article class="bg-white rounded-lg shadow-sm overflow-hidden">
+            <img
+              src={female.src}
+              alt="Female student - Executive Education"
+              class="w-full h-48 sm:h-56 object-cover"
+              loading="lazy"
+            />
+            <div class="p-4 lg:p-6">
+              <h3
+                class="text-xl lg:text-2xl font-semibold text-gray-900 mb-3 lg:mb-4"
+              >
+                Executive Education
+              </h3>
+              <div class="prose prose-gray max-w-none">
+                <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+                  Our executive education programs are designed for working
+                  professionals seeking to enhance their understanding of
+                  sustainability principles and practices. These intensive
+                  courses provide practical knowledge and tools for implementing
+                  sustainable solutions in various organizational contexts.
+                </p>
+                <p class="text-sm lg:text-base">
+                  <a
+                    href="https://sustainability.iitm.ac.in/executive-education"
+                    class="text-green-600 hover:text-green-700 underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Learn More
+                  </a>
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Degree Programs Section -->
+      <section class="mb-12 lg:mb-16">
+        <h2 class="text-2xl lg:text-3xl font-bold mb-6 lg:mb-8 text-gray-900">
+          Degree Programs
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          <!-- Degree Program 1 -->
+          <article class="bg-white rounded-lg shadow-sm overflow-hidden">
+            <img
+              src={Santosh.src}
+              alt="Santosh - Degree Program"
+              class="w-full h-48 sm:h-56 lg:h-64 object-cover"
+              loading="lazy"
+            />
+            <div class="p-4 lg:p-6">
+              <h3 class="text-lg lg:text-xl font-medium text-gray-900 mb-2">
+                Master's in Sustainability Science
+              </h3>
+              <p
+                class="text-gray-700 text-sm lg:text-base leading-relaxed mb-3"
+              >
+                A comprehensive graduate program focusing on interdisciplinary
+                approaches to sustainability challenges, combining scientific
+                research with practical applications.
+              </p>
+              <a
+                href="#"
+                class="text-green-600 hover:text-green-700 underline text-sm lg:text-base font-medium"
+                aria-label="Learn more about Master's in Sustainability Science"
+              >
+                Learn More →
+              </a>
+            </div>
+          </article>
+
+          <!-- Degree Program 2 -->
+          <article class="bg-white rounded-lg shadow-sm overflow-hidden">
+            <img
+              src={sstownhall.src}
+              alt="Sustainability Townhall - Degree Program"
+              class="w-full h-48 sm:h-56 lg:h-64 object-cover"
+              loading="lazy"
+            />
+            <div class="p-4 lg:p-6">
+              <h3 class="text-lg lg:text-xl font-medium text-gray-900 mb-2">
+                PhD in Sustainability Studies
+              </h3>
+              <p
+                class="text-gray-700 text-sm lg:text-base leading-relaxed mb-3"
+              >
+                Advanced research program for scholars pursuing cutting-edge
+                research in sustainability science, policy, and technology
+                innovation.
+              </p>
+              <a
+                href="#"
+                class="text-green-600 hover:text-green-700 underline text-sm lg:text-base font-medium"
+                aria-label="Learn more about PhD in Sustainability Studies"
+              >
+                Learn More →
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="bg-gray-50 py-8 lg:py-12" id="contact-us">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-2xl lg:text-3xl font-semibold text-gray-900 mb-6 lg:mb-8"
+        >
+          Contact Us
+        </h2>
+
+        <div class="space-y-6">
+          <!-- Contact Link -->
+          <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+            <span
+              class="text-lg lg:text-xl font-medium text-gray-900 whitespace-nowrap"
+              >G Link:</span
+            >
+            <a
+              href="#"
+              class="text-lg lg:text-xl text-green-600 hover:text-green-700 underline break-all"
+            >
+              sustainability@iitm.ac.in
+            </a>
+          </div>
+
+          <!-- Newsletter Signup -->
+          <div class="bg-white rounded-lg p-4 lg:p-6 shadow-sm">
+            <h3 class="text-lg lg:text-xl font-semibold text-gray-900 mb-4">
+              Subscribe to Newsletter
+            </h3>
+            <form class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                required
+                aria-label="Your name"
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                required
+                aria-label="Your email address"
+              />
+              <button
+                type="submit"
+                class="bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-2 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 whitespace-nowrap"
+                aria-label="Subscribe to newsletter"
+              >
+                SUBSCRIBE
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
 </Layout>

@@ -3,141 +3,521 @@ import Layout from "@/layouts/Layout.astro";
 import Navbar from "@/components/Navbar.astro";
 import Footer from "@/components/Footer.astro";
 import "../styles/global.css";
-import summmit from '../assets/Summit on Sustainability .jpg';
-import icssrconf from '../assets/ICSSR Conference_2 (1) 1.svg'
-import publicationcharuta from '../assets/Publication_Charuta 1.svg';
-import publicationsantosh from '../assets/Publication_Santosh 1.svg';
-import screenshot from '../assets/Screenshot 2025-05-05 194551 1.svg'
-import newsletter from '../assets/Screenshot 2025-05-05 085703 1.svg';
-import publication from '../assets/SfIB Cohort_1 3.svg';
-import kh from '../assets/knowledge hub page 1 image.jpg'
+
+// Import images
+import summitImage from "../assets/Summit on Sustainability .jpg";
+import icssrconfImage from "../assets/ICSSR Conference_2 (1) 1.svg";
+import publicationCharutaImage from "../assets/Publication_Charuta 1.svg";
+import publicationSantoshImage from "../assets/Publication_Santosh 1.svg";
+import screenshotImage from "../assets/Screenshot 2025-05-05 194551 1.svg";
+import newsletterImage from "../assets/Screenshot 2025-05-05 085703 1.svg";
+import publicationImage from "../assets/SfIB Cohort_1 3.svg";
+import khImage from "../assets/knowledge hub page 1 image.jpg";
+
+// Sample data - in production, this would come from a CMS or API
+const articles = [
+  {
+    id: 1,
+    image: summitImage,
+    date: "Tuesday, April 1, 2025",
+    title: "A Cost Effective Method to Treat Pollutants",
+    excerpt:
+      "Treatment of dye effluents and tannery effluents using advanced processes...",
+    url: "/articles/cost-effective-pollutant-treatment",
+  },
+  {
+    id: 2,
+    image: icssrconfImage,
+    date: "Tuesday, April 1, 2025",
+    title: "The Right Price",
+    excerpt:
+      "With global climate changes, does a firm lean towards reduced emissions?",
+    url: "/articles/the-right-price",
+  },
+];
+
+const publications = [
+  {
+    id: 1,
+    image: publicationCharutaImage,
+    alt: "Publication by Charuta",
+    url: "/publications/charuta-research",
+  },
+  {
+    id: 2,
+    image: publicationSantoshImage,
+    alt: "Publication by Santosh",
+    url: "/publications/santosh-research",
+  },
+  {
+    id: 3,
+    image: screenshotImage,
+    alt: "Research Publication",
+    url: "/publications/research-paper",
+  },
+];
+
+const reports = [
+  {
+    id: 1,
+    image: publicationImage,
+    alt: "Annual Report 2024",
+    url: "/reports/annual-2024",
+  },
+  {
+    id: 2,
+    image: publicationImage,
+    alt: "Sustainability Report",
+    url: "/reports/sustainability",
+  },
+  {
+    id: 3,
+    image: publicationImage,
+    alt: "Impact Assessment",
+    url: "/reports/impact-assessment",
+  },
+];
+
+const whitepapers = Array.from({ length: 4 }, (_, i) => ({
+  id: i + 1,
+  title: `Research Paper ${i + 1}`,
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  url: `/whitepapers/paper-${i + 1}`,
+}));
 ---
+
 <Layout>
   <Navbar />
-  <!-- Hero Slider -->
-  <section class="relative">
-    <img src={kh.src} alt="Hero Image" class="w-full h-96 object-cover" />
-    <div class="absolute inset-0 bg-gray-100 flex items-center justify-center text-white text-2xl font-semibold">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    </div>
-  </section>
-  
-  <!-- Tabs -->
-            <div class="flex justify-center items-center gap-8 text-[#3DAA6F] mt-10 text-[21px]">
-                    <div>Events</div>
-                    <div>↓</div>
-                    <div>Media</div>
-                    <div>↓</div>
-                    <div>Initiative</div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative" aria-label="Knowledge Hub Hero">
+      <img
+        src={khImage.src}
+        alt="Knowledge Hub - Research and Publications"
+        class="w-full h-96 object-cover"
+        loading="eager"
+      />
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center"
+      >
+        <div class="text-center text-white px-4">
+          <h1 class="text-2xl md:text-4xl font-bold mb-4">Knowledge Hub</h1>
+          <p class="text-lg md:text-xl max-w-2xl">
+            Discover cutting-edge research, publications, and insights in
+            sustainability and environmental science.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Breadcrumb -->
+    <nav
+      class="flex justify-center items-center gap-8 text-emerald-600 mt-10 text-lg md:text-xl"
+      aria-label="Content navigation"
+    >
+      <a
+        href="#articles"
+        class="hover:text-emerald-800 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded px-2 py-1"
+      >
+        Articles
+      </a>
+      <span class="text-emerald-400" aria-hidden="true">↓</span>
+      <a
+        href="#publications"
+        class="hover:text-emerald-800 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded px-2 py-1"
+      >
+        Publications
+      </a>
+      <span class="text-emerald-400" aria-hidden="true">↓</span>
+      <a
+        href="#newsletter"
+        class="hover:text-emerald-800 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded px-2 py-1"
+      >
+        Newsletter
+      </a>
+    </nav>
+
+    <!-- Articles Section -->
+    <section
+      id="articles"
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
+      aria-labelledby="articles-heading"
+    >
+      <h2 id="articles-heading" class="text-3xl font-bold mb-8 text-gray-900">
+        Latest Articles
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {
+          articles.map((article) => (
+            <article class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow overflow-hidden">
+              <a href={article.url} class="block group">
+                <div class="aspect-video overflow-hidden">
+                  <img
+                    src={article.image.src}
+                    alt={article.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="p-6">
+                  <time
+                    class="text-sm text-gray-500 font-medium"
+                    datetime="2025-04-01"
+                  >
+                    {article.date}
+                  </time>
+                  <h3 class="text-xl font-semibold mt-2 mb-3 text-gray-900 group-hover:text-emerald-600 transition-colors">
+                    {article.title}
+                  </h3>
+                  <p class="text-gray-600 line-clamp-2">{article.excerpt}</p>
+                  <span class="inline-flex items-center mt-4 text-emerald-600 font-medium group-hover:text-emerald-700">
+                    Read more
+                    <svg
+                      class="ml-1 w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section
+      id="publications"
+      class="bg-gray-50 py-16"
+      aria-labelledby="publications-heading"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          id="publications-heading"
+          class="text-3xl font-bold mb-8 text-gray-900"
+        >
+          Featured Publications
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {
+            publications.map((publication) => (
+              <a
+                href={publication.url}
+                class="group block bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow overflow-hidden"
+              >
+                <div class="aspect-[3/4] overflow-hidden">
+                  <img
+                    src={publication.image.src}
+                    alt={publication.alt}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="p-4">
+                  <span class="inline-flex items-center text-emerald-600 font-medium group-hover:text-emerald-700">
+                    View Publication
+                    <svg
+                      class="ml-1 w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="py-16" aria-labelledby="newsletter-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          id="newsletter-heading"
+          class="text-3xl font-bold mb-8 text-gray-900"
+        >
+          Newsletter
+        </h2>
+        <div class="bg-white rounded-lg shadow-sm p-8">
+          <div class="grid lg:grid-cols-3 gap-8 items-start">
+            <div class="lg:col-span-1">
+              <img
+                src={newsletterImage.src}
+                alt="Newsletter Preview"
+                class="rounded-lg w-full h-80 object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div class="lg:col-span-2">
+              <div class="mb-6">
+                <time class="text-gray-600 text-lg" datetime="2025-04-01"
+                  >Tuesday, April 1, 2025</time
+                >
+                <p class="text-gray-700 mt-4 leading-relaxed">
+                  Stay updated with our latest research findings, upcoming
+                  events, and sustainability initiatives. Our newsletter
+                  provides valuable insights into environmental science, policy
+                  updates, and innovative solutions for a sustainable future.
+                </p>
               </div>
 
-  <!-- Articles Section -->
-  <section id="articles" class="mx-auto px-9 py-10">
-    <h2 class="text-2xl font-bold mb-6">Articles</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="border">
-        <img src={summmit.src} alt="Article 1" class="h-56 object-cover w-full" />
-        <p class="mt-2 text-sm px-2 font-semibold">Tuesday, April 1, 2025</p>
-        <h3 class="text-lg font-semibold mt-1 px-2">A Cost Effective Method to Treat Pollutants</h3>
-        <p class="text-sm text-gray-600 px-2 mb-2">
-          Treatment of dye effluents and tannery effluents using advanced processes...
-        </p>
-      </div>
-      <div class="border">
-        <img src={icssrconf.src} alt="Article 2" class="h-56 object-cover w-full" />
-        <p class="mt-2 text-sm text-gray-500">Tuesday, April 1, 2025</p>
-        <h3 class="text-lg font-semibold mt-1">The Right Price</h3>
-        <p class="text-sm text-gray-600">
-          With global climate changes, does a firm lean towards reduced emissions?
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Publications Section -->
-  <section id="publications" class="px-9 py-10">
-    <h2 class="text-2xl font-bold mb-6">Publications</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <img src={publicationcharuta.src} alt="Publication 1" class="rounded-lg w-full h-72" />
-      <img src={publicationsantosh.src} alt="Publication 2" class="rounded-lg w-full h-72" />
-      <img src={screenshot.src} alt="Publication 3" class="rounded-lg w-full h-72 " />
-    </div>
-  </section>
-
-  <!-- Newsletter Section -->
-  <section id="newsletter" class="px-9 py-10">
-    <h2 class="text-2xl font-bold mb-6">Newsletter</h2>
-    <div class="grid md:grid-cols-3 gap-8 pt-8">
-      <div class="col-span-1">
-        <img src={newsletter.src} alt="Newsletter" class="rounded-lg h-80 w-full" />
-      </div>
-      <div class="col-span-2">
-        <p class="text-gray-700 mb-4 text-[24px]">
-          Tuesday, April 1, 2025<br />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor...<br>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor...<br> 
-        </p>
-        <form class="space-y-4">
-          <div>
-            <label class="block mb-1">Name</label>
-            <input type="text" class="w-full border px-4 py-2 rounded" />
-          </div>
-          <div>
-            <label class="block mb-1">Email</label>
-            <input type="email" class="w-full border px-4 py-2 rounded" />
-          </div>
-          <div class="flex justify-end items-center"> <button class="bg-green-600 text-white px-6 py-1 rounded-xl">SUBSCRIBE</button></div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Report Section -->
-  <section id="report" class="text-black py-10">
-    <div class="">
-      <h2 class="text-[32px] font-bold mb-4 px-9">Report</h2>
-      <p class="mb-6 bg-[#032A03] text-white px-9 py-20 text-[24px]">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...
-
-      </p>
-      <div class="grid md:grid-cols-3 gap-6 px-9">
-        <img src={publication.src} alt="Report Image" class="h-56 object-cover w-full" />
-        <img src={publication.src} alt="Report Image" class="h-56 object-cover w-full" />
-        <img src={publication.src} alt="Report Image" class="h-56 object-cover w-full" />
-      </div>
-    </div>
-  </section>
-
-  <!-- White Paper Section -->
-  <section id="whitepaper" class="px-9 py-10">
-    <h2 class="text-2xl font-bold mb-6">White Paper</h2>
-    <div class="grid md:grid-cols-4 gap-4">
-      {Array(4).fill(0).map(() => (
-        <div class="relative group">
-          <img src="/images/whitepaper.jpg" class="rounded-lg h-56 w-full object-cover" />
-          <div class="absolute inset-0 bg-black bg-opacity-40 text-white p-3 flex items-end rounded-lg opacity-0 group-hover:opacity-100 transition">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              <!-- Newsletter Signup Form -->
+              <form class="space-y-4" action="/api/newsletter" method="POST">
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      for="newsletter-name"
+                      class="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="newsletter-name"
+                      name="name"
+                      required
+                      class="w-full border border-gray-300 px-4 py-2 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                      placeholder="Enter your name"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="newsletter-email"
+                      class="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="newsletter-email"
+                      name="email"
+                      required
+                      class="w-full border border-gray-300 px-4 py-2 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                </div>
+                <div class="flex justify-end">
+                  <button
+                    type="submit"
+                    class="bg-emerald-600 hover:bg-emerald-700 focus:bg-emerald-700 text-white px-8 py-2 rounded-xl font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+                  >
+                    SUBSCRIBE
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      ))}
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <!-- Contact Us -->
-  <div class="mt-2 " id="contact-us">
-                    <div class="text-xl px-5 font-semibold text-[32px]">Contact Us</div>
-                    <div class="flex gap-5 px-5 mt-3">
-                            <div class="text-[24px]">G Link: </div>
-                            <div class="text-[24px] underline">Lorem ipsum dolor sit amet, consectetuer elit. </div>
-                    </div>
-                    <div class="flex gap-5 px-5 mt-3">
-                        <div class="font-semibold text-[24px]">Newsletter</div>
-                        <input type="text" placeholder="Name" class=""/>
-                        <input type="text" placeholder="Email" class=""/>
-                        <button class="bg-[#3DAA6F] w-[255px] h-[40px] rounded-lg text-white rounded-[30px] text-[24px]">SUBSCRIBE</button>
-                    </div>
-            </div> 
-  <!-- Footer -->
+    <!-- Reports Section -->
+    <section
+      id="report"
+      class="bg-gray-900 text-white py-16"
+      aria-labelledby="reports-heading"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="reports-heading" class="text-3xl font-bold mb-6">
+          Annual Reports
+        </h2>
+        <div class="bg-emerald-900 rounded-lg p-8 mb-8">
+          <p class="text-lg leading-relaxed">
+            Our comprehensive annual reports showcase the impact of our research
+            initiatives, sustainability projects, and environmental conservation
+            efforts. These reports provide detailed insights into our
+            achievements, challenges, and future roadmap for creating a more
+            sustainable world.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {
+            reports.map((report) => (
+              <a
+                href={report.url}
+                class="group block bg-white/10 rounded-lg overflow-hidden hover:bg-white/20 transition-colors"
+              >
+                <img
+                  src={report.image.src}
+                  alt={report.alt}
+                  class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <div class="p-4">
+                  <span class="inline-flex items-center text-emerald-300 font-medium group-hover:text-emerald-200">
+                    Download Report
+                    <svg
+                      class="ml-1 w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- White Papers Section -->
+    <section id="whitepaper" class="py-16" aria-labelledby="whitepaper-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          id="whitepaper-heading"
+          class="text-3xl font-bold mb-8 text-gray-900"
+        >
+          White Papers
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {
+            whitepapers.map((paper) => (
+              <a
+                href={paper.url}
+                class="group relative block bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <div class="aspect-[3/4] bg-emerald-600 flex items-center justify-center p-6">
+                  <div class="text-center text-white">
+                    <svg
+                      class="w-12 h-12 mx-auto mb-4 opacity-80"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      />
+                    </svg>
+                    <h3 class="font-semibold text-lg mb-2">{paper.title}</h3>
+                  </div>
+                </div>
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                  <p class="text-white text-center text-sm leading-relaxed">
+                    {paper.description}
+                  </p>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact-us"
+      class="bg-gray-50 py-16"
+      aria-labelledby="contact-heading"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="contact-heading" class="text-3xl font-bold mb-8 text-gray-900">
+          Contact Us
+        </h2>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Contact Information -->
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-xl font-semibold mb-4 text-gray-900">
+                Get in Touch
+              </h3>
+              <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                  <span class="font-medium text-gray-700">Website:</span>
+                  <a
+                    href="#"
+                    class="text-emerald-600 hover:text-emerald-700 underline transition-colors"
+                  >
+                    www.knowledgehub.research.org
+                  </a>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="font-medium text-gray-700">Email:</span>
+                  <a
+                    href="mailto:contact@knowledgehub.org"
+                    class="text-emerald-600 hover:text-emerald-700 underline transition-colors"
+                  >
+                    contact@knowledgehub.org
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Newsletter Signup -->
+          <div class="bg-white rounded-lg p-8 shadow-sm">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">
+              Quick Subscribe
+            </h3>
+            <form class="space-y-4" action="/api/newsletter" method="POST">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  required
+                  class="border border-gray-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                  class="border border-gray-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-emerald-600 hover:bg-emerald-700 focus:bg-emerald-700 text-white py-3 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+              >
+                SUBSCRIBE TO NEWSLETTER
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <Footer />
 </Layout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
