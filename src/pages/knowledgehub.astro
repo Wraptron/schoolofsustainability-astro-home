@@ -3,141 +3,329 @@ import Layout from "@/layouts/Layout.astro";
 import Navbar from "@/components/Navbar.astro";
 import Footer from "@/components/Footer.astro";
 import "../styles/global.css";
-import summmit from '../assets/Summit on Sustainability .jpg';
-import icssrconf from '../assets/ICSSR Conference_2 (1) 1.svg'
-import publicationcharuta from '../assets/Publication_Charuta 1.svg';
-import publicationsantosh from '../assets/Publication_Santosh 1.svg';
-import screenshot from '../assets/Screenshot 2025-05-05 194551 1.svg'
-import newsletter from '../assets/Screenshot 2025-05-05 085703 1.svg';
-import publication from '../assets/SfIB Cohort_1 3.svg';
-import kh from '../assets/knowledge hub page 1 image.jpg'
+
+// Import images
+import summit from "../assets/Summit on Sustainability .jpg";
+import icssrconf from "../assets/ICSSR Conference_2 (1) 1.svg";
+import publicationcharuta from "../assets/Publication_Charuta 1.svg";
+import publicationsantosh from "../assets/Publication_Santosh 1.svg";
+import screenshot from "../assets/Screenshot 2025-05-05 194551 1.svg";
+import newsletter from "../assets/Screenshot 2025-05-05 085703 1.svg";
+import publication from "../assets/SfIB Cohort_1 3.svg";
+import kh from "../assets/knowledge hub page 1 image.jpg";
+
+// Sample data - in a real app, this would come from a CMS or API
+const articles = [
+  {
+    id: 1,
+    image: summit,
+    date: "Tuesday, April 1, 2025",
+    title: "A Cost Effective Method to Treat Pollutants",
+    excerpt: "Treatment of dye effluents and tannery effluents using advanced processes..."
+  },
+  {
+    id: 2,
+    image: icssrconf,
+    date: "Tuesday, April 1, 2025",
+    title: "The Right Price",
+    excerpt: "With global climate changes, does a firm lean towards reduced emissions?"
+  }
+];
+
+const publications = [
+  { id: 1, image: publicationcharuta, alt: "Publication by Charuta" },
+  { id: 2, image: publicationsantosh, alt: "Publication by Santosh" },
+  { id: 3, image: screenshot, alt: "Research Screenshot" }
+];
+
+const whitepapers = Array(4).fill(0).map((_, index) => ({
+  id: index + 1,
+  title: `White Paper ${index + 1}`,
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+}));
 ---
+
 <Layout>
   <Navbar />
-  <!-- Hero Slider -->
-  <section class="relative">
-    <img src={kh.src} alt="Hero Image" class="w-full h-96 object-cover" />
-    <div class="absolute inset-0 bg-gray-100 flex items-center justify-center text-white text-2xl font-semibold">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    </div>
-  </section>
   
-  <!-- Tabs -->
-            <div class="flex justify-center items-center gap-8 text-[#3DAA6F] mt-10 text-[21px]">
-                    <div>Events</div>
-                    <div>↓</div>
-                    <div>Media</div>
-                    <div>↓</div>
-                    <div>Initiative</div>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden">
+    <img 
+      src={kh.src} 
+      alt="Knowledge Hub Hero - Research and Innovation" 
+      class="w-full h-96 object-cover"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+      <div class="text-center text-white px-4">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          Knowledge Hub
+        </h1>
+        <p class="text-lg md:text-xl max-w-2xl">
+          Discover cutting-edge research, publications, and insights in sustainability and innovation
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation Tabs -->
+  <nav class="flex justify-center items-center gap-4 md:gap-8 mt-10 px-4" role="navigation" aria-label="Content sections">
+    <div class="flex items-center gap-2 md:gap-4 text-emerald-600 text-lg md:text-xl">
+      <a href="#articles" class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1">
+        Articles
+      </a>
+      <span class="text-emerald-400" aria-hidden="true">↓</span>
+      <a href="#publications" class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1">
+        Publications
+      </a>
+      <span class="text-emerald-400" aria-hidden="true">↓</span>
+      <a href="#newsletter" class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1">
+        Newsletter
+      </a>
+      <span class="text-emerald-400" aria-hidden="true">↓</span>
+      <a href="#newsletter" class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1">
+        Reports
+      </a>
+      <span class="text-emerald-400" aria-hidden="true">↓</span>
+      <a href="#newsletter" class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1">
+        White Paper
+      </a>
+    </div>
+  </nav>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Articles Section -->
+    <section id="articles" class="py-16">
+      <h2 class="text-3xl font-bold mb-8 text-gray-900">Latest Articles</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {articles.map((article) => (
+          <article class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+            <img
+              src={article.image.src}
+              alt={article.title}
+              class="w-full h-56 object-cover"
+              loading="lazy"
+            />
+            <div class="p-6">
+              <time class="text-sm text-gray-500 font-medium" datetime="2025-04-01">
+                {article.date}
+              </time>
+              <h3 class="text-xl font-semibold mt-2 mb-3 text-gray-900 line-clamp-2">
+                {article.title}
+              </h3>
+              <p class="text-gray-600 line-clamp-3">
+                {article.excerpt}
+              </p>
+              <button class="mt-4 text-emerald-600 hover:text-emerald-700 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded">
+                Read More →
+              </button>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-16">
+      <h2 class="text-3xl font-bold mb-8 text-gray-900">Featured Publications</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {publications.map((pub) => (
+          <div class="group cursor-pointer">
+            <div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <img
+                src={pub.image.src}
+                alt={pub.alt}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="py-16">
+      <h2 class="text-3xl font-bold mb-8 text-gray-900">Newsletter</h2>
+      <div class="grid md:grid-cols-3 gap-8 items-start">
+        <div class="md:col-span-1">
+          <img
+            src={newsletter.src}
+            alt="Newsletter preview"
+            class="w-full h-full object-cover rounded-lg shadow-sm"
+            loading="lazy"
+          />
+        </div>
+        <div class="md:col-span-2">
+          <div class="mb-6">
+            <time class="text-lg text-gray-600 font-medium" datetime="2025-04-01">
+              Tuesday, April 1, 2025
+            </time>
+            <p class="text-lg text-gray-700 mt-4 leading-relaxed">
+              Stay updated with the latest research findings, sustainability initiatives, and innovation breakthroughs. Our newsletter delivers curated content directly to your inbox, featuring expert insights and cutting-edge developments in environmental science and sustainable technology.
+            </p>
+          </div>
+          
+          <!-- Newsletter Signup Form -->
+          <form class="space-y-4" aria-label="Newsletter subscription">
+            <div>
+              <label for="newsletter-name" class="block text-sm font-medium text-gray-700 mb-2">
+                Full Name
+              </label>
+              <input 
+                type="text" 
+                id="newsletter-name"
+                name="name"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                placeholder="Enter your full name"
+              />
+            </div>
+            <div>
+              <label for="newsletter-email" class="block text-sm font-medium text-gray-700 mb-2">
+                Email Address
+              </label>
+              <input 
+                type="email" 
+                id="newsletter-email"
+                name="email"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                placeholder="Enter your email address"
+              />
+            </div>
+            <div class="flex justify-end">
+              <button 
+                type="submit"
+                class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-xl font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+              >
+                SUBSCRIBE
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Report Section -->
+    <section id="report" class="py-16">
+      <h2 class="text-4xl font-bold mb-8 text-gray-900">Research Reports</h2>
+      <div class="bg-emerald-900 text-white rounded-lg p-8 md:p-12 mb-8">
+        <p class="text-xl leading-relaxed">
+          Our comprehensive research reports provide in-depth analysis of sustainability challenges and innovative solutions. These documents represent collaborative efforts between leading researchers, industry experts, and policy makers to address critical environmental and social issues through evidence-based recommendations and actionable insights.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {Array(3).fill(0).map((_, index) => (
+          <div class="group cursor-pointer">
+            <div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <img
+                src={publication.src}
+                alt={`Research Report ${index + 1}`}
+                class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- White Paper Section -->
+    <section id="whitepaper" class="py-16">
+      <h2 class="text-3xl font-bold mb-8 text-gray-900">White Papers</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {whitepapers.map((paper) => (
+          <div class="group relative overflow-hidden rounded-lg bg-gray-100 aspect-[3/4] cursor-pointer">
+            <!-- Placeholder for white paper cover -->
+            <div class="w-full h-full bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center">
+              <div class="text-center p-4">
+                <div class="w-16 h-16 bg-emerald-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <svg class="w-8 h-8 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"></path>
+                  </svg>
+                </div>
+                <h3 class="font-semibold text-gray-900">{paper.title}</h3>
               </div>
-
-  <!-- Articles Section -->
-  <section id="articles" class="mx-auto px-9 py-10">
-    <h2 class="text-2xl font-bold mb-6">Articles</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="border">
-        <img src={summmit.src} alt="Article 1" class="h-56 object-cover w-full" />
-        <p class="mt-2 text-sm px-2 font-semibold">Tuesday, April 1, 2025</p>
-        <h3 class="text-lg font-semibold mt-1 px-2">A Cost Effective Method to Treat Pollutants</h3>
-        <p class="text-sm text-gray-600 px-2 mb-2">
-          Treatment of dye effluents and tannery effluents using advanced processes...
-        </p>
-      </div>
-      <div class="border">
-        <img src={icssrconf.src} alt="Article 2" class="h-56 object-cover w-full" />
-        <p class="mt-2 text-sm text-gray-500">Tuesday, April 1, 2025</p>
-        <h3 class="text-lg font-semibold mt-1">The Right Price</h3>
-        <p class="text-sm text-gray-600">
-          With global climate changes, does a firm lean towards reduced emissions?
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Publications Section -->
-  <section id="publications" class="px-9 py-10">
-    <h2 class="text-2xl font-bold mb-6">Publications</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <img src={publicationcharuta.src} alt="Publication 1" class="rounded-lg w-full h-72" />
-      <img src={publicationsantosh.src} alt="Publication 2" class="rounded-lg w-full h-72" />
-      <img src={screenshot.src} alt="Publication 3" class="rounded-lg w-full h-72 " />
-    </div>
-  </section>
-
-  <!-- Newsletter Section -->
-  <section id="newsletter" class="px-9 py-10">
-    <h2 class="text-2xl font-bold mb-6">Newsletter</h2>
-    <div class="grid md:grid-cols-3 gap-8 pt-8">
-      <div class="col-span-1">
-        <img src={newsletter.src} alt="Newsletter" class="rounded-lg h-80 w-full" />
-      </div>
-      <div class="col-span-2">
-        <p class="text-gray-700 mb-4 text-[24px]">
-          Tuesday, April 1, 2025<br />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor...<br>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor...<br> 
-        </p>
-        <form class="space-y-4">
-          <div>
-            <label class="block mb-1">Name</label>
-            <input type="text" class="w-full border px-4 py-2 rounded" />
+            </div>
+            <div class="absolute inset-0 bg-black/70 text-white p-4 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p class="text-sm leading-relaxed">
+                {paper.description}
+              </p>
+            </div>
           </div>
-          <div>
-            <label class="block mb-1">Email</label>
-            <input type="email" class="w-full border px-4 py-2 rounded" />
-          </div>
-          <div class="flex justify-end items-center"> <button class="bg-green-600 text-white px-6 py-1 rounded-xl">SUBSCRIBE</button></div>
-        </form>
+        ))}
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Report Section -->
-  <section id="report" class="text-black py-10">
-    <div class="">
-      <h2 class="text-[32px] font-bold mb-4 px-9">Report</h2>
-      <p class="mb-6 bg-[#032A03] text-white px-9 py-20 text-[24px]">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...
-
-      </p>
-      <div class="grid md:grid-cols-3 gap-6 px-9">
-        <img src={publication.src} alt="Report Image" class="h-56 object-cover w-full" />
-        <img src={publication.src} alt="Report Image" class="h-56 object-cover w-full" />
-        <img src={publication.src} alt="Report Image" class="h-56 object-cover w-full" />
-      </div>
-    </div>
-  </section>
-
-  <!-- White Paper Section -->
-  <section id="whitepaper" class="px-9 py-10">
-    <h2 class="text-2xl font-bold mb-6">White Paper</h2>
-    <div class="grid md:grid-cols-4 gap-4">
-      {Array(4).fill(0).map(() => (
-        <div class="relative group">
-          <img src="/images/whitepaper.jpg" class="rounded-lg h-56 w-full object-cover" />
-          <div class="absolute inset-0 bg-black bg-opacity-40 text-white p-3 flex items-end rounded-lg opacity-0 group-hover:opacity-100 transition">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  <!-- Contact Section -->
+  <section id="contact-us" class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold mb-8 text-gray-900">Contact Us</h2>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Contact Information -->
+        <div>
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-gray-900">Get in Touch</h3>
+            <div class="space-y-4">
+              <div>
+                <span class="font-medium text-gray-700">G Link:</span>
+                <a href="#" class="ml-2 text-emerald-600 hover:text-emerald-700 underline transition-colors">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-      ))}
+
+        <!-- Quick Newsletter Signup -->
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-gray-900">Quick Subscribe</h3>
+          <form class="flex flex-col sm:flex-row gap-4" aria-label="Quick newsletter subscription">
+            <input 
+              type="text" 
+              placeholder="Name" 
+              required
+              class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+            />
+            <input 
+              type="email" 
+              placeholder="Email" 
+              required
+              class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+            />
+            <button
+              type="submit"
+              class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-full font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 whitespace-nowrap"
+            >
+              SUBSCRIBE
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Contact Us -->
-  <div class="mt-2 " id="contact-us">
-                    <div class="text-xl px-5 font-semibold text-[32px]">Contact Us</div>
-                    <div class="flex gap-5 px-5 mt-3">
-                            <div class="text-[24px]">G Link: </div>
-                            <div class="text-[24px] underline">Lorem ipsum dolor sit amet, consectetuer elit. </div>
-                    </div>
-                    <div class="flex gap-5 px-5 mt-3">
-                        <div class="font-semibold text-[24px]">Newsletter</div>
-                        <input type="text" placeholder="Name" class=""/>
-                        <input type="text" placeholder="Email" class=""/>
-                        <button class="bg-[#3DAA6F] w-[255px] h-[40px] rounded-lg text-white rounded-[30px] text-[24px]">SUBSCRIBE</button>
-                    </div>
-            </div> 
-  <!-- Footer -->
   <Footer />
 </Layout>
+
+<style>
+  /* Custom utilities for line clamping if not available in your Tailwind config */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
