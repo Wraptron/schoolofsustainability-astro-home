@@ -1,14 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Navbar from "@/components/Navbar.astro";
+import Layout from "@/layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import andrew from "../assets/Talk_Andrew Forrest Talk 2 (1).svg";
-import man from "../assets/medium-shot-man-with-paperwork.svg";
-import female from "../assets/female-student.svg";
-import cert1 from "../assets/front-view-woman-holding-tablet-hand-looking-aside 1 (1).svg";
-import Santosh from "../assets/Santosh Photos 1.svg";
-import sstownhall from "../assets/SS Townhall  1.svg";
 import "../styles/global.css";
+import cover from "../../public/images/banner.webp";
+import project1 from "../assets/project1.svg";
+import project4 from "../assets/project4.svg";
+import projectcover from "../assets/wind-farms-fields 1.svg";
+import projectcovercover from "../assets/abstract-creative-3d-sphere-with-vegetation 1.svg";
 ---
 
 <Layout>
@@ -29,8 +28,9 @@ import "../styles/global.css";
         School of Sustainability IIT Madras
       </h1>
       <p class="text-sm sm:text-base mt-3 text-gray-100">
-        Leading research and innovation in sustainable technologies and
-        environmental solutions.
+        Driving innovation for a sustainable future—our research empowers
+        communities, informs policy, and creates solutions for the world’s most
+        pressing environmental and social challenges
       </p>
     </div>
   </section>
@@ -38,7 +38,7 @@ import "../styles/global.css";
   <!-- Navigation Links -->
   <nav class="mt-8 sm:mt-20">
     <div
-      class="flex flex-wrap justify-center items-center gap-3 sm:gap-5 text-xs sm:text-sm text-[#3DAA6F] px-4"
+      class="flex flex-wrap justify-center items-center gap-3 sm:gap-5 text-[21px] text-[#3DAA6F] px-4"
     >
       <a
         href="#research"
@@ -108,157 +108,110 @@ import "../styles/global.css";
                 rel="noopener noreferrer"
                 class="text-sm font-medium text-blue-600 hover:text-blue-800 underline transition-colors block"
               >
-                Executive Education
-              </h3>
-              <div class="prose prose-gray max-w-none">
-                <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
-                  Our executive education programs are designed for working
-                  professionals seeking to enhance their understanding of
-                  sustainability principles and practices. These intensive
-                  courses provide practical knowledge and tools for implementing
-                  sustainable solutions in various organizational contexts.
-                </p>
-                <p class="text-sm lg:text-base">
-                  <a
-                    href="https://sustainability.iitm.ac.in/executive-education"
-                    class="text-green-600 hover:text-green-700 underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Learn More
-                  </a>
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- Degree Programs Section -->
-      <section id="degree-programs" class="mb-12 lg:mb-16 scroll-mt-16">
-        <h2 class="text-2xl lg:text-3xl font-bold mb-6 lg:mb-8 text-gray-900">
-          Degree Programs
-        </h2>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          <!-- Degree Program 1 -->
-          <article class="bg-white rounded-lg shadow-sm overflow-hidden">
-            <img
-              src={Santosh.src}
-              alt="Santosh - Degree Program"
-              class="w-full h-48 sm:h-56 lg:h-64 object-cover"
-              loading="lazy"
-            />
-            <div class="p-4 lg:p-6">
-              <h3 class="text-lg lg:text-xl font-medium text-gray-900 mb-2">
-                Master's in Sustainability Science
-              </h3>
-              <p
-                class="text-gray-700 text-sm lg:text-base leading-relaxed mb-3"
-              >
-                A comprehensive graduate program focusing on interdisciplinary
-                approaches to sustainability challenges, combining scientific
-                research with practical applications.
-              </p>
-              <a
-                href="#"
-                class="text-green-600 hover:text-green-700 underline text-sm lg:text-base font-medium"
-                aria-label="Learn more about Master's in Sustainability Science"
-              >
-                Learn More →
+                {project.title}
               </a>
-            </div>
-          </article>
-
-          <!-- Degree Program 2 -->
-          <article class="bg-white rounded-lg shadow-sm overflow-hidden">
-            <img
-              src={sstownhall.src}
-              alt="Sustainability Townhall - Degree Program"
-              class="w-full h-48 sm:h-56 lg:h-64 object-cover"
-              loading="lazy"
-            />
-            <div class="p-4 lg:p-6">
-              <h3 class="text-lg lg:text-xl font-medium text-gray-900 mb-2">
-                PhD in Sustainability Studies
-              </h3>
-              <p
-                class="text-gray-700 text-sm lg:text-base leading-relaxed mb-3"
-              >
-                Advanced research program for scholars pursuing cutting-edge
-                research in sustainability science, policy, and technology
-                innovation.
+              <p class="text-xs text-gray-600 mt-2">
+                View detailed information and data about our{" "}
+                {project.title.toLowerCase()} in a new tab.
               </p>
-              <a
-                href="#"
-                class="text-green-600 hover:text-green-700 underline text-sm lg:text-base font-medium"
-                aria-label="Learn more about PhD in Sustainability Studies"
-              >
-                Learn More →
-              </a>
             </div>
           </article>
-        </div>
-      </section>
+        ))
+      }
     </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section class="bg-gray-50 py-8 lg:py-12" id="contact-us">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2
-          class="text-2xl lg:text-3xl font-semibold text-gray-900 mb-6 lg:mb-8"
-        >
-          Contact Us
-        </h2>
+  <!-- Projects Section -->
+  <section id="projects" class="py-8 sm:py-12 bg-gray-100">
+    <h2 class="text-lg sm:text-xl font-bold mb-6 px-4 sm:px-8">Projects</h2>
+    <div class="relative overflow-hidden">
+      <img
+        src={projectcover.src}
+        alt="Wind farms project"
+        class="w-full h-64 sm:h-80 lg:h-96 object-cover"
+        loading="lazy"
+      />
+      <div
+        class="absolute inset-4 sm:inset-8 lg:top-1/4 lg:left-1/4 lg:w-1/2 bg-black/50 backdrop-blur-sm p-4 sm:p-6 rounded-lg text-white"
+      >
+        <h3 class="text-lg sm:text-xl lg:text-2xl font-bold mb-2">
+          Sustainable Wind Energy Solutions
+        </h3>
+        <p class="text-sm sm:text-base mb-4">
+          Innovative approaches to renewable energy generation and environmental
+          conservation.
+        </p>
 
-        <div class="space-y-6">
-          <!-- Contact Link -->
-          <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-            <span
-              class="text-lg lg:text-xl font-medium text-gray-900 whitespace-nowrap"
-              >G Link:</span
-            >
-            <a
-              href="#"
-              class="text-lg lg:text-xl text-green-600 hover:text-green-700 underline break-all"
-            >
-              sustainability@iitm.ac.in
-            </a>
-          </div>
-
-          <!-- Newsletter Signup -->
-          <div class="bg-white rounded-lg p-4 lg:p-6 shadow-sm">
-            <h3 class="text-lg lg:text-xl font-semibold text-gray-900 mb-4">
-              Subscribe to Newsletter
-            </h3>
-            <form class="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <input
-                type="text"
-                placeholder="Your Name"
-                class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                required
-                aria-label="Your name"
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                required
-                aria-label="Your email address"
-              />
-              <button
-                type="submit"
-                class="bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-2 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 whitespace-nowrap"
-                aria-label="Subscribe to newsletter"
-              >
-                SUBSCRIBE
-              </button>
-            </form>
+        <div class="relative mt-4">
+          <img
+            src={projectcovercover.src}
+            alt="3D sustainability visualization"
+            class="w-full h-32 sm:h-48 lg:h-64 object-cover rounded-lg"
+            loading="lazy"
+          />
+          <div
+            class="absolute inset-4 bg-black/40 backdrop-blur-sm p-3 sm:p-4 rounded text-white"
+          >
+            <p class="text-xs sm:text-sm">
+              Advanced 3D modeling and simulation for sustainable ecosystem
+              development and environmental impact assessment.
+            </p>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- Affiliated Centers Section -->
+  <section id="centers" class="px-4 sm:px-8 py-8 sm:py-12">
+    <h2 class="text-lg sm:text-xl font-bold mb-6">Affiliated Centers</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+      {
+        Array.from({ length: 8 }, (_, i) => (
+          <div class="bg-gray-200 hover:bg-gray-300 transition-colors p-4 sm:p-6 rounded-lg cursor-pointer group">
+            <div class="text-center text-xs sm:text-sm text-gray-600 group-hover:text-gray-800">
+              Center {i + 1}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="px-4 sm:px-8 py-8 sm:py-12 bg-gray-100">
+    <h2 class="text-lg sm:text-xl font-bold mb-4">Contact Us</h2>
+    <p class="mb-6 text-sm">
+      <strong>More Information:</strong>
+      <a
+        href="#"
+        class="text-blue-600 hover:text-blue-800 underline ml-2 transition-colors"
+      >
+        Learn more about our sustainability initiatives
+      </a>
+    </p>
+
+    <form class="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-lg">
+      <input
+        type="text"
+        placeholder="Your Name"
+        required
+        class="border border-gray-300 focus:border-[#3DAA6F] focus:ring-1 focus:ring-[#3DAA6F] px-4 py-2 flex-1 rounded outline-none transition-colors"
+      />
+      <input
+        type="email"
+        placeholder="Your Email"
+        required
+        class="border border-gray-300 focus:border-[#3DAA6F] focus:ring-1 focus:ring-[#3DAA6F] px-4 py-2 flex-1 rounded outline-none transition-colors"
+      />
+      <button
+        type="submit"
+        class="bg-[#3DAA6F] hover:bg-green-600 text-white px-6 py-2 rounded-xl transition-colors font-medium whitespace-nowrap"
+      >
+        SUBSCRIBE
+      </button>
+    </form>
+  </section>
 
   <Footer />
 </Layout>
