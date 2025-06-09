@@ -5,339 +5,566 @@ import Footer from "../components/Footer.astro";
 import NewLetter from "../components/Newletter.astro";
 import Home from "../components/Home.astro";
 import "../styles/global.css";
-import peoplecover from '../assets/IOER Conference Group Photo (1).svg';
+
+// Team photos
+import peoplecover from "../assets/IOER Conference Group Photo (1).svg";
 import Rajnish from "../assets/Rajnish-Kumarv2 1.svg";
 import satyaseshadri from "../assets/Satyanarayanan Seshadri 1.svg";
+import charutaphoto from "../assets/resource (2) 1.svg";
+import rahulphoto from "../assets/resource (1) 1.svg";
+import sivaphoto from "../assets/resource 1.svg";
+import vishakha from "../assets/resource (4) 1.svg";
+
+// Social icons
 import webglobe from "../assets/web logo small(1) 2.svg";
-import charutaphoto from '../assets/resource (2) 1.svg';
-import rahulphoto from '../assets/resource (1) 1.svg';
-import sivaphoto from '../assets/resource 1.svg';
-import vishakha from '../assets/resource (4) 1.svg'
-import linkedin from '../assets/LinkedIn 4.svg';
-import twitter from '../assets/x twitter logo small 2.svg';
-import associatefac1 from '../assets/1 (1).png';
-import associatefac2 from '../assets/2.svg';
-import associatefac3 from '../assets/3.svg';
-import associatefac4 from '../assets/4.svg';
-import associatefac5 from '../assets/5.svg';
-import associatefac6 from '../assets/6.svg';
-import associatefac7 from '../assets/7.svg';
-import associatefac8 from '../assets/8.svg';
-import afffac1 from '../assets/A.svg';
-import afffac2 from '../assets/B.svg';
-import afffac3 from '../assets/C.svg';
-import afffac4 from '../assets/D.svg';
-import afffac5 from '../assets/E.svg';
-import afffac6 from '../assets/F.svg';
-import afffac7 from '../assets/G.svg';
-import afffac8 from '../assets/H.svg';
-import advisor1 from '../assets/05.svg';
-import advisor2 from '../assets/01.svg';
-import advisor3 from '../assets/02.svg';
-import advisor4 from '../assets/03.svg';
-import advisor5 from '../assets/04.svg';
-import "../styles/global.css";
+import linkedin from "../assets/LinkedIn 4.svg";
+import twitter from "../assets/x twitter logo small 2.svg";
+
+// Associate faculty photos
+import associatefac1 from "../assets/1 (1).png";
+import associatefac2 from "../assets/2.svg";
+import associatefac3 from "../assets/3.svg";
+import associatefac4 from "../assets/4.svg";
+import associatefac5 from "../assets/5.svg";
+import associatefac6 from "../assets/6.svg";
+import associatefac7 from "../assets/7.svg";
+import associatefac8 from "../assets/8.svg";
+
+// Affiliate faculty photos
+import afffac1 from "../assets/A.svg";
+import afffac2 from "../assets/B.svg";
+import afffac3 from "../assets/C.svg";
+import afffac4 from "../assets/D.svg";
+import afffac5 from "../assets/E.svg";
+import afffac6 from "../assets/F.svg";
+import afffac7 from "../assets/G.svg";
+import afffac8 from "../assets/H.svg";
+
+// Advisor photos
+import advisor1 from "../assets/05.svg";
+import advisor2 from "../assets/01.svg";
+import advisor3 from "../assets/02.svg";
+import advisor4 from "../assets/03.svg";
+import advisor5 from "../assets/04.svg";
+
+// Team data structure for better maintainability
+const teamMembers = [
+  {
+    name: "Rajnish Kumar",
+    position: "Head, School of Sustainability",
+    image: Rajnish,
+    website: "https://che.iitm.ac.in",
+    icon: webglobe,
+  },
+  {
+    name: "Satyanarayanan Seshadri",
+    position: "Associate Head, School of Sustainability",
+    image: satyaseshadri,
+    website: "https://energyconsortium.org",
+    icon: linkedin,
+  },
+];
+
+const coreTeam = [
+  {
+    name: "Charuta Kulkarni",
+    position: "Head, School of Sustainability",
+    image: charutaphoto,
+    website: "https://che.iitm.ac.in",
+    icon: linkedin,
+  },
+  {
+    name: "Rahul Muralidharan",
+    position: "Associate Head, School of Sustainability",
+    image: rahulphoto,
+    website: "https://energyconsortium.org",
+    icon: linkedin,
+  },
+  {
+    name: "Siva Barathi A",
+    position: "Associate Head, School of Sustainability",
+    image: sivaphoto,
+    website: "https://energyconsortium.org",
+    icon: linkedin,
+  },
+  {
+    name: "Vishakha Shankar",
+    position: "Associate Head, School of Sustainability",
+    image: vishakha,
+    website: "https://energyconsortium.org",
+    icon: linkedin,
+  },
+];
+
+const associateFaculty = [
+  {
+    image: associatefac1,
+    name: "Dr. Faculty Name 1",
+    position: "Department of Engineering",
+    website: "https://che.iitm.ac.in",
+  },
+  {
+    image: associatefac2,
+    name: "Dr. Faculty Name 2",
+    position: "Department of Science",
+    website: "https://energyconsortium.org",
+  },
+  {
+    image: associatefac3,
+    name: "Dr. Faculty Name 3",
+    position: "Department of Mathematics",
+    website: "https://energyconsortium.org",
+  },
+  {
+    image: associatefac4,
+    name: "Dr. Faculty Name 4",
+    position: "Department of Physics",
+    website: "https://energyconsortium.org",
+  },
+  {
+    image: associatefac5,
+    name: "Dr. Faculty Name 5",
+    position: "Department of Chemistry",
+    website: "https://energyconsortium.org",
+  },
+  {
+    image: associatefac6,
+    name: "Dr. Faculty Name 6",
+    position: "Department of Biology",
+    website: "https://energyconsortium.org",
+  },
+  {
+    image: associatefac7,
+    name: "Dr. Faculty Name 7",
+    position: "Department of Environmental Science",
+    website: "https://energyconsortium.org",
+  },
+  {
+    image: associatefac8,
+    name: "Dr. Faculty Name 8",
+    position: "Department of Sustainability",
+    website: "https://energyconsortium.org",
+  },
+];
+
+const affiliateFellows = [
+  {
+    image: afffac1,
+    name: "Dr. Fellow Name 1",
+    position: "Research Fellow",
+    website: "https://energyconsortium.org",
+  },
+  {
+    image: afffac2,
+    name: "Dr. Fellow Name 2",
+    position: "Senior Fellow",
+    website: "https://energyconsortium.org",
+  },
+  {
+    image: afffac3,
+    name: "Dr. Fellow Name 3",
+    position: "Visiting Fellow",
+    website: "https://energyconsortium.org",
+  },
+  {
+    image: afffac4,
+    name: "Dr. Fellow Name 4",
+    position: "Research Associate",
+    website: "https://energyconsortium.org",
+  },
+  {
+    image: afffac5,
+    name: "Dr. Fellow Name 5",
+    position: "Post-doc Fellow",
+    website: "https://energyconsortium.org",
+  },
+  {
+    image: afffac6,
+    name: "Dr. Fellow Name 6",
+    position: "Senior Researcher",
+    website: "https://energyconsortium.org",
+  },
+  {
+    image: afffac7,
+    name: "Dr. Fellow Name 7",
+    position: "Research Scientist",
+    website: "https://energyconsortium.org",
+  },
+  {
+    image: afffac8,
+    name: "Dr. Fellow Name 8",
+    position: "Principal Investigator",
+    website: "https://energyconsortium.org",
+  },
+];
+
+const advisors = [
+  {
+    image: advisor1,
+    name: "Dr. Advisor Name ",
+    position: "Strategic Advisor",
+    website: "https://energyconsortium.org",
+  },
+  {
+    image: advisor2,
+    name: "Dr. Advisor Name ",
+    position: "Academic Advisor",
+    website: "https://energyconsortium.org",
+  },
+  {
+    image: advisor3,
+    name: "Dr. Advisor Name ",
+    position: "Industry Advisor",
+    website: "https://energyconsortium.org",
+  },
+  {
+    image: advisor4,
+    name: "Dr. Advisor Name ",
+    position: "Policy Advisor",
+    website: "https://energyconsortium.org",
+  },
+  {
+    image: advisor5,
+    name: "Dr. Advisor Name ",
+    position: "Technical Advisor",
+    website: "https://energyconsortium.org",
+  },
+];
 ---
 
+<Navbar />
 <Layout>
-  <Navbar />
-    <div class="">
-          <!-- <div class="relative"> -->
-            <!-- <img src={peoplecover.src} class="w-full"/> -->
-            <!-- <div class="absolute text-white font-semibold w-full top-55 right-[370px] text-center mt-[250px]">
-                      <span class="font-bold text-3xl">Lorem ipsum dolor sit amet, consectetuer</span><br>adipiscing elit. Aenean commodo ligula eget dolor.
-            </div>
-            <div class="top-20 absolute mt-10 left-[950px] border w-90 opacity-50 bg-black">
-                    <div class="text-white flex justify-center items-center">What's News</div>
-                    <ol class="text-white text-sm mx-2">
-                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
-                        <li class="pt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
-                        <li class="pt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
-                        <li class="pt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
-                        <li class="pt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</li>
-                    </ol>
-            </div> -->
-        <!-- </div> -->
-        <div class="text-white py-20">
-              <div class="flex justify-center items-center gap-8 text-[#3DAA6F] mt-10">
-                    <div>TEAM</div>
-                    <div>|</div>
-                    <div>ASSOCIATE FACULTY</div>
-                    <div>|</div>
-                    <div>AFFILIATE FELLOW</div>
-                    <div>|</div>
-                    <div>ADVISORS</div>
-              </div>
-        </div>
-        <div class="" id="Faculty">
-              <div class="font-semibold flex justify-start item-center px-5 text-2xl">Team</div>
-              <div class="grid grid-cols-2 mx-5">
-                      <div>
-                            <div class="flex justify-center items-center"><img src={Rajnish.src} class="w-50"/></div>
-                            <div class="flex justify-center items-center text-xl font-semibold pt-3">Rajnish Kumar</div>
-                            <div class="flex justify-center items-center pt-2">Head, School of Sustainability</div>
-                            <div class="flex justify-center items-center gap-2 pt-2">
-                                  <div class=""><img src={webglobe.src} /></div>
-                                  <div>https://che.iitm.ac.in</div>
-                            </div>
-                      </div>
-                      <div class="">
-                        <div class="flex justify-center items-center"><img src={satyaseshadri.src} class="w-45"/></div>
-                        <div class="flex justify-center items-center text-xl font-semibold pt-3">Satyanarayanan Seshadri</div>
-                        <div class="flex justify-center items-center pt-2">Associate Head, School of Sustainability</div>
-                        <div class="flex justify-center items-center gap-2 pt-2">
-                            <div class=""><img src={linkedin.src} /></div>
-                            <div>https://energyconsortium.org</div>
-                        </div>
-                      </div>
-              </div>
-        </div>
-        <div class="bg-gray-200 mt-10" id="Team">
-              <div class="grid grid-cols-4 mx-5 py-10">
-                    <div>
-                          <div class="flex justify-center items-center"><img src={charutaphoto.src} class="w-50"/></div>
-                          <div class="flex justify-center items-center text-xl font-semibold pt-3">Charuta Kulkarni</div>
-                          <div class="flex justify-center items-center pt-2 text-sm">Head, School of Sustainability</div>
-                          <div class="flex justify-center items-center gap-2 pt-2">
-                                <div class="text-sm"><img src={linkedin.src} /></div>
-                                <div>https://che.iitm.ac.in</div>
-                          </div>
-                    </div>
-                    <div class="">
-                      <div class="flex justify-center items-center"><img src={rahulphoto.src} class="w-45"/></div>
-                      <div class="flex justify-center items-center text-xl font-semibold pt-3">Rahul Muralidharan</div>
-                      <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                      <div class="flex justify-center items-center gap-2 pt-2">
-                          <div class="text-sm"><img src={linkedin.src} /></div>
-                          <div>https://energyconsortium.org</div>
-                      </div>
-                    </div>
-                    <div class="">
-                      <div class="flex justify-center items-center"><img src={sivaphoto.src} class="w-45"/></div>
-                      <div class="flex justify-center items-center text-xl font-semibold pt-3">Siva Barathi A</div>
-                      <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                      <div class="flex justify-center items-center gap-2 pt-2">
-                          <div class="text-sm"><img src={linkedin.src} /></div>
-                          <div>https://energyconsortium.org</div>
-                      </div>
-                    </div>
-                    <div class="">
-                      <div class="flex justify-center items-center"><img src={vishakha.src} class="w-45"/></div>
-                      <div class="flex justify-center items-center text-xl font-semibold pt-3">Vishakha Shankar</div>
-                      <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                      <div class="flex justify-center items-center gap-2 pt-2">
-                          <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                          <div>https://energyconsortium.org</div>
-                      </div>
-                    </div>
-              </div>
-        </div>
-        <div class="mt-4">
-            <div class="font-semibold flex justify-start item-center px-5 text-2xl">Associate Faculty</div>
-              <div class="grid grid-cols-4 mx-5 py-10">
-                  <div>
-                        <div class="flex justify-center items-center"><img src={associatefac1.src} class="w-45"/></div>
-                        <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                        <div class="flex justify-center items-center pt-2 text-sm">Head, School of Sustainability</div>
-                        <div class="flex justify-center items-center gap-2 pt-2">
-                              <div class="text-sm"><img src={linkedin.src} /></div>
-                              <div>https://che.iitm.ac.in</div>
-                        </div>
-                  </div>
-                  <div class="">
-                    <div class="flex justify-center items-center"><img src={associatefac2.src} class="w-45"/></div>
-                    <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                    <div class="flex justify-center items-center pt-2 text-sm">Department</div>
-                    <div class="flex justify-center items-center gap-2 pt-2">
-                        <div class="text-sm"><img src={linkedin.src} /></div>
-                        <div>https://energyconsortium.org</div>
-                    </div>
-                  </div>
-                  <div class="">
-                    <div class="flex justify-center items-center"><img src={associatefac3.src} class="w-45"/></div>
-                    <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                    <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                    <div class="flex justify-center items-center gap-2 pt-2">
-                        <div class="text-sm"><img src={linkedin.src} /></div>
-                        <div>https://energyconsortium.org</div>
-                    </div>
-                  </div>
-                  <div class="">
-                      <div class="flex justify-center items-center"><img src={associatefac4.src} class="w-45"/></div>
-                      <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                      <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                      <div class="flex justify-center items-center gap-2 pt-2">
-                          <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                          <div>https://energyconsortium.org</div>
-                      </div>
-                  </div>
-                  <div class="mt-10">
-                      <div class="flex justify-center items-center"><img src={associatefac5.src} class="w-45"/></div>
-                      <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                      <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                      <div class="flex justify-center items-center gap-2 pt-2">
-                          <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                          <div>https://energyconsortium.org</div>
-                      </div>
-                  </div>
-                  <div class="mt-10">
-                      <div class="flex justify-center items-center"><img src={associatefac6.src} class="w-45"/></div>
-                      <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                      <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                      <div class="flex justify-center items-center gap-2 pt-2">
-                          <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                          <div>https://energyconsortium.org</div>
-                      </div>
-                   </div>
-                   <div class="mt-10">
-                      <div class="flex justify-center items-center"><img src={associatefac7.src} class="w-45"/></div>
-                      <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                      <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                      <div class="flex justify-center items-center gap-2 pt-2">
-                          <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                          <div>https://energyconsortium.org</div>
-                      </div>
-                   </div>
-                   <div class="mt-10">
-                           <div class="flex justify-center items-center"><img src={associatefac8.src} class="w-45"/></div>
-                           <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                           <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                            <div class="flex justify-center items-center gap-2 pt-2">
-                                <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                                <div>https://energyconsortium.org</div>
-                            </div>
-                   </div>
-              <!-- </div> -->
-            </div>
-        </div>
-        <div class="" id="Affiliate">
-              <div class="mx-5 text-2xl font-semibold">Affilate Fellows</div>
-              <div class="mt-4 bg-gray-400 grid grid-cols-4 mx-5 py-10">
-                      <div class="">
-                            <div class="flex justify-center items-center"><img src={afffac1.src} class="w-45"/></div>
-                            <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                            <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                            <div class="flex justify-center items-center gap-2 pt-2">
-                                <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                                <div>https://energyconsortium.org</div>
-                            </div>
-                      </div>
-                      <div class="">
-                            <div class="flex justify-center items-center"><img src={afffac2.src} class="w-45"/></div>
-                            <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                            <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                            <div class="flex justify-center items-center gap-2 pt-2">
-                                <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                                <div>https://energyconsortium.org</div>
-                            </div>
-                      </div>
-                      <div class="">
-                            <div class="flex justify-center items-center"><img src={afffac3.src} class="w-45"/></div>
-                            <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                            <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                            <div class="flex justify-center items-center gap-2 pt-2">
-                                <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                                <div>https://energyconsortium.org</div>
-                            </div>
-                      </div>
-                      <div class="">
-                            <div class="flex justify-center items-center"><img src={afffac4.src} class="w-45"/></div>
-                            <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                            <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                            <div class="flex justify-center items-center gap-2 pt-2">
-                                <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                                <div>https://energyconsortium.org</div>
-                            </div>
-                       </div>
-                       <div class="mt-10">
-                            <div class="flex justify-center items-center"><img src={afffac5.src} class="w-45"/></div>
-                            <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                            <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                            <div class="flex justify-center items-center gap-2 pt-2">
-                                <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                                <div>https://energyconsortium.org</div>
-                            </div>
-                       </div>
-                       <div class="mt-10">
-                            <div class="flex justify-center items-center"><img src={afffac6.src} class="w-45"/></div>
-                            <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                            <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                            <div class="flex justify-center items-center gap-2 pt-2">
-                                <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                                <div>https://energyconsortium.org</div>
-                            </div>
-                       </div>
-                       <div class="mt-10">
-                            <div class="flex justify-center items-center"><img src={afffac7.src} class="w-45"/></div>
-                            <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                            <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                            <div class="flex justify-center items-center gap-2 pt-2">
-                                <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                                <div>https://energyconsortium.org</div>
-                            </div>
-                       </div>
-                       <div class="mt-10">
-                          <div class="flex justify-center items-center"><img src={afffac8.src} class="w-45"/></div>
-                          <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                          <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                          <div class="flex justify-center items-center gap-2 pt-2">
-                              <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                              <div>https://energyconsortium.org</div>
-                          </div>
-                       </div>
-              </div>  
-        </div>
+  <main class="min-h-screen scroll-smooth">
+    <!-- Navigation Menu -->
+    <section
+      class="py-8 border-b border-gray-700 sticky top-10 z-10 backdrop-blur-sm bg-gray-"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav
+          class="flex flex-wrap justify-center items-center gap-2 sm:gap-4 md:gap-8 text-green-600 font-medium text-sm sm:text-base"
+          aria-label="Team sections navigation"
+        >
+          <a
+            href="#team"
+            class="hover:text-green-800 active:text-green-900 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transform hover:scale-105"
+          >
+            TEAM
+          </a>
+          <span class="text-gray-400 hidden sm:inline" aria-hidden="false"
+            >|</span
+          >
+          <a
+            href="#associate-faculty"
+            class="hover:text-green-800 active:text-green-900 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transform hover:scale-105"
+          >
+            ASSOCIATE FACULTY
+          </a>
+          <span class="text-gray-400 hidden sm:inline" aria-hidden="true"
+            >|</span
+          >
+          <a
+            href="#affiliate-fellows"
+            class="hover:text-green-800 active:text-green-900 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transform hover:scale-105"
+          >
+            AFFILIATE FELLOWS
+          </a>
+          <span class="text-gray-400 hidden sm:inline" aria-hidden="true"
+            >|</span
+          >
+          <a
+            href="#advisors"
+            class="hover:text-green-800 active:text-green-900 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transform hover:scale-105"
+          >
+            ADVISORS
+          </a>
+        </nav>
+      </div>
+    </section>
 
-        <div class="mt-10" id="Advisor">
-          <div class="mx-5 text-2xl font-semibold">Advisors</div>
-          <div class="mt-4 grid grid-cols-4 mx-5 py-10">
-                  <div class="">
-                        <div class="flex justify-center items-center"><img src={advisor1.src} class="w-45"/></div>
-                        <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                        <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                        <div class="flex justify-center items-center gap-2 pt-2">
-                            <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                            <div>https://energyconsortium.org</div>
-                        </div>
+    <!-- Leadership Team Section -->
+    <section id="team" class="py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-left mb-16">
+          <h2 class="text-4xl lg:text-3xl font-bold mb-4 tracking-tight">
+            Team
+          </h2>
+        </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 max-w-5xl mx-auto"
+        >
+          {
+            teamMembers.map((member, index) => (
+              <div
+                class={`text-center group ${index % 2 === 1 ? "md:mt-8" : ""}`}
+              >
+                <div class="relative mb-8 overflow-hidden rounded-2xl ">
+                  <img
+                    src={member.image.src}
+                    alt={`${member.name}`}
+                    class="w-full h-80 lg:h-100 object-cover"
+                    loading="lazy"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+                  {member.name}
+                </h3>
+                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                  {member.position}
+                </p>
+                <a
+                  href={member.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-3 text-green-600 hover:text-white bg-transparent hover:bg-green-600 border-2 border-green-600 transition-all duration-300 font-semibold focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-full px-6 py-3 transform hover:scale-105 hover:shadow-lg"
+                  aria-label={`Visit ${member.name}'s profile`}
+                >
+                  <img
+                    src={member.icon.src}
+                    alt=""
+                    class="w-5 h-5 filter group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                    aria-hidden="true"
+                  />
+                  Visit Profile
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Team Section -->
+    <section class="py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-left mb-16">
+          <!-- <h2
+            class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight"
+          >
+            Core Team
+          </h2> -->
+        </div>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10"
+        >
+          {
+            coreTeam.map((member, index) => (
+              <div
+                class={`bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 ${index % 2 === 1 ? "sm:mt-6" : ""}`}
+              >
+                <div class="relative overflow-hidden">
+                  <img
+                    src={member.image.src}
+                    alt={`Portrait of ${member.name}`}
+                    class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <div class="p-6 text-center">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                    {member.name}
+                  </h3>
+                  <p class="text-sm text-gray-600 mb-5 leading-relaxed">
+                    {member.position}
+                  </p>
+                  <a
+                    href={member.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-green-600 hover:text-white bg-green-50 hover:bg-green-600 transition-all duration-300 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-full px-4 py-2 transform hover:scale-105"
+                    aria-label={`Connect with ${member.name}`}
+                  >
+                    <img
+                      src={member.icon.src}
+                      alt=""
+                      class="w-4 h-4 filter group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                      aria-hidden="true"
+                    />
+                    Connect
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Associate Faculty Section -->
+    <section id="associate-faculty" class="py-16 lg:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-left mb-16">
+          <h2
+            class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight"
+          >
+            Associate Faculty
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            associateFaculty.map((faculty, index) => (
+              <div
+                class={`bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-2 ${index % 3 === 1 ? "lg:mt-4" : index % 3 === 2 ? "lg:mt-8" : ""}`}
+              >
+                <div class="relative overflow-hidden">
+                  <img
+                    src={faculty.image.src}
+                    alt={`Portrait of ${faculty.name}`}
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="bg-white/90 backdrop-blur-sm rounded-full p-2">
+                      <img src={linkedin.src} alt="" class="w-4 h-4" />
+                    </div>
                   </div>
-                  <div class="">
-                        <div class="flex justify-center items-center"><img src={advisor2.src} class="w-45"/></div>
-                        <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                        <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                        <div class="flex justify-center items-center gap-2 pt-2">
-                            <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                            <div>https://energyconsortium.org</div>
-                        </div>
-                  </div>
-                  <div class="">
-                        <div class="flex justify-center items-center"><img src={advisor3.src} class="w-45"/></div>
-                        <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                        <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                        <div class="flex justify-center items-center gap-2 pt-2">
-                            <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                            <div>https://energyconsortium.org</div>
-                        </div>
-                  </div>
-                  <div class="">
-                        <div class="flex justify-center items-center"><img src={advisor4.src} class="w-45"/></div>
-                        <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                        <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                        <div class="flex justify-center items-center gap-2 pt-2">
-                            <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                            <div>https://energyconsortium.org</div>
-                        </div>
-                   </div>
-                   <div class="mt-10">
-                        <div class="flex justify-center items-center"><img src={advisor5.src} class="w-45"/></div>
-                        <div class="flex justify-center items-center text-xl font-semibold pt-3">Name</div>
-                        <div class="flex justify-center items-center pt-2 text-sm">Associate Head, School of Sustainability</div>
-                        <div class="flex justify-center items-center gap-2 pt-2">
-                            <div class="text-sm"><img src={linkedin.src} class=""/></div>
-                            <div>https://energyconsortium.org</div>
-                        </div>
-                   </div>
-          </div>  
-    </div>
-    </div>
+                </div>
+                <div class="p-6 text-center">
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2 leading-tight">
+                    {faculty.name}
+                  </h3>
+                  <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                    {faculty.position}
+                  </p>
+                  <a
+                    href={faculty.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-green-600 hover:text-green-800 transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-lg px-3 py-1 hover:bg-green-50"
+                    aria-label={`View ${faculty.name}'s profile`}
+                  >
+                    <img
+                      src={linkedin.src}
+                      alt=""
+                      class="w-4 h-4"
+                      aria-hidden="true"
+                    />
+                    View Profile
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Affiliate Fellows Section -->
+    <section
+      id="affiliate-fellows"
+      class="py-16 lg:py-20 bg-gradient-to-br from-gray-100 to-gray-50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-left mb-16">
+          <h2
+            class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight"
+          >
+            Affiliate Fellows
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            affiliateFellows.map((fellow, index) => (
+              <div
+                class={`bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${index % 4 === 1 ? "lg:mt-6" : index % 4 === 2 ? "lg:mt-12" : index % 4 === 3 ? "lg:mt-4" : ""}`}
+              >
+                <div class="relative overflow-hidden">
+                  <img
+                    src={fellow.image.src}
+                    alt={`Portrait of ${fellow.name}`}
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-green-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <div class="p-6 text-center">
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2 leading-tight">
+                    {fellow.name}
+                  </h3>
+                  <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                    {fellow.position}
+                  </p>
+                  <a
+                    href={fellow.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-green-600 hover:text-green-800 transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-lg px-3 py-1 hover:bg-green-50"
+                    aria-label={`Connect with ${fellow.name}`}
+                  >
+                    <img
+                      src={linkedin.src}
+                      alt=""
+                      class="w-4 h-4"
+                      aria-hidden="true"
+                    />
+                    Connect
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Advisors Section -->
+    <section id="advisors" class="py-16 lg:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-left mb-16">
+          <h2
+            class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight"
+          >
+            Advisors
+          </h2>
+        </div>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-8"
+        >
+          {
+            advisors.map((advisor, index) => (
+              <div
+                class={`bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-2 ${index % 5 === 1 ? "xl:mt-4" : index % 5 === 2 ? "xl:mt-8" : index % 5 === 3 ? "xl:mt-6" : index % 5 === 4 ? "xl:mt-2" : ""}`}
+              >
+                <div class="relative overflow-hidden">
+                  <img
+                    src={advisor.image.src}
+                    alt={`Portrait of ${advisor.name}`}
+                    class="w-48 h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  {/* <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" /> */}
+                </div>
+                <div class="p-6 text-center">
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2 leading-tight">
+                    {advisor.name}
+                  </h3>
+                  <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                    {advisor.position}
+                  </p>
+                  <a
+                    href={advisor.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-green-600 hover:text-green-800 transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-lg px-3 py-1 hover:bg-green-50"
+                    aria-label={`Contact ${advisor.name}`}
+                  >
+                    <img
+                      src={linkedin.src}
+                      alt=""
+                      class="w-4 h-4"
+                      aria-hidden="true"
+                    />
+                    Contact
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+
   <Footer />
 </Layout>
