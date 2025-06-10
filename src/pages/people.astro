@@ -237,152 +237,122 @@ const advisors = [
   <main class="min-h-screen scroll-smooth">
     <!-- Navigation Menu -->
     <section
-      class="py-8 border-b border-gray-700 sticky top-10 z-10 backdrop-blur-sm bg-gray-"
+      class="py-4 sm:py-6 md:py-8 border-b border-gray-200 sticky top-0 z-10 backdrop-blur-sm bg-white/80"
     >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="container mx-auto">
         <nav
-          class="flex flex-wrap justify-center items-center gap-2 sm:gap-4 md:gap-8 text-green-600 font-medium text-sm sm:text-base"
+          class="flex flex-wrap justify-center items-center gap-2 sm:gap-4 md:gap-6 text-green-600 font-medium text-sm sm:text-base md:text-lg"
           aria-label="Team sections navigation"
         >
           <a
             href="#team"
             class="hover:text-green-800 active:text-green-900 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transform hover:scale-105"
           >
-            TEAM
+            Team
           </a>
-          <span class="text-gray-400 hidden sm:inline" aria-hidden="false"
-            >|</span
-          >
           <a
             href="#associate-faculty"
             class="hover:text-green-800 active:text-green-900 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transform hover:scale-105"
           >
-            ASSOCIATE FACULTY
+            Associate Faculty
           </a>
-          <span class="text-gray-400 hidden sm:inline" aria-hidden="true"
-            >|</span
-          >
           <a
             href="#affiliate-fellows"
             class="hover:text-green-800 active:text-green-900 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transform hover:scale-105"
           >
-            AFFILIATE FELLOWS
+            Affiliate Fellows
           </a>
-          <span class="text-gray-400 hidden sm:inline" aria-hidden="true"
-            >|</span
-          >
           <a
             href="#advisors"
             class="hover:text-green-800 active:text-green-900 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transform hover:scale-105"
           >
-            ADVISORS
+            Advisors
           </a>
         </nav>
       </div>
     </section>
 
-    <!-- Leadership Team Section -->
-    <section id="team" class="py-16 lg:py-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-left mb-16">
-          <h2 class="text-4xl lg:text-3xl font-bold mb-4 tracking-tight">
-            Team
-          </h2>
-        </div>
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 max-w-5xl mx-auto"
-        >
-          {
-            teamMembers.map((member, index) => (
-              <div
-                class={`text-center group ${index % 2 === 1 ? "md:mt-8" : ""}`}
-              >
-                <div class="relative mb-8 overflow-hidden rounded-2xl ">
-                  <img
-                    src={member.image.src}
-                    alt={`${member.name}`}
-                    class="w-full h-80 lg:h-100 object-cover"
-                    loading="lazy"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
-                  {member.name}
-                </h3>
-                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                  {member.position}
-                </p>
-                <a
-                  href={member.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-3 text-green-600 hover:text-white bg-transparent hover:bg-green-600 border-2 border-green-600 transition-all duration-300 font-semibold focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-full px-6 py-3 transform hover:scale-105 hover:shadow-lg"
-                  aria-label={`Visit ${member.name}'s profile`}
-                >
-                  <img
-                    src={member.icon.src}
-                    alt=""
-                    class="w-5 h-5 filter group-hover:brightness-0 group-hover:invert transition-all duration-300"
-                    aria-hidden="true"
-                  />
-                  Visit Profile
-                </a>
-              </div>
-            ))
-          }
-        </div>
+    <!-- Hero Section -->
+    <section class="relative">
+      <img
+        src={peoplecover.src}
+        alt="Team photo"
+        class="w-full h-[40vh] sm:h-[50vh] md:h-[60vh] object-cover"
+      />
+      <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold text-center px-4">
+          Our Team
+        </h1>
       </div>
     </section>
 
-    <!-- Core Team Section -->
-    <section class="py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-gray-100">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-left mb-16">
-          <!-- <h2
-            class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight"
-          >
-            Core Team
-          </h2> -->
-        </div>
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10"
-        >
+    <!-- Team Section -->
+    <section id="team" class="py-12 sm:py-16 md:py-20">
+      <div class="container mx-auto">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
+          Leadership Team
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 sm:gap-10">
           {
-            coreTeam.map((member, index) => (
-              <div
-                class={`bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 ${index % 2 === 1 ? "sm:mt-6" : ""}`}
-              >
-                <div class="relative overflow-hidden">
+            teamMembers.map((member) => (
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="relative">
                   <img
                     src={member.image.src}
-                    alt={`Portrait of ${member.name}`}
-                    class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
-                    loading="lazy"
+                    alt={member.name}
+                    class="w-full h-64 sm:h-72 md:h-80 object-cover"
                   />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                <div class="p-6 text-center">
-                  <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
-                    {member.name}
-                  </h3>
-                  <p class="text-sm text-gray-600 mb-5 leading-relaxed">
-                    {member.position}
-                  </p>
                   <a
                     href={member.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-green-600 hover:text-white bg-green-50 hover:bg-green-600 transition-all duration-300 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-full px-4 py-2 transform hover:scale-105"
-                    aria-label={`Connect with ${member.name}`}
+                    class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
                   >
                     <img
                       src={member.icon.src}
-                      alt=""
-                      class="w-4 h-4 filter group-hover:brightness-0 group-hover:invert transition-all duration-300"
-                      aria-hidden="true"
+                      alt="Website"
+                      class="w-6 h-6"
                     />
-                    Connect
                   </a>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl sm:text-2xl font-bold mb-2">{member.name}</h3>
+                  <p class="text-gray-600 text-base sm:text-lg">{member.position}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 mt-16 text-center">
+          Core Team
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {
+            coreTeam.map((member) => (
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="relative">
+                  <img
+                    src={member.image.src}
+                    alt={member.name}
+                    class="w-full h-48 sm:h-56 md:h-64 object-cover"
+                  />
+                  <a
+                    href={member.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+                  >
+                    <img
+                      src={member.icon.src}
+                      alt="Website"
+                      class="w-6 h-6"
+                    />
+                  </a>
+                </div>
+                <div class="p-4 sm:p-6">
+                  <h3 class="text-lg sm:text-xl font-bold mb-2">{member.name}</h3>
+                  <p class="text-gray-600 text-sm sm:text-base">{member.position}</p>
                 </div>
               </div>
             ))
@@ -392,56 +362,37 @@ const advisors = [
     </section>
 
     <!-- Associate Faculty Section -->
-    <section id="associate-faculty" class="py-16 lg:py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-left mb-16">
-          <h2
-            class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight"
-          >
-            Associate Faculty
-          </h2>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section id="associate-faculty" class="py-12 sm:py-16 md:py-20 bg-gray-50">
+      <div class="container mx-auto">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
+          Associate Faculty
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {
-            associateFaculty.map((faculty, index) => (
-              <div
-                class={`bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-2 ${index % 3 === 1 ? "lg:mt-4" : index % 3 === 2 ? "lg:mt-8" : ""}`}
-              >
-                <div class="relative overflow-hidden">
+            associateFaculty.map((faculty) => (
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="relative">
                   <img
                     src={faculty.image.src}
-                    alt={`Portrait of ${faculty.name}`}
-                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
+                    alt={faculty.name}
+                    class="w-full h-48 sm:h-56 md:h-64 object-cover"
                   />
-                  <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div class="bg-white/90 backdrop-blur-sm rounded-full p-2">
-                      <img src={linkedin.src} alt="" class="w-4 h-4" />
-                    </div>
-                  </div>
-                </div>
-                <div class="p-6 text-center">
-                  <h3 class="text-lg font-semibold text-gray-900 mb-2 leading-tight">
-                    {faculty.name}
-                  </h3>
-                  <p class="text-sm text-gray-600 mb-4 leading-relaxed">
-                    {faculty.position}
-                  </p>
                   <a
                     href={faculty.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-green-600 hover:text-green-800 transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-lg px-3 py-1 hover:bg-green-50"
-                    aria-label={`View ${faculty.name}'s profile`}
+                    class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
                   >
                     <img
-                      src={linkedin.src}
-                      alt=""
-                      class="w-4 h-4"
-                      aria-hidden="true"
+                      src={webglobe.src}
+                      alt="Website"
+                      class="w-6 h-6"
                     />
-                    View Profile
                   </a>
+                </div>
+                <div class="p-4 sm:p-6">
+                  <h3 class="text-lg sm:text-xl font-bold mb-2">{faculty.name}</h3>
+                  <p class="text-gray-600 text-sm sm:text-base">{faculty.position}</p>
                 </div>
               </div>
             ))
@@ -451,55 +402,37 @@ const advisors = [
     </section>
 
     <!-- Affiliate Fellows Section -->
-    <section
-      id="affiliate-fellows"
-      class="py-16 lg:py-20 bg-gradient-to-br from-gray-100 to-gray-50"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-left mb-16">
-          <h2
-            class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight"
-          >
-            Affiliate Fellows
-          </h2>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section id="affiliate-fellows" class="py-12 sm:py-16 md:py-20">
+      <div class="container mx-auto">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
+          Affiliate Fellows
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {
-            affiliateFellows.map((fellow, index) => (
-              <div
-                class={`bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${index % 4 === 1 ? "lg:mt-6" : index % 4 === 2 ? "lg:mt-12" : index % 4 === 3 ? "lg:mt-4" : ""}`}
-              >
-                <div class="relative overflow-hidden">
+            affiliateFellows.map((fellow) => (
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="relative">
                   <img
                     src={fellow.image.src}
-                    alt={`Portrait of ${fellow.name}`}
-                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
+                    alt={fellow.name}
+                    class="w-full h-48 sm:h-56 md:h-64 object-cover"
                   />
-                  <div class="absolute inset-0 bg-gradient-to-t from-green-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                <div class="p-6 text-center">
-                  <h3 class="text-lg font-semibold text-gray-900 mb-2 leading-tight">
-                    {fellow.name}
-                  </h3>
-                  <p class="text-sm text-gray-600 mb-4 leading-relaxed">
-                    {fellow.position}
-                  </p>
                   <a
                     href={fellow.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-green-600 hover:text-green-800 transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-lg px-3 py-1 hover:bg-green-50"
-                    aria-label={`Connect with ${fellow.name}`}
+                    class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
                   >
                     <img
-                      src={linkedin.src}
-                      alt=""
-                      class="w-4 h-4"
-                      aria-hidden="true"
+                      src={webglobe.src}
+                      alt="Website"
+                      class="w-6 h-6"
                     />
-                    Connect
                   </a>
+                </div>
+                <div class="p-4 sm:p-6">
+                  <h3 class="text-lg sm:text-xl font-bold mb-2">{fellow.name}</h3>
+                  <p class="text-gray-600 text-sm sm:text-base">{fellow.position}</p>
                 </div>
               </div>
             ))
@@ -509,54 +442,37 @@ const advisors = [
     </section>
 
     <!-- Advisors Section -->
-    <section id="advisors" class="py-16 lg:py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-left mb-16">
-          <h2
-            class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight"
-          >
-            Advisors
-          </h2>
-        </div>
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-8"
-        >
+    <section id="advisors" class="py-12 sm:py-16 md:py-20 bg-gray-50">
+      <div class="container mx-auto">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
+          Advisors
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-8">
           {
-            advisors.map((advisor, index) => (
-              <div
-                class={`bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-2 ${index % 5 === 1 ? "xl:mt-4" : index % 5 === 2 ? "xl:mt-8" : index % 5 === 3 ? "xl:mt-6" : index % 5 === 4 ? "xl:mt-2" : ""}`}
-              >
-                <div class="relative overflow-hidden">
+            advisors.map((advisor) => (
+              <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="relative">
                   <img
                     src={advisor.image.src}
-                    alt={`Portrait of ${advisor.name}`}
-                    class="w-48 h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
+                    alt={advisor.name}
+                    class="w-full h-48 sm:h-56 md:h-64 object-cover"
                   />
-                  {/* <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" /> */}
-                </div>
-                <div class="p-6 text-center">
-                  <h3 class="text-lg font-semibold text-gray-900 mb-2 leading-tight">
-                    {advisor.name}
-                  </h3>
-                  <p class="text-sm text-gray-600 mb-4 leading-relaxed">
-                    {advisor.position}
-                  </p>
                   <a
                     href={advisor.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-green-600 hover:text-green-800 transition-colors duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-lg px-3 py-1 hover:bg-green-50"
-                    aria-label={`Contact ${advisor.name}`}
+                    class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
                   >
                     <img
-                      src={linkedin.src}
-                      alt=""
-                      class="w-4 h-4"
-                      aria-hidden="true"
+                      src={webglobe.src}
+                      alt="Website"
+                      class="w-6 h-6"
                     />
-                    Contact
                   </a>
+                </div>
+                <div class="p-4 sm:p-6">
+                  <h3 class="text-lg sm:text-xl font-bold mb-2">{advisor.name}</h3>
+                  <p class="text-gray-600 text-sm sm:text-base">{advisor.position}</p>
                 </div>
               </div>
             ))

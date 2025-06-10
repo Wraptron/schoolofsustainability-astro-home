@@ -30,19 +30,73 @@ import Footer from "../components/Footer.astro";
 import NavBar from "../components/Navbar.astro";
 
 const {
-  title = "My Astro Blog",
-  description = "My musings about the Astro framework",
+  title = "School of Sustainability",
+  description = "School of Sustainability at IIT Madras",
 } = Astro.props;
 ---
 
 <html lang="en">
   <MainHead {title} {description} />
   <link rel="icon" type="image/svg+xml" href="SoS.svg" />
-  <body>
-    <!-- <NavBar /> -->
-    <main>
+  <body class="min-h-screen flex flex-col">
+    <NavBar />
+    <main class="flex-grow">
       <slot> Default Text</slot>
     </main>
-    <!-- <Footer /> -->
+    <Footer />
   </body>
 </html>
+
+<style is:global>
+  :root {
+    --max-width: 1440px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Responsive container */
+  .container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding: 0 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding: 0 4rem;
+    }
+  }
+
+  /* Responsive typography */
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  p {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+  }
+</style>

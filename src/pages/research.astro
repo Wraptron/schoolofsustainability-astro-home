@@ -19,7 +19,7 @@ import projectbackgrond from "../assets/reseach_images/reseach_03.jpg";
     <img
       src={cover.src}
       alt="School of Sustainability IIT Madras"
-      class="w-full h-80 sm:h-96 lg:h-[500px] object-cover"
+      class="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] object-cover"
       loading="eager"
     />
 
@@ -37,219 +37,219 @@ import projectbackgrond from "../assets/reseach_images/reseach_03.jpg";
     {/* Spacing div to prevent content overlap */}
     <div class="h-12 sm:h-16 lg:h-20 xl:h-24 bg-transparent"></div>
   </section>
-</Layout>
 
-<!-- Navigation Links -->
-<nav class="mt-8 sm:mt-20">
-  <div
-    class="flex flex-wrap justify-center items-center gap-3 sm:gap-5 text-[21px] text-[#3DAA6F] px-4"
-  >
-    <a
-      href="#research"
-      class="hover:text-green-600 transition-colors cursor-pointer"
-      >Research & Development</a
+  <!-- Navigation Links -->
+  <nav class="mt-8 sm:mt-12 md:mt-16 lg:mt-20">
+    <div
+      class="container mx-auto flex flex-wrap justify-center items-center gap-3 sm:gap-5 text-base sm:text-lg md:text-xl text-[#3DAA6F]"
     >
-    <span class="text-gray-400">|</span>
-    <a
-      href="#projects"
-      class="hover:text-green-600 transition-colors cursor-pointer">Projects</a
-    >
-    <span class="text-gray-400">|</span>
-    <a
-      href="#centers"
-      class="hover:text-green-600 transition-colors cursor-pointer"
-      >Affiliated Centers</a
-    >
-  </div>
-</nav>
+      <a
+        href="#research"
+        class="hover:text-green-600 transition-colors cursor-pointer"
+        >Research & Development</a
+      >
+      <span class="text-gray-400">|</span>
+      <a
+        href="#projects"
+        class="hover:text-green-600 transition-colors cursor-pointer">Projects</a
+      >
+      <span class="text-gray-400">|</span>
+      <a
+        href="#centers"
+        class="hover:text-green-600 transition-colors cursor-pointer"
+        >Affiliated Centers</a
+      >
+    </div>
+  </nav>
 
-<!-- Research & Development Section -->
-<section id="research" class="px-4 sm:px-12 py-12 sm:py-16">
-  <h2 class="text-lg sm:text-xl font-bold mb-1">Research & Development</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-    {
-      [
-        {
-          image: project1,
-          title: "Sponsored Projects",
-          url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=392541364&single=true",
-        },
-        {
-          image: project4,
-          title: "Consultancy Projects",
-          url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=591462497&single=true",
-        },
-        {
-          image: project4,
-          title: "Patents Filed",
-          url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=1624878732&single=true",
-        },
-        {
-          image: project4,
-          title: "Patents Granted",
-          url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=1624878732&single=true",
-        },
-      ].map((project, index) => (
-        <article class="bg-gray-100 rounded-lg overflow-hidden hover:shadow-lg transition-shadow group">
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="block"
-          >
-            <img
-              src={project.image.src}
-              alt={project.title}
-              class="w-full h-40 sm:h-48 object-cover p-4 group-hover:scale-105 transition-transform cursor-pointer"
-              loading="lazy"
-            />
-          </a>
-          <div class="p-4">
+  <!-- Research & Development Section -->
+  <section id="research" class="container mx-auto px-4 py-12 sm:py-16 md:py-20">
+    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Research & Development</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
+      {
+        [
+          {
+            image: project1,
+            title: "Sponsored Projects",
+            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=392541364&single=true",
+          },
+          {
+            image: project4,
+            title: "Consultancy Projects",
+            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=591462497&single=true",
+          },
+          {
+            image: project4,
+            title: "Patents Filed",
+            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=1624878732&single=true",
+          },
+          {
+            image: project4,
+            title: "Patents Granted",
+            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=1624878732&single=true",
+          },
+        ].map((project, index) => (
+          <article class="bg-gray-100 rounded-lg overflow-hidden hover:shadow-lg transition-shadow group">
             <a
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-sm font-medium text-blue-600 hover:text-blue-800 underline transition-colors block"
+              class="block"
             >
-              {project.title}
+              <img
+                src={project.image.src}
+                alt={project.title}
+                class="w-full h-48 sm:h-56 md:h-64 object-cover p-4 group-hover:scale-105 transition-transform cursor-pointer"
+                loading="lazy"
+              />
             </a>
-            <p class="text-xs text-gray-600 mt-2">
-              View detailed information and data about our{" "}
-              {project.title.toLowerCase()} in a new tab.
+            <div class="p-4 sm:p-6">
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-base sm:text-lg font-medium text-blue-600 hover:text-blue-800 underline transition-colors block"
+              >
+                {project.title}
+              </a>
+              <p class="text-sm sm:text-base text-gray-600 mt-2">
+                View detailed information and data about our{" "}
+                {project.title.toLowerCase()} in a new tab.
+              </p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-12 sm:py-16 md:py-20 bg-gray-100">
+    <div class="container mx-auto">
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-8">
+        Projects
+      </h2>
+
+      <div class="relative overflow-hidden rounded-lg">
+        <img
+          src={projectcover.src}
+          alt="Wind farms project"
+          class="w-full h-[40vh] sm:h-[50vh] md:h-[60vh] object-cover"
+          loading="lazy"
+        />
+
+        <!-- Text overlay on main image -->
+        <div class="absolute inset-0 flex items-center justify-center px-4 sm:px-8">
+          <div class="text-center text-white max-w-4xl">
+            <p class="text-lg sm:text-xl md:text-2xl mb-6 leading-relaxed">
+              Our projects tackle real-world sustainability challenges.<br />
+              Led by students and experts, they create lasting impact.
             </p>
-          </div>
-        </article>
-      ))
-    }
-  </div>
-</section>
 
-<!-- Projects Section -->
-<section id="projects" class="py-8 sm:py-12 bg-gray-100">
-  <h2 class="text-lg sm:text-xl font-bold mb-6 px-4 sm:px-8 text-left">
-    Projects
-  </h2>
+            <!-- Second image with button overlay -->
+            <div class="relative mx-auto max-w-md sm:max-w-lg md:max-w-xl">
+              <img
+                src={projectcovercover.src}
+                alt="3D sustainability visualization"
+                class="w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg shadow-lg"
+                loading="lazy"
+              />
 
-  <div class="relative overflow-hidden">
-    <img
-      src={projectcover.src}
-      alt="Wind farms project"
-      class="w-full h-64 sm:h-80 lg:h-96 object-cover"
-      loading="lazy"
-    />
-
-    <!-- Text overlay on main image -->
-    <div class="absolute inset-0 flex items-center justify-center px-4 sm:px-8">
-      <div class="text-center text-white max-w-4xl">
-        <p class="text-lg sm:text-xl lg:text-xl mb-6 leading-relaxed">
-          Our projects tackle real-world sustainability challenges.<br />
-          Led by students and experts, they create lasting impact.
-        </p>
-
-        <!-- Second image with button overlay -->
-        <div class="relative mx-auto max-w-md sm:max-w-lg lg:max-w-xl">
-          <img
-            src={projectcovercover.src}
-            alt="3D sustainability visualization"
-            class="w-full h-32 sm:h-48 lg:h-64 object-cover rounded-lg shadow-lg"
-            loading="lazy"
-          />
-
-          <!-- Centered content on second image -->
-          <div
-            class="absolute inset-2 sm:inset-4 flex flex-col items-center justify-center text-center px-2 sm:px-4"
-          >
-            <p
-              class="text-white text-xs sm:text-sm lg:text-base font-medium mb-3 sm:mb-4 leading-tight"
-            >
-              Explore real-world solutions in action.<br />
-              Discover how our projects drive sustainability forward
-            </p>
-            <button
-              class="bg-white text-black font-bold py-1.5 px-3 sm:py-2 sm:px-4 lg:py-2.5 lg:px-5 rounded-full shadow-lg transform hover:scale-105 transition-all duration-200 text-xs sm:text-sm lg:text-base"
-            >
-              VIEW PROJECTS
-            </button>
+              <!-- Centered content on second image -->
+              <div
+                class="absolute inset-2 sm:inset-4 flex flex-col items-center justify-center text-center px-2 sm:px-4"
+              >
+                <p
+                  class="text-white text-sm sm:text-base md:text-lg font-medium mb-4 leading-tight"
+                >
+                  Explore real-world solutions in action.<br />
+                  Discover how our projects drive sustainability forward
+                </p>
+                <button
+                  class="bg-white text-black font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-full shadow-lg transform hover:scale-105 transition-all duration-200 text-sm sm:text-base"
+                >
+                  VIEW PROJECTS
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- Affiliated Centers Section -->
-<section id="centers" class="px-4 sm:px-8 py-8 sm:py-4 relative">
-  <h2 class="text-lg sm:text-xl text-black font-bold mb-21">
-    Affiliated Centers
-  </h2>
+  </section>
 
-  {/* Background Image */}
-  <div class="absolute inset-0 z-0">
-    <img
-      src={projectbackgrond.src}
-      alt="3D sustainability visualization"
-      class="w-full h-full object-cover opacity-70"
-      loading="lazy"
-    />
-  </div>
+  <!-- Affiliated Centers Section -->
+  <section id="centers" class="py-12 sm:py-16 md:py-20 relative">
+    <div class="container mx-auto">
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-8">
+        Affiliated Centers
+      </h2>
 
-  {/* Centers Grid */}
-  <div
-    class="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-4 max-w-4xl mx-auto"
-  >
-    {
-      Array.from({ length: 8 }, (_, i) => (
-        <div class="bg-white/80 backdrop-blur-sm hover:bg-white/90 transition-all duration-300 p-4 sm:p-6 rounded-lg cursor-pointer group shadow-lg hover:shadow-xl border border-white/20">
-          <div class="flex items-center justify-between">
-            {/* Logo placeholder */}
-            <div class="flex items-center space-x-3">
-              <div class="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-full flex items-center justify-center">
-                <svg
-                  class="w-4 h-4 sm:w-5 sm:h-5 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                  <path
-                    fill-rule="evenodd"
-                    d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </div>
+      {/* Background Image */}
+      <div class="absolute inset-0 z-0">
+        <img
+          src={projectbackgrond.src}
+          alt="3D sustainability visualization"
+          class="w-full h-full object-cover opacity-70"
+          loading="lazy"
+        />
+      </div>
 
-              {/* Center Name */}
-              <div class="text-sm sm:text-base font-medium text-gray-800 group-hover:text-gray-900">
-                Center {i + 1}
+      {/* Centers Grid */}
+      <div
+        class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8"
+      >
+        {
+          Array.from({ length: 8 }, (_, i) => (
+            <div class="bg-white/80 backdrop-blur-sm hover:bg-white/90 transition-all duration-300 p-4 sm:p-6 rounded-lg cursor-pointer group shadow-lg hover:shadow-xl border border-white/20">
+              <div class="flex items-center justify-between">
+                {/* Logo placeholder */}
+                <div class="flex items-center space-x-3 sm:space-x-4">
+                  <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                    <svg
+                      class="w-5 h-5 sm:w-6 sm:h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                      <path
+                        fill-rule="evenodd"
+                        d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+
+                  {/* Center Name */}
+                  <div class="text-base sm:text-lg font-medium text-gray-800 group-hover:text-gray-900">
+                    Center {i + 1}
+                  </div>
+                </div>
+
+                {/* Arrow Icon */}
+                <div class="text-gray-400 group-hover:text-gray-600 group-hover:translate-x-1 transition-all duration-200">
+                  <svg
+                    class="w-5 h-5 sm:w-6 sm:h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
-
-            {/* Arrow Icon */}
-            <div class="text-gray-400 group-hover:text-gray-600 group-hover:translate-x-1 transition-all duration-200">
-              <svg
-                class="w-4 h-4 sm:w-5 sm:h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </div>
-          </div>
-
-          {/* Optional description */}
-          {/* <p class="text-xs sm:text-sm text-gray-600 mt-2 group-hover:text-gray-700">
-            Research and innovation hub focused on sustainable solutions
-          </p> */}
-        </div>
-      ))
-    }
-  </div>
-</section>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Layout>
 
 <!-- Contact Section -->
 <section class="px-4 sm:px-8 py-8 sm:py-12 bg-gray-100">
