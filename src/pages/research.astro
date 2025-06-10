@@ -8,6 +8,7 @@ import project1 from "../assets/project1.svg";
 import project4 from "../assets/project4.svg";
 import projectcover from "../assets/wind-farms-fields 1.svg";
 import projectcovercover from "../assets/abstract-creative-3d-sphere-with-vegetation 1.svg";
+import projectbackgrond from "../assets/reseach_images/reseach_03.jpg";
 ---
 
 <Layout>
@@ -21,195 +22,268 @@ import projectcovercover from "../assets/abstract-creative-3d-sphere-with-vegeta
       class="w-full h-80 sm:h-96 lg:h-[500px] object-cover"
       loading="eager"
     />
+
+    {/* Text box positioned to be half on image, half outside */}
     <div
-      class="absolute inset-x-4 bottom-4 sm:bottom-8 lg:top-[320px] lg:left-8 bg-green-600 p-6 sm:p-8 lg:w-1/2 rounded-lg"
+      class="absolute left-4 sm:left-8 lg:left-12 xl:left-16 bottom-[-10px] sm:bottom-[-20px] lg:bottom-[-30px] xl:bottom-[-30px] bg-green-300 backdrop-blur-sm bg-opacity-95 p-4 sm:p-6 lg:p-8 w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] lg:w-2/3 xl:w-1/2 rounded-md shadow-lg z-10"
     >
-      <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
-        School of Sustainability IIT Madras
-      </h1>
-      <p class="text-sm sm:text-base mt-3 text-gray-100">
-        Driving innovation for a sustainable future—our research empowers communities, informs policy, and creates solutions for the world’s most pressing environmental and social challenges
+      <p class="text-base sm:text-lg lg:text-xl text-gray-900 leading-relaxed">
+        Driving innovation for a sustainable future—our research empowers
+        communities, informs policy, and creates solutions for the world's most
+        pressing environmental and social challenges
       </p>
     </div>
+
+    {/* Spacing div to prevent content overlap */}
+    <div class="h-12 sm:h-16 lg:h-20 xl:h-24 bg-transparent"></div>
   </section>
+</Layout>
 
-  <!-- Navigation Links -->
-  <nav class="mt-8 sm:mt-20">
-    <div
-      class="flex flex-wrap justify-center items-center gap-3 sm:gap-5 text-[21px]  text-[#3DAA6F] px-4"
+<!-- Navigation Links -->
+<nav class="mt-8 sm:mt-20">
+  <div
+    class="flex flex-wrap justify-center items-center gap-3 sm:gap-5 text-[21px] text-[#3DAA6F] px-4"
+  >
+    <a
+      href="#research"
+      class="hover:text-green-600 transition-colors cursor-pointer"
+      >Research & Development</a
     >
-      <a
-        href="#research"
-        class="hover:text-green-600 transition-colors cursor-pointer"
-        >Research & Development</a
-      >
-      <span class="text-gray-400">|</span>
-      <a
-        href="#projects"
-        class="hover:text-green-600 transition-colors cursor-pointer"
-        >Projects</a
-      >
-      <span class="text-gray-400">|</span>
-      <a
-        href="#centers"
-        class="hover:text-green-600 transition-colors cursor-pointer"
-        >Affiliated Centers</a
-      >
-    </div>
-  </nav>
+    <span class="text-gray-400">|</span>
+    <a
+      href="#projects"
+      class="hover:text-green-600 transition-colors cursor-pointer">Projects</a
+    >
+    <span class="text-gray-400">|</span>
+    <a
+      href="#centers"
+      class="hover:text-green-600 transition-colors cursor-pointer"
+      >Affiliated Centers</a
+    >
+  </div>
+</nav>
 
-  <!-- Research & Development Section -->
-  <section id="research" class="px-4 sm:px-8 py-8 sm:py-12">
-    <h2 class="text-lg sm:text-xl font-bold mb-6">Research & Development</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-      {
-        [
-          {
-            image: project1,
-            title: "Sponsored Projects",
-            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=392541364&single=true",
-          },
-          {
-            image: project4,
-            title: "Consultancy Projects",
-            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=591462497&single=true",
-          },
-          {
-            image: project4,
-            title: "Patents Filed",
-            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=1624878732&single=true",
-          },
-          {
-            image: project4,
-            title: "Patents Granted",
-            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=1624878732&single=true",
-          },
-        ].map((project, index) => (
-          <article class="bg-gray-100 rounded-lg overflow-hidden hover:shadow-lg transition-shadow group">
+<!-- Research & Development Section -->
+<section id="research" class="px-4 sm:px-12 py-12 sm:py-16">
+  <h2 class="text-lg sm:text-xl font-bold mb-1">Research & Development</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+    {
+      [
+        {
+          image: project1,
+          title: "Sponsored Projects",
+          url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=392541364&single=true",
+        },
+        {
+          image: project4,
+          title: "Consultancy Projects",
+          url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=591462497&single=true",
+        },
+        {
+          image: project4,
+          title: "Patents Filed",
+          url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=1624878732&single=true",
+        },
+        {
+          image: project4,
+          title: "Patents Granted",
+          url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=1624878732&single=true",
+        },
+      ].map((project, index) => (
+        <article class="bg-gray-100 rounded-lg overflow-hidden hover:shadow-lg transition-shadow group">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block"
+          >
+            <img
+              src={project.image.src}
+              alt={project.title}
+              class="w-full h-40 sm:h-48 object-cover p-4 group-hover:scale-105 transition-transform cursor-pointer"
+              loading="lazy"
+            />
+          </a>
+          <div class="p-4">
             <a
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="block"
+              class="text-sm font-medium text-blue-600 hover:text-blue-800 underline transition-colors block"
             >
-              <img
-                src={project.image.src}
-                alt={project.title}
-                class="w-full h-40 sm:h-48 object-cover p-4 group-hover:scale-105 transition-transform cursor-pointer"
-                loading="lazy"
-              />
+              {project.title}
             </a>
-            <div class="p-4">
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-sm font-medium text-blue-600 hover:text-blue-800 underline transition-colors block"
-              >
-                {project.title}
-              </a>
-              <p class="text-xs text-gray-600 mt-2">
-                View detailed information and data about our{" "}
-                {project.title.toLowerCase()} in a new tab.
-              </p>
-            </div>
-          </article>
-        ))
-      }
-    </div>
-  </section>
+            <p class="text-xs text-gray-600 mt-2">
+              View detailed information and data about our{" "}
+              {project.title.toLowerCase()} in a new tab.
+            </p>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="py-8 sm:py-12 bg-gray-100">
-    <h2 class="text-lg sm:text-xl font-bold mb-6 px-4 sm:px-8">Projects</h2>
-    <div class="relative overflow-hidden">
-      <img
-        src={projectcover.src}
-        alt="Wind farms project"
-        class="w-full h-64 sm:h-80 lg:h-96 object-cover"
-        loading="lazy"
-      />
-      <div
-        class="absolute inset-4 sm:inset-8 lg:top-1/4 lg:left-1/4 lg:w-1/2 bg-black/50 backdrop-blur-sm p-4 sm:p-6 rounded-lg text-white"
-      >
-        <h3 class="text-lg sm:text-xl lg:text-2xl font-bold mb-2">
-          Sustainable Wind Energy Solutions
-        </h3>
-        <p class="text-sm sm:text-base mb-4">
-          Innovative approaches to renewable energy generation and environmental
-          conservation.
+<!-- Projects Section -->
+<section id="projects" class="py-8 sm:py-12 bg-gray-100">
+  <h2 class="text-lg sm:text-xl font-bold mb-6 px-4 sm:px-8 text-left">
+    Projects
+  </h2>
+
+  <div class="relative overflow-hidden">
+    <img
+      src={projectcover.src}
+      alt="Wind farms project"
+      class="w-full h-64 sm:h-80 lg:h-96 object-cover"
+      loading="lazy"
+    />
+
+    <!-- Text overlay on main image -->
+    <div class="absolute inset-0 flex items-center justify-center px-4 sm:px-8">
+      <div class="text-center text-white max-w-4xl">
+        <p class="text-lg sm:text-xl lg:text-xl mb-6 leading-relaxed">
+          Our projects tackle real-world sustainability challenges.<br />
+          Led by students and experts, they create lasting impact.
         </p>
 
-        <div class="relative mt-4">
+        <!-- Second image with button overlay -->
+        <div class="relative mx-auto max-w-md sm:max-w-lg lg:max-w-xl">
           <img
             src={projectcovercover.src}
             alt="3D sustainability visualization"
-            class="w-full h-32 sm:h-48 lg:h-64 object-cover rounded-lg"
+            class="w-full h-32 sm:h-48 lg:h-64 object-cover rounded-lg shadow-lg"
             loading="lazy"
           />
+
+          <!-- Centered content on second image -->
           <div
-            class="absolute inset-4 bg-black/40 backdrop-blur-sm p-3 sm:p-4 rounded text-white"
+            class="absolute inset-2 sm:inset-4 flex flex-col items-center justify-center text-center px-2 sm:px-4"
           >
-            <p class="text-xs sm:text-sm">
-              Advanced 3D modeling and simulation for sustainable ecosystem
-              development and environmental impact assessment.
+            <p
+              class="text-white text-xs sm:text-sm lg:text-base font-medium mb-3 sm:mb-4 leading-tight"
+            >
+              Explore real-world solutions in action.<br />
+              Discover how our projects drive sustainability forward
             </p>
+            <button
+              class="bg-white text-black font-bold py-1.5 px-3 sm:py-2 sm:px-4 lg:py-2.5 lg:px-5 rounded-full shadow-lg transform hover:scale-105 transition-all duration-200 text-xs sm:text-sm lg:text-base"
+            >
+              VIEW PROJECTS
+            </button>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+<!-- Affiliated Centers Section -->
+<section id="centers" class="px-4 sm:px-8 py-8 sm:py-4 relative">
+  <h2 class="text-lg sm:text-xl text-black font-bold mb-21">
+    Affiliated Centers
+  </h2>
 
-  <!-- Affiliated Centers Section -->
-  <section id="centers" class="px-4 sm:px-8 py-8 sm:py-12">
-    <h2 class="text-lg sm:text-xl font-bold mb-6">Affiliated Centers</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-      {
-        Array.from({ length: 8 }, (_, i) => (
-          <div class="bg-gray-200 hover:bg-gray-300 transition-colors p-4 sm:p-6 rounded-lg cursor-pointer group">
-            <div class="text-center text-xs sm:text-sm text-gray-600 group-hover:text-gray-800">
-              Center {i + 1}
+  {/* Background Image */}
+  <div class="absolute inset-0 z-0">
+    <img
+      src={projectbackgrond.src}
+      alt="3D sustainability visualization"
+      class="w-full h-full object-cover opacity-70"
+      loading="lazy"
+    />
+  </div>
+
+  {/* Centers Grid */}
+  <div
+    class="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-4 max-w-4xl mx-auto"
+  >
+    {
+      Array.from({ length: 8 }, (_, i) => (
+        <div class="bg-white/80 backdrop-blur-sm hover:bg-white/90 transition-all duration-300 p-4 sm:p-6 rounded-lg cursor-pointer group shadow-lg hover:shadow-xl border border-white/20">
+          <div class="flex items-center justify-between">
+            {/* Logo placeholder */}
+            <div class="flex items-center space-x-3">
+              <div class="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                <svg
+                  class="w-4 h-4 sm:w-5 sm:h-5 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+
+              {/* Center Name */}
+              <div class="text-sm sm:text-base font-medium text-gray-800 group-hover:text-gray-900">
+                Center {i + 1}
+              </div>
+            </div>
+
+            {/* Arrow Icon */}
+            <div class="text-gray-400 group-hover:text-gray-600 group-hover:translate-x-1 transition-all duration-200">
+              <svg
+                class="w-4 h-4 sm:w-5 sm:h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
             </div>
           </div>
-        ))
-      }
-    </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section class="px-4 sm:px-8 py-8 sm:py-12 bg-gray-100">
-    <h2 class="text-lg sm:text-xl font-bold mb-4">Contact Us</h2>
-    <p class="mb-6 text-sm">
-      <strong>More Information:</strong>
-      <a
-        href="#"
-        class="text-blue-600 hover:text-blue-800 underline ml-2 transition-colors"
-      >
-        Learn more about our sustainability initiatives
-      </a>
-    </p>
+          {/* Optional description */}
+          {/* <p class="text-xs sm:text-sm text-gray-600 mt-2 group-hover:text-gray-700">
+            Research and innovation hub focused on sustainable solutions
+          </p> */}
+        </div>
+      ))
+    }
+  </div>
+</section>
 
-    <form class="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-lg">
-      <input
-        type="text"
-        placeholder="Your Name"
-        required
-        class="border border-gray-300 focus:border-[#3DAA6F] focus:ring-1 focus:ring-[#3DAA6F] px-4 py-2 flex-1 rounded outline-none transition-colors"
-      />
-      <input
-        type="email"
-        placeholder="Your Email"
-        required
-        class="border border-gray-300 focus:border-[#3DAA6F] focus:ring-1 focus:ring-[#3DAA6F] px-4 py-2 flex-1 rounded outline-none transition-colors"
-      />
-      <button
-        type="submit"
-        class="bg-[#3DAA6F] hover:bg-green-600 text-white px-6 py-2 rounded-xl transition-colors font-medium whitespace-nowrap"
-      >
-        SUBSCRIBE
-      </button>
-    </form>
-  </section>
+<!-- Contact Section -->
+<section class="px-4 sm:px-8 py-8 sm:py-12 bg-gray-100">
+  <h2 class="text-lg sm:text-xl font-bold mb-4">Contact Us</h2>
+  <p class="mb-6 text-sm">
+    <strong>More Information:</strong>
+    <a
+      href="#"
+      class="text-blue-600 hover:text-blue-800 underline ml-2 transition-colors"
+    >
+      Learn more about our sustainability initiatives
+    </a>
+  </p>
 
-  <Footer />
-</Layout>
+  <form class="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-lg">
+    <input
+      type="text"
+      placeholder="Your Name"
+      required
+      class="border border-gray-300 focus:border-[#3DAA6F] focus:ring-1 focus:ring-[#3DAA6F] px-4 py-2 flex-1 rounded outline-none transition-colors"
+    />
+    <input
+      type="email"
+      placeholder="Your Email"
+      required
+      class="border border-gray-300 focus:border-[#3DAA6F] focus:ring-1 focus:ring-[#3DAA6F] px-4 py-2 flex-1 rounded outline-none transition-colors"
+    />
+    <button
+      type="submit"
+      class="bg-[#3DAA6F] hover:bg-green-600 text-white px-6 py-2 rounded-xl transition-colors font-medium whitespace-nowrap"
+    >
+      SUBSCRIBE
+    </button>
+  </form>
+</section>
+
+<Footer />
