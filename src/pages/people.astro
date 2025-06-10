@@ -46,6 +46,7 @@ import advisor2 from "../assets/01.svg";
 import advisor3 from "../assets/02.svg";
 import advisor4 from "../assets/03.svg";
 import advisor5 from "../assets/04.svg";
+import Newletter from "../components/Newletter.astro";
 
 // Team data structure for better maintainability
 const teamMembers = [
@@ -279,8 +280,12 @@ const advisors = [
         alt="Team photo"
         class="w-full h-[40vh] sm:h-[50vh] md:h-[60vh] object-cover"
       />
-      <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold text-center px-4">
+      <div
+        class="absolute inset-0 bg-black/40 flex items-center justify-center"
+      >
+        <h1
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold text-center px-4"
+        >
           Our Team
         </h1>
       </div>
@@ -292,7 +297,9 @@ const advisors = [
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
           Leadership Team
         </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 sm:gap-10">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 sm:gap-10"
+        >
           {
             teamMembers.map((member) => (
               <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -308,26 +315,30 @@ const advisors = [
                     rel="noopener noreferrer"
                     class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
                   >
-                    <img
-                      src={member.icon.src}
-                      alt="Website"
-                      class="w-6 h-6"
-                    />
+                    <img src={member.icon.src} alt="Website" class="w-6 h-6" />
                   </a>
                 </div>
                 <div class="p-6">
-                  <h3 class="text-xl sm:text-2xl font-bold mb-2">{member.name}</h3>
-                  <p class="text-gray-600 text-base sm:text-lg">{member.position}</p>
+                  <h3 class="text-xl sm:text-2xl font-bold mb-2">
+                    {member.name}
+                  </h3>
+                  <p class="text-gray-600 text-base sm:text-lg">
+                    {member.position}
+                  </p>
                 </div>
               </div>
             ))
           }
         </div>
 
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 mt-16 text-center">
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 mt-16 text-center"
+        >
           Core Team
         </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+        >
           {
             coreTeam.map((member) => (
               <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -343,16 +354,16 @@ const advisors = [
                     rel="noopener noreferrer"
                     class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
                   >
-                    <img
-                      src={member.icon.src}
-                      alt="Website"
-                      class="w-6 h-6"
-                    />
+                    <img src={member.icon.src} alt="Website" class="w-6 h-6" />
                   </a>
                 </div>
                 <div class="p-4 sm:p-6">
-                  <h3 class="text-lg sm:text-xl font-bold mb-2">{member.name}</h3>
-                  <p class="text-gray-600 text-sm sm:text-base">{member.position}</p>
+                  <h3 class="text-lg sm:text-xl font-bold mb-2">
+                    {member.name}
+                  </h3>
+                  <p class="text-gray-600 text-sm sm:text-base">
+                    {member.position}
+                  </p>
                 </div>
               </div>
             ))
@@ -367,7 +378,9 @@ const advisors = [
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
           Associate Faculty
         </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+        >
           {
             associateFaculty.map((faculty) => (
               <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -383,16 +396,16 @@ const advisors = [
                     rel="noopener noreferrer"
                     class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
                   >
-                    <img
-                      src={webglobe.src}
-                      alt="Website"
-                      class="w-6 h-6"
-                    />
+                    <img src={webglobe.src} alt="Website" class="w-6 h-6" />
                   </a>
                 </div>
                 <div class="p-4 sm:p-6">
-                  <h3 class="text-lg sm:text-xl font-bold mb-2">{faculty.name}</h3>
-                  <p class="text-gray-600 text-sm sm:text-base">{faculty.position}</p>
+                  <h3 class="text-lg sm:text-xl font-bold mb-2">
+                    {faculty.name}
+                  </h3>
+                  <p class="text-gray-600 text-sm sm:text-base">
+                    {faculty.position}
+                  </p>
                 </div>
               </div>
             ))
@@ -407,7 +420,9 @@ const advisors = [
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
           Affiliate Fellows
         </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+        >
           {
             affiliateFellows.map((fellow) => (
               <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -423,16 +438,16 @@ const advisors = [
                     rel="noopener noreferrer"
                     class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
                   >
-                    <img
-                      src={webglobe.src}
-                      alt="Website"
-                      class="w-6 h-6"
-                    />
+                    <img src={webglobe.src} alt="Website" class="w-6 h-6" />
                   </a>
                 </div>
                 <div class="p-4 sm:p-6">
-                  <h3 class="text-lg sm:text-xl font-bold mb-2">{fellow.name}</h3>
-                  <p class="text-gray-600 text-sm sm:text-base">{fellow.position}</p>
+                  <h3 class="text-lg sm:text-xl font-bold mb-2">
+                    {fellow.name}
+                  </h3>
+                  <p class="text-gray-600 text-sm sm:text-base">
+                    {fellow.position}
+                  </p>
                 </div>
               </div>
             ))
@@ -447,7 +462,9 @@ const advisors = [
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
           Advisors
         </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-8">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-8"
+        >
           {
             advisors.map((advisor) => (
               <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -463,16 +480,16 @@ const advisors = [
                     rel="noopener noreferrer"
                     class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
                   >
-                    <img
-                      src={webglobe.src}
-                      alt="Website"
-                      class="w-6 h-6"
-                    />
+                    <img src={webglobe.src} alt="Website" class="w-6 h-6" />
                   </a>
                 </div>
                 <div class="p-4 sm:p-6">
-                  <h3 class="text-lg sm:text-xl font-bold mb-2">{advisor.name}</h3>
-                  <p class="text-gray-600 text-sm sm:text-base">{advisor.position}</p>
+                  <h3 class="text-lg sm:text-xl font-bold mb-2">
+                    {advisor.name}
+                  </h3>
+                  <p class="text-gray-600 text-sm sm:text-base">
+                    {advisor.position}
+                  </p>
                 </div>
               </div>
             ))
@@ -482,5 +499,5 @@ const advisors = [
     </section>
   </main>
 
-  <Footer />
+  <Newletter />
 </Layout>

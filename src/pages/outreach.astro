@@ -16,6 +16,7 @@ import summit from "../assets/Summit on Sustainability .jpg";
 import stem from "../assets/stem1.svg";
 import school from "../assets/school.svg";
 import andrew from "../assets/outreach_images/hero_section.svg";
+import Newletter from "../components/Newletter.astro";
 ---
 
 <Layout>
@@ -410,65 +411,8 @@ import andrew from "../assets/outreach_images/hero_section.svg";
     </section>
 
     <!-- Contact & Newsletter Section -->
-    <section class="py-8 sm:py-12 bg-gray-50" id="contact-us">
-      <div class="container mx-auto px-4">
-        <h2 class="text-2xl sm:text-3xl font-semibold mb-6 text-gray-900">
-          Contact Us
-        </h2>
-
-        <!-- Contact Info -->
-        <div class="mb-8">
-          <div class="flex flex-col sm:flex-row gap-2 sm:gap-5 mb-4">
-            <span class="font-semibold text-lg sm:text-xl text-gray-900"
-              >G Link:</span
-            >
-            <span class="text-base sm:text-lg text-gray-700">
-              Lorem ipsum dolor sit amet, consectetuer elit.
-            </span>
-          </div>
-        </div>
-
-        <!-- Newsletter Signup -->
-        <div class="bg-white p-6 rounded-lg shadow-sm">
-          <h3 class="font-semibold text-xl sm:text-2xl mb-4 text-gray-900">
-            Newsletter
-          </h3>
-          <form class="flex flex-col sm:flex-row gap-4 items-end">
-            <div class="flex-1 min-w-0">
-              <label for="newsletter-name" class="sr-only">Name</label>
-              <input
-                type="text"
-                id="newsletter-name"
-                name="name"
-                placeholder="Name"
-                required
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              />
-            </div>
-            <div class="flex-1 min-w-0">
-              <label for="newsletter-email" class="sr-only">Email</label>
-              <input
-                type="email"
-                id="newsletter-email"
-                name="email"
-                placeholder="Email"
-                required
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              />
-            </div>
-            <button
-              type="submit"
-              class="bg-green-600 hover:bg-green-700 text-white px-8 py-2 rounded-full transition-colors duration-200 font-medium whitespace-nowrap"
-            >
-              SUBSCRIBE
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
+    <Newletter />
   </main>
-
-  <Footer />
 </Layout>
 
 <style>

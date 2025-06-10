@@ -13,6 +13,7 @@ import screenshot from "../assets/Screenshot 2025-05-05 194551 1.svg";
 import newsletter from "../assets/Screenshot 2025-05-05 085703 1.svg";
 import publication from "../assets/SfIB Cohort_1 3.svg";
 import kh from "../assets/knowledge hub page 1 image.jpg";
+import Newletter from "@/components/Newletter.astro";
 
 // Sample data - in a real app, this would come from a CMS or API
 const articles = [
@@ -262,55 +263,7 @@ const whitepapers = Array(4).fill(0).map((_, index) => ({
   </main>
 
   <!-- Contact Section -->
-  <section id="contact-us" class="bg-gray-50 py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold mb-8 text-gray-900">Contact Us</h2>
-      
-      <div class="grid md:grid-cols-2 gap-12">
-        <!-- Contact Information -->
-        <div>
-          <div class="mb-8">
-            <h3 class="text-xl font-semibold mb-4 text-gray-900">Get in Touch</h3>
-            <div class="space-y-4">
-              <div>
-                <span class="font-medium text-gray-700">G Link:</span>
-                <a href="#" class="ml-2 text-emerald-600 hover:text-emerald-700 underline transition-colors">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Quick Newsletter Signup -->
-        <div>
-          <h3 class="text-xl font-semibold mb-4 text-gray-900">Quick Subscribe</h3>
-          <form class="flex flex-col sm:flex-row gap-4" aria-label="Quick newsletter subscription">
-            <input 
-              type="text" 
-              placeholder="Name" 
-              required
-              class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
-            />
-            <input 
-              type="email" 
-              placeholder="Email" 
-              required
-              class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
-            />
-            <button
-              type="submit"
-              class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-full font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 whitespace-nowrap"
-            >
-              SUBSCRIBE
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <Footer />
+  <Newletter />
 </Layout>
 
 <style>

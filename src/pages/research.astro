@@ -9,6 +9,7 @@ import project4 from "../assets/project4.svg";
 import projectcover from "../assets/wind-farms-fields 1.svg";
 import projectcovercover from "../assets/abstract-creative-3d-sphere-with-vegetation 1.svg";
 import projectbackgrond from "../assets/reseach_images/reseach_03.jpg";
+import Newletter from "@/components/Newletter.astro";
 ---
 
 <Layout>
@@ -51,7 +52,8 @@ import projectbackgrond from "../assets/reseach_images/reseach_03.jpg";
       <span class="text-gray-400">|</span>
       <a
         href="#projects"
-        class="hover:text-green-600 transition-colors cursor-pointer">Projects</a
+        class="hover:text-green-600 transition-colors cursor-pointer"
+        >Projects</a
       >
       <span class="text-gray-400">|</span>
       <a
@@ -64,7 +66,9 @@ import projectbackgrond from "../assets/reseach_images/reseach_03.jpg";
 
   <!-- Research & Development Section -->
   <section id="research" class="container mx-auto px-4 py-12 sm:py-16 md:py-20">
-    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Research & Development</h2>
+    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6">
+      Research & Development
+    </h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
       {
         [
@@ -126,9 +130,7 @@ import projectbackgrond from "../assets/reseach_images/reseach_03.jpg";
   <!-- Projects Section -->
   <section id="projects" class="py-12 sm:py-16 md:py-20 bg-gray-100">
     <div class="container mx-auto">
-      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-8">
-        Projects
-      </h2>
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-8">Projects</h2>
 
       <div class="relative overflow-hidden rounded-lg">
         <img
@@ -139,7 +141,9 @@ import projectbackgrond from "../assets/reseach_images/reseach_03.jpg";
         />
 
         <!-- Text overlay on main image -->
-        <div class="absolute inset-0 flex items-center justify-center px-4 sm:px-8">
+        <div
+          class="absolute inset-0 flex items-center justify-center px-4 sm:px-8"
+        >
           <div class="text-center text-white max-w-4xl">
             <p class="text-lg sm:text-xl md:text-2xl mb-6 leading-relaxed">
               Our projects tackle real-world sustainability challenges.<br />
@@ -249,41 +253,6 @@ import projectbackgrond from "../assets/reseach_images/reseach_03.jpg";
       </div>
     </div>
   </section>
+  <br />
+  <Newletter />
 </Layout>
-
-<!-- Contact Section -->
-<section class="px-4 sm:px-8 py-8 sm:py-12 bg-gray-100">
-  <h2 class="text-lg sm:text-xl font-bold mb-4">Contact Us</h2>
-  <p class="mb-6 text-sm">
-    <strong>More Information:</strong>
-    <a
-      href="#"
-      class="text-blue-600 hover:text-blue-800 underline ml-2 transition-colors"
-    >
-      Learn more about our sustainability initiatives
-    </a>
-  </p>
-
-  <form class="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-lg">
-    <input
-      type="text"
-      placeholder="Your Name"
-      required
-      class="border border-gray-300 focus:border-[#3DAA6F] focus:ring-1 focus:ring-[#3DAA6F] px-4 py-2 flex-1 rounded outline-none transition-colors"
-    />
-    <input
-      type="email"
-      placeholder="Your Email"
-      required
-      class="border border-gray-300 focus:border-[#3DAA6F] focus:ring-1 focus:ring-[#3DAA6F] px-4 py-2 flex-1 rounded outline-none transition-colors"
-    />
-    <button
-      type="submit"
-      class="bg-[#3DAA6F] hover:bg-green-600 text-white px-6 py-2 rounded-xl transition-colors font-medium whitespace-nowrap"
-    >
-      SUBSCRIBE
-    </button>
-  </form>
-</section>
-
-<Footer />

@@ -1,67 +1,207 @@
 ---
+import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
+
 interface Props {
   title?: string;
   newsletterTitle?: string;
   buttonText?: string;
+  placeholderName?: string;
   placeholderText?: string;
   googleLinkText?: string;
 }
 
 const {
   title = "Subscribe to our Newsletters",
-  newsletterTitle = "The latest news, articles, and resources, sent to your inbox.",
   buttonText = "Subscribe",
+  placeholderName = "Enter your Full Name",
   placeholderText = "Enter your email",
   googleLinkText = "Google Form",
 } = Astro.props;
 ---
 
-<section class="bg-emerald-900 py-8 rounded-lg mb-8 mx-6 md:mx-12">
+<section class="bg-emerald-800 py-8 rounded-lg mb-8 mx-4 md:mx-12 lg:mx-24">
   <div class="container mx-auto px-6 md:px-12">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-8">
-      <!-- Section Header -->
-      <div class="col-span-1 lg:col-span-2">
-        <h2 class="text-white font-bold text-2xl md:text-3xl">{title}</h2>
-      </div>
+    <!-- Section Header -->
+    <div class="mb-8">
+      <h2 class="text-white font-bold text-center text-2xl md:text-3xl">
+        {title}
+      </h2>
+    </div>
 
-      <!-- Newsletter Subscription -->
-      <div class="max-w-xl">
-        <h3 class="text-3xl font-semibold text-white tracking-tight">
-          {newsletterTitle}
-        </h3>
-        <form class="mt-6 flex flex-col sm:flex-row gap-4">
-          <div class="flex-auto">
-            <label for="email-address" class="sr-only">Email address</label>
-            <input
-              id="email-address"
-              name="email"
-              type="email"
-              autocomplete="email"
-              required
-              class="w-full rounded-md bg-white/10 px-3.5 py-2 text-white outline-1 placeholder:text-gray-300 focus:outline-2 focus:outline-white sm:text-sm"
-              placeholder={placeholderText}
-            />
-          </div>
+    <!-- Newsletter Subscription Form -->
+    <div class="max-w-2xl mx-auto">
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Full Name Input -->
+        <div class="md:col-span-1">
+          <label for="fullName" class="sr-only">Full Name</label>
+          <input
+            id="fullName"
+            name="fullName"
+            type="text"
+            autocomplete="name"
+            required
+            class="w-full rounded-md bg-white/10 px-3.5 py-2.5 text-white placeholder:text-gray-300 border border-white/20 focus:border-white focus:ring-2 focus:ring-white focus:ring-opacity-50 focus:outline-none transition-all duration-200"
+            placeholder={placeholderName}
+          />
+        </div>
+
+        <!-- Email Input -->
+        <div class="md:col-span-1">
+          <label for="email" class="sr-only">Email address</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            class="w-full rounded-md bg-white/10 px-3.5 py-2.5 text-white placeholder:text-gray-300 border border-white/20 focus:border-white focus:ring-2 focus:ring-white focus:ring-opacity-50 focus:outline-none transition-all duration-200"
+            placeholder={placeholderText}
+          />
+        </div>
+
+        <!-- Buttons Container -->
+        <div
+          class="md:col-span-2 flex flex-col sm:flex-row gap-4 mt-4 justify-center items-center"
+        >
+          <!-- Subscribe Button -->
           <button
             type="submit"
-            class="flex-none rounded-md bg-crimson px-3.5 py-2.5 text-sm font-semibold shadow text-black hover:bg-crimson/90 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-crimson"
-            style="background-color: #e7c609;"
+            class="flex-1 sm:flex-none rounded-md bg-yellow-400 hover:bg-yellow-500 px-12 py-4 text-sm font-semibold text-black shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-offset-2 focus:ring-offset-emerald-800 transition-all duration-200"
           >
             {buttonText}
-            <!-- <span class="ml-2 text-xl">→</span> -->
           </button>
-        </form>
-        <div class="mt-4">
-          <a
-            href="https://wraptron.com"
-            class="text-white hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
+
+          <!-- Google Form Button -->
+          <button
+            type="button"
+            id="googleFormBtn"
+            class="flex-1 sm:flex-none rounded-md bg-white/10 hover:bg-white/20 border border-white/30 hover:border-white/50 px-12 py-4 text-sm font-semibold text-white shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition-all duration-200"
           >
             {googleLinkText}
-          </a>
+          </button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </section>
+
+<!-- Modal for Google Form -->
+<div id="googleFormModal" class="fixed inset-0 z-50 hidden">
+  <!-- Backdrop -->
+  <div
+    class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
+    id="modalBackdrop"
+  >
+  </div>
+
+  <!-- Modal Container -->
+  <div class="fixed inset-0 flex items-center justify-center p-4">
+    <div
+      class="relative bg-white rounded-lg shadow-2xl w-full max-w-4xl h-[80vh] max-h-[600px]"
+    >
+      <!-- Close Button -->
+      <button
+        id="closeModal"
+        class="absolute top-4 right-4 z-10 bg-gray-100 hover:bg-gray-200 rounded-full p-2 shadow-md transition-colors duration-200"
+        aria-label="Close modal"
+      >
+        <svg
+          class="w-5 h-5 text-gray-600"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Iframe Container -->
+      <div class="w-full h-full rounded-lg overflow-hidden">
+        <iframe
+          id="googleFormIframe"
+          src=""
+          class="w-full h-full border-0"
+          title="Google Form"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Google Form Modal functionality
+  const googleFormBtn = document.getElementById("googleFormBtn");
+  const googleFormModal = document.getElementById("googleFormModal");
+  const googleFormIframe = document.getElementById("googleFormIframe");
+  const closeModal = document.getElementById("closeModal");
+  const modalBackdrop = document.getElementById("modalBackdrop");
+
+  const googleFormUrl =
+    "https://docs.google.com/forms/d/1tna6zVarnCkIWQrbjoveO_lbJMjWRmA7VQAKt7lg8_w/prefill";
+
+  // Open modal
+  googleFormBtn?.addEventListener("click", () => {
+    googleFormIframe.src = googleFormUrl;
+    googleFormModal?.classList.remove("hidden");
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
+  });
+
+  // Close modal function
+  const closeGoogleFormModal = () => {
+    googleFormModal?.classList.add("hidden");
+    googleFormIframe.src = ""; // Clear iframe src to stop loading
+    document.body.style.overflow = "auto"; // Restore scrolling
+  };
+
+  // Close modal events
+  closeModal?.addEventListener("click", closeGoogleFormModal);
+  modalBackdrop?.addEventListener("click", closeGoogleFormModal);
+
+  // Close modal on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !googleFormModal?.classList.contains("hidden")) {
+      closeGoogleFormModal();
+    }
+  });
+
+  // Handle form submission
+  const form = document.querySelector("form");
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const fullName = formData.get("fullName");
+    const email = formData.get("email");
+
+    // Here you can add your form submission logic
+    console.log("Form submitted:", { fullName, email });
+
+    // Show success message or handle the submission
+    alert("Thank you for subscribing!");
+    form.reset();
+  });
+</script>
+
+<style>
+  /* Custom scrollbar for modal */
+  #googleFormModal iframe::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  #googleFormModal iframe::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+
+  #googleFormModal iframe::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+
+  #googleFormModal iframe::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+</style>
