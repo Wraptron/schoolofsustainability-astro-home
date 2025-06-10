@@ -1,18 +1,12 @@
 ---
-import { string } from 'astro:schema';
+import { Fragment } from 'astro/jsx-runtime';
 
 interface Props {
   email?: string;
   address?: string;
   titleName?: string;
-  quickLinks?: Array<{
-    title: string;
-    href: string;
-  }>;
-  policy?: Array<{
-    title: string;
-    href: string;
-  }>;
+  quickLinks?: Array<{ title: string; href: string }>;
+  policy?: Array<{ title: string; href: string }>;
   logoPath?: string;
   logoAlt?: string;
 }
@@ -30,12 +24,12 @@ const {
     { title: "Sustainability @IITM", href: "/sustainability-iitm" },
   ],
   policy = [
-    {title: "Organization", href: "/organization"},
-    {title: "Program Offered", href: "/publications"},
-    {title: "Outreach", href: "/initiatives"},
-    {title: "Knowledge hub", href: "/research-development"},
-    {title: "Sustainability @ IITM", href: "/projects"},
-    {title: "Competitions", href: "/media"}
+    { title: "Organization", href: "/organization" },
+    { title: "Program Offered", href: "/publications" },
+    { title: "Outreach", href: "/initiatives" },
+    { title: "Knowledge hub", href: "/research-development" },
+    { title: "Sustainability @ IITM", href: "/projects" },
+    { title: "Competitions", href: "/media" },
   ],
   logoPath = "/SoS.svg",
   logoAlt = "School of Sustainability",
@@ -45,95 +39,72 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer class="bg-white w-full">
-  <div
-    class="grid grid-cols-1 md:grid-cols-4 px-4 md:px-8 pt-12 md:pt-24 pb-12 md:pb-20 gap-5"
-  >
-    <div class="col-span-2 ">
-      <h2 class="text-black text-lg md:text-xl flex gap-4">
+  <div class="grid grid-cols-1 md:grid-cols-4 px-4 md:px-8 pt-12 md:pt-24 pb-12 md:pb-20 gap-5">
+    <!-- Left: Logo and Address -->
+    <div class="col-span-2">
+      <h2 class="text-black text-lg md:text-xl flex gap-4 items-center">
         <img src={logoPath} alt={logoAlt} class="w-10" />
         <div>{titleName}</div>
       </h2>
+
       <div class="flex items-center space-x-2 mt-4">
-        <svg
-          class="w-6 h-6 text-[#3DAA6F]"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-        >
-          <path
-            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
-          ></path>
+        <svg class="w-6 h-6 text-[#3DAA6F]" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
         </svg>
-        <a
-          class="text-black text-sm md:text-base font-light block transition-colors hover:text-yellow-300"
-          href={`mailto:${email}`}
-        >
+        <a href={`mailto:${email}`} class="text-black text-sm md:text-base font-light hover:text-yellow-300 transition-colors">
           {email}
         </a>
       </div>
+
       <div class="flex items-start space-x-2 mt-3">
-        <svg
-          class="w-6 h-6 text-[#3DAA6F] mt-1 flex-shrink-0"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-        >
-          <path
-            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-          ></path>
+        <svg class="w-6 h-6 text-[#3DAA6F] mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
         </svg>
-        <p class="text-black text-sm md:text-base font-light">
-          {address}
-        </p>
+        <p class="text-black text-sm md:text-base font-light max-w-sm">{address}</p>
+      </div>
+
+      <!-- Social Icons -->
+      <div class="flex space-x-4 mt-6">
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+          <img src="images/linkedin.png" alt="LinkedIn" class="w-6 h-6 hover:opacity-80" />
+        </a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+          <img src="images/twitter.png" alt="Twitter" class="w-6 h-6 hover:opacity-80" />
+        </a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+          <img src="images/instagram.png" alt="Instagram" class="w-6 h-6 hover:opacity-80" />
+        </a>
       </div>
     </div>
-    <div class="text-left col-span-2 flex justify-between text-zinc-100">
-        <div>
-          <h4 class="text-sm md:text-base font-bold mb-4 text-black">Quick links</h4>
-          <ul class="text-left mt-2 space-y-2">
-            {
-              quickLinks.map((link) => (
-                <li>
-                  <a
-                    href={link.href}
-                    class="text-black text-sm md:text-base hover:text-yellow-300 transition-colors"
-                  >
-                    {link.title}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-        <div class="">
-          <h4 class="text-sm md:text-base font-bold mb-4 text-black">Policies</h4>
-              <ul class="text-left mt-2 space-y-2">
-                {
-                  policy.map((link) => (
-                    <li>
-                      <a
-                        href={link.href}
-                        class="text-black text-sm md:text-base hover:text-yellow-300 transition-colors"
-                      >
-                        {link.title}
-                      </a>
-                    </li>
-                  ))
-                }
-              </ul>
-        </div>
+
+    <!-- Right: Links -->
+    <div class="col-span-2 flex justify-between">
+      <div>
+        <h4 class="text-sm md:text-base font-bold mb-4 text-black">Quick links</h4>
+        <ul class="space-y-2">
+          {quickLinks.map((link) => (
+            <li><a href={link.href}>{link.title}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm md:text-base font-bold mb-4 text-black">Policies</h4>
+        <ul class="space-y-2">
+          {policy.map((link) => (
+            <li><a href={link.href} class="text-black text-sm md:text-base hover:text-yellow-300 transition-colors">{link.title}</a></li>
+          ))}
+        </ul>
+      </div>
     </div>
   </div>
+
+  <!-- Bottom -->
   <div class="border-t border-zinc-800 py-6">
     <div class="px-4 md:px-16 flex flex-col md:flex-row items-center gap-4">
-      <div
-        class="text-xs md:text-sm text-zinc-400 flex-1 text-center md:text-left"
-      >
+      <div class="text-xs md:text-sm text-zinc-400 flex-1 text-center md:text-left">
         &copy; {currentYear} School of Sustainability, All rights reserved
       </div>
-      <div
-        class="flex-1 text-zinc-400 text-xs md:text-sm text-center md:text-right"
-      >
+      <div class="text-xs md:text-sm text-zinc-400 flex-1 text-center md:text-right">
         Made with <span class="text-red-500">&hearts;</span> in India
       </div>
     </div>
