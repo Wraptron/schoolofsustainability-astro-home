@@ -1,89 +1,3 @@
-<!-- ---
-import imageUrl from "../assets/logo_sos-removebg-preview.webp";
----
-<style>
-  .backdrop-blur-glass {
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-
-  .transition-navbar {
-    transition: all 0.3s ease-in-out;
-  }
-</style>
-
-<nav id="navbar" class={`fixed top-0 left-0 right-0 z-50 w-full transition-navbar ${['/', '/about'].includes(Astro.url.pathname) ? 'bg-transparent text-white' : 'bg-white text-black shadow-md'}`}>
-  <div class="max-w-screen-3xl flex flex-wrap items-center justify-between mx-auto py-2 px-[120px]">
-    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src={imageUrl.src} class="h-[60px] md:h-[80px]" alt="Logo" />
-    </a>
-    <button id="mobile-menu-button" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 transition">
-      <span class="sr-only">Open main menu</span>
-      <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14" xmlns="http://www.w3.org/2000/svg">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-      </svg>
-    </button>
-    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0 text-sm">
-        <li><a href="/about" class="block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600 transition">ABOUT</a></li>
-        <li><a href="/research" class="block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600 transition">RESEARCH</a></li>
-        <li><a href="/programs" class="block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600 transition">PROGRAM OFFERED</a></li>
-        <li><a href="/outreach" class="block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600 transition">OUTREACH</a></li>
-        <li><a href="/knowledgehub" class="block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600 transition">KNOWLEDGE HUB</a></li>
-        <li><a href="#" class="block py-2 px-3 md:p-0"><i class="fas fa-search"></i></a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const navbar = document.getElementById('navbar');
-    const button = document.getElementById('mobile-menu-button');
-    const menu = document.getElementById('navbar-default');
-
-    // Toggle mobile menu
-    if (button && menu) {
-      button.addEventListener('click', function () {
-        menu.classList.toggle('hidden');
-        menu.classList.toggle('block');
-        const isExpanded = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', String(!isExpanded));
-      });
-    }
-
-    // Handle scroll and background switch
-    function updateNavbar() {
-      const currentScrollY = window.scrollY;
-
-      if (navbar) {
-        if (currentScrollY > 50) {
-          navbar.classList.remove('bg-transparent', 'text-white');
-          navbar.classList.add('bg-white', 'text-black', 'shadow-md');
-        } else {
-          if (window.location.pathname === '/' || window.location.pathname === '/about') {
-            navbar.classList.add('bg-transparent', 'text-white');
-            navbar.classList.remove('bg-white', 'text-black', 'shadow-md');
-          }
-        }
-      }
-    }
-
-    // Throttle scroll performance
-    let ticking = false;
-    function requestTick() {
-      if (!ticking) {
-        requestAnimationFrame(updateNavbar);
-        ticking = true;
-        setTimeout(() => ticking = false, 16);
-      }
-    }
-
-    window.addEventListener('scroll', requestTick, { passive: true });
-    updateNavbar();
-  });
-</script> -->
-
 ---
 import imageUrl from "../assets/logo_sos-removebg-preview.webp";
 ---
@@ -93,90 +7,102 @@ import imageUrl from "../assets/logo_sos-removebg-preview.webp";
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
-
   .transition-navbar {
     transition: all 0.3s ease-in-out;
-  }
-
-  .navbar-link {
-    transition: color 0.3s ease;
   }
 </style>
 
 <nav id="navbar" class={`fixed top-0 left-0 right-0 z-50 w-full transition-navbar ${['/', '/about'].includes(Astro.url.pathname) ? 'bg-transparent text-white' : 'bg-white text-black shadow-md'}`}>
   <div class="max-w-screen-3xl flex flex-wrap items-center justify-between mx-auto py-2 px-[120px]">
-    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src={imageUrl.src} class="h-[60px] md:h-[80px]" alt="Logo" />
+    <!-- Logo -->
+    <a href="/" class="flex items-center space-x-3">
+      <img src={imageUrl.src} class="h-[60px]" alt="Logo" />
     </a>
-    <button id="mobile-menu-button" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 transition">
-      <span class="sr-only">Open main menu</span>
-      <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- Mobile Toggle Button -->
+    <button id="mobile-menu-button" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
       </svg>
     </button>
-    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+
+    <!-- Navbar Links -->
+    <div id="navbar-default" class="hidden w-full md:block md:w-auto">
       <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0 text-sm">
-        <li><a href="/about" class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600">ABOUT</a></li>
+
+        <!-- ABOUT with Dropdown -->
+        <li class="relative">
+          <button id="about-dropdown-button" class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600 focus:outline-none">
+            ABOUT
+            <svg class="w-3 h-3 inline ml-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.585l3.71-4.354a.75.75 0 111.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div id="about-dropdown" class="hidden absolute z-50 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5">
+            <a href="/about" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Who We Are</a>
+            <a href="/people" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">People</a>
+          </div>
+        </li>
+
+        <!-- Other Links -->
         <li><a href="/research" class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600">RESEARCH</a></li>
         <li><a href="/programs" class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600">PROGRAM OFFERED</a></li>
         <li><a href="/outreach" class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600">OUTREACH</a></li>
         <li><a href="/knowledgehub" class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600">KNOWLEDGE HUB</a></li>
-        <li><a href="#" class="navbar-link block py-2 px-3 md:p-0"><i class="fas fa-search"></i></a></li>
+        <li><a href="/knowledgehub" class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600">SUSTAINABILITY@IITM</a></li>
+        <li><a href="" class="navbar-link block py-2 px-3 md:p-0"><i class="fas fa-search"></i></a></li>
       </ul>
     </div>
   </div>
 </nav>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     const links = document.querySelectorAll('.navbar-link');
-    const button = document.getElementById('mobile-menu-button');
+    const mobileBtn = document.getElementById('mobile-menu-button');
     const menu = document.getElementById('navbar-default');
+    const aboutBtn = document.getElementById('about-dropdown-button');
+    const aboutDropdown = document.getElementById('about-dropdown');
 
-    if (button && menu) {
-      button.addEventListener('click', function () {
-        menu.classList.toggle('hidden');
-        menu.classList.toggle('block');
-        const isExpanded = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', String(!isExpanded));
-      });
-    }
+    // Mobile toggle
+    mobileBtn?.addEventListener('click', () => {
+      menu?.classList.toggle('hidden');
+    });
 
+    // ABOUT dropdown toggle
+    aboutBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      aboutDropdown?.classList.toggle('hidden');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!aboutBtn.contains(e.target) && !aboutDropdown.contains(e.target)) {
+        aboutDropdown?.classList.add('hidden');
+      }
+    });
+
+    // Scroll color logic
     function updateNavbar() {
-      const currentScrollY = window.scrollY;
+      if (!navbar) return;
+      const atTop = window.scrollY <= 50;
+      const transparent = ['/', '/about'].includes(window.location.pathname);
 
-      if (navbar) {
-        if (currentScrollY > 50) {
-          navbar.classList.remove('bg-transparent', 'text-white');
-          navbar.classList.add('bg-white', 'text-black', 'shadow-md');
-          links.forEach(link => {
-            link.classList.remove('text-white');
-            link.classList.add('text-black');
-          });
-        } else {
-          if (window.location.pathname === '/' || window.location.pathname === '/about') {
-            navbar.classList.add('bg-transparent', 'text-white');
-            navbar.classList.remove('bg-white', 'text-black', 'shadow-md');
-            links.forEach(link => {
-              link.classList.remove('text-black');
-              link.classList.add('text-white');
-            });
-          }
-        }
+      if (atTop && transparent) {
+        navbar.classList.add('bg-transparent', 'text-white');
+        navbar.classList.remove('bg-white', 'text-black', 'shadow-md');
+        links.forEach(link => link.classList.remove('text-black'));
+        links.forEach(link => link.classList.add('text-white'));
+      } else {
+        navbar.classList.remove('bg-transparent', 'text-white');
+        navbar.classList.add('bg-white', 'text-black', 'shadow-md');
+        links.forEach(link => link.classList.remove('text-white'));
+        links.forEach(link => link.classList.add('text-black'));
       }
     }
 
-    let ticking = false;
-    function requestTick() {
-      if (!ticking) {
-        requestAnimationFrame(updateNavbar);
-        ticking = true;
-        setTimeout(() => ticking = false, 16);
-      }
-    }
-
-    window.addEventListener('scroll', requestTick, { passive: true });
     updateNavbar();
+    window.addEventListener('scroll', () => requestAnimationFrame(updateNavbar));
   });
 </script>
