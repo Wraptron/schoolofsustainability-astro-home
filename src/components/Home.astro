@@ -211,7 +211,7 @@ import Footer from "../components/Footer.astro";
       </div>
       <div class="mt-4">
         <div
-          class="grid grid-cols-2 justify-center md:justify-end items-center"
+          class="grid grid-cols-2 2xl:grid-cols-4 justify-center gap-4 md:justify-end items-center"
         >
           <a
             href="/programs"
@@ -260,7 +260,7 @@ import Footer from "../components/Footer.astro";
         </a>
         <a
           href="/research"
-          class="bg-[#009640] text-white font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
+          class="bg-[#009640] text-white font-semibold rounded-md text-lg lg:text-xl px-2 xl:px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
         >
           <span class="inline">Affiliated Centers</span>
         </a>
@@ -283,7 +283,7 @@ import Footer from "../components/Footer.astro";
 <div id="people" class="relative py-10 px-4 md:px-16 min-h-screen">
   <!-- Background Image -->
   <div
-    class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat h-full"
     style={`background-image: url(${peoplehome.src})`}
   >
     <!-- Optional overlay for better text readability -->
@@ -408,5 +408,4 @@ import Footer from "../components/Footer.astro";
     </div>
   </div>
   <Newletter />
-  <Footer />
-</Layout>
+</div>

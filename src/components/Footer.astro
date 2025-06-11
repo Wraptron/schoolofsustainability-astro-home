@@ -24,7 +24,7 @@ const {
   ],
   Quick = [
     { title: "Organization", href: "/organization" },
-    { title: "Knowledge Hub", href: "/knowledge-hub" },
+    { title: "Knowledge Hub", href: "/knowledgehub" },
     { title: "Sustainability @IITM", href: "/sustainability-iitm" },
     { title: "Competitions", href: "/media" },
   ],
@@ -40,7 +40,7 @@ const currentYear = new Date().getFullYear();
     class="grid grid-cols-1 md:grid-cols-4 px-4 md:px-8 pt-12 md:pt-24 pb-12 md:pb-20 gap-5"
   >
     <!-- Left: Logo and Address -->
-    <div class="col-span-2">
+    <div class="md:col-span-3 xl:col-span-2">
       <h2 class="text-black text-lg md:text-xl flex gap-4 items-center">
         <img src={logoPath} alt={logoAlt} class="w-16 h-16 md:w-20 md:h-20" />
         <div>{titleName}</div>
@@ -80,7 +80,9 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <!-- Social Icons -->
-      <div class="flex space-x-4 space-y-reverse mt-6">
+      <div
+        class="flex space-x-4 space-y-reverse mt-6 justify-center xl:justify-start xl:mx-8"
+      >
         <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
           <img
             src="images/linkedin.png"
@@ -106,8 +108,8 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <!-- Right: Links -->
-    <div class="col-span-2 flex gap-8">
-      <div>
+    <div class="flex-col xl:flex-row flex md:col-span-1 xl:col-span-2 gap-8">
+      <div class="flex-1">
         <h4 class="text-sm md:text-base font-bold mb-4 text-black">
           Quick links
         </h4>
@@ -126,7 +128,7 @@ const currentYear = new Date().getFullYear();
           }
         </ul>
       </div>
-      <div>
+      <div class="flex-1">
         <h4 class="text-sm md:text-base font-bold mb-4 text-black">
           Quick links
         </h4>
