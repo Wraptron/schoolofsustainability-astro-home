@@ -10,395 +10,401 @@ import profkamakoti from "../assets/prof-kamakoti.png";
 import rajnishkumar from "../assets/Rajnish-Kumarv2 1.svg";
 import homesvg from "../assets/Home_images/Hero_section.webp";
 import peoplehome from "../assets/Home_images/home_people.webp";
-import Layout from "../layouts/Layout.astro";
 import peoplesvg from "../assets/1_Launch_1 1.svg";
 import Newletter from "./Newletter.astro";
 ---
 
-<div class="">
-  <div class="relative pt-7">
-    <img src={homesvg.src} class="w-full pt-[67px]" />
-    <div
-      class="absolute text-[#FAF9F6] font-semibold w-full top-[100px] md:top-[200px] lg:[@media(min-width:1400px)]:top-[330px] left-0 md:right-[260px] lg:[@media(min-width:1400px)]:right-[380px] px-4 md:mt-[240px]"
+<div class="relative w-full h-[584px] overflow-hidden">
+  <!-- Hero Image -->
+  <img
+    src={homesvg.src}
+    alt="Hero background"
+    class="w-full h-full object-cover"
+  />
+
+  <!-- Main Text - Bottom Left -->
+  <div
+    class="absolute bottom-8 left-4 md:bottom-12 md:left-8 lg:bottom-16 lg:left-12 z-10"
+  >
+    <h1
+      class="text-[#FAF9F6] font-bold text-xl md:text-3xl lg:text-4xl xl:text-5xl leading-tight max-w-md md:max-w-lg lg:max-w-xl"
     >
-      <span class="text-[20px] md:text-[36px] font-[700]"
-        >Empowering Minds for a Greener Tomorrow</span
+      Empowering Minds for a Greener Tomorrow
+    </h1>
+  </div>
+
+  <!-- What's New Sidebar - Hidden on mobile -->
+  <div
+    class="hidden md:block absolute top-20 right-4 lg:right-8 xl:right-12 w-80 lg:w-96"
+  >
+    <div
+      class="bg-black/40 backdrop-blur-sm rounded-lg p-6 h-96 lg:h-[400px] xl:h-[500px]"
+    >
+      <!-- Header -->
+      <div
+        class="text-[#FAF9F6] text-center text-xl lg:text-2xl font-semibold mb-6"
       >
-    </div>
-    <div
-      class="hidden md:block top-20 absolute mt-10 left-[950px] [@media(min-width:1400px)]:left-[1150px] w-90 opacity-40 bg-black [@media(min-width:1400px)]:h-[500px] h-[400px]"
-    >
-      <div class="text-[#FAF9F6] flex justify-center items-center text-[24px]">
         What's New
       </div>
-      <ol class="text-[#FAF9F6] text-[18px] mx-2">
-        <li>
+
+      <!-- Content List -->
+      <ol
+        class="text-[#FAF9F6] text-base lg:text-lg space-y-4 list-decimal list-inside"
+      >
+        <li class="leading-relaxed">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
           commodo ligula eget dolor.
         </li>
-        <li class="pt-3">
+        <li class="leading-relaxed">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
           commodo ligula eget dolor.
         </li>
       </ol>
     </div>
   </div>
-  <div class="bg-[#064c06] mt-10 py-10">
-    <!-- Header -->
-    <div
-      class="text-white text-[24px] md:text-[32px] font-[700] px-4 md:px-8 mb-6"
-    >
-      Themes
-    </div>
+</div>
+<div class="bg-[#064c06] mt-10 py-10">
+  <!-- Header -->
+  <div
+    class="text-white text-[24px] md:text-[32px] font-[700] px-4 md:px-8 mb-6"
+  >
+    Themes
+  </div>
 
-    <!-- Top 3 Cards -->
-    <div class="flex flex-col items-center gap-6 relative">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full px-4 md:px-10">
-        <!-- Card 1 -->
-        <div class="border px-2 bg-[#044d04] rounded-xl shadow-md">
-          <div class="flex justify-center items-center text-white pt-4">
-            <img src={organicfood.src} class="w-[60px] h-[60px]" />
-          </div>
-          <div class="text-white ps-2 mt-3 font-semibold text-[16px]">
-            Climate Change Impacts and Adaptation: Scenario Modeling
-          </div>
-          <div class="text-white text-[14px] ps-2 mt-2 pb-4">
-            Explore climate change impacts and adaptation strategies from an
-            engineering perspective...
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="border px-2 bg-[#044d04] rounded-xl shadow-md">
-          <div class="flex justify-center items-center text-white pt-4">
-            <img src={Flash.src} class="bg-white p-2 rounded-3xl mt-2" />
-          </div>
-          <div class="text-white ps-2 mt-3 font-semibold text-[16px]">
-            Ubiquitous Decarbonization (Materials and Energy)
-          </div>
-          <div class="text-white text-[14px] ps-2 mt-2 pb-4">
-            Comprehensive decarbonization efforts spanning renewable energy,
-            sustainable materials...
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="border px-2 bg-[#044d04] rounded-xl shadow-md">
-          <div class="flex justify-center items-center text-white pt-4">
-            <img
-              src={DogHouse.src}
-              class="bg-white p-2 rounded-3xl mt-2 w-12"
-            />
-          </div>
-          <div class="text-white ps-2 mt-3 font-semibold text-[16px]">
-            Sustainable Human Settlements and the F-E-W Nexus
-          </div>
-          <div class="text-white text-[14px] ps-2 mt-2 pb-4">
-            Develop sustainable models for human settlements...
-          </div>
-        </div>
-      </div>
-
-      <!-- Flow Lines -->
-      <div class="h-8 w-full relative flex justify-center items-center mt-4">
-        <div class="absolute h-8 w-px bg-white left-[25%]"></div>
-        <div class="absolute h-8 w-px bg-white left-[50%]"></div>
-        <div class="absolute h-8 w-px bg-white left-[75%]"></div>
-        <div class="absolute top-8 left-[25%] w-[50%] h-px bg-white"></div>
-        <div class="absolute top-8 left-[50%] h-8 w-px bg-white"></div>
-      </div>
-
-      <!-- Bottom Card -->
-      <div
-        class="border px-4 bg-[#044d04] rounded-xl shadow-xl w-[90%] md:w-[60%]"
-      >
+  <!-- Top 3 Cards -->
+  <div class="flex flex-col items-center gap-6 relative">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full px-4 md:px-10">
+      <!-- Card 1 -->
+      <div class="border px-2 bg-[#044d04] rounded-xl shadow-md">
         <div class="flex justify-center items-center text-white pt-4">
-          <img src={UserAcc.src} class="bg-white p-2 rounded-3xl mt-2 w-12" />
+          <img src={organicfood.src} class="w-[60px] h-[60px]" />
         </div>
-        <div class="text-white ps-2 mt-3 font-semibold text-[18px] text-center">
-          Behavioural Change for Sustainability
+        <div class="text-white ps-2 mt-3 font-semibold text-[16px]">
+          Climate Change Impacts and Adaptation: Scenario Modeling
         </div>
-        <div class="text-white text-[14px] ps-2 mt-2 pb-4 text-center">
-          Explore the spectrum of human behavior... sustainable living
-          seamlessly integrates...
+        <div class="text-white text-[14px] ps-2 mt-2 pb-4">
+          Explore climate change impacts and adaptation strategies from an
+          engineering perspective...
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="border px-2 bg-[#044d04] rounded-xl shadow-md">
+        <div class="flex justify-center items-center text-white pt-4">
+          <img src={Flash.src} class="bg-white p-2 rounded-3xl mt-2" />
+        </div>
+        <div class="text-white ps-2 mt-3 font-semibold text-[16px]">
+          Ubiquitous Decarbonization (Materials and Energy)
+        </div>
+        <div class="text-white text-[14px] ps-2 mt-2 pb-4">
+          Comprehensive decarbonization efforts spanning renewable energy,
+          sustainable materials...
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="border px-2 bg-[#044d04] rounded-xl shadow-md">
+        <div class="flex justify-center items-center text-white pt-4">
+          <img src={DogHouse.src} class="bg-white p-2 rounded-3xl mt-2 w-12" />
+        </div>
+        <div class="text-white ps-2 mt-3 font-semibold text-[16px]">
+          Sustainable Human Settlements and the F-E-W Nexus
+        </div>
+        <div class="text-white text-[14px] ps-2 mt-2 pb-4">
+          Develop sustainable models for human settlements...
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Events Section  -->
-  <div class="mt-8 mb-6">
+    <!-- Flow Lines -->
+    <div class="h-8 w-full relative flex justify-center items-center mt-4">
+      <div class="absolute h-8 w-px bg-white left-[25%]"></div>
+      <div class="absolute h-8 w-px bg-white left-[50%]"></div>
+      <div class="absolute h-8 w-px bg-white left-[75%]"></div>
+      <div class="absolute top-8 left-[25%] w-[50%] h-px bg-white"></div>
+      <div class="absolute top-8 left-[50%] h-8 w-px bg-white"></div>
+    </div>
+
+    <!-- Bottom Card -->
     <div
-      class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mx-4 lg:mx-8"
+      class="border px-4 bg-[#044d04] rounded-xl shadow-xl w-[90%] md:w-[60%]"
     >
-      <!-- Content Section -->
-      <div class="order-2 lg:order-1">
-        <h2 class="text-2xl lg:text-4xl font-bold text-gray-900 mb-6">
-          Events
-        </h2>
-
-        <p class="text-[14px] md:text-[16px] text-justify text-[#1f1f1f] mb-8">
-          Join us for insightful events that drive meaningful conversations on
-          sustainability. From expert-led seminars to hands-on workshops, our
-          events foster innovation, collaboration, and real-world impact. Stay
-          updated and be part of the change!
-        </p>
-
-        <div class="flex justify-center lg:justify-start">
-          <a
-            href="/research"
-            class="bg-slate-800 hover:bg-green-800 text-white font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
-          >
-            View Events
-          </a>
-        </div>
+      <div class="flex justify-center items-center text-white pt-4">
+        <img src={UserAcc.src} class="bg-white p-2 rounded-3xl mt-2 w-12" />
       </div>
-
-      <!-- Image Section -->
-      <div class="order-1 lg:order-1">
-        <img
-          src={EventsImg.src}
-          alt="School of Sustainability events at IITM"
-          class="rounded-md w-full h-full lg:h-100 object-cover"
-        />
+      <div class="text-white ps-2 mt-3 font-semibold text-[18px] text-center">
+        Behavioural Change for Sustainability
+      </div>
+      <div class="text-white text-[14px] ps-2 mt-2 pb-4 text-center">
+        Explore the spectrum of human behavior... sustainable living seamlessly
+        integrates...
       </div>
     </div>
   </div>
+</div>
 
-  <!-- End Events Section -->
+<!-- Events Section  -->
+<div class="mt-8 mb-6">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mx-4 lg:mx-8">
+    <!-- Content Section -->
+    <div class="order-2 lg:order-1">
+      <h2 class="text-2xl lg:text-4xl font-bold text-gray-900 mb-6">Events</h2>
 
-  <div class="bg-[#064c06]">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 py-5 mx-2 md:mx-5">
-      <div class="order-1 md:order-2">
-        <img
-          src={exploreImg.src}
-          alt="Explore Sustainability Programs"
-          class="w-full h-full lg:h-100 object-cover rounded-md"
-        />
-      </div>
-      <div class="text-white order-1 md:order-2">
-        <div class="text-[24px] md:text-[32px] mb-2 font-[700]">
-          Explore Sustainability Programs
-        </div>
-        <div class="text-[14px] md:text-[16px] text-justify text-white mb-8">
-          As a new interdisciplinary entity in one of India's oldest
-          technological institutions, the School of Sustainability opens doors
-          to the field of Sustainability to a wide array of populations
-          including students, industries, policymakers, and public in India.
-          Harnessing the best pedagogical practices implemented in
-          interdisciplinary curricula worldwide, School of Sustainability is
-          creating new modes of knowledge transfer in Sustainability Science and
-          Technology. The outcome is innovative education programs such as Minor
-          in Sustainability and International Master's Programs for those who
-          are about to enter the industrial workforce while the Executive
-          Education Certificate Programs for those have spent years in Industry
-          Landscape and looking to build confidence and competence in actioning
-        </div>
-        <div class="mt-4">
-          <div
-            class="grid grid-cols-2 justify-center md:justify-end items-center"
-          >
-            <a
-              href="/programs"
-              class="bg-slate-800 hover:bg-green-800 text-white font-semibold rounded-md text-lg lg:text-xl px-6 space-x-4 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
-              >Certificate courses</a
-            >
+      <p class="text-[14px] md:text-[16px] text-justify text-[#1f1f1f] mb-8">
+        Join us for insightful events that drive meaningful conversations on
+        sustainability. From expert-led seminars to hands-on workshops, our
+        events foster innovation, collaboration, and real-world impact. Stay
+        updated and be part of the change!
+      </p>
 
-            <a
-              href="/programs"
-              class="bg-slate-800 hover:bg-green-800 text-white font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
-              >Degree programs</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!---- Research Section  -->
-
-  <div id="research">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 py-5 mx-2 md:mx-5">
-      <!-- Text and Buttons Section (Left Side) -->
-      <div class="bg-white px-4 md:px-10 py-10 order-2 md:order-1">
-        <div
-          class="text-[24px] md:text-[32px] font-semibold text-[#032A03] mb-4"
-        >
-          Research
-        </div>
-        <div
-          class="text-[14px] md:text-[16px] text-justify text-[#1f1f1f] mb-8"
-        >
-          At the School of Sustainability, research is at the heart of every
-          initiative. Our projects address pressing global challenges through
-          interdisciplinary collaboration. We work closely with affiliated
-          research centers to expand our reach and impact. These centers bring
-          together faculty, students, and partners from across domains. From
-          sustainable materials to climate action, innovation drives our
-          efforts. Explore the articles showcasing breakthroughs, case studies,
-          and field insights. Together, we build a foundation for a more
-          resilient and sustainable future.
-        </div>
-        <!-- Buttons below text -->
-        <div class="flex flex-row gap-3 w-full max-w-[220px]">
-          <a
-            href="/research"
-            class="bg-slate-800 hover:bg-green-800 text-white font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
-          >
-            Projects
-          </a>
-          <a
-            href="/research"
-            class="bg-slate-800 hover:bg-green-800 text-white font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
-          >
-            <span class="inline">Affiliated Centers</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Image Section (Right Side) -->
-      <div class="order-1 md:order-2">
-        <img
-          src={ecofriendly.src}
-          alt="Eco-friendly research"
-          class="w-full h-full lg:h-100 object-cover rounded-md"
-        />
-      </div>
-    </div>
-  </div>
-  <!-- End Research Section  -->
-
-  <!-- People Section Start here -->
-  <div id="people" class="relative py-10 px-4 md:px-16 min-h-screen">
-    <!-- Background Image -->
-    <div
-      class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-      style={`background-image: url(${peoplehome.src})`}
-    >
-      <!-- Optional overlay for better text readability -->
-      <div class="absolute inset-0 bg-black/40"></div>
-    </div>
-
-    <!-- Content Container -->
-    <div class="relative z-10">
-      <!-- Top Illustration -->
-      <!-- Main Heading -->
-      <div
-        class="text-[28px] md:text-[36px] font-semibold text-white text-left"
-      >
-        People
-      </div>
-      <!-- Subheading -->
-      <div
-        class="text-[20px] md:text-[24px] font-bold mt-6 text-white text-center"
-      >
-        Meet the minds driving sustainability forward.
-      </div>
-      <!-- Description Text -->
-      <div
-        class="text-[16px] md:text-[20px] text-white mt-4 max-w-4xl mx-auto text-center"
-      >
-        Our team of experts, researchers, and changemakers are dedicated to
-        creating innovative solutions for a more sustainable future. Together,
-        we inspire action and lead the way toward environmental and social
-        impact.
-      </div>
-      <div class="flex justify-center items-center mb- mt-12">
-        <img
-          src={peoplesvg.src}
-          alt="People illustration"
-          class="w-full h-full lg:h-100 object-cover rounded-md"
-        />
-      </div>
-      <div class="flex items-center justify-center mt-5">
+      <div class="flex justify-center lg:justify-start">
         <a
-          href="/people"
-          class="bg-slate-800 hover:bg-green-800 text-white font-semibold rounded-md text-lg lg:text-xl px-8 py-3 w-full max-w-xs lg:w-64 h-12 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group"
+          href="/research"
+          class="bg-[#009640] text-white font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
         >
-          Know More
+          View Events
         </a>
       </div>
     </div>
-  </div>
-  <!-- People End Here -->
 
-  <!-- Director Section -->
-  <div class="bg-[#F2F2F2] py-10 px-4 md:px-10">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10">
-      <!-- Photo + Name -->
-      <div class="col-span-1 flex flex-col items-center text-center">
-        <img
-          src={profkamakoti.src}
-          alt="Prof. Kamakoti"
-          class="w-[250px] md:w-[300px] rounded-lg"
-        />
-        <div class="text-[18px] md:text-[20px] font-semibold mt-4">
-          Prof. V. Kamakoti
-        </div>
-        <div class="text-[14px] md:text-[16px] text-gray-600">
-          Director, IIT Madras
-        </div>
-      </div>
-
-      <!-- Message -->
-      <div class="col-span-1 md:col-span-2 flex flex-col justify-center">
-        <div class="text-[22px] md:text-[28px] font-semibold text-[#032A03]">
-          From The Director
-        </div>
-        <div
-          class="pt-3 text-[14px] md:text-[18px] text-[#1F1F1F] leading-relaxed"
-        >
-          "Sustainability plays a pivotal role in our National Education Policy.
-          Every domain of engineering and technology is increasingly aligning
-          with one or more of the United Nations' seventeen Sustainable
-          Development Goals. This convergence is accelerating, as seen in the
-          numerous G20 events held in India in 2023. In this light, the School
-          of Sustainability reflects IIT Madras' strong commitment to capacity
-          building and impactful action in this vital area."
-        </div>
-      </div>
+    <!-- Image Section -->
+    <div class="order-1 lg:order-1">
+      <img
+        src={EventsImg.src}
+        alt="School of Sustainability events at IITM"
+        class="rounded-md w-full h-full lg:h-100 object-cover"
+      />
     </div>
   </div>
+</div>
 
-  <div class="bg-[#F2F2F2] py-10 px-4 md:px-10 mt-5">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-5 md:gap-10">
-      <!-- Image + Name/Title -->
-      <div
-        class="col-span-1 order-1 md:order-2 flex flex-col items-center text-center"
-      >
-        <img
-          src={rajnishkumar.src}
-          alt="Prof. Rajnish Kumar"
-          class="w-[200px] md:w-[300px] h-[200px] md:h-[300px] rounded-lg object-cover"
-        />
-        <div class="text-[18px] md:text-[20px] font-semibold mt-4">
-          Prof. Rajnish Kumar
-        </div>
-        <div class="text-[14px] md:text-[16px] text-gray-600">
-          Head, School of Sustainability
-        </div>
+<!-- End Events Section -->
+
+<div class="bg-[#064c06]">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 py-5 mx-2 md:mx-5">
+    <div class="order-1 md:order-2">
+      <img
+        src={exploreImg.src}
+        alt="Explore Sustainability Programs"
+        class="w-full h-full lg:h-100 object-cover rounded-md"
+      />
+    </div>
+    <div class="text-white order-1 md:order-2">
+      <div class="text-[24px] md:text-[32px] mb-2 font-[700]">
+        Explore Sustainability Programs
       </div>
-
-      <!-- Message -->
-      <div
-        class="col-span-1 md:col-span-3 order-2 md:order-1 flex flex-col justify-center"
-      >
-        <div class="text-[20px] md:text-[28px] font-semibold text-[#032A03]">
-          From The Head of the School
-        </div>
+      <div class="text-[14px] md:text-[16px] text-justify text-white mb-8">
+        As a new interdisciplinary entity in one of India's oldest technological
+        institutions, the School of Sustainability opens doors to the field of
+        Sustainability to a wide array of populations including students,
+        industries, policymakers, and public in India. Harnessing the best
+        pedagogical practices implemented in interdisciplinary curricula
+        worldwide, School of Sustainability is creating new modes of knowledge
+        transfer in Sustainability Science and Technology. The outcome is
+        innovative education programs such as Minor in Sustainability and
+        International Master's Programs for those who are about to enter the
+        industrial workforce while the Executive Education Certificate Programs
+        for those have spent years in Industry Landscape and looking to build
+        confidence and competence in actioning
+      </div>
+      <div class="mt-4">
         <div
-          class="mt-4 text-[14px] md:text-[16px] leading-relaxed text-[#1F1F1F]"
+          class="grid grid-cols-2 justify-center md:justify-end items-center"
         >
-          "The School of Sustainability at IIT Madras will concentrate on three
-          key areas: (I) transforming IIT Madras into a NetZero, sustainable
-          campus; (II) embedding sustainability into the academic curriculum;
-          and (III) unifying government and industry-funded research aligned
-          with the UN Sustainable Development Goals. Through science, practical
-          implementation, and policy interventions, the School aims to create a
-          comprehensive impact towards achieving a NetZero India."
+          <a
+            href="/programs"
+            class="bg-[#009640] text-white font-semibold rounded-md text-lg lg:text-xl px-6 space-x-4 sm:px-12 lg:px-12 py-3 lg:py-2 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
+            >Certificate courses</a
+          >
+
+          <a
+            href="/programs"
+            class="bg-[#009640] text-white font-semibold rounded-md text-lg lg:text-xl px-6 sm:px-12 lg:px-12 py-3 lg:py-2 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
+            >Degree programs</a
+          >
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!---- Research Section  -->
+
+<div id="research">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 py-5 mx-2 md:mx-5">
+    <!-- Text and Buttons Section (Left Side) -->
+    <div class="bg-white px-4 md:px-10 py-10 order-2 md:order-1">
+      <div class="text-[24px] md:text-[32px] font-semibold text-[#032A03] mb-4">
+        Research
+      </div>
+      <div class="text-[14px] md:text-[16px] text-justify text-[#1f1f1f] mb-8">
+        At the School of Sustainability, research is at the heart of every
+        initiative. Our projects address pressing global challenges through
+        interdisciplinary collaboration. We work closely with affiliated
+        research centers to expand our reach and impact. These centers bring
+        together faculty, students, and partners from across domains. From
+        sustainable materials to climate action, innovation drives our efforts.
+        Explore the articles showcasing breakthroughs, case studies, and field
+        insights. Together, we build a foundation for a more resilient and
+        sustainable future.
+      </div>
+      <!-- Buttons below text -->
+      <div class="flex flex-row gap-3 w-full max-w-[220px]">
+        <a
+          href="/research"
+          class="bg-[#009640] text-white font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
+        >
+          Projects
+        </a>
+        <a
+          href="/research"
+          class="bg-[#009640] text-white font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
+        >
+          <span class="inline">Affiliated Centers</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Image Section (Right Side) -->
+    <div class="order-1 md:order-2">
+      <img
+        src={ecofriendly.src}
+        alt="Eco-friendly research"
+        class="w-full h-full lg:h-100 object-cover rounded-md"
+      />
+    </div>
+  </div>
+</div>
+<!-- End Research Section  -->
+
+<!-- People Section Start here -->
+<div id="people" class="relative py-10 px-4 md:px-16 min-h-screen">
+  <!-- Background Image -->
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={`background-image: url(${peoplehome.src})`}
+  >
+    <!-- Optional overlay for better text readability -->
+    <div class="absolute inset-0 bg-black/40"></div>
+  </div>
+
+  <!-- Content Container -->
+  <div class="relative z-10">
+    <!-- Top Illustration -->
+    <!-- Main Heading -->
+    <div class="text-[28px] md:text-[36px] font-semibold text-white text-left">
+      People
+    </div>
+    <!-- Subheading -->
+    <div
+      class="text-[20px] md:text-[24px] font-bold mt-6 text-white text-center"
+    >
+      Meet the minds driving sustainability forward.
+    </div>
+    <!-- Description Text -->
+    <div
+      class="text-[16px] md:text-[20px] text-white mt-4 max-w-4xl mx-auto text-center"
+    >
+      Our team of experts, researchers, and changemakers are dedicated to
+      creating innovative solutions for a more sustainable future. Together, we
+      inspire action and lead the way toward environmental and social impact.
+    </div>
+    <div class="flex justify-center items-center mb- mt-12">
+      <img
+        src={peoplesvg.src}
+        alt="People illustration"
+        class="w-full h-full lg:h-100 object-cover rounded-md"
+      />
+    </div>
+    <div class="flex items-center justify-center mt-5">
+      <a
+        href="/people"
+        class="bg-[#009640] text-white font-semibold rounded-md text-lg lg:text-xl px-8 py-3 w-full max-w-xs lg:w-64 h-12 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group"
+      >
+        Know More
+      </a>
+    </div>
+  </div>
+</div>
+<!-- People End Here -->
+
+<!-- Director Section -->
+<div class="bg-[#F2F2F2] py-10 px-4 md:px-10">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10">
+    <!-- Photo + Name -->
+    <div class="col-span-1 flex flex-col items-center text-center">
+      <img
+        src={profkamakoti.src}
+        alt="Prof. Kamakoti"
+        class="w-[250px] md:w-[300px] rounded-lg"
+      />
+      <div class="text-[18px] md:text-[20px] font-semibold mt-4">
+        Prof. V. Kamakoti
+      </div>
+      <div class="text-[14px] md:text-[16px] text-gray-600">
+        Director, IIT Madras
+      </div>
+    </div>
+
+    <!-- Message -->
+    <div class="col-span-1 md:col-span-2 flex flex-col justify-center">
+      <div class="text-[22px] md:text-[28px] font-semibold text-[#032A03]">
+        From The Director
+      </div>
+      <div
+        class="pt-3 text-[14px] md:text-[18px] text-[#1F1F1F] leading-relaxed"
+      >
+        "Sustainability plays a pivotal role in our National Education Policy.
+        Every domain of engineering and technology is increasingly aligning with
+        one or more of the United Nations' seventeen Sustainable Development
+        Goals. This convergence is accelerating, as seen in the numerous G20
+        events held in India in 2023. In this light, the School of
+        Sustainability reflects IIT Madras' strong commitment to capacity
+        building and impactful action in this vital area."
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-[#F2F2F2] py-10 px-4 md:px-10 mt-5">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-5 md:gap-10">
+    <!-- Image + Name/Title -->
+    <div
+      class="col-span-1 order-1 md:order-2 flex flex-col items-center text-center"
+    >
+      <img
+        src={rajnishkumar.src}
+        alt="Prof. Rajnish Kumar"
+        class="w-[200px] md:w-[300px] h-[200px] md:h-[300px] rounded-lg object-cover"
+      />
+      <div class="text-[18px] md:text-[20px] font-semibold mt-4">
+        Prof. Rajnish Kumar
+      </div>
+      <div class="text-[14px] md:text-[16px] text-gray-600">
+        Head, School of Sustainability
+      </div>
+    </div>
+
+    <!-- Message -->
+    <div
+      class="col-span-1 md:col-span-3 order-2 md:order-1 flex flex-col justify-center"
+    >
+      <div class="text-[20px] md:text-[28px] font-semibold text-[#032A03]">
+        From The Head of the School
+      </div>
+      <div
+        class="mt-4 text-[14px] md:text-[16px] leading-relaxed text-[#1F1F1F]"
+      >
+        "The School of Sustainability at IIT Madras will concentrate on three
+        key areas: (I) transforming IIT Madras into a NetZero, sustainable
+        campus; (II) embedding sustainability into the academic curriculum; and
+        (III) unifying government and industry-funded research aligned with the
+        UN Sustainable Development Goals. Through science, practical
+        implementation, and policy interventions, the School aims to create a
+        comprehensive impact towards achieving a NetZero India."
+      </div>
+    </div>
+  </div>
+</div>
+
 <Newletter />
