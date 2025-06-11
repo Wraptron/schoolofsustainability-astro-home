@@ -15,9 +15,9 @@ import imageUrl from "../assets/logo_sos-removebg-preview.webp";
 </style>
 
 <nav id="navbar" class={`fixed w-full z-50 transition-all duration-300 ease-out ${['/', '/about'].includes(Astro.url.pathname) ? 'bg-transparent border-0' : 'bg-transparent'}`}>
-  <div class="max-w-screen-3xl flex flex-wrap items-center justify-between mx-auto py-1 px-[120px]">
+  <div class="max-w-screen-3xl flex flex-wrap items-center justify-between mx-auto py-1 px-[50px]">
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src={imageUrl.src} class="h-[60px] md:h-[80px]" alt="Logo" />
+      <img src={imageUrl.src} class="h-[50px] md:h-[80px]" alt="Logo" />
     </a>
     <button id="mobile-menu-button" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 transition-colors duration-200" aria-controls="navbar-default" aria-expanded="false">
       <span class="sr-only">Open main menu</span>
@@ -45,6 +45,9 @@ import imageUrl from "../assets/logo_sos-removebg-preview.webp";
         <li>
           <a href="#" class={`${['/', '/about'].includes(Astro.url.pathname) ? 'text-black dark:text-white' : 'bg-transparent text-white'} block py-2 px-3 rounded-sm md:p-0 font-semibold text-[16px] hover:text-blue-600 transition-colors duration-300 transform hover:scale-105`}>SUSTAINABILITY@IITM</a>
         </li>
+        <!-- <li>
+          <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+        </li> -->
       </ul>
     </div>
   </div>

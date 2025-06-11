@@ -12,24 +12,25 @@ import homesvg from "../assets/WhatsApp Image 2025-05-15 at 02.53.12_62a32c11 1 
 import Layout from "../layouts/Layout.astro";
 import peoplesvg from "../assets/1_Launch_1 1.svg";
 import Newletter from "./Newletter.astro";
+import Footer from "./Footer.astro";
 ---
 
 <Layout title="Home" description="Home Page">
   <div class="">
-    <div class="relative pt-7">
+    <div class="relative pt-7 ">
       <img src={homesvg.src} class="w-full pt-[67px]" />
       <div
-        class="absolute text-[#FAF9F6] font-semibold w-full top-[100px] md:top-[200px] lg:[@media(min-width:1400px)]:top-[330px] left-0 md:right-[260px] lg:[@media(min-width:1400px)]:right-[380px] px-4 md:mt-[240px]"
+        class="absolute text-[#FAF9F6] font-semibold w-full top-[100px] md:top-[200px] lg:[@media(min-width:1400px)]:top-[330px] left-0 md:right-[260px] lg:[@media(min-width:1400px)]:right-[380px] px-4 md:mt-[240px] px-[50px]"
       >
-        <span class="text-[20px] md:text-[36px] font-[700]"
+        <span class="text-[20px] md:text-[36px] font-[700] "
           >Empowering Minds for a Greener Tomorrow</span
         >
       </div>
       <div
-        class="hidden md:block top-20 absolute mt-10 left-[950px] [@media(min-width:1400px)]:left-[1150px] w-90 opacity-40 bg-black [@media(min-width:1400px)]:h-[500px] h-[400px]"
+        class="hidden md:block top-20 absolute mt-10 left-[950px] [@media(min-width:1400px)]:left-[1150px] w-90 opacity-40 bg-black [@media(min-width:1400px)]:h-[500px] h-[400px] "
       >
         <div
-          class="text-[#FAF9F6] flex justify-center items-center text-[24px]"
+          class="text-[#FAF9F6] flex justify-center items-center text-[24px] px-[50px]"
         >
           What's New
         </div>
@@ -45,7 +46,7 @@ import Newletter from "./Newletter.astro";
         </ol>
       </div>
     </div>
-    <div class="bg-[#064c06] mt-10 py-10">
+    <div class="bg-[#064c06] mt-10 py-10 px-[50px]">
       <!-- Header -->
       <div
         class="text-white text-[24px] md:text-[32px] font-[700] px-4 md:px-8 mb-6"
@@ -130,7 +131,7 @@ import Newletter from "./Newletter.astro";
       </div>
     </div>
 
-    <div class="mt-5 mb-3">
+    <div class="mt-5 mb-3 px-[50px]">
       <div
         class="grid grid-cols-1 md:grid-cols-2 gap-3 item-center mx-2 md:mx-5"
       >
@@ -140,7 +141,7 @@ import Newletter from "./Newletter.astro";
           >
             Events
           </div>
-          <div class="mt-[50px] text-[14px] md:text-[18px]">
+          <div class="mt-[25px] text-[14px] md:text-[18px]">
             Join us for insightful events that drive meaningful conversations on
             sustainability. From expert-led seminars to hands-on workshops, our
             events foster innovation, collaboration, and real-world impact. Stay
@@ -158,7 +159,7 @@ import Newletter from "./Newletter.astro";
         </div>
       </div>
     </div>
-    <div class="bg-[#064c06]">
+    <div class="bg-[#064c06] px-[50px]">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 py-5 mx-2 md:mx-5">
         <div class="order-2 md:order-1">
           <img src={exploreImg.src} class="w-full" />
@@ -167,7 +168,7 @@ import Newletter from "./Newletter.astro";
           <div class="text-[24px] md:text-[32px] mb-2 font-semibold font-[700]">
             Explore Sustainability Programs
           </div>
-          <div class="mt-[50px] text-[14px] md:text-[18px]">
+          <div class="mt-[25px] text-[14px] md:text-[18px]">
             As a new interdisciplinary entity in one of India's oldest
             technological institutions, the School of Sustainability opens doors
             to the field of Sustainability to a wide array of populations
@@ -275,7 +276,7 @@ import Newletter from "./Newletter.astro";
     </div>
 
     <!-- Director Section -->
-    <div class="bg-[#F2F2F2] py-10 px-4 md:px-10">
+    <div class="bg-[#F2F2F2] py-10 px-[50px] md:px-[50px]">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10">
         <!-- Photo + Name -->
         <div class="col-span-1 flex flex-col items-center text-center">
@@ -313,7 +314,7 @@ import Newletter from "./Newletter.astro";
       </div>
     </div>
 
-    <div class="bg-[#F2F2F2] py-10 px-4 md:px-10 mt-5">
+    <div class="bg-[#F2F2F2] py-10 px-[50px] md:px-[50px] mt-5">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-5 md:gap-10">
         <!-- Image + Name/Title -->
         <div
@@ -356,4 +357,5 @@ import Newletter from "./Newletter.astro";
     </div>
   </div>
   <Newletter />
+  <Footer />
 </Layout>
