@@ -12,6 +12,8 @@ import homesvg from "../assets/Home_images/Hero_section.webp";
 import peoplehome from "../assets/Home_images/home_people.webp";
 import peoplesvg from "../assets/1_Launch_1 1.svg";
 import Newletter from "./Newletter.astro";
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
 ---
 
 <div class="relative w-full h-[584px] overflow-hidden">
@@ -405,6 +407,6 @@ import Newletter from "./Newletter.astro";
       </div>
     </div>
   </div>
-</div>
-
-<Newletter />
+  <Newletter />
+  <Footer />
+</Layout>

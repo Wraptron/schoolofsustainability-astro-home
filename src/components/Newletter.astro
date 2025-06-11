@@ -19,7 +19,7 @@ const {
 } = Astro.props;
 ---
 
-<section class="bg-[#009640] py-8 rounded-lg mb-8 mx-4 md:mx-12 lg:mx-24">
+<section class="bg-emerald-800 py-8 rounded-lg mb-8 mx-4 md:mx-12 lg:mx-24">
   <div class="container mx-auto px-6 md:px-12">
     <!-- Section Header -->
     <div class="mb-8">
@@ -135,7 +135,7 @@ const {
   // Google Form Modal functionality
   const googleFormBtn = document.getElementById("googleFormBtn");
   const googleFormModal = document.getElementById("googleFormModal");
-  const googleFormIframe = document.getElementById("googleFormIframe");
+  const googleFormIframe = document.getElementById("googleFormIframe") as HTMLIFrameElement;
   const closeModal = document.getElementById("closeModal");
   const modalBackdrop = document.getElementById("modalBackdrop");
 
@@ -144,7 +144,9 @@ const {
 
   // Open modal
   googleFormBtn?.addEventListener("click", () => {
-    googleFormIframe.src = googleFormUrl;
+    if (googleFormIframe) {
+      googleFormIframe.src = googleFormUrl;
+    }
     googleFormModal?.classList.remove("hidden");
     document.body.style.overflow = "hidden"; // Prevent background scrolling
   });
@@ -152,7 +154,9 @@ const {
   // Close modal function
   const closeGoogleFormModal = () => {
     googleFormModal?.classList.add("hidden");
-    googleFormIframe.src = ""; // Clear iframe src to stop loading
+    if (googleFormIframe) {
+      googleFormIframe.src = ""; // Clear iframe src to stop loading
+    }
     document.body.style.overflow = "auto"; // Restore scrolling
   };
 
