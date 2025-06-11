@@ -15,7 +15,7 @@ import imageUrl from "../assets/logo_sos-removebg-preview.webp";
 </style>
 
 <nav id="navbar" class={`fixed w-full z-50 transition-all duration-300 ease-out ${['/', '/about'].includes(Astro.url.pathname) ? 'bg-transparent border-0' : 'bg-transparent'}`}>
-  <div class="max-w-screen-3xl flex flex-wrap items-center justify-between mx-auto py-1 px-1">
+  <div class="max-w-screen-3xl flex flex-wrap items-center justify-between mx-auto py-1 px-[120px]">
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
       <img src={imageUrl.src} class="h-[60px] md:h-[80px]" alt="Logo" />
     </a>
