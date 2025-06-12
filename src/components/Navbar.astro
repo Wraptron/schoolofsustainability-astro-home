@@ -208,13 +208,13 @@ import imageUrl from "../assets/logo_sos-removebg-preview.webp";
     });
     // Close dropdown when clicking outside
     document.addEventListener("click", (e) => {
-      if (!aboutBtn.contains(e.target) && !aboutDropdown.contains(e.target)) {
+      if (!aboutBtn?.contains(e.target as Node) && !aboutDropdown?.contains(e.target as Node)) {
         aboutDropdown?.classList.add("hidden");
       }
     });
 
     document.addEventListener("click", (e) => {
-      if (!susBtn.contains(e.target) && !susDropdown.contains(e.target)) {
+      if (!susBtn?.contains(e.target as Node) && !susDropdown?.contains(e.target as Node)) {
         susDropdown?.classList.add("hidden");
       }
     });

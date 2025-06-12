@@ -3,13 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 
 import "../styles/global.css";
-import Newletter from "@/components/Newletter.astro";
-import Footer from "@/components/Footer.astro";
-// import mission1 from "../assets/mission1.png";
-// import mission2 from "../assets/mission2.png";
-// import mission3 from "../assets/mission3.png";
-// import bg from "../assets/bg.jpg";
-import abouthero from "../assets/About_images/about_hero.svg";
+import mission1 from "../assets/mission1.png";
+import mission2 from "../assets/mission 2.png";
+import mission3 from "../assets/mission3.png";
+import bg from "../assets/bg.jpg";
+import aboutcover from "../assets/ri_12 1.svg";
+import ourmission from "../assets/our mission BG img (1).png";
+import Newletter from "../components/Newletter.astro";
 ---
 
 <Layout title="About Us">
@@ -93,71 +93,31 @@ import abouthero from "../assets/About_images/about_hero.svg";
       </div>
     </section>
 
-    <!-- OUR MISSION Section -->
-    <section id="our-mission" class="mb-16">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">
-          OUR MISSION
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Mission Item 1 -->
-        <div
-          class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition-shadow"
-        >
-          <div class="flex justify-center mb-6">
-            <img
-              src="#"
-              alt="Interactive teaching icon"
-              class="w-24 h-24 object-contain"
-            />
+      <!-- OUR MISSION Section -->
+      <section class="flex flex-col items-center mt-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-black mb-8">OUR Mission</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+          <div class="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-sm">
+            <img src={mission1.src} alt="Foster interactive and innovative teaching approaches" class="w-32 h-32 mb-4" />
+            <p class="text-black text-base sm:text-lg leading-relaxed">
+              Foster interactive and innovative teaching approaches for students and professionals to deepen our understanding of sustainability.
+            </p>
           </div>
-          <p class="text-gray-700 leading-relaxed">
-            Foster interactive and innovative teaching approaches for students
-            and professionals to deepen our understanding of sustainability.
-          </p>
-        </div>
-
-        <!-- Mission Item 2 -->
-        <div
-          class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition-shadow"
-        >
-          <div class="flex justify-center mb-6">
-            <img
-              src="#"
-              alt="Interdisciplinary research icon"
-              class="w-24 h-24 object-contain"
-            />
+          <div class="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-sm">
+            <img src={mission2.src} alt="Drive integrated, interdisciplinary research" class="w-32 h-32 mb-4" />
+            <p class="text-black text-base sm:text-lg leading-relaxed">
+              Drive integrated, interdisciplinary research on sustainability in areas such as climate change, decarbonization, sustainable settlements, and behavioral change.
+            </p>
           </div>
-          <p class="text-gray-700 leading-relaxed">
-            Drive integrated, interdisciplinary research on sustainability in
-            areas such as climate change, decarbonization, sustainable
-            settlements, and behavioral change.
-          </p>
-        </div>
-
-        <!-- Mission Item 3 -->
-        <div
-          class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition-shadow md:col-span-2 lg:col-span-1"
-        >
-          <div class="flex justify-center mb-6">
-            <img
-              src="#"
-              alt="Impactful change icon"
-              class="w-24 h-24 object-contain"
-            />
+          <div class="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-sm">
+            <img src={mission3.src} alt="Create impactful change" class="w-32 h-32 mb-4" />
+            <p class="text-black text-base sm:text-lg leading-relaxed">
+              Create impactful change by collaborating with industry, engaging in policy dialogues, and helping implement solutions on the ground.
+            </p>
           </div>
-          <p class="text-gray-700 leading-relaxed">
-            Create impactful change by collaborating with industry, engaging in
-            policy dialogues, and helping implement solutions on the ground.
-          </p>
         </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Newsletter Section -->
-  <Newletter />
-  <Footer />
+      </section>
+    </main>
+    <Newletter />
+  </div>
 </Layout>
