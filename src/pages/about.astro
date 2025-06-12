@@ -11,6 +11,7 @@ import ourmission from "../assets/our mission BG img (1).png";
 import Newletter from "../components/Newletter.astro";
 ---
 
+<<<<<<< Updated upstream
 <Layout title="About Us">
   <!-- Full-width Hero Image -->
   <div class="relative">
@@ -66,4 +67,110 @@ import Newletter from "../components/Newletter.astro";
     </main>
     <Newletter />
   </div>
+=======
+<Layout>
+  <Navbar />
+
+  <!-- Full-width Hero Image -->
+  <div class="relative">
+    <img src={aboutcover.src} class="w-full" alt="About Cover" />
+  </div>
+
+  <!-- Section Navigation Links -->
+  <div class="text-white py-10">
+    <div
+      class="flex justify-center items-center gap-8 text-[#3DAA6F] font-semibold"
+    >
+      <div>WHO WE ARE</div>
+      <div>|</div>
+      <div>OUR VISION</div>
+      <div>|</div>
+      <div>OUR MISSION</div>
+    </div>
+  </div>
+
+  <!-- Wrapped main content inside 80% width container -->
+  <div class="w-[90%] sm:w-[85%]  justify-center lg:w-[80%] mx-auto">
+    <main>
+      <!-- WHO WE ARE Section -->
+      <div class="relative w-[80%] items-center left-27">
+        <div class="flex justify-end items-center">
+          <img src={ourmission.src} class="" />
+        </div>
+        <div
+          class="absolute top-1/3 [@media(min-width:1400px)]:left-[0px] left-[-85px] text-[32px] font-[700]"
+        >
+          WHO <span class="text-white">WE ARE</span>
+        </div>
+        <div
+          class="absolute top-[28px] [@media(min-width:1400px)]:left-[800px] left-[400px] text-white text-[18px]"
+        >
+          The School of Sustainability at IIT Madras is a hub for
+          interdisciplinary learning and research. We bring together experts,
+          students, and communities to address complex environmental challenges.
+          Our focus lies in integrating technology, policy, and societal
+          perspectives for sustainable solutions. Through education,
+          collaboration, and innovation, we aim to shape responsible future
+          leaders. We believe sustainability is not a subject—it's a way of
+          thinking, living, and progressing.
+        </div>
+      </div>
+
+      <!-- OUR VISION Section -->
+      <div class="relative w-[80%] left-27 mt-8">
+        <!-- Background Image -->
+        <div class="relative">
+          <img src={ourmission.src} class="w-full" />
+
+          <!-- OUR VISION Heading aligned to right -->
+          <div
+            class="absolute top-[110px] itebottom-4 right-[-115px] text-[32px] font-bold text-white"
+          >
+            <span class="text-white">OUR </span><span class="text-black"
+              >VISION</span
+            >
+          </div>
+        </div>
+
+        <!-- Paragraph Content -->
+        <div
+          class="absolute top-[50px] [@media(min-width:1400px)]:left-[30px] left-[20px] max-w-[55%] text-white text-[18px] leading-relaxed"
+        >
+          The school’s vision is to be the go-to place for policymakers and
+          researchers for an understanding of sustainability related
+          technologies and policy implications. The school aims to be recognized
+          as a leader for sustainability teaching and research in the global
+          south.
+        </div>
+      </div>
+
+      <!-- OUR MISSION Section -->
+      <div class="relative w-[80%] left-27 items-center mt-8">
+        <div class="flex justify-end items-center">
+          <img src={ourmission.src} class="" />
+        </div>
+        <div
+          class="absolute top-1/3 [@media(min-width:1400px)]:left-[0px] left-[-72px] text-[32px] font-[700]"
+        >
+          OUR <span class="text-white">MISSION</span>
+        </div>
+        <div
+          class="absolute top-[30px] [@media(min-width:1400px)]:left-[800px] left-[400px] text-white text-[18px]"
+        >
+          Foster interactive and innovative teaching approaches for students and
+          professionals to deepen our understanding of sustainability. Drive
+          integrated, interdisciplinary research on sustainability in areas such
+          as climate change, decarbonization, sustainable settlements, and
+          behavioral change. Create impactful change by collaborating with
+          industry, engaging in policy dialogues, and helping implement
+          solutions on the ground.
+        </div>
+      </div>
+      
+    </main>
+    <br />
+  <Newletter />
+  </div>
+
+>>>>>>> Stashed changes
 </Layout>
