@@ -10,6 +10,28 @@ import imageUrl from "../assets/logo_sos-removebg-preview.webp";
   .transition-navbar {
     transition: all 0.3s ease-in-out;
   }
+  /* Ensure dropdown appears above other content */
+  .dropdown-menu {
+            z-index: 9999 !important;
+        }
+        
+        /* Fix text colors in dropdown */
+        .dropdown-menu a {
+            color: #374151 !important; /* gray-700 */
+        }
+        
+        .dropdown-menu a:hover {
+            background-color: #f3f4f6 !important; /* gray-100 */
+        }
+        
+        /* Ensure dropdown button arrow rotates */
+        .dropdown-arrow {
+            transition: transform 0.2s ease;
+        }
+        
+        .dropdown-open .dropdown-arrow {
+            transform: rotate(180deg);
+        }
 </style>
 
 <nav
@@ -46,69 +68,26 @@ import imageUrl from "../assets/logo_sos-removebg-preview.webp";
         class="font-medium flex flex-col p-4 md:p-0 mt-4 xl:flex-row xl:space-x-8 xl:mt-0 text-sm"
       >
         <!-- ABOUT with Dropdown -->
-        <!-- <li class="relative">
+        <li class="relative">
           <button id="about-dropdown-button" class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600 focus:outline-none">
             ABOUT
             <svg class="w-3 h-3 inline ml-1" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.585l3.71-4.354a.75.75 0 111.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
             </svg>
           </button>
-          <div id="about-dropdown" class="hidden absolute z-50 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5">
+          <div id="about-dropdown" class="hidden absolute z-50 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-0 ring-black ring-opacity-5">
             <a href="/about" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Who We Are</a>
             <a href="/people" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">People</a>
           </div>
-        </li> -->
+        </li> 
         <!-- ABOUT without Dropdown -->
-
-        <li>
-          <a
-            href="/about"
-            class="navbar-link block py-2 md:p-0 font-semibold text-[16px] hover:text-green-600"
-            >ABOUT</a
-          >
-        </li>
-
         <!-- Other Links -->
-        <li>
-          <a
-            href="/research"
-            class="navbar-link block py-2 md:p-0 font-semibold text-[16px] hover:text-green-600"
-            >RESEARCH</a
-          >
-        </li>
-        <li>
-          <a
-            href="/programs"
-            class="navbar-link block py-2 md:p-0 font-semibold text-[16px] hover:text-green-600"
-            >PROGRAM OFFERED</a
-          >
-        </li>
-        <li>
-          <a
-            href="/outreach"
-            class="navbar-link block py-2 md:p-0 font-semibold text-[16px] hover:text-green-600"
-            >OUTREACH</a
-          >
-        </li>
-        <li>
-          <a
-            href="/knowledgehub"
-            class="navbar-link block py-2 md:p-0 font-semibold text-[16px] hover:text-green-600"
-            >KNOWLEDGE HUB</a
-          >
-        </li>
-        <li>
-          <a
-            href="/knowledgehub"
-            class="navbar-link block py-2 md:p-0 font-semibold text-[16px] hover:text-green-600"
-            >SUSTAINABILITY@IITM</a
-          >
-        </li>
-        <li>
-          <a href="" class="navbar-link block py-2 px-3 md:p-0"
-            ><i class="fas fa-search"></i></a
-          >
-        </li>
+        <li><a href="/research" class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600">RESEARCH</a></li>
+        <li><a href="/programs" class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600">PROGRAM OFFERED</a></li>
+        <li><a href="/outreach" class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600">OUTREACH</a></li>
+        <li><a href="/knowledgehub" class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600">KNOWLEDGE HUB</a></li>
+        <li><a href="/knowledgehub" class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600">SUSTAINABILITY@IITM</a></li>
+        <li><a href="" class="navbar-link block py-2 px-3 md:p-0"><i class="fas fa-search"></i></a></li>
       </ul>
     </div>
   </div>
@@ -129,9 +108,9 @@ import imageUrl from "../assets/logo_sos-removebg-preview.webp";
     });
 
     // ABOUT dropdown toggle
-    aboutBtn?.addEventListener("click", (e) => {
+    aboutBtn?.addEventListener('click', (e) => {
       e.stopPropagation();
-      aboutDropdown?.classList.toggle("hidden");
+      aboutDropdown?.classList.toggle('hidden');
     });
 
     // Close dropdown when clicking outside
