@@ -1,14 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
-
+import Footer from "../components/Footer.astro";
 import "../styles/global.css";
-import mission1 from "../assets/mission1.png";
-import mission2 from "../assets/mission 2.png";
-import mission3 from "../assets/mission3.png";
+import mission1 from "../assets/mission1.svg";
+import mission2 from "../assets/mission 2.svg";
+import mission3 from "../assets/mission3.svg";
 import bg from "../assets/bg.jpg";
-import aboutcover from "../assets/ri_12 1.svg";
-import ourmission from "../assets/our mission BG img (1).png";
+import aboutcover from "../assets/About_images/about_hero.svg";
 import Newletter from "../components/Newletter.astro";
 ---
 
@@ -18,7 +17,7 @@ import Newletter from "../components/Newletter.astro";
   <!-- Hero Section -->
   <section class="relative">
     <img
-      src={abouthero.src}
+      src={aboutcover.src}
       alt="About the School of Sustainability at IIT Madras"
       class="w-full h-full sm:h-full lg:h-full object-cover"
     />
@@ -73,7 +72,7 @@ import Newletter from "../components/Newletter.astro";
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <div class="order-2 lg:order-1">
           <img
-            src="#"
+            src={bg.src}
             alt="Vision for sustainable future"
             class="w-full h-64 lg:h-80 object-cover rounded-lg shadow-lg"
           />
@@ -98,26 +97,27 @@ import Newletter from "../components/Newletter.astro";
         <h2 class="text-3xl sm:text-4xl font-bold text-black mb-8">OUR Mission</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
           <div class="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-sm">
-            <img src={mission1.src} alt="Foster interactive and innovative teaching approaches" class="w-32 h-32 mb-4" />
-            <p class="text-black text-base sm:text-lg leading-relaxed">
+            <img src={mission1.src} alt="Foster interactive and innovative teaching approaches" class="w-80 h-80 mb-4" />
+            <!-- <p class="text-black text-base sm:text-lg leading-relaxed">
               Foster interactive and innovative teaching approaches for students and professionals to deepen our understanding of sustainability.
-            </p>
+            </p> -->
           </div>
           <div class="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-sm">
-            <img src={mission2.src} alt="Drive integrated, interdisciplinary research" class="w-32 h-32 mb-4" />
-            <p class="text-black text-base sm:text-lg leading-relaxed">
+            <img src={mission2.src} alt="Drive integrated, interdisciplinary research" class="w-80 h-80 mb-4" />
+            <!-- <p class="text-black text-base sm:text-lg leading-relaxed">
               Drive integrated, interdisciplinary research on sustainability in areas such as climate change, decarbonization, sustainable settlements, and behavioral change.
-            </p>
+            </p> -->
           </div>
           <div class="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-sm">
-            <img src={mission3.src} alt="Create impactful change" class="w-32 h-32 mb-4" />
-            <p class="text-black text-base sm:text-lg leading-relaxed">
+            <img src={mission3.src} alt="Create impactful change" class="w-80 h-80 mb-4" />
+            <!-- <p class="text-black text-base sm:text-lg leading-relaxed">
               Create impactful change by collaborating with industry, engaging in policy dialogues, and helping implement solutions on the ground.
-            </p>
+            </p> -->
           </div>
         </div>
       </section>
     </main>
     <Newletter />
+    <Footer />
   </div>
 </Layout>
