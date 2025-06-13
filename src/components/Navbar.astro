@@ -7,27 +7,24 @@ import imageUrl from "../assets/logo_sos-removebg-preview.webp";
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
-  
   .transition-navbar {
     transition: all 0.3s ease-in-out;
   }
-  
-  /* Dropdown styling with improved z-index and positioning */
+  /* Ensure dropdown appears above other content */
   .dropdown-menu {
     z-index: 9999 !important;
   }
 
+  /* Fix text colors in dropdown */
   .dropdown-menu a {
-    color: #374151 !important;
-    transition: all 0.2s ease-in-out;
+    color: #374151 !important; /* gray-700 */
   }
 
   .dropdown-menu a:hover {
-    background-color: #f3f4f6 !important;
-    color: #059669 !important;
+    background-color: #f3f4f6 !important; /* gray-100 */
   }
 
-  /* Dropdown arrow animation */
+  /* Ensure dropdown button arrow rotates */
   .dropdown-arrow {
     transition: transform 0.2s ease;
   }
@@ -35,331 +32,150 @@ import imageUrl from "../assets/logo_sos-removebg-preview.webp";
   .dropdown-open .dropdown-arrow {
     transform: rotate(180deg);
   }
-
-  /* Mobile menu animations */
-  .mobile-menu-enter {
-    animation: slideDown 0.3s ease-out;
-  }
-
-  .mobile-menu-exit {
-    animation: slideUp 0.3s ease-in;
-  }
-
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slideUp {
-    from {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    to {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-  }
-
-  /* Navbar link hover effects */
-  .navbar-link {
-    position: relative;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .navbar-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background-color: #059669;
-    transition: all 0.3s ease-in-out;
-    transform: translateX(-50%);
-  }
-
-  .navbar-link:hover::after {
-    width: 100%;
-  }
-
-  /* Active link styling */
-  .navbar-link.active {
-    color: #059669 !important;
-  }
-
-  .navbar-link.active::after {
-    width: 100%;
-  }
 </style>
 
 <nav
   id="navbar"
   class={`fixed top-0 left-0 right-0 z-50 w-full transition-navbar ${["/", "/about"].includes(Astro.url.pathname) ? "bg-transparent text-white" : "bg-white text-black shadow-md"}`}
 >
-  <!-- Main Container with centered layout and equal padding -->
-  <div class="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
-    <div class="flex items-center justify-between h-16 lg:h-20">
-      
-      <!-- Logo Section -->
-      <div class="flex-shrink-0">
-        <a href="/" class="flex items-center" aria-label="School of Sustainability Home">
-          <img 
-            src={imageUrl.src} 
-            class="h-12 lg:h-16 w-auto" 
-            alt="School of Sustainability Logo" 
-          />
-        </a>
-      </div>
+  <div
+    class="max-w-screen-3xl flex flex-wrap items-center justify-between mx-auto p-4 lg:p-6 lg:px-20"
+  >
+    <!-- Logo -->
+    <a href="/" class="flex items-center space-x-25">
+      <img src={imageUrl.src} class="h-[60px]" alt="Logo" />
+    </a>
 
-      <!-- Desktop Navigation -->
-      <div class="hidden xl:flex xl:items-center xl:space-x-1">
-        <nav class="flex items-center space-x-1" role="navigation" aria-label="Main navigation">
-          
-          <!-- ABOUT Dropdown -->
-          <div class="relative">
-            <button
-              id="about-dropdown-button"
-              class="navbar-link flex items-center px-4 py-2 font-semibold text-sm tracking-wide hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
-              aria-expanded="false"
-              aria-haspopup="true"
-            >
-              ABOUT
-              <svg
-                class="dropdown-arrow w-4 h-4 ml-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                aria-hidden="true"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.585l3.71-4.354a.75.75 0 111.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </button>
-            
-            <div
-              id="about-dropdown"
-              class="dropdown-menu hidden absolute left-0 mt-2 w-48 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-              role="menu"
-              aria-orientation="vertical"
-            >
-              <div class="py-1">
-                <a
-                  href="/about"
-                  class="block px-4 py-3 text-sm font-medium hover:bg-gray-50 rounded-t-lg"
-                  role="menuitem"
-                >
-                  Who We Are
-                </a>
-                <a
-                  href="/people"
-                  class="block px-4 py-3 text-sm font-medium hover:bg-gray-50 rounded-b-lg"
-                  role="menuitem"
-                >
-                  People
-                </a>
-              </div>
-            </div>
-          </div>
+    <!-- Mobile Toggle Button -->
+    <button
+      id="mobile-menu-button"
+      type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+    >
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"></path>
+      </svg>
+    </button>
 
-          <!-- Regular Navigation Links -->
-          <a
-            href="/research"
-            class="navbar-link px-4 py-2 font-semibold text-sm tracking-wide hover:text-green-600 rounded-md transition-colors duration-200"
-          >
-            RESEARCH
-          </a>
-          
-          <a
-            href="/programs"
-            class="navbar-link px-4 py-2 font-semibold text-sm tracking-wide hover:text-green-600 rounded-md transition-colors duration-200"
-          >
-            PROGRAMS OFFERED
-          </a>
-          
-          <a
-            href="/outreach"
-            class="navbar-link px-4 py-2 font-semibold text-sm tracking-wide hover:text-green-600 rounded-md transition-colors duration-200"
-          >
-            OUTREACH
-          </a>
-          
-          <a
-            href="/knowledgehub"
-            class="navbar-link px-4 py-2 font-semibold text-sm tracking-wide hover:text-green-600 rounded-md transition-colors duration-200"
-          >
-            KNOWLEDGE HUB
-          </a>
-
-          <!-- SUSTAINABILITY@IITM Dropdown -->
-          <div class="relative">
-            <button
-              id="sustainability-dropdown-button"
-              class="navbar-link flex items-center px-4 py-2 font-semibold text-sm tracking-wide hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
-              aria-expanded="false"
-              aria-haspopup="true"
-            >
-              SUSTAINABILITY@IITM
-              <svg
-                class="dropdown-arrow w-4 h-4 ml-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                aria-hidden="true"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.585l3.71-4.354a.75.75 0 111.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </button>
-            
-            <div
-              id="sustainability-dropdown"
-              class="dropdown-menu hidden absolute right-0 mt-2 w-56 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-              role="menu"
-              aria-orientation="vertical"
-            >
-              <div class="py-1">
-                <a
-                  href="/organisation"
-                  class="block px-4 py-3 text-sm font-medium hover:bg-gray-50 rounded-t-lg"
-                  role="menuitem"
-                >
-                  Organisation
-                </a>
-                <a
-                  href="/policies"
-                  class="block px-4 py-3 text-sm font-medium hover:bg-gray-50"
-                  role="menuitem"
-                >
-                  Policies
-                </a>
-                <a
-                  href="/health-wellbeing"
-                  class="block px-4 py-3 text-sm font-medium hover:bg-gray-50 rounded-b-lg"
-                  role="menuitem"
-                >
-                  Health & Wellbeing
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Search Icon -->
+    <!-- Navbar Links -->
+    <div id="navbar-default" class="hidden w-full xl:block xl:w-auto">
+      <ul
+        class="font-medium flex flex-col p-4 md:p-0 mt-4 xl:flex-row xl:space-x-8 xl:mt-0 text-sm"
+      >
+        <!-- ABOUT with Dropdown -->
+        <li class="relative">
           <button
-            class="navbar-link p-2 hover:text-green-600 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-            aria-label="Search"
+            id="about-dropdown-button"
+            class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-green-600 focus:outline-none"
           >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            ABOUT
+            <svg
+              class="w-3 h-3 inline ml-1"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.585l3.71-4.354a.75.75 0 111.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd"></path>
             </svg>
           </button>
-        </nav>
-      </div>
-
-      <!-- Mobile Menu Button -->
-      <div class="xl:hidden">
-        <button
-          id="mobile-menu-button"
-          type="button"
-          class="inline-flex items-center justify-center p-2 w-10 h-10 text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-colors duration-200"
-          aria-controls="mobile-menu"
-          aria-expanded="false"
-          aria-label="Toggle navigation menu"
-        >
-          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Navigation Menu -->
-    <div id="mobile-menu" class="hidden xl:hidden">
-      <div class="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg rounded-lg mt-2">
-        
-        <!-- Mobile ABOUT Section -->
-        <div class="border-b border-gray-200 pb-2 mb-2">
-          <div class="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-            About
+          <div
+            id="about-dropdown"
+            class="hidden absolute z-50 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-0 ring-black ring-opacity-5"
+          >
+            <a
+              href="/about"
+              class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+              >Who We Are</a
+            >
+            <a
+              href="/people"
+              class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+              >People</a
+            >
           </div>
+        </li>
+        <!-- ABOUT without Dropdown -->
+        <!-- Other Links -->
+        <li>
           <a
-            href="/about"
-            class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
+            href="/research"
+            class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-green-600"
+            >RESEARCH</a
           >
-            Who We Are
-          </a>
+        </li>
+        <li>
           <a
-            href="/people"
-            class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
+            href="/programs"
+            class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-green-600"
+            >PROGRAM OFFERED</a
           >
-            People
-          </a>
-        </div>
-
-        <!-- Mobile Regular Links -->
-        <a
-          href="/research"
-          class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
-        >
-          Research
-        </a>
-        
-        <a
-          href="/programs"
-          class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
-        >
-          Programs Offered
-        </a>
-        
-        <a
-          href="/outreach"
-          class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
-        >
-          Outreach
-        </a>
-        
-        <a
-          href="/knowledgehub"
-          class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
-        >
-          Knowledge Hub
-        </a>
-
-        <!-- Mobile Sustainability Section -->
-        <div class="border-t border-gray-200 pt-2 mt-2">
-          <div class="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-            Sustainability@IITM
+        </li>
+        <li>
+          <a
+            href="/outreach"
+            class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-green-600"
+            >OUTREACH</a
+          >
+        </li>
+        <li>
+          <a
+            href="/knowledgehub"
+            class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-green-600"
+            >KNOWLEDGE HUB</a
+          >
+        </li>
+        <li class="relative">
+          <button
+            id="about-dropdown-buttonn"
+            class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-green-600 focus:outline-none"
+          >
+            SUSTAINABILITY@IITM
+            <svg
+              class="w-3 h-3 inline ml-1"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.585l3.71-4.354a.75.75 0 111.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          <div
+            id="about-dropdownn"
+            class="hidden absolute z-50 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-0 ring-black ring-opacity-5"
+          >
+            <a
+              href="/organisation"
+              class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+              >Organisation</a
+            >
+            <a
+              href="/policies"
+              class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+              >Policies</a
+            >
+            <a
+              href="/policies"
+              class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+              >Health & Wellbeing</a
+            >
           </div>
-          <a
-            href="/organisation"
-            class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
+        </li>
+        <!-- <li><a href="/knowledgehub" class="navbar-link block py-2 px-3 md:p-0 font-semibold text-[16px] hover:text-blue-600">SUSTAINABILITY@IITM</a></li> -->
+        <li>
+          <a href="" class="navbar-link block py-2 px-3 md:p-0"
+            ><i class="fas fa-search"></i></a
           >
-            Organisation
-          </a>
-          <a
-            href="/policies"
-            class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
-          >
-            Policies
-          </a>
-          <a
-            href="/health-wellbeing"
-            class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
-          >
-            Health & Wellbeing
-          </a>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
@@ -369,173 +185,68 @@ import imageUrl from "../assets/logo_sos-removebg-preview.webp";
     const navbar = document.getElementById("navbar");
     const links = document.querySelectorAll(".navbar-link");
     const mobileBtn = document.getElementById("mobile-menu-button");
-    const mobileMenu = document.getElementById("mobile-menu");
-    
-    // Dropdown elements
+    const menu = document.getElementById("navbar-default");
     const aboutBtn = document.getElementById("about-dropdown-button");
     const aboutDropdown = document.getElementById("about-dropdown");
-    const sustainabilityBtn = document.getElementById("sustainability-dropdown-button");
-    const sustainabilityDropdown = document.getElementById("sustainability-dropdown");
 
-    // Set active link based on current path
-    function setActiveLink() {
-      const currentPath = window.location.pathname;
-      links.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === currentPath) {
-          link.classList.add('active');
-        }
-      });
-    }
-
-    // Mobile menu toggle with animation
+    const susBtn = document.getElementById("about-dropdown-buttonn");
+    const susDropdown = document.getElementById("about-dropdownn");
+    // Mobile toggle
     mobileBtn?.addEventListener("click", () => {
-      const isHidden = mobileMenu?.classList.contains("hidden");
-      
-      if (isHidden) {
-        mobileMenu?.classList.remove("hidden");
-        mobileMenu?.classList.add("mobile-menu-enter");
-        mobileBtn.setAttribute("aria-expanded", "true");
-      } else {
-        mobileMenu?.classList.add("mobile-menu-exit");
-        setTimeout(() => {
-          mobileMenu?.classList.add("hidden");
-          mobileMenu?.classList.remove("mobile-menu-exit");
-        }, 300);
-        mobileBtn.setAttribute("aria-expanded", "false");
-      }
+      menu?.classList.toggle("hidden");
     });
 
-    // About dropdown toggle
+    // ABOUT dropdown toggle
     aboutBtn?.addEventListener("click", (e) => {
       e.stopPropagation();
-      const isHidden = aboutDropdown?.classList.contains("hidden");
-      
-      // Close other dropdowns
-      sustainabilityDropdown?.classList.add("hidden");
-      sustainabilityBtn?.setAttribute("aria-expanded", "false");
-      sustainabilityBtn?.classList.remove("dropdown-open");
-      
-      // Toggle about dropdown
       aboutDropdown?.classList.toggle("hidden");
-      aboutBtn.setAttribute("aria-expanded", !isHidden ? "true" : "false");
-      aboutBtn.classList.toggle("dropdown-open");
     });
 
-    // Sustainability dropdown toggle
-    sustainabilityBtn?.addEventListener("click", (e) => {
+    susBtn?.addEventListener("click", (e) => {
       e.stopPropagation();
-      const isHidden = sustainabilityDropdown?.classList.contains("hidden");
-      
-      // Close other dropdowns
-      aboutDropdown?.classList.add("hidden");
-      aboutBtn?.setAttribute("aria-expanded", "false");
-      aboutBtn?.classList.remove("dropdown-open");
-      
-      // Toggle sustainability dropdown
-      sustainabilityDropdown?.classList.toggle("hidden");
-      sustainabilityBtn.setAttribute("aria-expanded", !isHidden ? "true" : "false");
-      sustainabilityBtn.classList.toggle("dropdown-open");
+      susDropdown?.classList.toggle("hidden");
     });
-
-    // Close dropdowns when clicking outside
+    // Close dropdown when clicking outside
     document.addEventListener("click", (e) => {
-<<<<<<< HEAD
-      if (!aboutBtn?.contains(e.target) && !aboutDropdown?.contains(e.target)) {
-=======
-      if (!aboutBtn?.contains(e.target as Node) && !aboutDropdown?.contains(e.target as Node)) {
->>>>>>> da8ed7fbf96bb36a91f88585fae97f2069984690
+      if (
+        !aboutBtn?.contains(e.target as Node) &&
+        !aboutDropdown?.contains(e.target as Node)
+      ) {
         aboutDropdown?.classList.add("hidden");
-        aboutBtn?.setAttribute("aria-expanded", "false");
-        aboutBtn?.classList.remove("dropdown-open");
-      }
-      
-      if (!sustainabilityBtn?.contains(e.target) && !sustainabilityDropdown?.contains(e.target)) {
-        sustainabilityDropdown?.classList.add("hidden");
-        sustainabilityBtn?.setAttribute("aria-expanded", "false");
-        sustainabilityBtn?.classList.remove("dropdown-open");
       }
     });
 
-<<<<<<< HEAD
-    // Close mobile menu when clicking on links
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu?.classList.add("hidden");
-        mobileBtn?.setAttribute("aria-expanded", "false");
-      });
-=======
     document.addEventListener("click", (e) => {
-      if (!susBtn?.contains(e.target as Node) && !susDropdown?.contains(e.target as Node)) {
+      if (
+        !susBtn?.contains(e.target as Node) &&
+        !susDropdown?.contains(e.target as Node)
+      ) {
         susDropdown?.classList.add("hidden");
       }
->>>>>>> da8ed7fbf96bb36a91f88585fae97f2069984690
     });
 
-    // Enhanced scroll behavior with throttling
-    let ticking = false;
-    
+    // Scroll color logic
     function updateNavbar() {
       if (!navbar) return;
-      
       const atTop = window.scrollY <= 50;
-      const isTransparentPage = ["/", "/about"].includes(window.location.pathname);
+      const transparent = ["/", "/about"].includes(window.location.pathname);
 
-      if (atTop && isTransparentPage) {
+      if (atTop && transparent) {
         navbar.classList.add("bg-transparent", "text-white");
-        navbar.classList.remove("bg-white", "text-black", "shadow-md", "backdrop-blur-glass");
-        links.forEach((link) => {
-          link.classList.remove("text-black");
-          link.classList.add("text-white");
-        });
+        navbar.classList.remove("bg-white", "text-black", "shadow-md");
+        links.forEach((link) => link.classList.remove("text-black"));
+        links.forEach((link) => link.classList.add("text-white"));
       } else {
         navbar.classList.remove("bg-transparent", "text-white");
         navbar.classList.add("bg-white", "text-black", "shadow-md");
-        links.forEach((link) => {
-          link.classList.remove("text-white");
-          link.classList.add("text-black");
-        });
-      }
-      
-      ticking = false;
-    }
-
-    function requestTick() {
-      if (!ticking) {
-        requestAnimationFrame(updateNavbar);
-        ticking = true;
+        links.forEach((link) => link.classList.remove("text-white"));
+        links.forEach((link) => link.classList.add("text-black"));
       }
     }
 
-    // Initialize
-    setActiveLink();
     updateNavbar();
-    
-    // Event listeners
-    window.addEventListener("scroll", requestTick, { passive: true });
-    window.addEventListener("resize", () => {
-      // Close mobile menu on resize to desktop
-      if (window.innerWidth >= 1280) {
-        mobileMenu?.classList.add("hidden");
-        mobileBtn?.setAttribute("aria-expanded", "false");
-      }
-    });
-
-    // Handle escape key for accessibility
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        // Close all dropdowns and mobile menu
-        aboutDropdown?.classList.add("hidden");
-        sustainabilityDropdown?.classList.add("hidden");
-        mobileMenu?.classList.add("hidden");
-        
-        aboutBtn?.setAttribute("aria-expanded", "false");
-        sustainabilityBtn?.setAttribute("aria-expanded", "false");
-        mobileBtn?.setAttribute("aria-expanded", "false");
-        
-        aboutBtn?.classList.remove("dropdown-open");
-        sustainabilityBtn?.classList.remove("dropdown-open");
-      }
-    });
+    window.addEventListener("scroll", () =>
+      requestAnimationFrame(updateNavbar)
+    );
   });
 </script>
