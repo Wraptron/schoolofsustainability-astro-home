@@ -440,7 +440,11 @@ import imageUrl from "../assets/logo_sos-removebg-preview.webp";
 
     // Close dropdowns when clicking outside
     document.addEventListener("click", (e) => {
+<<<<<<< HEAD
       if (!aboutBtn?.contains(e.target) && !aboutDropdown?.contains(e.target)) {
+=======
+      if (!aboutBtn?.contains(e.target as Node) && !aboutDropdown?.contains(e.target as Node)) {
+>>>>>>> da8ed7fbf96bb36a91f88585fae97f2069984690
         aboutDropdown?.classList.add("hidden");
         aboutBtn?.setAttribute("aria-expanded", "false");
         aboutBtn?.classList.remove("dropdown-open");
@@ -453,12 +457,19 @@ import imageUrl from "../assets/logo_sos-removebg-preview.webp";
       }
     });
 
+<<<<<<< HEAD
     // Close mobile menu when clicking on links
     document.querySelectorAll('#mobile-menu a').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu?.classList.add("hidden");
         mobileBtn?.setAttribute("aria-expanded", "false");
       });
+=======
+    document.addEventListener("click", (e) => {
+      if (!susBtn?.contains(e.target as Node) && !susDropdown?.contains(e.target as Node)) {
+        susDropdown?.classList.add("hidden");
+      }
+>>>>>>> da8ed7fbf96bb36a91f88585fae97f2069984690
     });
 
     // Enhanced scroll behavior with throttling
