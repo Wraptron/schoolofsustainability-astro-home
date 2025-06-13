@@ -6,10 +6,9 @@ interface Props {
   address?: string;
   titleName?: string;
   quickLinks?: Array<{ title: string; href: string }>;
-  policy?: Array<{ title: string; href: string }>;
+  additionalLinks?: Array<{ title: string; href: string }>;
   logoPath?: string;
   logoAlt?: string;
-  Quick?: Array<{ title: string; href: string }>;
 }
 
 const {
@@ -22,7 +21,7 @@ const {
     { title: "Programs Offered", href: "/programs" },
     { title: "Outreach", href: "/outreach" },
   ],
-  Quick = [
+  additionalLinks = [
     { title: "Organization", href: "/organization" },
     { title: "Knowledge Hub", href: "/knowledgehub" },
     { title: "Sustainability @IITM", href: "/sustainability-iitm" },
@@ -35,128 +34,157 @@ const {
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-white w-full">
-  <div
-    class="grid grid-cols-1 md:grid-cols-4 px-4 md:px-8 pt-12 md:pt-24 pb-12 md:pb-20 gap-5"
-  >
-    <!-- Left: Logo and Address -->
-    <div class="md:col-span-3 xl:col-span-2">
-      <h2 class="text-black text-lg md:text-xl flex gap-4 items-center">
-        <img src={logoPath} alt={logoAlt} class="w-16 h-16 md:w-20 md:h-20" />
-        <div>{titleName}</div>
-      </h2>
+<footer class="bg-white border-t border-gray-100">
+  <!-- Main Content Container -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Main Footer Content -->
+    <div class="py-12 lg:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        <!-- Logo and Contact Section -->
+        <div class="lg:col-span-6 xl:col-span-5">
+          <!-- Logo and Title -->
+          <div class="flex items-center gap-4 mb-6">
+            <img
+              src={logoPath}
+              alt={logoAlt}
+              class="w-16 h-16 lg:w-20 lg:h-20 flex-shrink-0"
+            />
+            <h2 class="text-lg lg:text-xl font-semibold text-gray-900">
+              {titleName}
+            </h2>
+          </div>
 
-      <div class="flex items-center space-x-2 mt-4">
-        <svg
-          class="w-6 h-6 text-[#009640]"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
-          ></path>
-        </svg>
-        <a
-          href={`mailto:${email}`}
-          class="text-black text-sm md:text-base font-light hover:text-yellow-300 transition-colors"
-        >
-          {email}
-        </a>
+          <!-- Email -->
+          <div class="flex items-center gap-3 mb-4">
+            <div class="flex-shrink-0">
+              <svg
+                class="w-5 h-5 text-green-600"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                ></path>
+              </svg>
+            </div>
+            <a
+              href={`mailto:${email}`}
+              class="text-gray-700 hover:text-green-600 transition-colors duration-200 text-sm lg:text-base"
+            >
+              {email}
+            </a>
+          </div>
+
+          <!-- Address -->
+          <div class="flex items-start gap-3 mb-6">
+            <div class="flex-shrink-0 mt-0.5">
+              <svg
+                class="w-5 h-5 text-green-600"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                ></path>
+              </svg>
+            </div>
+            <p class="text-gray-700 text-sm lg:text-base leading-relaxed">
+              {address}
+            </p>
+          </div>
+
+          <!-- Social Media Links -->
+          <div class="flex items-center gap-4">
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              class="hover:opacity-75 transition-opacity duration-200"
+            >
+              <img
+                src="/images/linkedin.png"
+                alt="LinkedIn"
+                class="w-10 h-10 lg:w-12 lg:h-12"
+              />
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+              class="hover:opacity-75 transition-opacity duration-200"
+            >
+              <img
+                src="/images/twitter.png"
+                alt="Twitter"
+                class="w-10 h-10 lg:w-12 lg:h-12"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Links Section -->
+        <div class="lg:col-span-6 xl:col-span-7">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
+            <!-- First Quick Links Column -->
+            <div>
+              <h3 class="text-base font-semibold text-gray-900 mb-4">
+                Quick Links
+              </h3>
+              <ul class="space-y-3">
+                {
+                  quickLinks.map((link) => (
+                    <li>
+                      <a
+                        href={link.href}
+                        class="text-gray-600 hover:text-green-600 transition-colors duration-200 text-sm lg:text-base"
+                      >
+                        {link.title}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+
+            <!-- Second Quick Links Column -->
+            <div>
+              <h3 class="text-base font-semibold text-gray-900 mb-4">
+                More Links
+              </h3>
+              <ul class="space-y-3">
+                {
+                  additionalLinks.map((link) => (
+                    <li>
+                      <a
+                        href={link.href}
+                        class="text-gray-600 hover:text-green-600 transition-colors duration-200 text-sm lg:text-base"
+                      >
+                        {link.title}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <div class="flex items-start space-x-2 mt-3">
-        <svg
-          class="w-6 h-6 text-[#009640] mt-1 flex-shrink-0"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-          ></path>
-        </svg>
-        <p class="text-black text-sm md:text-base font-light max-w-sm">
-          {address}
+    <!-- Bottom Copyright Section -->
+    <div class="border-t border-gray-200 py-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-500 text-center sm:text-left">
+          &copy; {currentYear} School of Sustainability. All rights reserved.
         </p>
-      </div>
-
-      <!-- Social Icons -->
-      <div
-        class="flex space-x-4 space-y-reverse mt-6 justify-center xl:justify-start xl:mx-8"
-      >
-        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-          <img
-            src="/images/linkedin.png"
-            alt="LinkedIn"
-            class="w-14 h-14 hover:opacity-80 transition-opacity"
-          />
-        </a>
-        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-          <img
-            src="/images/twitter.png"
-            alt="Twitter"
-            class="w-12 h-12 hover:opacity-80 transition-opacity"
-          />
-        </a>
-      </div>
-    </div>
-
-    <!-- Right: Links -->
-    <div
-      class="flex-col xl:flex-row flex md:col-span-1 xl:col-span-2 gap-8 mt-8"
-    >
-      <div class="flex-1">
-        <h4 class="text-xl md:text-base font-bold mb-4 text-black">
-          Quick links
-        </h4>
-        <ul class="space-y-1">
-          {
-            quickLinks.map((link) => (
-              <li>
-                <a
-                  href={link.href}
-                  class="text-black text-sm md:text-base hover:text-[#3DAA6F] hover:underline transition-colors"
-                >
-                  {link.title}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-      <div class="flex-1">
-        <h4 class="text-sm md:text-base font-bold mb-4 text-black">
-          Quick links
-        </h4>
-        <ul class="space-y-1">
-          {
-            Quick.map((link) => (
-              <li>
-                <a
-                  href={link.href}
-                  class="text-black text-sm md:text-base hover:text-[#3DAA6F] hover:underline transition-colors"
-                >
-                  {link.title}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bottom -->
-  <div class="border-t border-zinc-800 py-6">
-    <div class="px-4 md:px-16 flex flex-col md:flex-row items-center gap-4">
-      <div
-        class="text-xs md:text-sm text-zinc-400 flex-1 text-center md:text-left"
-      >
-        &copy; {currentYear} School of Sustainability, All rights reserved
-      </div>
-      <div
-        class="text-xs md:text-sm text-zinc-400 flex-1 text-center md:text-right"
-      >
-        Made with <span class="text-red-500">&hearts;</span> in India
+        <p class="text-sm text-gray-500 text-center sm:text-right">
+          Made with <span class="text-red-500" aria-label="love">&hearts;</span>
+          in India
+        </p>
       </div>
     </div>
   </div>

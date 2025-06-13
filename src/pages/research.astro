@@ -9,6 +9,7 @@ import projectcover from "../assets/wind-farms-fields 1.svg";
 import projectcovercover from "../assets/abstract-creative-3d-sphere-with-vegetation 1.svg";
 import projectbackgrond from "../assets/reseach_images/research.jpg";
 import Newletter from "@/components/Newletter.astro";
+import Footer from "@/components/Footer.astro";
 ---
 
 <Layout title="School of Sustainability">
@@ -17,13 +18,13 @@ import Newletter from "@/components/Newletter.astro";
     <img
       src={cover.src}
       alt="School of Sustainability IIT Madras"
-      class="w-full h-full sm:h-[60vh] md:h-[50vh] lg:h-[80vh] object-cover"
+      class="w-full h-full sm:h-[100vh] md:h-[100vh] lg:h-[100vh] object-cover mt-15"
       loading="eager"
     />
     <div
-      class="absolute left-4 sm:left-8 lg:left-12 xl:left-16 bottom-[-10px] sm:bottom-[-20px] lg:bottom-[-30px] xl:bottom-[-30px] bg-[#009640] backdrop-blur-sm bg-opacity-95 p-4 sm:p-6 lg:p-8 w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] lg:w-2/3 xl:w-1/2 rounded-md shadow-lg z-10"
+      class="absolute left-4 sm:left-8 lg:left-12 xl:left-16 bottom-[-10px] sm:bottom-[-20px] lg:bottom-[-30px] xl:bottom-[-30px] bg-[#032A03] backdrop-blur-sm bg-opacity-95 p-4 sm:p-6 lg:p-8 w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] lg:w-2/3 xl:w-1/2 rounded-md shadow-lg z-10"
     >
-      <p class="text-base sm:text-lg lg:text-xl text-gray-900 leading-relaxed">
+      <p class="text-base sm:text-lg lg:text-xl text-white leading-relaxed p-5 rounded-md">
         Driving innovation for a sustainable future—our research empowers communities, informs policy, and creates solutions for the world's most pressing environmental and social challenges
       </p>
     </div>
@@ -31,7 +32,7 @@ import Newletter from "@/components/Newletter.astro";
   </section>
 
   <!-- Navigation Links -->
-  <nav class="mt-8 sm:mt-12 md:mt-16 lg:mt-20">
+  <nav class="mt-8  mb-8  sm:mb-12 md:mb-16 sm:mt-12 md:mt-16 lg:mt-20">
     <div
       class="container mx-auto flex flex-wrap justify-center items-center gap-3 sm:gap-5 text-base sm:text-lg md:text-xl text-[#3DAA6F]"
     >
@@ -233,5 +234,5 @@ import Newletter from "@/components/Newletter.astro";
 
   <br />
   <Newletter />
-  
+  <Footer />
 </Layout>

@@ -29,7 +29,7 @@ import Newletter from "../components/Newletter.astro";
         <img
           src={andrew.src}
           alt="Hero Image showcasing outreach activities"
-          class="w-full h-[200] object-cover mt-5"
+          class="w-full h-full sm:h-[100vh] md:h-[100vh] lg:h-[100vh] object-cover mt-15"
         />
         <div class="absolute inset-0 bg-opacity-40"></div>
         <div
@@ -320,12 +320,11 @@ import Newletter from "../components/Newletter.astro";
               <p
                 class="mb-6 text-gray-700 text-base sm:text-lg leading-relaxed group-hover:text-gray-900 transition-colors"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-                commodo ligula eget dolor.
+                Electronic kits distribution
               </p>
               <div class="text-center">
                 <button
-                  class="bg-green-600 hover:bg-green-700 text-white px-8 py-2 rounded-full transition-all duration-200 font-medium hover:scale-105 hover:shadow-lg"
+                  class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
                 >
                   Learn More
                 </button>
@@ -348,12 +347,11 @@ import Newletter from "../components/Newletter.astro";
               <p
                 class="mb-6 text-gray-700 text-base sm:text-lg leading-relaxed group-hover:text-gray-900 transition-colors"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-                commodo ligula eget dolor.
+                Rural Technology Centres/ Rural Interaction Centres
               </p>
               <div class="text-center">
                 <button
-                  class="bg-green-600 hover:bg-green-700 text-white px-8 py-2 rounded-full transition-all duration-200 font-medium hover:scale-105 hover:shadow-lg"
+                  class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
                 >
                   Learn More
                 </button>
@@ -412,6 +410,7 @@ import Newletter from "../components/Newletter.astro";
 
     <!-- Contact & Newsletter Section -->
     <Newletter />
+    <Footer />
   </main>
 </Layout>
 
