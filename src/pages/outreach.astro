@@ -7,8 +7,8 @@ import Home from "../components/Home.astro";
 import "../styles/global.css";
 
 // Import assets
-import naturesvg from "../assets/nature.svg";
-import naturesvg2 from "../assets/renewable.svg";
+import naturesvg from "../assets/outreach_images/resource.webp";
+import naturesvg2 from "../assets/outreach_images/outreach_event.webp";
 import naturesvg3 from "../assets/Copy of EE Instrumentation Facility Visit 1 1.svg";
 import indu from "../assets/Indu Photos 1.svg";
 import kamaimage from "../assets/WhatsApp Image 2025-05-05 at 21.43.22_281d4de7.jpg";
@@ -25,21 +25,31 @@ import Newletter from "../components/Newletter.astro";
   <main class="overflow-x-hidden">
     <!-- Hero Section -->
     <section class="relative">
-      <div class="relative w-full h-64 sm:h-80 md:h-96">
-        <img
-          src={andrew.src}
-          alt="Hero Image showcasing outreach activities"
-          class="w-full h-full sm:h-[100vh] md:h-[100vh] lg:h-[100vh] object-cover mt-15"
-        />
-        <div class="absolute inset-0 bg-opacity-40"></div>
+      <div class="relative w-full">
+        <!-- Responsive Image Container -->
         <div
-          class="absolute top-1/2 left-4 sm:left-6 md:left-8 transform -translate-y-1/2 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl"
+          class="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[85vh]"
         >
-          <h1
-            class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight"
+          <img
+            src={andrew.src}
+            alt="Hero Image showcasing outreach activities"
+            class="w-full h-full object-cover"
+            loading="eager"
+          />
+          <!-- Dark Overlay for Better Text Readability -->
+          <div class="absolute inset-0 bg-opacity-30"></div>
+        </div>
+
+        <!-- Text Overlay - Positioned at Bottom Left -->
+        <div
+          class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-8 md:left-8 lg:bottom-10 lg:left-10 z-10"
+        >
+          <h2
+            class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight drop-shadow-lg"
           >
-            Engaging minds. Empowering change.
-          </h1>
+            <span class="block">Engaging minds.</span>
+            <span class="block">Empowering change.</span>
+          </h2>
         </div>
       </div>
     </section>
@@ -52,7 +62,7 @@ import Newletter from "../components/Newletter.astro";
           aria-label="Page sections"
         >
           <div
-            class="flex items-center gap-2 sm:gap-4 text-base sm:text-lg md:text-xl"
+            class="flex items-center gap-2 sm:gap-4 text-base sm:text-lg md:text-xl mt-3"
           >
             <a
               href="#events"
@@ -412,7 +422,6 @@ import Newletter from "../components/Newletter.astro";
     <Newletter />
     <Footer />
   </main>
-  <Footer />
 </Layout>
 
 <style>
