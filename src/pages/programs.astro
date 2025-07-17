@@ -7,55 +7,75 @@ import cert1 from "../assets/front-view-woman-holding-tablet-hand-looking-aside 
 import Santosh from "../assets/Santosh Photos 1.svg";
 import sstownhall from "../assets/SS Townhall  1.svg";
 import "../styles/global.css";
-import Newletter from "@/components/Newletter.astro";
-import Footer from "@/components/Footer.astro";
+import Newsletter from "../components/Newletter.astro";
+import Footer from "../components/Footer.astro";
+
+// SEO and meta data
+const pageTitle = "Our Programs - School of Sustainability";
+const pageDescription =
+  "Explore our comprehensive sustainability programs including certificate courses, degree programs, and postgraduate options at IIT Madras School of Sustainability.";
 ---
 
-<Layout title="School of Sustainability">
+<Layout title={pageTitle} description={pageDescription}>
   <main>
     <!-- Hero Section -->
-    <section class="relative pt-20">
-      <img
-        src={andrew.src}
-        alt="Andrew Forrest speaking at an event"
-        class="w-full h-[40vh] sm:h-[50vh] md:h-[60vh] object-cover"
-      />
-      <div
-        class="absolute inset-0 bg-black/40 flex items-center justify-center"
-      >
-        <h1
-          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold text-center px-4"
+    <section class="relative pt-20" aria-labelledby="hero-heading">
+      <div class="relative">
+        <img
+          src={andrew.src}
+          alt="Andrew Forrest speaking at sustainability event"
+          class="w-full h-[40vh] sm:h-[50vh] md:h-[60vh] object-cover"
+          loading="eager"
+          decoding="async"
+        />
+        <div
+          class="absolute inset-0 bg-black/40 flex items-center justify-center"
         >
-          Our Programs
-        </h1>
+          <h1
+            id="hero-heading"
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold text-center px-4 drop-shadow-lg"
+          >
+            Our Programs
+          </h1>
+        </div>
       </div>
     </section>
 
     <!-- Main Content -->
-    <section class="py-8 sm:py-12 md:py-16">
-      <div class="container mx-auto">
+    <section class="py-8 sm:py-12 md:py-16" aria-labelledby="main-content">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Tab Navigation -->
         <nav
           class="flex flex-wrap justify-center items-center gap-4 mb-8 sm:mb-12"
+          aria-label="Program categories"
         >
           <a
             href="#certificate-section"
-            class="text-green-500 font-medium text-lg sm:text-xl hover:text-green-600 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-3 py-2"
+            class="text-green-600 font-medium text-lg sm:text-xl hover:text-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md px-3 py-2"
+            aria-describedby="certificate-description"
           >
             Certificate Courses
           </a>
-          <span class="text-gray-400 hidden sm:inline">|</span>
+          <span class="text-gray-400 hidden sm:inline" aria-hidden="true"
+            >|</span
+          >
           <a
             href="#degree-section"
-            class="text-green-500 font-medium text-lg sm:text-xl hover:text-green-600 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded px-3 py-2"
+            class="text-green-600 font-medium text-lg sm:text-xl hover:text-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md px-3 py-2"
+            aria-describedby="degree-description"
           >
             Degree Programs
           </a>
         </nav>
 
         <!-- Certificate Courses Section -->
-        <section id="certificate-section" class="mb-16 sm:mb-20">
+        <section
+          id="certificate-section"
+          class="mb-16 sm:mb-20"
+          aria-labelledby="certificate-heading"
+        >
           <h2
+            id="certificate-heading"
             class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-gray-800 text-center"
           >
             Certificate Courses
@@ -68,8 +88,10 @@ import Footer from "@/components/Footer.astro";
             <div class="order-2 lg:order-1">
               <img
                 src={cert1.src}
-                alt="Woman holding tablet for certificate course"
+                alt="Woman holding tablet representing digital learning for sustainability certificate"
                 class="w-full h-64 sm:h-80 md:h-96 object-cover rounded-lg shadow-md"
+                loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -82,90 +104,98 @@ import Footer from "@/components/Footer.astro";
                 Minor in Sustainability
               </h3>
               <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
-                We offer a Minor in Sustainability to all matriculated
-                undergraduate students of IITM. Availing any 4 out of a basket
-                of ~30 ongoing courses gives students an opportunity to build a
+                We offer a Minor in Sustainability to all undergraduate students
+                of IIT Madras. By completing any 4 courses from our basket of
+                ~30 ongoing courses, students gain the opportunity to build a
                 multidimensional understanding of sustainability by delving
                 deeper into environmental, social, and economic challenges of
-                the day.
+                our time.
               </p>
               <p class="text-sm sm:text-base text-gray-600">
-                Learn "Why is this Minor for you!" at our comprehensive guide.
+                Learn "Why is this Minor for you!" in our comprehensive guide.
               </p>
               <a
                 href="https://sustainability.iitm.ac.in/Minor-in-Sustainability-Final-compressed.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors w-fit font-medium focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 text-sm sm:text-base"
+                class="inline-block border-2 border-green-600 text-gray-800 hover:bg-green-600 hover:text-white font-semibold rounded-lg text-lg px-6 py-3 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                aria-describedby="brochure-description"
               >
                 View Brochure
+                <span class="sr-only"> (opens in new tab)</span>
               </a>
+              <span id="brochure-description" class="sr-only">
+                Download the comprehensive brochure for Minor in Sustainability
+                program
+              </span>
             </div>
           </div>
 
           <!-- Additional Certificate Cards -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
             <article
-              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
               <img
                 src={man.src}
-                alt="Man working with paperwork for ecology course"
+                alt="Professional working with environmental documents and paperwork"
                 class="w-full h-48 sm:h-64 md:h-72 object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div class="p-6 sm:p-8">
-                <h3
-                  class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
-                >
+                <h4 class="text-lg sm:text-xl font-semibold mb-4 text-gray-800">
                   ID Core Course: Ecology and Environment
-                </h3>
+                </h4>
                 <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
                   The mandatory undergraduate course "ID1200 Ecology and
-                  Environment" is designed for sensitizing students towards
+                  Environment" is designed to sensitize students towards
                   real-world sustainability scenarios. Offered as a flipped
-                  classroom, this interdisciplinary course covers fundamentals
-                  of sustainability including climate change, ecosystems,
-                  energy, waste, economics, and ethics, as well as applied
-                  aspects like natural resource management and environmental
-                  impact assessment.
+                  classroom, this interdisciplinary course covers the
+                  fundamentals of sustainability (climate change, ecosystems,
+                  energy, waste, economics, and ethics) as well as their applied
+                  aspects (natural resource management, environmental impact
+                  assessment, Life Cycle Analysis).
                 </p>
-                <a
-                  href="https://sustainability.iitm.ac.in/Course-ID1200%20Ecology_and_Environment_SoS_SemesterAgnostic.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-block mt-4 text-green-600 hover:text-green-700 font-medium transition-colors text-sm sm:text-base"
-                >
-                  View Course Details →
-                </a>
               </div>
             </article>
 
             <article
-              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
               <img
                 src={female.src}
-                alt="Female student studying"
+                alt="Female student engaged in sustainability studies"
                 class="w-full h-48 sm:h-64 md:h-72 object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div class="p-6 sm:p-8">
-                <h3
+                <h4
                   class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
                 >
                   Executive Education
-                </h3>
-                <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
-                  Our executive education programs are designed for working
-                  professionals seeking to enhance their understanding of
-                  sustainability practices. These courses provide practical
-                  knowledge and skills applicable to real-world environmental
-                  challenges and sustainable business practices.
+                </h4>
+                <p
+                  class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4"
+                >
+                  A comprehensive 6-week online Certificate Programme that takes
+                  a multidimensional approach to sustainability. Targeted at
+                  mid-career industry professionals, this case study-rich
+                  program helps develop critical knowledge of existing and
+                  upcoming sustainability frameworks and business implications
+                  of India's shifting policy landscape, building confidence and
+                  competence in implementing sustainability within respective
+                  business ecosystems.
                 </p>
                 <a
-                  href="#"
-                  class="inline-block mt-4 text-green-600 hover:text-green-700 font-medium transition-colors text-sm sm:text-base"
+                  href="../assets/Programs/Course - Sustainability for Indian Businesses_3.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block text-green-600 hover:text-green-700 font-medium transition-colors text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
                 >
-                  Learn More →
+                  View Course Details →
+                  <span class="sr-only"> (opens in new tab)</span>
                 </a>
               </div>
             </article>
@@ -173,71 +203,227 @@ import Footer from "@/components/Footer.astro";
         </section>
 
         <!-- Degree Programs Section -->
-        <section id="degree-section" class="mb-16 sm:mb-20">
+        <section
+          id="degree-section"
+          class="mb-16 sm:mb-20"
+          aria-labelledby="degree-heading"
+        >
           <h2
+            id="degree-heading"
             class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-gray-800 text-center"
           >
-            Degree Programs
+            Postgraduate Programs
           </h2>
+          <p class="text-center text-gray-700 mb-10 max-w-4xl mx-auto">
+            IIT Madras offers several postgraduate programs in the area of
+            sustainability. These programs are designed to develop expertise in
+            various aspects of sustainable development and environmental
+            management.
+          </p>
 
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
             <article
-              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
               <img
                 src={Santosh.src}
-                alt="Santosh - Degree Program"
+                alt="Santosh presenting at sustainability program"
                 class="w-full h-48 sm:h-64 md:h-72 object-cover"
+                loading="lazy"
+                decoding="async"
               />
-              <div class="p-6 sm:p-8">
-                <h3
-                  class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
-                >
-                  Master's in Sustainability
-                </h3>
-                <p
-                  class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4"
-                >
-                  Comprehensive graduate program focusing on advanced
-                  sustainability concepts, research methodologies, and practical
-                  applications in various industries.
-                </p>
-                <a
-                  href="#"
-                  class="text-green-600 hover:text-green-700 font-medium transition-colors underline text-sm sm:text-base"
-                >
-                  Program Details and Application Information
-                </a>
+              <div class="p-6 sm:p-8 space-y-6">
+                <div>
+                  <h3
+                    class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
+                  >
+                    Environmental Engineering
+                  </h3>
+                  <p
+                    class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4"
+                  >
+                    IIT Madras offers a 2-year M.Tech program, M.S (Masters by
+                    Research), and PhD program in environmental engineering.
+                    Students are exposed to concepts related to water
+                    conservation, air quality, waste management, and
+                    circularity.
+                  </p>
+                  <a
+                    href="https://civil.iitm.ac.in/ee/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-green-600 hover:text-green-700 font-medium transition-colors underline text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                  >
+                    Program Details and Application Information
+                    <span class="sr-only"> (opens in new tab)</span>
+                  </a>
+                </div>
+
+                <div>
+                  <h3
+                    class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
+                  >
+                    Hydraulics and Water Resources Engineering
+                  </h3>
+                  <p
+                    class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4"
+                  >
+                    IIT Madras offers a 2-year M.Tech program, M.S (Masters by
+                    Research), and PhD program in Hydraulics and Water Resources
+                    Engineering. Students are exposed to hydrology, water
+                    resources management, hydraulic engineering, flood
+                    management, and disaster mitigation.
+                  </p>
+                  <a
+                    href="https://civil.iitm.ac.in/hwre/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-green-600 hover:text-green-700 font-medium transition-colors underline text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                  >
+                    Program Details and Application Information
+                    <span class="sr-only"> (opens in new tab)</span>
+                  </a>
+                </div>
+
+                <div>
+                  <h3
+                    class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
+                  >
+                    Energy Systems
+                  </h3>
+                  <p
+                    class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4"
+                  >
+                    IIT Madras offers an Interdisciplinary Dual Degree Programme
+                    in Energy Systems. Undergraduate students with minimum
+                    academic performance can apply in their fifth semester. The
+                    program covers Thermal Energy Conversion, Renewable Energy
+                    Technology, Materials for Energy Storage and Conversion, and
+                    Energy Economics.
+                  </p>
+                  <a
+                    href="https://ioe.iitm.ac.in/program/energy-systems/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-green-600 hover:text-green-700 font-medium transition-colors underline text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                  >
+                    Program Details and Application Information
+                    <span class="sr-only"> (opens in new tab)</span>
+                  </a>
+                </div>
+
+                <div>
+                  <h3
+                    class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
+                  >
+                    Atmospheric and Climate Sciences
+                  </h3>
+                  <p
+                    class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4"
+                  >
+                    IIT Madras offers an Interdisciplinary Dual Degree program
+                    in Atmospheric and Climate Sciences. This program provides
+                    detailed understanding of atmospheric processes and
+                    interactions from molecular to global scale, improving
+                    knowledge about climate change.
+                  </p>
+                  <a
+                    href="https://cacs.iitm.ac.in/programs-iddd.php"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-green-600 hover:text-green-700 font-medium transition-colors underline text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                  >
+                    Program Details and Application Information
+                    <span class="sr-only"> (opens in new tab)</span>
+                  </a>
+                </div>
+
+                <div>
+                  <h3
+                    class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
+                  >
+                    ABCD Program
+                  </h3>
+                  <p
+                    class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4"
+                  >
+                    IIT Madras, in collaboration with RWTH Aachen, AIT Bangkok,
+                    and TU Dresden, offers a joint Master's program on Water
+                    Security and Global Change. This program provides an
+                    integrated approach to water security, with 4 of the 11 core
+                    courses offered by IIT Madras.
+                  </p>
+                  <a
+                    href="https://abcd-centre.org/master-program/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-green-600 hover:text-green-700 font-medium transition-colors underline text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                  >
+                    Program Details and Application Information
+                    <span class="sr-only"> (opens in new tab)</span>
+                  </a>
+                </div>
               </div>
             </article>
 
             <article
-              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
               <img
                 src={sstownhall.src}
-                alt="Sustainability Town Hall"
+                alt="Sustainability town hall meeting with students and faculty"
                 class="w-full h-48 sm:h-64 md:h-72 object-cover"
+                loading="lazy"
+                decoding="async"
               />
-              <div class="p-6 sm:p-8">
-                <h3
-                  class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
-                >
-                  PhD in Sustainability Sciences
-                </h3>
-                <p
-                  class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4"
-                >
-                  Advanced doctoral program for researchers interested in
-                  contributing to sustainability science through original
-                  research and innovation.
-                </p>
-                <a
-                  href="#"
-                  class="text-green-600 hover:text-green-700 font-medium transition-colors underline text-sm sm:text-base"
-                >
-                  Research Areas and Admission Requirements
-                </a>
+              <div class="p-6 sm:p-8 space-y-6">
+                <div>
+                  <h3
+                    class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
+                  >
+                    PhD in Sustainability Sciences
+                  </h3>
+                  <p
+                    class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4"
+                  >
+                    Advanced doctoral program for researchers interested in
+                    contributing to sustainability science through original
+                    research and innovation. This program focuses on
+                    interdisciplinary approaches to solving complex
+                    sustainability challenges.
+                  </p>
+                  <a
+                    href="#"
+                    class="text-green-600 hover:text-green-700 font-medium transition-colors underline text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                  >
+                    Research Areas and Admission Requirements
+                  </a>
+                </div>
+
+                <div>
+                  <h3
+                    class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
+                  >
+                    Ethics Courses
+                  </h3>
+                  <p
+                    class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4"
+                  >
+                    Comprehensive ethics curriculum integrated into our
+                    sustainability programs, addressing moral and ethical
+                    dimensions of environmental and social challenges in
+                    contemporary society.
+                  </p>
+                  <a
+                    href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQWikidQZfQQOuuX9NWw4QvwGz1UdWMrjezPqxdveaiyKTAW2VM7PJxSUOF-0iCON8nBTtmKZLRC1gt/pubhtml?gid=488988286&single=true"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-green-600 hover:text-green-700 font-medium transition-colors underline text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                  >
+                    Course Details and Requirements
+                    <span class="sr-only"> (opens in new tab)</span>
+                  </a>
+                </div>
               </div>
             </article>
           </div>
@@ -245,12 +431,37 @@ import Footer from "@/components/Footer.astro";
       </div>
     </section>
   </main>
-  <Newletter />
+
+  <Newsletter />
+  <Footer />
 
   <style>
     html {
       scroll-behavior: smooth;
     }
+
+    /* Enhanced focus styles for better accessibility */
+    .focus-visible {
+      outline: 2px solid #10b981;
+      outline-offset: 2px;
+    }
+
+    /* Custom scrollbar for better UX */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #10b981;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #059669;
+    }
   </style>
 </Layout>
-<Footer />
