@@ -214,216 +214,363 @@ const pageDescription =
           >
             Postgraduate Programs
           </h2>
-          <p class="text-center text-gray-700 mb-10 max-w-4xl mx-auto">
+          <p
+            class="text-center text-gray-700 mb-10 max-w-4xl mx-auto text-base sm:text-lg"
+          >
             IIT Madras offers several postgraduate programs in the area of
             sustainability. These programs are designed to develop expertise in
             various aspects of sustainable development and environmental
             management.
           </p>
 
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+          <!-- First Row: Environmental Engineering & Hydraulics -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mb-8 sm:mb-12"
+          >
+            <!-- Environmental Engineering -->
             <article
-              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
-              <img
-                src={Santosh.src}
-                alt="Santosh presenting at sustainability program"
-                class="w-full h-48 sm:h-64 md:h-72 object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="p-6 sm:p-8 space-y-6">
-                <div>
-                  <h3
-                    class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
-                  >
-                    Environmental Engineering
-                  </h3>
-                  <p
-                    class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4"
-                  >
-                    IIT Madras offers a 2-year M.Tech program, M.S (Masters by
-                    Research), and PhD program in environmental engineering.
-                    Students are exposed to concepts related to water
-                    conservation, air quality, waste management, and
-                    circularity.
-                  </p>
-                  <a
-                    href="https://civil.iitm.ac.in/ee/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-green-600 hover:text-green-700 font-medium transition-colors underline text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
-                  >
-                    Program Details and Application Information
-                    <span class="sr-only"> (opens in new tab)</span>
-                  </a>
+              <div class="relative overflow-hidden">
+                <!-- <img
+                  src={EnvironmentalEngImg.src}
+                  alt="Environmental Engineering laboratory and research facilities"
+                  class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                /> -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+                >
                 </div>
-
-                <div>
-                  <h3
-                    class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
+              </div>
+              <div class="p-6 sm:p-8">
+                <h3
+                  class="text-xl sm:text-2xl font-bold mb-4 text-gray-800 leading-tight"
+                >
+                  Environmental Engineering
+                </h3>
+                <p
+                  class="text-base sm:text-lg text-gray-700 leading-relaxed mb-6"
+                >
+                  IIT Madras offers a 2-year M.Tech program, M.S (Masters by
+                  Research), and PhD program in environmental engineering.
+                  Students are exposed to concepts related to water
+                  conservation, air quality, waste management, and circularity.
+                </p>
+                <a
+                  href="https://civil.iitm.ac.in/ee/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-4 hover:decoration-green-700 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                >
+                  Program Details and Application Information
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    Hydraulics and Water Resources Engineering
-                  </h3>
-                  <p
-                    class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4"
-                  >
-                    IIT Madras offers a 2-year M.Tech program, M.S (Masters by
-                    Research), and PhD program in Hydraulics and Water Resources
-                    Engineering. Students are exposed to hydrology, water
-                    resources management, hydraulic engineering, flood
-                    management, and disaster mitigation.
-                  </p>
-                  <a
-                    href="https://civil.iitm.ac.in/hwre/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-green-600 hover:text-green-700 font-medium transition-colors underline text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
-                  >
-                    Program Details and Application Information
-                    <span class="sr-only"> (opens in new tab)</span>
-                  </a>
-                </div>
-
-                <div>
-                  <h3
-                    class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
-                  >
-                    Energy Systems
-                  </h3>
-                  <p
-                    class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4"
-                  >
-                    IIT Madras offers an Interdisciplinary Dual Degree Programme
-                    in Energy Systems. Undergraduate students with minimum
-                    academic performance can apply in their fifth semester. The
-                    program covers Thermal Energy Conversion, Renewable Energy
-                    Technology, Materials for Energy Storage and Conversion, and
-                    Energy Economics.
-                  </p>
-                  <a
-                    href="https://ioe.iitm.ac.in/program/energy-systems/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-green-600 hover:text-green-700 font-medium transition-colors underline text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
-                  >
-                    Program Details and Application Information
-                    <span class="sr-only"> (opens in new tab)</span>
-                  </a>
-                </div>
-
-                <div>
-                  <h3
-                    class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
-                  >
-                    Atmospheric and Climate Sciences
-                  </h3>
-                  <p
-                    class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4"
-                  >
-                    IIT Madras offers an Interdisciplinary Dual Degree program
-                    in Atmospheric and Climate Sciences. This program provides
-                    detailed understanding of atmospheric processes and
-                    interactions from molecular to global scale, improving
-                    knowledge about climate change.
-                  </p>
-                  <a
-                    href="https://cacs.iitm.ac.in/programs-iddd.php"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-green-600 hover:text-green-700 font-medium transition-colors underline text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
-                  >
-                    Program Details and Application Information
-                    <span class="sr-only"> (opens in new tab)</span>
-                  </a>
-                </div>
-
-                <div>
-                  <h3
-                    class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
-                  >
-                    ABCD Program
-                  </h3>
-                  <p
-                    class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4"
-                  >
-                    IIT Madras, in collaboration with RWTH Aachen, AIT Bangkok,
-                    and TU Dresden, offers a joint Master's program on Water
-                    Security and Global Change. This program provides an
-                    integrated approach to water security, with 4 of the 11 core
-                    courses offered by IIT Madras.
-                  </p>
-                  <a
-                    href="https://abcd-centre.org/master-program/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-green-600 hover:text-green-700 font-medium transition-colors underline text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
-                  >
-                    Program Details and Application Information
-                    <span class="sr-only"> (opens in new tab)</span>
-                  </a>
-                </div>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                  <span class="sr-only"> (opens in new tab)</span>
+                </a>
               </div>
             </article>
 
+            <!-- Hydraulics and Water Resources Engineering -->
             <article
-              class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
-              <img
-                src={sstownhall.src}
-                alt="Sustainability town hall meeting with students and faculty"
-                class="w-full h-48 sm:h-64 md:h-72 object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="p-6 sm:p-8 space-y-6">
-                <div>
-                  <h3
-                    class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
-                  >
-                    PhD in Sustainability Sciences
-                  </h3>
-                  <p
-                    class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4"
-                  >
-                    Advanced doctoral program for researchers interested in
-                    contributing to sustainability science through original
-                    research and innovation. This program focuses on
-                    interdisciplinary approaches to solving complex
-                    sustainability challenges.
-                  </p>
-                  <a
-                    href="#"
-                    class="text-green-600 hover:text-green-700 font-medium transition-colors underline text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
-                  >
-                    Research Areas and Admission Requirements
-                  </a>
+              <div class="relative overflow-hidden">
+                <!-- <img
+                  src={HydraulicsImg.src}
+                  alt="Hydraulics and water resources engineering projects"
+                  class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                /> -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+                >
                 </div>
+              </div>
+              <div class="p-6 sm:p-8">
+                <h3
+                  class="text-xl sm:text-2xl font-bold mb-4 text-gray-800 leading-tight"
+                >
+                  Hydraulics and Water Resources Engineering
+                </h3>
+                <p
+                  class="text-base sm:text-lg text-gray-700 leading-relaxed mb-6"
+                >
+                  IIT Madras offers a 2-year M.Tech program, M.S (Masters by
+                  Research), and PhD program in Hydraulics and Water Resources
+                  Engineering. Students are exposed to hydrology, water
+                  resources management, hydraulic engineering, flood management,
+                  and disaster mitigation.
+                </p>
+                <a
+                  href="https://civil.iitm.ac.in/hwre/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-4 hover:decoration-green-700 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                >
+                  Program Details and Application Information
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                  <span class="sr-only"> (opens in new tab)</span>
+                </a>
+              </div>
+            </article>
+          </div>
 
-                <div>
-                  <h3
-                    class="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"
-                  >
-                    Ethics Courses
-                  </h3>
-                  <p
-                    class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4"
-                  >
-                    Comprehensive ethics curriculum integrated into our
-                    sustainability programs, addressing moral and ethical
-                    dimensions of environmental and social challenges in
-                    contemporary society.
-                  </p>
-                  <a
-                    href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQWikidQZfQQOuuX9NWw4QvwGz1UdWMrjezPqxdveaiyKTAW2VM7PJxSUOF-0iCON8nBTtmKZLRC1gt/pubhtml?gid=488988286&single=true"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-green-600 hover:text-green-700 font-medium transition-colors underline text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
-                  >
-                    Course Details and Requirements
-                    <span class="sr-only"> (opens in new tab)</span>
-                  </a>
+          <!-- Second Row: Energy Systems & Atmospheric Sciences -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mb-8 sm:mb-12"
+          >
+            <!-- Energy Systems -->
+            <article
+              class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <div class="relative overflow-hidden">
+                <!-- <img
+                  src={EnergySystemsImg.src}
+                  alt="Energy systems and renewable energy technology"
+                  class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                /> -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+                >
                 </div>
+              </div>
+              <div class="p-6 sm:p-8">
+                <h3
+                  class="text-xl sm:text-2xl font-bold mb-4 text-gray-800 leading-tight"
+                >
+                  Energy Systems
+                </h3>
+                <p
+                  class="text-base sm:text-lg text-gray-700 leading-relaxed mb-6"
+                >
+                  IIT Madras offers an Interdisciplinary Dual Degree Programme
+                  in Energy Systems. Undergraduate students with minimum
+                  academic performance can apply in their fifth semester. The
+                  program covers Thermal Energy Conversion, Renewable Energy
+                  Technology, Materials for Energy Storage and Conversion, and
+                  Energy Economics.
+                </p>
+                <a
+                  href="https://ioe.iitm.ac.in/program/energy-systems/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-4 hover:decoration-green-700 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                >
+                  Program Details and Application Information
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                  <span class="sr-only"> (opens in new tab)</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Atmospheric and Climate Sciences -->
+            <article
+              class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <div class="relative overflow-hidden">
+                <!-- <img
+                  src={ClimateImg.src}
+                  alt="Atmospheric and climate sciences research"
+                  class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                /> -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+                >
+                </div>
+              </div>
+              <div class="p-6 sm:p-8">
+                <h3
+                  class="text-xl sm:text-2xl font-bold mb-4 text-gray-800 leading-tight"
+                >
+                  Atmospheric and Climate Sciences
+                </h3>
+                <p
+                  class="text-base sm:text-lg text-gray-700 leading-relaxed mb-6"
+                >
+                  IIT Madras offers an Interdisciplinary Dual Degree program in
+                  Atmospheric and Climate Sciences. This program provides
+                  detailed understanding of atmospheric processes and
+                  interactions from molecular to global scale, improving
+                  knowledge about climate change.
+                </p>
+                <a
+                  href="https://cacs.iitm.ac.in/programs-iddd.php"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-4 hover:decoration-green-700 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                >
+                  Program Details and Application Information
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                  <span class="sr-only"> (opens in new tab)</span>
+                </a>
+              </div>
+            </article>
+            <article
+              class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <div class="relative overflow-hidden">
+                <!-- <img
+                  src={ClimateImg.src}
+                  alt="Atmospheric and climate sciences research"
+                  class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                /> -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+                >
+                </div>
+              </div>
+              <div class="p-6 sm:p-8">
+                <h3
+                  class="text-xl sm:text-2xl font-bold mb-4 text-gray-800 leading-tight"
+                >
+                  Atmospheric and Climate Sciences
+                </h3>
+                <p
+                  class="text-base sm:text-lg text-gray-700 leading-relaxed mb-6"
+                >
+                  IIT Madras offers an Interdisciplinary Dual Degree program in
+                  Atmospheric and Climate Sciences. This program provides
+                  detailed understanding of atmospheric processes and
+                  interactions from molecular to global scale, improving
+                  knowledge about climate change.
+                </p>
+                <a
+                  href="https://cacs.iitm.ac.in/programs-iddd.php"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-4 hover:decoration-green-700 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                >
+                  Program Details and Application Information
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                  <span class="sr-only"> (opens in new tab)</span>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Third Row: ABCD Program (Centered) -->
+          <div class="flex justify-center">
+            <article
+              class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-full max-w-2xl"
+            >
+              <div class="relative overflow-hidden">
+                <!-- <img
+                  src={ABCDImg.src}
+                  alt="ABCD program collaboration between international universities"
+                  class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                /> -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+                >
+                </div>
+              </div>
+              <div class="p-6 sm:p-8">
+                <h3
+                  class="text-xl sm:text-2xl font-bold mb-4 text-gray-800 leading-tight"
+                >
+                  ABCD Program
+                </h3>
+                <p
+                  class="text-base sm:text-lg text-gray-700 leading-relaxed mb-6"
+                >
+                  IIT Madras, in collaboration with RWTH Aachen, AIT Bangkok,
+                  and TU Dresden, offers a joint Master's program on Water
+                  Security and Global Change. This program provides an
+                  integrated approach to water security, with 4 of the 11 core
+                  courses offered by IIT Madras.
+                </p>
+                <a
+                  href="https://abcd-centre.org/master-program/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-4 hover:decoration-green-700 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                >
+                  Program Details and Application Information
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                  <span class="sr-only"> (opens in new tab)</span>
+                </a>
               </div>
             </article>
           </div>

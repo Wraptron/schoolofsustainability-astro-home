@@ -14,6 +14,7 @@ import newsletter from "../assets/Screenshot 2025-05-05 085703 1.svg";
 import publication from "../assets/SfIB Cohort_1 3.svg";
 import kh from "../assets/knowledge hub page 1 image.jpg";
 import Newletter from "@/components/Newletter.astro";
+// import Whitepaper from "../assets/knowledgehub/cxo.pdf";
 
 // Sample data - in a real app, this would come from a CMS or API
 const articles = [
@@ -22,85 +23,122 @@ const articles = [
     image: summit,
     date: "Tuesday, April 1, 2025",
     title: "A Cost Effective Method to Treat Pollutants",
-    excerpt: "Treatment of dye effluents and tannery effluents using advanced processes..."
+    excerpt:
+      "Treatment of dye effluents and tannery effluents using advanced processes...",
   },
   {
     id: 2,
     image: icssrconf,
     date: "Tuesday, April 1, 2025",
     title: "The Right Price",
-    excerpt: "With global climate changes, does a firm lean towards reduced emissions?"
-  }
+    excerpt:
+      "With global climate changes, does a firm lean towards reduced emissions?",
+  },
 ];
 
 const publications = [
   { id: 1, image: publicationcharuta, alt: "Publication by Charuta" },
   { id: 2, image: publicationsantosh, alt: "Publication by Santosh" },
-  { id: 3, image: screenshot, alt: "Research Screenshot" }
+  { id: 3, image: screenshot, alt: "Research Screenshot" },
 ];
 
-const whitepapers = Array(4).fill(0).map((_, index) => ({
-  id: index + 1,
-  title: `White Paper ${index + 1}`,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-}));
+const whitepapers = Array(4)
+  .fill(0)
+  .map((_, index) => [
+    {
+      id: index * 2 + 1,
+      title: `White Paper ${index * 2 + 1}`,
+      description: "Sustainability and Indian Industries: Why? Who? And How?",
+      image: `/images/whitepaper${index * 2 + 1}.pdf`,
+    },
+    // {
+    //   id: index * 2 + 2,
+    //   title: `White Paper ${index * 2 + 2}`,
+    //   description:
+    //     "Igniting Progress: Outcomes from the FLARE workshop and 3 challenges for the future of transdisciplinary Fire Science",
+    // },
+    // {
+    //   id: index * 2 + 3,
+    //   title: `White Paper ${index * 2 + 3}`,
+    //   description: "#",
+    // },
+  ]);
 ---
 
 <Layout title="School of Sustainability">
-
-  
   <!-- Hero Section -->
   <section class="relative overflow-hidden">
-    <img 
-      src={kh.src} 
-      alt="Knowledge Hub Hero - Research and Innovation" 
+    <img
+      src={kh.src}
+      alt="Knowledge Hub Hero - Research and Innovation"
       class="w-full h-full object-cover"
       loading="eager"
     />
-   <div class="absolute inset-0 bg-black/40 flex items-end justify-start">
-  <div class="text-left text-white px-4 pb-8 pl-8">
-    <h1 class="text-3xl md:text-4xl font-bold mb-4">
-      Knowledge Hub
-    </h1>
-    <p class="text-lg md:text-xl max-w-2xl">
-      Discover cutting-edge research, publications, and insights in sustainability and innovation
-    </p>
-  </div>
-</div>
+    <div class="absolute inset-0 bg-black/40 flex items-end justify-start">
+      <div class="text-left text-white px-4 pb-8 pl-8">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">Knowledge Hub</h1>
+        <p class="text-lg md:text-xl max-w-2xl">
+          Discover cutting-edge research, publications, and insights in
+          sustainability and innovation
+        </p>
+      </div>
     </div>
   </section>
+</Layout>
 
-  <!-- Navigation Tabs -->
- <nav class="flex justify-center items-center mt-10 p-6" role="navigation" aria-label="Content sections">
-  <div class="flex flex-wrap justify-center items-center gap-2 md:gap-4 text-emerald-600 text-lg md:text-xl">
-    <a href="#articles" class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1">
+<!-- Navigation Tabs -->
+<nav
+  class="flex justify-center items-center mt-10 p-6"
+  role="navigation"
+  aria-label="Content sections"
+>
+  <div
+    class="flex flex-wrap justify-center items-center gap-2 md:gap-4 text-emerald-600 text-lg md:text-xl"
+  >
+    <a
+      href="#articles"
+      class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1"
+    >
       Articles
     </a>
     <span class="text-emerald-400" aria-hidden="true">↓</span>
-    <a href="#publications" class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1">
+    <a
+      href="#publications"
+      class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1"
+    >
       Publications
     </a>
     <span class="text-emerald-400" aria-hidden="true">↓</span>
-    <a href="#newsletter" class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1">
+    <a
+      href="#newsletter"
+      class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1"
+    >
       Newsletter
     </a>
     <span class="text-emerald-400" aria-hidden="true">↓</span>
-    <a href="#reports" class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1">
+    <a
+      href="#reports"
+      class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1"
+    >
       Reports
     </a>
     <span class="text-emerald-400" aria-hidden="true">↓</span>
-    <a href="#whitepaper" class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1">
+    <a
+      href="#whitepaper"
+      class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1"
+    >
       White Paper
     </a>
   </div>
 </nav>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Articles Section -->
-    <section id="articles" class="py-16">
-      <h2 class="text-3xl font-bold mb-8 text-gray-900">Latest Articles</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        {articles.map((article) => (
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Articles Section -->
+  <section id="articles" class="py-16">
+    <h2 class="text-3xl font-bold mb-8 text-gray-900">Latest Articles</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      {
+        articles.map((article) => (
           <article class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
             <img
               src={article.image.src}
@@ -109,29 +147,32 @@ const whitepapers = Array(4).fill(0).map((_, index) => ({
               loading="lazy"
             />
             <div class="p-6">
-              <time class="text-sm text-gray-500 font-medium" datetime="2025-04-01">
+              <time
+                class="text-sm text-gray-500 font-medium"
+                datetime="2025-04-01"
+              >
                 {article.date}
               </time>
               <h3 class="text-xl font-semibold mt-2 mb-3 text-gray-900 line-clamp-2">
                 {article.title}
               </h3>
-              <p class="text-gray-600 line-clamp-3">
-                {article.excerpt}
-              </p>
+              <p class="text-gray-600 line-clamp-3">{article.excerpt}</p>
               <button class="mt-4 text-emerald-600 hover:text-emerald-700 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded">
                 Read More →
               </button>
             </div>
           </article>
-        ))}
-      </div>
-    </section>
+        ))
+      }
+    </div>
+  </section>
 
-    <!-- Publications Section -->
-    <section id="publications" class="py-16">
-      <h2 class="text-3xl font-bold mb-8 text-gray-900">Featured Publications</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        {publications.map((pub) => (
+  <!-- Publications Section -->
+  <section id="publications" class="py-16">
+    <h2 class="text-3xl font-bold mb-8 text-gray-900">Featured Publications</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        publications.map((pub) => (
           <div class="group cursor-pointer">
             <div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <img
@@ -140,133 +181,160 @@ const whitepapers = Array(4).fill(0).map((_, index) => ({
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 loading="lazy"
               />
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
             </div>
           </div>
-        ))}
-      </div>
-    </section>
+        ))
+      }
+    </div>
+  </section>
 
-    <!-- Newsletter Section -->
-    <section id="newsletter" class="py-16">
-      <h2 class="text-3xl font-bold mb-8 text-gray-900">Newsletter</h2>
-      <div class="grid md:grid-cols-3 gap-8 items-start">
-        <div class="md:col-span-1">
-          <img
-            src={newsletter.src}
-            alt="Newsletter preview"
-            class="w-full h-full object-cover rounded-lg shadow-sm"
-            loading="lazy"
-          />
+  <!-- Newsletter Section -->
+  <section id="newsletter" class="py-16">
+    <h2 class="text-3xl font-bold mb-8 text-gray-900">Newsletter</h2>
+    <div class="grid md:grid-cols-3 gap-8 items-start">
+      <div class="md:col-span-1">
+        <img
+          src={newsletter.src}
+          alt="Newsletter preview"
+          class="w-full h-full object-cover rounded-lg shadow-sm"
+          loading="lazy"
+        />
+      </div>
+      <div class="md:col-span-2">
+        <div class="mb-6">
+          <time class="text-lg text-gray-600 font-medium" datetime="2025-04-01">
+            Tuesday, April 1, 2025
+          </time>
+          <p class="text-lg text-gray-700 mt-4 leading-relaxed">
+            Stay updated with the latest research findings, sustainability
+            initiatives, and innovation breakthroughs. Our newsletter delivers
+            curated content directly to your inbox, featuring expert insights
+            and cutting-edge developments in environmental science and
+            sustainable technology.
+          </p>
         </div>
-        <div class="md:col-span-2">
-          <div class="mb-6">
-            <time class="text-lg text-gray-600 font-medium" datetime="2025-04-01">
-              Tuesday, April 1, 2025
-            </time>
-            <p class="text-lg text-gray-700 mt-4 leading-relaxed">
-              Stay updated with the latest research findings, sustainability initiatives, and innovation breakthroughs. Our newsletter delivers curated content directly to your inbox, featuring expert insights and cutting-edge developments in environmental science and sustainable technology.
-            </p>
-          </div>
-          
-          <!-- Newsletter Signup Form -->
-          <form class="space-y-4" aria-label="Newsletter subscription">
-            <div>
-              <label for="newsletter-name" class="block text-sm font-medium text-gray-700 mb-2">
-                Full Name
-              </label>
-              <input 
-                type="text" 
-                id="newsletter-name"
-                name="name"
-                required
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
-                placeholder="Enter your full name"
-              />
-            </div>
-            <div>
-              <label for="newsletter-email" class="block text-sm font-medium text-gray-700 mb-2">
-                Email Address
-              </label>
-              <input 
-                type="email" 
-                id="newsletter-email"
-                name="email"
-                required
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
-                placeholder="Enter your email address"
-              />
-            </div>
-            <div class="flex justify-end">
-              <button 
-                type="submit"
-                class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
-              >
-                SUBSCRIBE
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
 
-    <!-- Report Section -->
-    <section id="report" class="py-16">
-      <h2 class="text-4xl font-bold mb-8 text-gray-900">Research Reports</h2>
-      <div class="bg-gradient-to-r from-[#064924] to-[#519335] text-white rounded-lg p-8 md:p-12 mb-8">
-        <p class="text-xl leading-relaxed">
-          Our comprehensive research reports provide in-depth analysis of sustainability challenges and innovative solutions. These documents represent collaborative efforts between leading researchers, industry experts, and policy makers to address critical environmental and social issues through evidence-based recommendations and actionable insights.
-        </p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        {Array(3).fill(0).map((_, index) => (
-          <div class="group cursor-pointer">
-            <div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <img
-                src={publication.src}
-                alt={`Research Report ${index + 1}`}
-                class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
-            </div>
+        <!-- Newsletter Signup Form -->
+        <form class="space-y-4" aria-label="Newsletter subscription">
+          <div>
+            <label
+              for="newsletter-name"
+              class="block text-sm font-medium text-gray-700 mb-2"
+            >
+              Full Name
+            </label>
+            <input
+              type="text"
+              id="newsletter-name"
+              name="name"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+              placeholder="Enter your full name"
+            />
           </div>
-        ))}
+          <div>
+            <label
+              for="newsletter-email"
+              class="block text-sm font-medium text-gray-700 mb-2"
+            >
+              Email Address
+            </label>
+            <input
+              type="email"
+              id="newsletter-email"
+              name="email"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+              placeholder="Enter your email address"
+            />
+          </div>
+          <div class="flex justify-end">
+            <button
+              type="submit"
+              class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
+            >
+              SUBSCRIBE
+            </button>
+          </div>
+        </form>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- White Paper Section -->
-    <section id="whitepaper" class="py-16">
-      <h2 class="text-3xl font-bold mb-8 text-gray-900">White Papers</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {whitepapers.map((paper) => (
-          <div class="group relative overflow-hidden rounded-lg bg-gray-100 aspect-[3/4] cursor-pointer">
-            <!-- Placeholder for white paper cover -->
+  <!-- Report Section -->
+  <section id="report" class="py-16">
+    <h2 class="text-4xl font-bold mb-8 text-gray-900">Research Reports</h2>
+    <div
+      class="bg-gradient-to-r from-[#064924] to-[#519335] text-white rounded-lg p-8 md:p-12 mb-8"
+    >
+      <p class="text-xl leading-relaxed">
+        Our comprehensive research reports provide in-depth analysis of
+        sustainability challenges and innovative solutions. These documents
+        represent collaborative efforts between leading researchers, industry
+        experts, and policy makers to address critical environmental and social
+        issues through evidence-based recommendations and actionable insights.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        Array(3)
+          .fill(0)
+          .map((_, index) => (
+            <div class="group cursor-pointer">
+              <div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <img
+                  src={publication.src}
+                  alt={`Research Report ${index + 1}`}
+                  class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+              </div>
+            </div>
+          ))
+      }
+    </div>
+  </section>
+
+  <!-- White Paper Section -->
+  <section id="whitepaper" class="py-16">
+    <h2 class="text-3xl font-bold mb-8 text-gray-900">White Papers</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {
+        whitepapers.flat().map((paper) => (
+          <div
+            key={paper.id}
+            class="group relative overflow-hidden rounded-lg bg-gray-100 aspect-[3/4] cursor-pointer"
+          >
             <div class="w-full h-full bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center">
               <div class="text-center p-4">
                 <div class="w-16 h-16 bg-emerald-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <svg class="w-8 h-8 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"></path>
+                  <svg
+                    class="w-8 h-8 text-emerald-600"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" />
                   </svg>
                 </div>
+                <img src={paper.image} alt="test" />
                 <h3 class="font-semibold text-gray-900">{paper.title}</h3>
               </div>
             </div>
             <div class="absolute inset-0 bg-black/70 text-white p-4 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p class="text-sm leading-relaxed">
-                {paper.description}
-              </p>
+              <p class="text-sm leading-relaxed">{paper.description}</p>
             </div>
           </div>
-        ))}
-      </div>
-    </section>
-  </main>
+        ))
+      }
+    </div>
+  </section>
+</main>
 
-  <!-- Contact Section -->
-  <Newletter />
-  <Footer />
-</Layout>
+<!-- Contact Section -->
+<Newletter />
+<Footer />
 
 <style>
   /* Custom utilities for line clamping if not available in your Tailwind config */
@@ -276,7 +344,7 @@ const whitepapers = Array(4).fill(0).map((_, index) => ({
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
