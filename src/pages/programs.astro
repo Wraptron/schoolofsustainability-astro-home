@@ -9,6 +9,12 @@ import sstownhall from "../assets/SS Townhall  1.svg";
 import "../styles/global.css";
 import Newsletter from "../components/Newletter.astro";
 import Footer from "../components/Footer.astro";
+import Env from "../assets/Programs/env-eng-v2.webp";
+import Hydraulics from "../assets/Programs/hydraulic-science.webp";
+import Energy from "../assets/Programs/energy-systems.webp";
+import Atmosphere from "../assets/Programs/atmosphere-sciences.webp";
+import Building from "../assets/Programs/nac-building.webp";
+import Ethis from "../assets/Programs/ethics.webp";
 
 // SEO and meta data
 const pageTitle = "Our Programs - School of Sustainability";
@@ -232,13 +238,13 @@ const pageDescription =
               class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               <div class="relative overflow-hidden">
-                <!-- <img
-                  src={EnvironmentalEngImg.src}
+                <img
+                  src={Env.src}
                   alt="Environmental Engineering laboratory and research facilities"
                   class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                   decoding="async"
-                /> -->
+                />
                 <div
                   class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
                 >
@@ -262,22 +268,10 @@ const pageDescription =
                   href="https://civil.iitm.ac.in/ee/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-4 hover:decoration-green-700 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                  class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-8 py-4 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg"
                 >
-                  Program Details and Application Information
-                  <svg
-                    class="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    ></path>
-                  </svg>
+                  Program Details
+
                   <span class="sr-only"> (opens in new tab)</span>
                 </a>
               </div>
@@ -288,13 +282,13 @@ const pageDescription =
               class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               <div class="relative overflow-hidden">
-                <!-- <img
-                  src={HydraulicsImg.src}
+                <img
+                  src={Hydraulics.src}
                   alt="Hydraulics and water resources engineering projects"
                   class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                   decoding="async"
-                /> -->
+                />
                 <div
                   class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
                 >
@@ -319,22 +313,10 @@ const pageDescription =
                   href="https://civil.iitm.ac.in/hwre/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-4 hover:decoration-green-700 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                  class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-8 py-4 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg"
                 >
                   Program Details and Application Information
-                  <svg
-                    class="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    ></path>
-                  </svg>
+
                   <span class="sr-only"> (opens in new tab)</span>
                 </a>
               </div>
@@ -350,13 +332,13 @@ const pageDescription =
               class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               <div class="relative overflow-hidden">
-                <!-- <img
-                  src={EnergySystemsImg.src}
+                <img
+                  src={Energy.src}
                   alt="Energy systems and renewable energy technology"
                   class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                   decoding="async"
-                /> -->
+                />
                 <div
                   class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
                 >
@@ -382,22 +364,10 @@ const pageDescription =
                   href="https://ioe.iitm.ac.in/program/energy-systems/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-4 hover:decoration-green-700 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                  class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-8 py-4 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg"
                 >
-                  Program Details and Application Information
-                  <svg
-                    class="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    ></path>
-                  </svg>
+                  Program Details
+
                   <span class="sr-only"> (opens in new tab)</span>
                 </a>
               </div>
@@ -408,13 +378,13 @@ const pageDescription =
               class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               <div class="relative overflow-hidden">
-                <!-- <img
-                  src={ClimateImg.src}
+                <img
+                  src={Atmosphere.src}
                   alt="Atmospheric and climate sciences research"
                   class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                   decoding="async"
-                /> -->
+                />
                 <div
                   class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
                 >
@@ -439,22 +409,10 @@ const pageDescription =
                   href="https://cacs.iitm.ac.in/programs-iddd.php"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-4 hover:decoration-green-700 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                  class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-8 py-4 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg"
                 >
-                  Program Details and Application Information
-                  <svg
-                    class="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    ></path>
-                  </svg>
+                  Program Details
+
                   <span class="sr-only"> (opens in new tab)</span>
                 </a>
               </div>
@@ -463,72 +421,13 @@ const pageDescription =
               class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               <div class="relative overflow-hidden">
-                <!-- <img
-                  src={ClimateImg.src}
+                <img
+                  src={Building.src}
                   alt="Atmospheric and climate sciences research"
                   class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                   decoding="async"
-                /> -->
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
-                >
-                </div>
-              </div>
-              <div class="p-6 sm:p-8">
-                <h3
-                  class="text-xl sm:text-2xl font-bold mb-4 text-gray-800 leading-tight"
-                >
-                  Atmospheric and Climate Sciences
-                </h3>
-                <p
-                  class="text-base sm:text-lg text-gray-700 leading-relaxed mb-6"
-                >
-                  IIT Madras offers an Interdisciplinary Dual Degree program in
-                  Atmospheric and Climate Sciences. This program provides
-                  detailed understanding of atmospheric processes and
-                  interactions from molecular to global scale, improving
-                  knowledge about climate change.
-                </p>
-                <a
-                  href="https://cacs.iitm.ac.in/programs-iddd.php"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-4 hover:decoration-green-700 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
-                >
-                  Program Details and Application Information
-                  <svg
-                    class="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    ></path>
-                  </svg>
-                  <span class="sr-only"> (opens in new tab)</span>
-                </a>
-              </div>
-            </article>
-          </div>
-
-          <!-- Third Row: ABCD Program (Centered) -->
-          <div class="flex justify-center">
-            <article
-              class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-full max-w-2xl"
-            >
-              <div class="relative overflow-hidden">
-                <!-- <img
-                  src={ABCDImg.src}
-                  alt="ABCD program collaboration between international universities"
-                  class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
-                  loading="lazy"
-                  decoding="async"
-                /> -->
+                />
                 <div
                   class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
                 >
@@ -543,32 +442,69 @@ const pageDescription =
                 <p
                   class="text-base sm:text-lg text-gray-700 leading-relaxed mb-6"
                 >
-                  IIT Madras, in collaboration with RWTH Aachen, AIT Bangkok,
-                  and TU Dresden, offers a joint Master's program on Water
-                  Security and Global Change. This program provides an
-                  integrated approach to water security, with 4 of the 11 core
-                  courses offered by IIT Madras.
+                  IIT-Madras, along with RWTH Aachen, AIT Bangkok and TU Dresden
+                  offers a joint Master’s program on Water Security and Global
+                  Change. This program is open to applicants from all
+                  nationalities and provides an integrated and holistic approach
+                  to the topic of water security. 4 of the 11 core courses
+                  offered in the program are being offered by IIT Madras. For
+                  more information, click the below link.
+                </p>
+                <a
+                  href="https://cacs.iitm.ac.in/programs-iddd.php"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-8 py-4 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg"
+                >
+                  Program Details
+
+                  <span class="sr-only"> (opens in new tab)</span>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Third Row: ABCD Program (Centered) -->
+          <div class="flex justify-center">
+            <article
+              class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-full max-w-2xl"
+            >
+              <div class="relative overflow-hidden">
+                <img
+                  src={Ethis.src}
+                  alt="Ethis courses"
+                  class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+                >
+                </div>
+              </div>
+              <div class="p-6 sm:p-8">
+                <h3
+                  class="text-xl sm:text-2xl font-bold mb-4 text-gray-800 leading-tight"
+                >
+                  Ethics Courses
+                </h3>
+                <p
+                  class="text-base sm:text-lg text-gray-700 leading-relaxed mb-6"
+                >
+                  This course covers fundamental ethical principles. Students
+                  will learn about various ethical frameworks and how to apply
+                  them in real-world situations. The course includes case
+                  studies and discussions to deepen understanding. For more
+                  information, click the below link.
                 </p>
                 <a
                   href="https://abcd-centre.org/master-program/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold transition-colors duration-200 underline decoration-2 underline-offset-4 hover:decoration-green-700 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-md"
+                  class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-8 py-4 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg"
                 >
-                  Program Details and Application Information
-                  <svg
-                    class="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    ></path>
-                  </svg>
+                  Program Details
+
                   <span class="sr-only"> (opens in new tab)</span>
                 </a>
               </div>
