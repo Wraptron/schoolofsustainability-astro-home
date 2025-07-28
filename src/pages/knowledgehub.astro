@@ -14,7 +14,10 @@ import newsletter from "../assets/Screenshot 2025-05-05 085703 1.svg";
 import publication from "../assets/SfIB Cohort_1 3.svg";
 import kh from "../assets/knowledge hub page 1 image.jpg";
 import Newletter from "@/components/Newletter.astro";
-// import Whitepaper from "../assets/knowledgehub/cxo.pdf";
+import Whitepaper from "../assets/white_papers/cxo.pdf.png";
+
+import Reprot1 from "../../public/pdf/Report - Razanatsoa et al 2025_DiverseK Madagascar Workshop Report (1).pdf";
+import Report_image from "../assets/Reports_images/Report - Industry Dialogue on ESG - Chennai Workshop Proceedings.jpg";
 
 // Sample data - in a real app, this would come from a CMS or API
 const articles = [
@@ -47,21 +50,10 @@ const whitepapers = Array(4)
   .map((_, index) => [
     {
       id: index * 2 + 1,
-      title: `White Paper ${index * 2 + 1}`,
+      title: `paper ${index * 2 + 1}`,
       description: "Sustainability and Indian Industries: Why? Who? And How?",
-      image: `/images/whitepaper${index * 2 + 1}.pdf`,
+      image: `{whitepapers.src}`,
     },
-    // {
-    //   id: index * 2 + 2,
-    //   title: `White Paper ${index * 2 + 2}`,
-    //   description:
-    //     "Igniting Progress: Outcomes from the FLARE workshop and 3 challenges for the future of transdisciplinary Fire Science",
-    // },
-    // {
-    //   id: index * 2 + 3,
-    //   title: `White Paper ${index * 2 + 3}`,
-    //   description: "#",
-    // },
   ]);
 ---
 
@@ -284,9 +276,9 @@ const whitepapers = Array(4)
             <div class="group cursor-pointer">
               <div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
                 <img
-                  src={publication.src}
+                  src={Report_image.src}
                   alt={`Research Report ${index + 1}`}
-                  class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
                 <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
