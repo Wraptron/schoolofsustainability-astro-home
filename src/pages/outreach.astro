@@ -17,6 +17,13 @@ import stem from "../assets/stem1.svg";
 import school from "../assets/school.svg";
 import andrew from "../assets/outreach_images/hero_section.svg";
 import Newletter from "../components/Newletter.astro";
+import Media1 from "../assets/outreach_images/IITM.webp";
+import Media2 from "../assets/outreach_images/IIT-madras-1.jpg";
+import Media3 from "../assets/outreach_images/Media3.webp";
+
+import Event1 from "../assets/outreach_images/Events/Event1.jpeg";
+import Event2 from "../assets/outreach_images/Events/2025_08_06.png";
+import Event3 from "../assets/outreach_images/Events/IITM Swadeshi Shodh Sansthan.jpeg";
 ---
 
 <Layout title="School of Sustainability">
@@ -111,7 +118,7 @@ import Newletter from "../components/Newletter.astro";
             class="border border-green-500 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer group"
           >
             <img
-              src={naturesvg.src}
+              src={Event1.src}
               alt="SustainX - ACE 2025 event banner"
               class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -119,14 +126,13 @@ import Newletter from "../components/Newletter.astro";
               <h3
                 class="text-lg sm:text-xl font-medium mb-3 line-clamp-3 group-hover:text-green-600 transition-colors"
               >
-                SustainX - ACE 2025 & 4th CO2India Meet - Call for abstracts and
-                registration is now open!
+                Identity and Beliefs Dissonance
               </h3>
               <time
                 datetime="2025-06-23"
                 class="text-right block font-semibold text-lg sm:text-xl text-green-600"
               >
-                23 Jun 2025
+                24 July 2025
               </time>
             </div>
           </article>
@@ -136,7 +142,7 @@ import Newletter from "../components/Newletter.astro";
             class="border border-green-500 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer group"
           >
             <img
-              src={naturesvg2.src}
+              src={Event2.src}
               alt="SustainX symposium registration banner"
               class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -144,14 +150,14 @@ import Newletter from "../components/Newletter.astro";
               <h3
                 class="text-lg sm:text-xl font-medium mb-3 line-clamp-3 group-hover:text-green-600 transition-colors"
               >
-                SustainX - ACE 2025 & 4th CO2India Meet - Symposium registration
-                is now open!
+                SPARC Workshop on Hydrogen and Carbon Capture, Utilization and
+                Storage (CCUS) Value Chains: Fundamentals & Systems Engineering
               </h3>
               <time
                 datetime="2025-06-23"
                 class="text-right block font-semibold text-lg sm:text-xl text-green-600"
               >
-                23 Jun 2025
+                8 June 2025
               </time>
             </div>
           </article>
@@ -161,7 +167,7 @@ import Newletter from "../components/Newletter.astro";
             class="border border-green-500 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer group"
           >
             <img
-              src={naturesvg3.src}
+              src={Event3.src}
               alt="Instrumentation facility visit banner"
               class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -169,14 +175,13 @@ import Newletter from "../components/Newletter.astro";
               <h3
                 class="text-lg sm:text-xl font-medium mb-3 line-clamp-3 group-hover:text-green-600 transition-colors"
               >
-                SustainX - ACE 2025 & 4th CO2India Meet - Symposium registration
-                is now open!
+                Brainstorming Session: Policy Directions for the Future
               </h3>
               <time
                 datetime="2025-06-23"
                 class="text-right block font-semibold text-lg sm:text-xl text-green-600"
               >
-                23 Jun 2025
+                22 July 2025
               </time>
             </div>
           </article>
@@ -197,7 +202,7 @@ import Newletter from "../components/Newletter.astro";
             class="relative group rounded-lg overflow-hidden cursor-pointer"
           >
             <img
-              src={kamaimage.src}
+              src={Media1.src}
               alt="Featured sustainability event coverage"
               class="w-full h-64 sm:h-80 lg:h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
@@ -211,9 +216,8 @@ import Newletter from "../components/Newletter.astro";
               <p
                 class="text-white text-sm sm:text-base lg:text-lg font-medium leading-relaxed"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                penatibus et magnis dis parturient
+                IIT Madras opens Centre of Excellence for Sustainability aiming
+                to tackle global challenges
               </p>
             </div>
             <button
@@ -240,7 +244,7 @@ import Newletter from "../components/Newletter.astro";
               class="relative group rounded-lg overflow-hidden cursor-pointer"
             >
               <img
-                src={summit.src}
+                src={Media2.src}
                 alt="Summit on Sustainability coverage"
                 class="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -252,8 +256,7 @@ import Newletter from "../components/Newletter.astro";
                 class="absolute bottom-0 left-0 right-0 p-3 sm:p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300"
               >
                 <p class="text-white text-sm sm:text-base font-medium">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Aenean commodo ligula eget dolor.
+                  IIT Madras launches School of Sustainability
                 </p>
               </div>
               <button
@@ -272,182 +275,190 @@ import Newletter from "../components/Newletter.astro";
                 </svg>
               </button>
             </article>
-
-            <!-- Media Item 2 -->
-            <article
-              class="relative group rounded-lg overflow-hidden cursor-pointer"
-            >
-              <img
-                src={indu.src}
-                alt="Industrial sustainability initiative"
-                class="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/80 transition-all duration-300"
+            <div class="grid grid-cols-1 gap-6">
+              <!-- Media Item 1 -->
+              <article
+                class="relative group rounded-lg overflow-hidden cursor-pointer"
               >
-              </div>
-              <button
-                class="absolute bottom-3 right-3 text-white opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-200"
-                aria-label="Share this media content"
-              >
-                <svg
-                  class="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
+                <img
+                  src={Media3.src}
+                  alt="Summit on Sustainability coverage"
+                  class="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent group-hover:from-black/80 transition-all duration-300"
                 >
-                  <path
-                    d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a3.268 3.268 0 000-1.4l7.05-4.11a2.99 2.99 0 10-.96-1.68l-7.06 4.12a2.99 2.99 0 100 4.78l7.05 4.11c.52-.48 1.2-.77 1.96-.77a3 3 0 100-6z"
-                  ></path>
-                </svg>
-              </button>
+                </div>
+                <div
+                  class="absolute bottom-0 left-0 right-0 p-3 sm:p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300"
+                >
+                  <p class="text-white text-sm sm:text-base font-medium">
+                    The shape of climate justice in a warming India
+                  </p>
+                </div>
+                <button
+                  class="absolute bottom-3 right-3 text-white opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-200"
+                  aria-label="Share this media content"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a3.268 3.268 0 000-1.4l7.05-4.11a2.99 2.99 0 10-.96-1.68l-7.06 4.12a2.99 2.99 0 100 4.78l7.05 4.11c.52-.48 1.2-.77 1.96-.77a3 3 0 100-6z"
+                    ></path>
+                  </svg>
+                </button>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Initiatives Section -->
+      <section class="py-8 sm:py-12" id="initiatives">
+        <div class="container mx-auto px-4">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-gray-900">
+            Initiatives
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- Initiative Card 1 -->
+            <article
+              class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer group"
+            >
+              <div class="overflow-hidden rounded-t-lg">
+                <img
+                  src={stem.src}
+                  alt="STEM education initiative"
+                  class="w-full h-48 sm:h-60 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6">
+                <p
+                  class="mb-6 text-gray-700 text-base sm:text-lg leading-relaxed group-hover:text-gray-900 transition-colors"
+                >
+                  Electronic kits distribution
+                </p>
+                <div class="text-center">
+                  <button
+                    class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
+                  >
+                    Learn More
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Initiative Card 2 -->
+            <article
+              class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer group"
+            >
+              <div class="overflow-hidden rounded-t-lg">
+                <img
+                  src={school.src}
+                  alt="School outreach initiative"
+                  class="w-full h-48 sm:h-60 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6">
+                <p
+                  class="mb-6 text-gray-700 text-base sm:text-lg leading-relaxed group-hover:text-gray-900 transition-colors"
+                >
+                  Rural Technology Centres/ Rural Interaction Centres
+                </p>
+                <div class="text-center">
+                  <button
+                    class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
+                  >
+                    Learn More
+                  </button>
+                </div>
+              </div>
             </article>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Initiatives Section -->
-    <section class="py-8 sm:py-12" id="initiatives">
-      <div class="container mx-auto px-4">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-gray-900">
-          Initiatives
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <!-- Initiative Card 1 -->
-          <article
-            class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer group"
-          >
-            <div class="overflow-hidden rounded-t-lg">
-              <img
-                src={stem.src}
-                alt="STEM education initiative"
-                class="w-full h-48 sm:h-60 object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div class="p-6">
-              <p
-                class="mb-6 text-gray-700 text-base sm:text-lg leading-relaxed group-hover:text-gray-900 transition-colors"
+          <!-- Entrepreneurship Section -->
+          <div>
+            <h3 class="text-2xl sm:text-3xl font-bold mb-8 text-gray-900">
+              Entrepreneurship
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Venture Studios Card -->
+              <a
+                href="https://indusdc.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="border-2 border-green-400 p-6 rounded-lg hover:bg-green-50 hover:border-green-500 transition-all duration-200 group hover:shadow-lg hover:scale-[1.02]"
               >
-                Electronic kits distribution
-              </p>
-              <div class="text-center">
-                <button
-                  class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
+                <h4
+                  class="text-xl sm:text-2xl font-semibold mb-3 text-gray-900 group-hover:text-green-700 transition-colors"
                 >
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Initiative Card 2 -->
-          <article
-            class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer group"
-          >
-            <div class="overflow-hidden rounded-t-lg">
-              <img
-                src={school.src}
-                alt="School outreach initiative"
-                class="w-full h-48 sm:h-60 object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div class="p-6">
-              <p
-                class="mb-6 text-gray-700 text-base sm:text-lg leading-relaxed group-hover:text-gray-900 transition-colors"
-              >
-                Rural Technology Centres/ Rural Interaction Centres
-              </p>
-              <div class="text-center">
-                <button
-                  class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
+                  Sustainability Venture Studios
+                </h4>
+                <p
+                  class="text-gray-600 text-base sm:text-lg break-all group-hover:text-green-600 transition-colors"
                 >
-                  Learn More
-                </button>
-              </div>
+                  https://indusdc.com/
+                </p>
+              </a>
+
+              <!-- Competitions Card -->
+              <a
+                href="https://czeroc.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="border-2 border-green-400 p-6 rounded-lg hover:bg-green-50 hover:border-green-500 transition-all duration-200 group hover:shadow-lg hover:scale-[1.02]"
+              >
+                <h4
+                  class="text-xl sm:text-2xl font-semibold mb-3 text-gray-900 group-hover:text-green-700 transition-colors"
+                >
+                  Competitions
+                </h4>
+                <p
+                  class="text-gray-600 text-base sm:text-lg break-all group-hover:text-green-600 transition-colors"
+                >
+                  https://czeroc.in/
+                </p>
+              </a>
             </div>
-          </article>
-        </div>
-
-        <!-- Entrepreneurship Section -->
-        <div>
-          <h3 class="text-2xl sm:text-3xl font-bold mb-8 text-gray-900">
-            Entrepreneurship
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Venture Studios Card -->
-            <a
-              href="https://indusdc.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="border-2 border-green-400 p-6 rounded-lg hover:bg-green-50 hover:border-green-500 transition-all duration-200 group hover:shadow-lg hover:scale-[1.02]"
-            >
-              <h4
-                class="text-xl sm:text-2xl font-semibold mb-3 text-gray-900 group-hover:text-green-700 transition-colors"
-              >
-                Sustainability Venture Studios
-              </h4>
-              <p
-                class="text-gray-600 text-base sm:text-lg break-all group-hover:text-green-600 transition-colors"
-              >
-                https://indusdc.com/
-              </p>
-            </a>
-
-            <!-- Competitions Card -->
-            <a
-              href="https://czeroc.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="border-2 border-green-400 p-6 rounded-lg hover:bg-green-50 hover:border-green-500 transition-all duration-200 group hover:shadow-lg hover:scale-[1.02]"
-            >
-              <h4
-                class="text-xl sm:text-2xl font-semibold mb-3 text-gray-900 group-hover:text-green-700 transition-colors"
-              >
-                Competitions
-              </h4>
-              <p
-                class="text-gray-600 text-base sm:text-lg break-all group-hover:text-green-600 transition-colors"
-              >
-                https://czeroc.in/
-              </p>
-            </a>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Contact & Newsletter Section -->
+      <Newletter />
+      <Footer />
     </section>
-
-    <!-- Contact & Newsletter Section -->
-    <Newletter />
-    <Footer />
   </main>
+
+  <style>
+    /* Utility class for text truncation */
+    .line-clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Ensure proper container constraints */
+    .container {
+      max-width: 1200px;
+    }
+
+    /* Smooth scrolling for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Focus styles for better accessibility */
+    button:focus,
+    input:focus,
+    a:focus {
+      outline: 2px solid #10b981;
+      outline-offset: 2px;
+    }
+  </style>
 </Layout>
-
-<style>
-  /* Utility class for text truncation */
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  /* Ensure proper container constraints */
-  .container {
-    max-width: 1200px;
-  }
-
-  /* Smooth scrolling for anchor links */
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* Focus styles for better accessibility */
-  button:focus,
-  input:focus,
-  a:focus {
-    outline: 2px solid #10b981;
-    outline-offset: 2px;
-  }
-</style>
