@@ -18,6 +18,7 @@ import Whitepaper from "../assets/white_papers/cxo.pdf.png";
 
 import Reprot1 from "../../public/pdf/Report - Razanatsoa et al 2025_DiverseK Madagascar Workshop Report (1).pdf";
 import Report_image from "../assets/Reports_images/Report - Industry Dialogue on ESG - Chennai Workshop Proceedings.jpg";
+import { Images } from "lucide-react";
 
 // Sample data - in a real app, this would come from a CMS or API
 const articles = [
@@ -44,17 +45,21 @@ const publications = [
   { id: 2, image: publicationsantosh, alt: "Publication by Santosh" },
   { id: 3, image: screenshot, alt: "Research Screenshot" },
 ];
+const images =[
+  'src/assets/white_papers/white_img1.png',
+  'src/assets/1_Launch_1 1.svg',
+  
+]
 
 const whitepapers = Array(4)
   .fill(0)
-  .map((_, index) => [
-    {
-      id: index * 2 + 1,
-      title: `paper ${index * 2 + 1}`,
-      description: "Sustainability and Indian Industries: Why? Who? And How?",
-      image: `{whitepapers.src}`,
-    },
-  ]);
+  .map((_, index) => ({
+    id: index + 1,
+    title: `paper ${index + 1}`,
+    description: "Sustainability and Indian Industries: Why? Who? And How?",
+    image: images[index],
+  }));
+
 ---
 
 <Layout title="School of Sustainability">
@@ -301,15 +306,7 @@ const whitepapers = Array(4)
           >
             <div class="w-full h-full bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center">
               <div class="text-center p-4">
-                <div class="w-16 h-16 bg-emerald-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <svg
-                    class="w-8 h-8 text-emerald-600"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" />
-                  </svg>
-                </div>
+                
                 <img src={paper.image} alt="test" />
                 <h3 class="font-semibold text-gray-900">{paper.title}</h3>
               </div>
