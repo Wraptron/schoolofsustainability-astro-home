@@ -1,15 +1,16 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Footer from "@/components/Footer.astro";
+import Newletter from "@/components/Newletter.astro";
 import "../styles/global.css";
 import cover from "../../public/images/banner.webp";
 import project1 from "../assets/project1.svg";
-import project4 from "../assets/project4.svg";
 import projectcover from "../assets/wind-farms-fields 1.svg";
 import projectcovercover from "../assets/abstract-creative-3d-sphere-with-vegetation 1.svg";
 import projectbackgrond from "../assets/reseach_images/research.jpg";
-import Newletter from "@/components/Newletter.astro";
-import Footer from "@/components/Footer.astro";
+import project4 from "../assets/reseach_images/Consultancy Projects.jpg";
+import project5 from "../assets/reseach_images/Patents Filed.jpg";
+import project6 from "../assets/reseach_images/Patents Granted.jpg";
 ---
 
 <Layout title="School of Sustainability">
@@ -18,7 +19,7 @@ import Footer from "@/components/Footer.astro";
     <img
       src={cover.src}
       alt="School of Sustainability IIT Madras"
-      class="w-full h-full sm:h-[100vh] md:h-[100vh] lg:h-[100vh] object-cover mt-15"
+      class="w-full h-full sm:h-[100vh] md:h-[100vh] lg:h-[100vh] object-cover mt-18"
       loading="eager"
     />
     <div
@@ -32,7 +33,7 @@ import Footer from "@/components/Footer.astro";
   </section>
 
   <!-- Navigation Links -->
-  <nav class="mt-8  mb-8  sm:mb-12 md:mb-16 sm:mt-12 md:mt-16 lg:mt-20">
+  <nav class="mt-8 mb-8 sm:mb-12 md:mb-16 sm:mt-12 md:mt-16 lg:mt-20">
     <div
       class="container mx-auto flex flex-wrap justify-center items-center gap-3 sm:gap-5 text-base sm:text-lg md:text-xl text-[#3DAA6F]"
     >
@@ -53,7 +54,7 @@ import Footer from "@/components/Footer.astro";
     <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6">
       Research & Development
     </h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-6 sm:gap-8">
       {
         [
           {
@@ -67,12 +68,12 @@ import Footer from "@/components/Footer.astro";
             url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=591462497&single=true",
           },
           {
-            image: project4,
+            image: project5,
             title: "Patents Filed",
             url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=1624878732&single=true",
           },
           {
-            image: project4,
+            image: project6,
             title: "Patents Granted",
             url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=1624878732&single=true",
           },
@@ -100,10 +101,10 @@ import Footer from "@/components/Footer.astro";
               >
                 {project.title}
               </a>
-              <p class="text-sm sm:text-base text-gray-600 mt-2">
+              {/* <p class="text-sm sm:text-base text-gray-600 mt-2">
                 View detailed information and data about our{" "}
                 {project.title.toLowerCase()} in a new tab.
-              </p>
+              </p> */}
             </div>
           </article>
         ))
@@ -154,85 +155,93 @@ import Footer from "@/components/Footer.astro";
     <div class="h-12 sm:h-16 lg:h-20 xl:h-24 bg-transparent"></div>
   </section>
 
-  <!-- Affiliated Centers Section (Updated to 14 cards) -->
-  <!-- Affiliated Centers Section (Fixed layout with individual images) -->
-<section id="centers" class="py-12 sm:py-16 md:py-20 relative">
-  <div class="container mx-auto">
-    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-8">Affiliated Centers</h2>
+  <!-- Affiliated Centers Section (4 columns layout) -->
+  <section id="centers" class="py-12 sm:py-16 md:py-20 relative">
+    <div class="container mx-auto px-4">
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-8">Affiliated Centers</h2>
 
-    <!-- Background Image -->
-    <div class="absolute inset-0 z-0">
-      <img
-        src={projectbackgrond.src}
-        alt="Affiliated Centers background"
-        class="w-full h-full object-cover opacity-70"
-        loading="lazy"
-      />
-    </div>
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src={projectbackgrond.src}
+          alt="Affiliated Centers background"
+          class="w-full h-full object-cover opacity-70"
+          loading="lazy"
+        />
+      </div>
 
-    <!-- Cards Grid -->
-    <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-      {
-        [
-          { name: "ABCD Center", logo: "/images/ABCD Center.png", link: "https://abcd-centre.org/" },
-          { name: "Aqua MAP Centre", logo: "/images/Aqua MAP Centre.png", link: "https://aquamap.iitm.ac.in/" },
-          { name: "Architected Material & Design Group", logo: "/images/Architected Material & Design Group.png", link: "https://www.archmatdesiitm.com/" },
-          { name: "Carbon Zero Challenge", logo: "/images/Carbon Zero Challenge.png", link: "https://czeroc.in/" },
-          { name: "CCSD", logo: "/images/CCSD.png", link: "https://web.iitm.ac.in/ccsd/" },
-          { name: "Center for Resource Efficiency", logo: "/images/Center for resource Efficiency.png", link: "https://resourceefficiency.org/" },
-          { name: "Zero Emission Trucking", logo: "/images/Centre of Excellence for Zero Emission Trucking.png", link: "https://zeroemissiontrucking.org/" },
-          { name: "CNDE", logo: "/images/CNDE.png", link: "https://www.cnde.in/" },
-          { name: "Correlative Microscopy", logo: "/images/Correlative Microscopy.png", link: "https://ioe.iitm.ac.in/project/correlative-microscopy/" },
-          { name: "CTAP", logo: "/images/CTAP.png", link: "https://hss.iitm.ac.in/ctap/" },
-          { name: "CUBE", logo: "/images/CUBE.png", link: "https://cubeiitm.org/" },
-          { name: "Extra Terrestrial Manufacturing", logo: "/images/Extra Terrestrial Manufacturing.png", link: "https://ioe.iitm.ac.in/project/extra-terrestrial-manufacturing/" },
-          { name: "GFL", logo: "/images/GFL.png", link: "https://ioe.iitm.ac.in/project/geophysical-flows/#project" },
-          { name: "HTIC", logo: "/images/HTIC.png", link: "https://www.hticiitm.org/" },
-        ].map((center) => (
-          <div class="bg-white/80 backdrop-blur-sm hover:bg-white/90 transition-all duration-300 p-4 sm:p-6 rounded-lg cursor-pointer group shadow-lg hover:shadow-xl border border-white/20">
-            <div class="flex items-center justify-between">
-              <!-- Left: Logo + Name -->
-              <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden">
-                  <img src={center.logo} alt={center.name} class="w-full h-full object-contain" />
-                </div>
-                <div class="text-base sm:text-lg font-medium text-gray-800 group-hover:text-gray-900">
-                  {center.name}
-                </div>
-              </div>
-
-              <!-- Right: External Arrow Link -->
+      <!-- Cards Grid - 4 columns on large screens -->
+      <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+        {
+          [
+            { name: "ABCD Center", logo: "/images/ABCD Center.png", link: "https://abcd-centre.org/" },
+            { name: "Aqua MAP Centre", logo: "/images/Aqua MAP Centre.png", link: "https://aquamap.iitm.ac.in/" },
+            { name: "Architected Material & Design Group", logo: "/images/Architected Material & Design Group.png", link: "https://www.archmatdesiitm.com/" },
+            { name: "Carbon Zero Challenge", logo: "/images/Carbon Zero Challenge.png", link: "https://czeroc.in/" },
+            { name: "CCSD", logo: "/images/CCSD.png", link: "https://web.iitm.ac.in/ccsd/" },
+            { name: "Center for Resource Efficiency", logo: "/images/Center for resource Efficiency.png", link: "https://resourceefficiency.org/" },
+            { name: "Zero Emission Trucking", logo: "/images/Centre of Excellence for Zero Emission Trucking.png", link: "https://zeroemissiontrucking.org/" },
+            { name: "CNDE", logo: "/images/CNDE.png", link: "https://www.cnde.in/" },
+            { name: "Correlative Microscopy", logo: "/images/Correlative Microscopy.png", link: "https://ioe.iitm.ac.in/project/correlative-microscopy/" },
+            { name: "CTAP", logo: "/images/CTAP.png", link: "https://hss.iitm.ac.in/ctap/" },
+            { name: "CUBE", logo: "/images/CUBE.png", link: "https://cubeiitm.org/" },
+            { name: "Extra Terrestrial Manufacturing", logo: "/images/Extra Terrestrial Manufacturing.png", link: "https://ioe.iitm.ac.in/project/extra-terrestrial-manufacturing/" },
+            { name: "GFL", logo: "/images/GFL.png", link: "https://ioe.iitm.ac.in/project/geophysical-flows/#project" },
+            { name: "HTIC", logo: "/images/HTIC.png", link: "https://www.hticiitm.org/" },
+          ].map((center) => (
+            <div class="bg-white/90 backdrop-blur-sm hover:bg-white/95 transition-all duration-300 p-3 sm:p-4 rounded-lg cursor-pointer group shadow-lg hover:shadow-xl border border-white/20">
               <a
                 href={center.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-gray-400 hover:text-gray-600 transition duration-200"
+                class="block"
               >
-                <svg
-                  class="w-5 h-5 sm:w-6 sm:h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
+                <!-- Logo -->
+                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden mx-auto mb-3">
+                  <img src={center.logo} alt={center.name} class="w-full h-full object-contain" />
+                </div>
+                
+                <!-- Name -->
+                <div class="text-center">
+                  <h3 class="text-sm sm:text-base font-medium text-gray-800 group-hover:text-gray-900 line-clamp-2 leading-tight">
+                    {center.name}
+                  </h3>
+                </div>
+                
+                <!-- External link indicator -->
+                <div class="flex justify-center mt-2">
+                  <svg
+                    class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition duration-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </div>
               </a>
             </div>
-          </div>
-        ))
-      }
+          ))
+        }
+      </div>
     </div>
-  </div>
-</section>
-
-
+  </section>
 
   <br />
   <Newletter />
   <Footer />
 </Layout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

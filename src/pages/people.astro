@@ -2,8 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "@/components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import NewLetter from "../components/Newletter.astro";
-import Home from "../components/Home.astro";
+import Newletter from "../components/Newletter.astro";
 import "../styles/global.css";
 
 // Team photos
@@ -46,7 +45,6 @@ import advisor2 from "../assets/01.svg";
 import advisor3 from "../assets/02.svg";
 import advisor4 from "../assets/03.svg";
 import advisor5 from "../assets/04.svg";
-import Newletter from "../components/Newletter.astro";
 
 // Team data structure for better maintainability
 const teamMembers = [
@@ -215,12 +213,12 @@ const advisors = [
   {
     image: advisor3,
     name: "Dr. Mahesh Panchagnula",
-    position: "Applied Mechnaics",
+    position: "Applied Mechanics",
     website: "https://energyconsortium.org",
   },
   {
     image: advisor4,
-    name: "Dr. Advisor Name ",
+    name: "Dr. Advisor Name",
     position: "Policy Advisor",
     website: "https://energyconsortium.org",
   },
@@ -236,43 +234,6 @@ const advisors = [
 <Navbar />
 <Layout title="School of Sustainability">
   <main class="min-h-screen scroll-smooth">
-    <!-- Navigation Menu -->
-    <section
-      class="py-4 sm:py-6 md:py-8 border-b border-gray-200 sticky top-0 z-10 backdrop-blur-sm bg-white/80"
-    >
-      <div class="container mx-auto">
-        <nav
-          class="flex flex-wrap justify-center items-center gap-2 sm:gap-4 md:gap-6 text-green-600 font-medium text-sm sm:text-base md:text-lg"
-          aria-label="Team sections navigation"
-        >
-          <a
-            href="#team"
-            class="hover:text-green-800 active:text-green-900 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transform hover:scale-105"
-          >
-            Team
-          </a>
-          <a
-            href="#associate-faculty"
-            class="hover:text-green-800 active:text-green-900 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transform hover:scale-105"
-          >
-            Associate Faculty
-          </a>
-          <a
-            href="#affiliate-fellows"
-            class="hover:text-green-800 active:text-green-900 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transform hover:scale-105"
-          >
-            Affiliate Fellows
-          </a>
-          <a
-            href="#advisors"
-            class="hover:text-green-800 active:text-green-900 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transform hover:scale-105"
-          >
-            Advisors
-          </a>
-        </nav>
-      </div>
-    </section>
-
     <!-- Hero Section -->
     <section class="relative">
       <img
@@ -291,9 +252,49 @@ const advisors = [
       </div>
     </section>
 
-    <!-- Team Section -->
-    <section id="team" class="py-12 sm:py-16 md:py-20">
-      <div class="container mx-auto">
+    <!-- Navigation Menu -->
+    <section
+      class="py-4 sm:py-6 md:py-8 border-b border-gray-200 sticky top-0 z-10 backdrop-blur-sm bg-white/80"
+    >
+      <div class="container mx-auto px-4">
+        <nav
+          class="flex flex-wrap justify-center items-center gap-2 sm:gap-4 md:gap-6 text-green-600 font-medium text-sm sm:text-base md:text-lg"
+          aria-label="Team sections navigation"
+        >
+          <a
+            href="#core-team"
+            class="hover:text-green-800 active:text-green-900 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transform hover:scale-105"
+          >
+            Core Team
+          </a>
+          <span class="text-gray-300">|</span>
+          <a
+            href="#associate-faculty"
+            class="hover:text-green-800 active:text-green-900 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transform hover:scale-105"
+          >
+            Associate Faculty
+          </a>
+          <span class="text-gray-300">|</span>
+          <a
+            href="#affiliate-fellows"
+            class="hover:text-green-800 active:text-green-900 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transform hover:scale-105"
+          >
+            Affiliate Fellows
+          </a>
+          <span class="text-gray-300">|</span>
+          <a
+            href="#advisors"
+            class="hover:text-green-800 active:text-green-900 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transform hover:scale-105"
+          >
+            Advisors
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Leadership Team Section -->
+    <section class="py-12 sm:py-16 md:py-20">
+      <div class="container mx-auto px-4">
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
           Leadership Team
         </h2>
@@ -330,175 +331,259 @@ const advisors = [
             ))
           }
         </div>
-
-        <h2
-          class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 mt-16 text-center"
-        >
-          Core Team
-        </h2>
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
-        >
-          {
-            coreTeam.map((member) => (
-              <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                  <img
-                    src={member.image.src}
-                    alt={member.name}
-                    class="w-full h-48 sm:h-56 md:h-64 object-cover"
-                  />
-                  <a
-                    href={member.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
-                  >
-                    <img src={member.icon.src} alt="Website" class="w-6 h-6" />
-                  </a>
-                </div>
-                <div class="p-4 sm:p-6">
-                  <div class="text-lg sm:text-xl font-bold mb-2">
-                    {member.name}
-                  </div>
-                  <p class="text-gray-600 text-sm sm:text-base">
-                    {member.position}
-                  </p>
-                </div>
-              </div>
-            ))
-          }
-        </div>
       </div>
-    </section>
 
-    <!-- Associate Faculty Section -->
-    <section id="associate-faculty" class="py-12 sm:py-16 md:py-20 bg-gray-50">
-      <div class="container mx-auto">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
-          Associate Faculty
-        </h2>
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
-        >
-          {
-            associateFaculty.map((faculty) => (
-              <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                  <img
-                    src={faculty.image.src}
-                    alt={faculty.name}
-                    class="w-full h-48 sm:h-56 md:h-64 object-cover"
-                  />
-                  <a
-                    href={faculty.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
-                  >
-                    <img src={webglobe.src} alt="Website" class="w-6 h-6" />
-                  </a>
-                </div>
-                <div class="p-4 sm:p-6">
-                  <div class="text-lg sm:text-xl font-bold mb-2">
-                    {faculty.name}
+      <!-- Core Team Section -->
+      <section id="core-team" class="py-12 sm:py-16 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <h2 class="text-xl sm:text-xl md:text-2xl font-bold mb-8 text-center">
+            Core Team
+          </h2>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+          >
+            {
+              coreTeam.map((member) => (
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                  <div class="relative">
+                    <img
+                      src={member.image.src}
+                      alt={member.name}
+                      class="w-full h-48 sm:h-56 md:h-64 object-cover"
+                    />
+                    <a
+                      href={member.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+                    >
+                      <img
+                        src={member.icon.src}
+                        alt="Website"
+                        class="w-6 h-6"
+                      />
+                    </a>
                   </div>
-                  <p class="text-gray-600 text-sm sm:text-base">
-                    {faculty.position}
-                  </p>
+                  <div class="p-4 sm:p-6">
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">
+                      {member.name}
+                    </h3>
+                    <p class="text-gray-600 text-sm sm:text-base">
+                      {member.position}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))
-          }
+              ))
+            }
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Affiliate Fellows Section -->
-    <section id="affiliate-fellows" class="py-12 sm:py-16 md:py-20">
-      <div class="container mx-auto">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
-          Affiliate Fellows
-        </h2>
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
-        >
-          {
-            affiliateFellows.map((fellow) => (
-              <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                  <img
-                    src={fellow.image.src}
-                    alt={fellow.name}
-                    class="w-full h-48 sm:h-56 md:h-64 object-cover"
-                  />
-                  <a
-                    href={fellow.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
-                  >
-                    <img src={webglobe.src} alt="Website" class="w-6 h-6" />
-                  </a>
-                </div>
-                <div class="p-4 sm:p-6">
-                  <div class="text-lg sm:text-xl font-bold mb-2">
-                    {fellow.name}
+      <!-- Associate Faculty Section -->
+      <section id="associate-faculty" class="py-12 sm:py-16 md:py-20">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center"
+          >
+            Associate Faculty
+          </h2>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+          >
+            {
+              associateFaculty.map((faculty) => (
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                  <div class="relative">
+                    <img
+                      src={faculty.image.src}
+                      alt={faculty.name}
+                      class="w-full h-48 sm:h-56 md:h-64 object-cover"
+                    />
+                    <a
+                      href={faculty.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+                    >
+                      <img src={webglobe.src} alt="Website" class="w-6 h-6" />
+                    </a>
                   </div>
-                  <p class="text-gray-600 text-sm sm:text-base">
-                    {fellow.position}
-                  </p>
+                  <div class="p-4 sm:p-6">
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">
+                      {faculty.name}
+                    </h3>
+                    <p class="text-gray-600 text-sm sm:text-base">
+                      {faculty.position}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))
-          }
+              ))
+            }
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Advisors Section -->
-    <section id="advisors" class="py-12 sm:py-16 md:py-20 bg-gray-50">
-      <div class="container mx-auto">
-        <h2 class="text-md sm:text-md md:text-md font-bold mb-8 text-center">
-          Advisors
-        </h2>
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-8"
-        >
-          {
-            advisors.map((advisor) => (
-              <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                  <img
-                    src={advisor.image.src}
-                    alt={advisor.name}
-                    class="w-full h-48 sm:h-56 md:h-64 object-cover"
-                  />
-                  <a
-                    href={advisor.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
-                  >
-                    <img src={webglobe.src} alt="Website" class="w-6 h-6" />
-                  </a>
-                </div>
-                <div class="p-4 sm:p-6">
-                  <div class="text-md sm:text-md font-bold mb-2">
-                    {advisor.name}
+      <!-- Affiliate Fellows Section -->
+      <section
+        id="affiliate-fellows"
+        class="py-12 sm:py-16 md:py-20 bg-gray-50"
+      >
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center"
+          >
+            Affiliate Fellows
+          </h2>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+          >
+            {
+              affiliateFellows.map((fellow) => (
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                  <div class="relative">
+                    <img
+                      src={fellow.image.src}
+                      alt={fellow.name}
+                      class="w-full h-48 sm:h-56 md:h-64 object-cover"
+                    />
+                    <a
+                      href={fellow.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+                    >
+                      <img src={webglobe.src} alt="Website" class="w-6 h-6" />
+                    </a>
                   </div>
-                  <p class="text-gray-600 text-sm sm:text-base">
-                    {advisor.position}
-                  </p>
+                  <div class="p-4 sm:p-6">
+                    <h3 class="text-lg sm:text-xl font-bold mb-2">
+                      {fellow.name}
+                    </h3>
+                    <p class="text-gray-600 text-sm sm:text-base">
+                      {fellow.position}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))
-          }
+              ))
+            }
+          </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Advisors Section -->
+      <section id="advisors" class="py-12 sm:py-16 md:py-20">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center"
+          >
+            Advisors
+          </h2>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-8"
+          >
+            {
+              advisors.map((advisor) => (
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                  <div class="relative">
+                    <img
+                      src={advisor.image.src}
+                      alt={advisor.name}
+                      class="w-full h-48 sm:h-56 md:h-64 object-cover"
+                    />
+                    <a
+                      href={advisor.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+                    >
+                      <img src={webglobe.src} alt="Website" class="w-6 h-6" />
+                    </a>
+                  </div>
+                  <div class="p-4 sm:p-6">
+                    <h3 class="text-base sm:text-lg font-bold mb-2">
+                      {advisor.name}
+                    </h3>
+                    <p class="text-gray-600 text-sm sm:text-base">
+                      {advisor.position}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <Newletter />
+      <Footer />
     </section>
   </main>
 
-  <Newletter />
-  <Footer />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Enhanced scroll padding to account for sticky navigation */
+    section[id] {
+      scroll-margin-top: 100px;
+    }
+
+    /* Active navigation state */
+    nav a:hover {
+      transform: translateY(-1px);
+    }
+  </style>
+
+  <script>
+    // Add active state management for navigation links
+    document.addEventListener("DOMContentLoaded", function () {
+      const navLinks = document.querySelectorAll('nav a[href^="#"]');
+      const sections = document.querySelectorAll("section[id]");
+
+      // Function to update active navigation link
+      function updateActiveNav() {
+        const scrollPos = window.scrollY + 120; // Account for sticky nav height
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const sectionId = section.getAttribute("id");
+
+          if (
+            scrollPos >= sectionTop &&
+            scrollPos < sectionTop + sectionHeight
+          ) {
+            navLinks.forEach((link) => {
+              link.classList.remove("text-green-800", "bg-green-50");
+              if (link.getAttribute("href") === `#${sectionId}`) {
+                link.classList.add("text-green-800", "bg-green-50");
+              }
+            });
+          }
+        });
+      }
+
+      // Add smooth scrolling and active state on click
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href").substring(1);
+          const targetSection = document.getElementById(targetId);
+
+          if (targetSection) {
+            const offsetTop = targetSection.offsetTop - 100; // Account for sticky nav
+            window.scrollTo({
+              top: offsetTop,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Update active nav on scroll
+      window.addEventListener("scroll", updateActiveNav);
+      updateActiveNav(); // Initial call
+    });
+  </script>
 </Layout>

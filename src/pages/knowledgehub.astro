@@ -7,9 +7,10 @@ import "../styles/global.css";
 // Import images
 import summit from "../assets/Summit on Sustainability .jpg";
 import icssrconf from "../assets/ICSSR Conference_2 (1) 1.svg";
-import publicationcharuta from "../assets/Publication_Charuta 1.svg";
-import publicationsantosh from "../assets/Publication_Santosh 1.svg";
-import screenshot from "../assets/Screenshot 2025-05-05 194551 1.svg";
+// import publicationcharuta from "../assets/Publication_Charuta 1.svg";
+// import publicationsantosh from "../assets/Publication_Santosh 1.svg";
+// import screenshot from "../assets/Screenshot 2025-05-05 194551 1.svg";
+
 import newsletter from "../assets/Screenshot 2025-05-05 085703 1.svg";
 import publication from "../assets/SfIB Cohort_1 3.svg";
 import kh from "../assets/knowledge hub page 1 image.jpg";
@@ -41,13 +42,15 @@ const articles = [
 ];
 
 const publications = [
-  { id: 1, image: publicationcharuta, alt: "Publication by Charuta" },
-  { id: 2, image: publicationsantosh, alt: "Publication by Santosh" },
-  { id: 3, image: screenshot, alt: "Research Screenshot" },
+  { id: 1, image: 'src/assets/white_papers/whitepaper/publication01.png', alt: "Publication by Charuta" },
+  { id: 2, image: 'src/assets/white_papers/whitepaper/publication02.png', alt: "Publication by Santosh" },
+  { id: 3, image: 'src/assets/white_papers/whitepaper/publication03.png', alt: "Research Screenshot" },
 ];
 const images =[
   'src/assets/white_papers/white_img1.png',
-  'src/assets/1_Launch_1 1.svg',
+  'src/assets/white_papers/white_img1.png',
+  'src/assets/white_papers/white_img1.png',
+  'src/assets/white_papers/white_img1.png',
   
 ]
 
@@ -166,25 +169,42 @@ const whitepapers = Array(4)
 
   <!-- Publications Section -->
   <section id="publications" class="py-16">
-    <h2 class="text-3xl font-bold mb-8 text-gray-900">Featured Publications</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      {
-        publications.map((pub) => (
-          <div class="group cursor-pointer">
-            <div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <img
-                src={pub.image.src}
-                alt={pub.alt}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
-            </div>
+  <h2 class="text-3xl font-bold mb-8 text-gray-900">Featured Publications</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    {
+      publications.map((pub) => {
+        // Add links for each publication by ID
+        const links = {
+          1: "https://drive.google.com/file/d/1USnz62sTmUMwZIrVRN9areiZpqb0J03c/view",
+          2: "https://drive.google.com/file/d/12ZljGw6dnRBLqCbMSfjXsFDcz3zMNteG/view",
+          3: "https://drive.google.com/file/d/15-Id07NqgD2JR_Djmoptek121gNBwwtV/view"
+        };
+
+        const content = (
+          <div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <img
+              src={pub.image}
+              alt={pub.alt}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
           </div>
-        ))
-      }
-    </div>
-  </section>
+        );
+
+        return (
+          <div class="group cursor-pointer" key={pub.id}>
+            {links[pub.id]
+              ? <a href={links[pub.id]} target="_blank" rel="noopener noreferrer" class="block">{content}</a>
+              : content}
+          </div>
+        );
+      })
+    }
+  </div>
+</section>
+
+
 
   <!-- Newsletter Section -->
   <section id="newsletter" class="py-16">
@@ -298,26 +318,29 @@ const whitepapers = Array(4)
   <section id="whitepaper" class="py-16">
     <h2 class="text-3xl font-bold mb-8 text-gray-900">White Papers</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {
-        whitepapers.flat().map((paper) => (
-          <div
-            key={paper.id}
-            class="group relative overflow-hidden rounded-lg bg-gray-100 aspect-[3/4] cursor-pointer"
-          >
-            <div class="w-full h-full bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center">
-              <div class="text-center p-4">
-                
-                <img src={paper.image} alt="test" />
-                <h3 class="font-semibold text-gray-900">{paper.title}</h3>
-              </div>
-            </div>
-            <div class="absolute inset-0 bg-black/70 text-white p-4 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p class="text-sm leading-relaxed">{paper.description}</p>
-            </div>
+  {
+    whitepapers.flat().map((paper) => (
+      <a
+        href="https://drive.google.com/file/d/1VLdMH9nUTTukH-cuc-KY-sTNLgC1DoLo/view"
+        target="_blank"
+        rel="noopener noreferrer"
+        key={paper.id}
+        class="group relative overflow-hidden rounded-lg bg-gray-100 aspect-[3/4] cursor-pointer block"
+      >
+        <div class="w-full h-full bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center">
+          <div class="text-center p-4">
+            <img src={paper.image} alt={paper.title} />
+            <h3 class="font-semibold text-gray-900">{paper.title}</h3>
           </div>
-        ))
-      }
-    </div>
+        </div>
+        <div class="absolute inset-0 bg-black/70 text-white p-4 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <p class="text-sm leading-relaxed">{paper.description}</p>
+        </div>
+      </a>
+    ))
+  }
+</div>
+
   </section>
 </main>
 
