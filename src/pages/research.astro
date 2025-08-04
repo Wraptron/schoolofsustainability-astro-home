@@ -5,10 +5,12 @@ import Newletter from "@/components/Newletter.astro";
 import "../styles/global.css";
 import cover from "../../public/images/banner.webp";
 import project1 from "../assets/project1.svg";
-import project4 from "../assets/project4.svg";
 import projectcover from "../assets/wind-farms-fields 1.svg";
 import projectcovercover from "../assets/abstract-creative-3d-sphere-with-vegetation 1.svg";
 import projectbackgrond from "../assets/reseach_images/research.jpg";
+import project4 from "../assets/reseach_images/Consultancy Projects.jpg";
+import project5 from "../assets/reseach_images/Patents Filed.jpg";
+import project6 from "../assets/reseach_images/Patents Granted.jpg";
 ---
 
 <Layout title="School of Sustainability">
@@ -17,7 +19,7 @@ import projectbackgrond from "../assets/reseach_images/research.jpg";
     <img
       src={cover.src}
       alt="School of Sustainability IIT Madras"
-      class="w-full h-full sm:h-[100vh] md:h-[100vh] lg:h-[100vh] object-cover mt-15"
+      class="w-full h-full sm:h-[100vh] md:h-[100vh] lg:h-[100vh] object-cover mt-18"
       loading="eager"
     />
     <div
@@ -66,12 +68,12 @@ import projectbackgrond from "../assets/reseach_images/research.jpg";
             url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=591462497&single=true",
           },
           {
-            image: project4,
+            image: project5,
             title: "Patents Filed",
             url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=1624878732&single=true",
           },
           {
-            image: project4,
+            image: project6,
             title: "Patents Granted",
             url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=1624878732&single=true",
           },
@@ -99,10 +101,10 @@ import projectbackgrond from "../assets/reseach_images/research.jpg";
               >
                 {project.title}
               </a>
-              <p class="text-sm sm:text-base text-gray-600 mt-2">
+              {/* <p class="text-sm sm:text-base text-gray-600 mt-2">
                 View detailed information and data about our{" "}
                 {project.title.toLowerCase()} in a new tab.
-              </p>
+              </p> */}
             </div>
           </article>
         ))
