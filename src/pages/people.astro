@@ -790,8 +790,9 @@ const advisors = [
         const scrollPos = window.scrollY + 120; // Account for sticky nav height
 
         sections.forEach((section) => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
+            const htmlSection = section as HTMLElement;
+          const sectionTop = htmlSection.offsetTop;
+          const sectionHeight = htmlSection.offsetHeight;
           const sectionId = section.getAttribute("id");
 
           if (
@@ -810,9 +811,9 @@ const advisors = [
 
       // Add smooth scrolling and active state on click
       navLinks.forEach((link) => {
-        link.addEventListener("click", function (e) {
+        link.addEventListener("click", (e)=> {
           e.preventDefault();
-          const targetId = this.getAttribute("href").substring(1);
+          const targetId = (link.getAttribute("href") ?? "").substring(1);
           const targetSection = document.getElementById(targetId);
 
           if (targetSection) {
