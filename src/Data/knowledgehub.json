@@ -18,72 +18,72 @@
   "publications": [
     {
       "id": 1,
-      "image": "src/assets/white_papers/whitepaper/publication01.png",
+      "image": "public/images/whitepaper/publication01.png",
       "alt": "Publication by Charuta",
       "link": "https://drive.google.com/file/d/1USnz62sTmUMwZIrVRN9areiZpqb0J03c/view"
     },
     {
       "id": 2,
-      "image": "src/assets/white_papers/whitepaper/publication02.png",
+      "image": "public/images/whitepaper/publication02.png",
       "alt": "Publication by Santosh",
       "link": "https://drive.google.com/file/d/12ZljGw6dnRBLqCbMSfjXsFDcz3zMNteG/view"
     },
     {
       "id": 3,
-      "image": "src/assets/white_papers/whitepaper/publication03.png",
+      "image": "public/images/whitepaper/publication03.png",
       "alt": "Research Screenshot",
       "link": "https://drive.google.com/file/d/15-Id07NqgD2JR_Djmoptek121gNBwwtV/view"
     },
     {
       "id": 4,
-      "image": "src/assets/white_papers/whitepaper/publication04.png",
+      "image": "public/images/whitepaper/publication04.png",
       "alt": "Publication 4",
       "link": "https://drive.google.com/file/d/172GtQVTq1HxRETYGCdL3ci_oT1Ya1OrL/view"
     },
     {
       "id": 5,
-      "image": "src/assets/white_papers/whitepaper/publication05.png",
+      "image": "public/images/whitepaper/publication05.png",
       "alt": "Publication 5",
       "link": "https://drive.google.com/file/d/1Nv_eEGy89J3iLB3FkOJ2B_Gs4u8Fw-DV/view"
     },
     {
       "id": 6,
-      "image": "src/assets/white_papers/whitepaper/publication06.png",
+      "image": "public/images/whitepaper/publication06.png",
       "alt": "Publication 6",
       "link": "https://drive.google.com/file/d/1_mWvpiGaB0EKmA2WyepAG8cdhq_Skj3Q/view"
     },
     {
       "id": 7,
-      "image": "src/assets/white_papers/whitepaper/publication07.png",
+      "image": "public/images/whitepaper/publication07.png",
       "alt": "Publication 7",
       "link": "https://drive.google.com/file/d/1VjKz9qmiTnbJOB3FBz5w2jF-57_zBhyE/view"
     },
     {
       "id": 8,
-      "image": "src/assets/white_papers/whitepaper/publication08.png",
+      "image": "public/images/whitepaper/publication08.png",
       "alt": "Publication 8",
       "link": "https://drive.google.com/file/d/1Wfl71neNsG9kiE1e0Y_jTb8JX49AeZOj/view"
     },
     {
       "id": 9,
-      "image": "src/assets/white_papers/whitepaper/publication09.png",
+      "image": "public/images/whitepaper/publication09.png",
       "alt": "Publication 9",
       "link": "https://drive.google.com/file/d/1EyUCvEQID_t4cibtVrxKfpa5lXBgbyYF/view"
     }
   ],
   "reports": [
     {
-      "image": "src/assets/white_papers/whitepaper/Reportimg.png",
+      "image": "public/images/whitepaper/Reportimg.png",
       "link": "https://drive.google.com/file/d/14_bJjoeW1P-PV6z1yT1fQJGUewqQOVu3/view",
       "alt": "Research Report 1"
     },
     {
-      "image": "src/assets/white_papers/whitepaper/Reportimg02.png",
+      "image": "public/images/whitepaper/Reportimg02.png",
       "link": "https://drive.google.com/file/d/1Nv_eEGy89J3iLB3FkOJ2B_Gs4u8Fw-DV/view",
       "alt": "Research Report 2"
     },
     {
-      "image": "src/assets/white_papers/whitepaper/Reportimg03.png",
+      "image": "public/images/whitepaper/Reportimg03.png",
       "link": "https://drive.google.com/file/d/1tn0JfKUMJynt3IyKoiwXB_IFUEMukCn_/view",
       "alt": "Research Report 3"
     }
@@ -93,33 +93,33 @@
       "id": 1,
       "title": "White Paper 1",
       "description": "Sustainability and Indian Industries: Why? Who? And How?",
-      "image": "src/assets/white_papers/white_img1.png",
+      "image": "public/images/white_papers/white_img1.png",
       "link": "https://drive.google.com/file/d/1VLdMH9nUTTukH-cuc-KY-sTNLgC1DoLo/view"
     },
     {
       "id": 2,
       "title": "White Paper 2",
       "description": "Sustainability and Indian Industries: Why? Who? And How?",
-      "image": "src/assets/white_papers/white_img1.png",
+      "image": "public/images/white_papers/white_img1.png",
       "link": "https://drive.google.com/file/d/1VLdMH9nUTTukH-cuc-KY-sTNLgC1DoLo/view"
     },
     {
       "id": 3,
       "title": "White Paper 3",
       "description": "Sustainability and Indian Industries: Why? Who? And How?",
-      "image": "src/assets/white_papers/white_img1.png",
+      "image": "public/images/white_papers/white_img1.png",
       "link": "https://drive.google.com/file/d/1VLdMH9nUTTukH-cuc-KY-sTNLgC1DoLo/view"
     },
     {
       "id": 4,
       "title": "White Paper 4",
       "description": "Sustainability and Indian Industries: Why? Who? And How?",
-      "image": "src/assets/white_papers/white_img1.png",
+      "image": "public/images/white_papers/white_img1.png",
       "link": "https://drive.google.com/file/d/1VLdMH9nUTTukH-cuc-KY-sTNLgC1DoLo/view"
     }
   ],
   "newsletter": {
-    "image": "src/assets/white_papers/whitepaper/Newsletter.png",
+    "image": "public/images/white_papers/whitepaper/Newsletter.png",
     "date": "Tuesday, April 1, 2025",
     "description": "Stay updated with the latest research findings, sustainability initiatives, and innovation breakthroughs. Our newsletter delivers curated content directly to your inbox, featuring expert insights and cutting-edge developments in environmental science and sustainable technology."
   },
