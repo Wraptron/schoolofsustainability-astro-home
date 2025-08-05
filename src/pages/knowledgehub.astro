@@ -22,7 +22,7 @@ const imageMap = {
 // Process articles with imported images
 const articles = knowledgeData.articles.map((article) => ({
   ...article,
-  image: imageMap[article.image] || { src: article.image },
+  image: imageMap[article.image as keyof typeof imageMap] || { src: article.image },
 }));
 
 const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
@@ -148,7 +148,7 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
           );
 
           return (
-            <div class="group cursor-pointer" key={pub.id}>
+            <div class="group cursor-pointer">
               {pub.link ? (
                 <a
                   href={pub.link}
@@ -256,7 +256,7 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
     <div class="grid md:grid-cols-3 gap-8">
       {
         reports.map((report, index) => (
-          <div key={index} class="group cursor-pointer">
+          <div  class="group cursor-pointer">
             <a
               href={report.link}
               target="_blank"
@@ -289,13 +289,12 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
             href={paper.link}
             target="_blank"
             rel="noopener noreferrer"
-            key={paper.id}
             class="group relative overflow-hidden rounded-lg bg-gray-100 aspect-[3/4] cursor-pointer block"
           >
             <div class="w-full h-full bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center">
               <div class="text-center p-4">
-                <img src={paper.image} alt={paper.title} />
-                <h3 class="font-semibold text-gray-900">{paper.title}</h3>
+                <img src={paper.image}  />
+                <h3 class="font-semibold text-gray-900"></h3>
               </div>
             </div>
             <div class="absolute inset-0 bg-black/70 text-white p-4 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
