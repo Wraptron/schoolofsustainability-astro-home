@@ -42,17 +42,58 @@ const articles = [
 ];
 
 const publications = [
-  { id: 1, image: 'src/assets/white_papers/whitepaper/publication01.png', alt: "Publication by Charuta" },
-  { id: 2, image: 'src/assets/white_papers/whitepaper/publication02.png', alt: "Publication by Santosh" },
-  { id: 3, image: 'src/assets/white_papers/whitepaper/publication03.png', alt: "Research Screenshot" },
+  {
+    id: 1,
+    image: "src/assets/white_papers/whitepaper/publication01.png",
+    alt: "Publication by Charuta",
+  },
+  {
+    id: 2,
+    image: "src/assets/white_papers/whitepaper/publication02.png",
+    alt: "Publication by Santosh",
+  },
+  {
+    id: 3,
+    image: "src/assets/white_papers/whitepaper/publication03.png",
+    alt: "Research Screenshot",
+  },
+   {
+    id: 4,
+    image: "src/assets/white_papers/whitepaper/publication04.png",
+
+  },
+  {
+    id: 5,
+    image: "src/assets/white_papers/whitepaper/publication05.png",
+
+  },
+  {
+    id: 6,
+    image: "src/assets/white_papers/whitepaper/publication06.png",
+
+  },
+  {
+    id: 7,
+    image: "src/assets/white_papers/whitepaper/publication07.png",
+
+  },
+   {
+    id: 8,
+    image: "src/assets/white_papers/whitepaper/publication08.png",
+
+  },
+   {
+    id: 9,
+    image: "src/assets/white_papers/whitepaper/publication09.png",
+
+  },
 ];
-const images =[
-  'src/assets/white_papers/white_img1.png',
-  'src/assets/white_papers/white_img1.png',
-  'src/assets/white_papers/white_img1.png',
-  'src/assets/white_papers/white_img1.png',
-  
-]
+const images = [
+  "src/assets/white_papers/white_img1.png",
+  "src/assets/white_papers/white_img1.png",
+  "src/assets/white_papers/white_img1.png",
+  "src/assets/white_papers/white_img1.png",
+];
 
 const whitepapers = Array(4)
   .fill(0)
@@ -62,6 +103,24 @@ const whitepapers = Array(4)
     description: "Sustainability and Indian Industries: Why? Who? And How?",
     image: images[index],
   }));
+const reports = [
+  {
+    image: "src/assets/white_papers/whitepaper/Reportimg.png",
+    link: "https://drive.google.com/file/d/14_bJjoeW1P-PV6z1yT1fQJGUewqQOVu3/view",
+    alt: "Research Report 1",
+  },
+  {
+    image: "src/assets/white_papers/whitepaper/Reportimg02.png",
+    link: "https://drive.google.com/file/d/1Nv_eEGy89J3iLB3FkOJ2B_Gs4u8Fw-DV/view",
+    alt: "Research Report 2",
+  },
+  {
+    image: "src/assets/white_papers/whitepaper/Reportimg03.png",
+    link: "https://drive.google.com/file/d/1tn0JfKUMJynt3IyKoiwXB_IFUEMukCn_/view",
+    alt: "Research Report 3",
+  },
+];
+---
 
 ---
 
@@ -169,42 +228,57 @@ const whitepapers = Array(4)
 
   <!-- Publications Section -->
   <section id="publications" class="py-16">
-  <h2 class="text-3xl font-bold mb-8 text-gray-900">Featured Publications</h2>
-  <div class="grid md:grid-cols-3 gap-8">
-    {
-      publications.map((pub) => {
-        // Add links for each publication by ID
-        const links = {
-          1: "https://drive.google.com/file/d/1USnz62sTmUMwZIrVRN9areiZpqb0J03c/view",
-          2: "https://drive.google.com/file/d/12ZljGw6dnRBLqCbMSfjXsFDcz3zMNteG/view",
-          3: "https://drive.google.com/file/d/15-Id07NqgD2JR_Djmoptek121gNBwwtV/view"
-        };
-
-        const content = (
-          <div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
-            <img
-              src={pub.image}
-              alt={pub.alt}
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-            />
-            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
-          </div>
-        );
-
-        return (
-          <div class="group cursor-pointer" key={pub.id}>
-            {links[pub.id]
-              ? <a href={links[pub.id]} target="_blank" rel="noopener noreferrer" class="block">{content}</a>
-              : content}
-          </div>
-        );
-      })
-    }
-  </div>
-</section>
+    <h2 class="text-3xl font-bold mb-8 text-gray-900">Featured Publications</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        publications.map((pub) => {
+          // Add links for each publication by ID
+          const links = {
+            1: "https://drive.google.com/file/d/1USnz62sTmUMwZIrVRN9areiZpqb0J03c/view",
+            2: "https://drive.google.com/file/d/12ZljGw6dnRBLqCbMSfjXsFDcz3zMNteG/view",
+            3: "https://drive.google.com/file/d/15-Id07NqgD2JR_Djmoptek121gNBwwtV/view",
+            4: "https://drive.google.com/file/d/172GtQVTq1HxRETYGCdL3ci_oT1Ya1OrL/view",
+            5: "https://drive.google.com/file/d/1Nv_eEGy89J3iLB3FkOJ2B_Gs4u8Fw-DV/view",
+            6: "https://drive.google.com/file/d/1_mWvpiGaB0EKmA2WyepAG8cdhq_Skj3Q/view",
+            7: "https://drive.google.com/file/d/1VjKz9qmiTnbJOB3FBz5w2jF-57_zBhyE/view",
+            8: "https://drive.google.com/file/d/1Wfl71neNsG9kiE1e0Y_jTb8JX49AeZOj/view",
+            9: "https://drive.google.com/file/d/1EyUCvEQID_t4cibtVrxKfpa5lXBgbyYF/view",
 
 
+          };
+
+          const content = (
+            <div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <img
+                src={pub.image}
+                alt={pub.alt}
+                class="w-full h-96 object-contain mx-auto"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+            </div>
+          );
+
+          return (
+            <div class="group cursor-pointer" key={pub.id}>
+              {links[pub.id] ? (
+                <a
+                  href={links[pub.id]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
+                >
+                  {content}
+                </a>
+              ) : (
+                content
+              )}
+            </div>
+          );
+        })
+      }
+    </div>
+  </section>
 
   <!-- Newsletter Section -->
   <section id="newsletter" class="py-16">
@@ -212,9 +286,9 @@ const whitepapers = Array(4)
     <div class="grid md:grid-cols-3 gap-8 items-start">
       <div class="md:col-span-1">
         <img
-          src={newsletter.src}
+          src="src/assets/white_papers/whitepaper/Newsletter.png"
           alt="Newsletter preview"
-          class="w-full h-full object-cover rounded-lg shadow-sm"
+          class="w-full h-96 object-contain mx-auto"
           loading="lazy"
         />
       </div>
@@ -280,8 +354,10 @@ const whitepapers = Array(4)
   </section>
 
   <!-- Report Section -->
+
   <section id="report" class="py-16">
     <h2 class="text-4xl font-bold mb-8 text-gray-900">Research Reports</h2>
+
     <div
       class="bg-gradient-to-r from-[#064924] to-[#519335] text-white rounded-lg p-8 md:p-12 mb-8"
     >
@@ -293,23 +369,30 @@ const whitepapers = Array(4)
         issues through evidence-based recommendations and actionable insights.
       </p>
     </div>
+
     <div class="grid md:grid-cols-3 gap-8">
       {
-        Array(3)
-          .fill(0)
-          .map((_, index) => (
-            <div class="group cursor-pointer">
+        reports.map((report, index) => (
+          <div key={index} class="group cursor-pointer">
+            <a
+              href={report.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block"
+            >
               <div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
                 <img
-                  src={Report_image.src}
-                  alt={`Research Report ${index + 1}`}
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  src={report.image}
+                  alt={report.alt}
+                  class="w-full h-96 object-contain mx-auto"
                   loading="lazy"
                 />
+
                 <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
               </div>
-            </div>
-          ))
+            </a>
+          </div>
+        ))
       }
     </div>
   </section>
@@ -318,29 +401,28 @@ const whitepapers = Array(4)
   <section id="whitepaper" class="py-16">
     <h2 class="text-3xl font-bold mb-8 text-gray-900">White Papers</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-  {
-    whitepapers.flat().map((paper) => (
-      <a
-        href="https://drive.google.com/file/d/1VLdMH9nUTTukH-cuc-KY-sTNLgC1DoLo/view"
-        target="_blank"
-        rel="noopener noreferrer"
-        key={paper.id}
-        class="group relative overflow-hidden rounded-lg bg-gray-100 aspect-[3/4] cursor-pointer block"
-      >
-        <div class="w-full h-full bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center">
-          <div class="text-center p-4">
-            <img src={paper.image} alt={paper.title} />
-            <h3 class="font-semibold text-gray-900">{paper.title}</h3>
-          </div>
-        </div>
-        <div class="absolute inset-0 bg-black/70 text-white p-4 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <p class="text-sm leading-relaxed">{paper.description}</p>
-        </div>
-      </a>
-    ))
-  }
-</div>
-
+      {
+        whitepapers.flat().map((paper) => (
+          <a
+            href="https://drive.google.com/file/d/1VLdMH9nUTTukH-cuc-KY-sTNLgC1DoLo/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            key={paper.id}
+            class="group relative overflow-hidden rounded-lg bg-gray-100 aspect-[3/4] cursor-pointer block"
+          >
+            <div class="w-full h-full bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center">
+              <div class="text-center p-4">
+                <img src={paper.image} alt={paper.title} />
+                <h3 class="font-semibold text-gray-900">{paper.title}</h3>
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-black/70 text-white p-4 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p class="text-sm leading-relaxed">{paper.description}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
   </section>
 </main>
 
