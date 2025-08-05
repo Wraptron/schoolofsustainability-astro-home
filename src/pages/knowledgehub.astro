@@ -57,35 +57,29 @@ const publications = [
     image: "src/assets/white_papers/whitepaper/publication03.png",
     alt: "Research Screenshot",
   },
-   {
+  {
     id: 4,
     image: "src/assets/white_papers/whitepaper/publication04.png",
-
   },
   {
     id: 5,
     image: "src/assets/white_papers/whitepaper/publication05.png",
-
   },
   {
     id: 6,
     image: "src/assets/white_papers/whitepaper/publication06.png",
-
   },
   {
     id: 7,
     image: "src/assets/white_papers/whitepaper/publication07.png",
-
   },
-   {
+  {
     id: 8,
     image: "src/assets/white_papers/whitepaper/publication08.png",
-
   },
-   {
+  {
     id: 9,
     image: "src/assets/white_papers/whitepaper/publication09.png",
-
   },
 ];
 const images = [
@@ -99,7 +93,7 @@ const whitepapers = Array(4)
   .fill(0)
   .map((_, index) => ({
     id: index + 1,
-    title: `paper ${index + 1}`,
+    title: `paper ${index + 1}`, // ❌ This line is missing backticks
     description: "Sustainability and Indian Industries: Why? Who? And How?",
     image: images[index],
   }));
@@ -120,8 +114,6 @@ const reports = [
     alt: "Research Report 3",
   },
 ];
----
-
 ---
 
 <Layout title="School of Sustainability">
@@ -243,8 +235,6 @@ const reports = [
             7: "https://drive.google.com/file/d/1VjKz9qmiTnbJOB3FBz5w2jF-57_zBhyE/view",
             8: "https://drive.google.com/file/d/1Wfl71neNsG9kiE1e0Y_jTb8JX49AeZOj/view",
             9: "https://drive.google.com/file/d/1EyUCvEQID_t4cibtVrxKfpa5lXBgbyYF/view",
-
-
           };
 
           const content = (
