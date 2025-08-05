@@ -3,7 +3,6 @@ import MainHead from "./MainHead.astro";
 import Footer from "../components/Footer.astro";
 import NavBar from "../components/Navbar.astro";
 
-
 interface Props {
   title: string;
   description?: string;
@@ -13,6 +12,8 @@ const {
   title = "School of Sustainability",
   description = "School of Sustainability at IIT Madras",
 } = Astro.props;
+
+import ScrollToTop from "../components/ScrollToTop.astro";
 ---
 
 <html lang="en">
@@ -31,7 +32,7 @@ const {
     <main class="flex-grow">
       <slot> Default Text</slot>
     </main>
-
+    <ScrollToTop />
   </body>
 </html>
 

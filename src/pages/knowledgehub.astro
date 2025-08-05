@@ -1,119 +1,31 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-
 import Footer from "@/components/Footer.astro";
+import Newletter from "@/components/Newletter.astro";
 import "../styles/global.css";
 
-// Import images
+// Import knowledge data
+import knowledgeData from "../Data/knowledgehub.json";
+
+// Import image assets
 import summit from "../assets/Summit on Sustainability .jpg";
 import icssrconf from "../assets/ICSSR Conference_2 (1) 1.svg";
-// import publicationcharuta from "../assets/Publication_Charuta 1.svg";
-// import publicationsantosh from "../assets/Publication_Santosh 1.svg";
-// import screenshot from "../assets/Screenshot 2025-05-05 194551 1.svg";
-
-import newsletter from "../assets/Screenshot 2025-05-05 085703 1.svg";
-import publication from "../assets/SfIB Cohort_1 3.svg";
 import kh from "../assets/knowledge hub page 1 image.jpg";
-import Newletter from "@/components/Newletter.astro";
-import Whitepaper from "../assets/white_papers/cxo.pdf.png";
 
-import Reprot1 from "../../public/pdf/Report - Razanatsoa et al 2025_DiverseK Madagascar Workshop Report (1).pdf";
-import Report_image from "../assets/Reports_images/Report - Industry Dialogue on ESG - Chennai Workshop Proceedings.jpg";
-import { Images } from "lucide-react";
+// Map imported images to data
+const imageMap = {
+  "../assets/Summit on Sustainability .jpg": summit,
+  "../assets/ICSSR Conference_2 (1) 1.svg": icssrconf,
+  "../assets/knowledge hub page 1 image.jpg": kh,
+};
 
-// Sample data - in a real app, this would come from a CMS or API
-const articles = [
-  {
-    id: 1,
-    image: summit,
-    date: "Tuesday, April 1, 2025",
-    title: "A Cost Effective Method to Treat Pollutants",
-    excerpt:
-      "Treatment of dye effluents and tannery effluents using advanced processes...",
-  },
-  {
-    id: 2,
-    image: icssrconf,
-    date: "Tuesday, April 1, 2025",
-    title: "The Right Price",
-    excerpt:
-      "With global climate changes, does a firm lean towards reduced emissions?",
-  },
-];
+// Process articles with imported images
+const articles = knowledgeData.articles.map((article) => ({
+  ...article,
+  image: imageMap[article.image] || { src: article.image },
+}));
 
-const publications = [
-  {
-    id: 1,
-    image: "src/assets/white_papers/whitepaper/publication01.png",
-    alt: "Publication by Charuta",
-  },
-  {
-    id: 2,
-    image: "src/assets/white_papers/whitepaper/publication02.png",
-    alt: "Publication by Santosh",
-  },
-  {
-    id: 3,
-    image: "src/assets/white_papers/whitepaper/publication03.png",
-    alt: "Research Screenshot",
-  },
-  {
-    id: 4,
-    image: "src/assets/white_papers/whitepaper/publication04.png",
-  },
-  {
-    id: 5,
-    image: "src/assets/white_papers/whitepaper/publication05.png",
-  },
-  {
-    id: 6,
-    image: "src/assets/white_papers/whitepaper/publication06.png",
-  },
-  {
-    id: 7,
-    image: "src/assets/white_papers/whitepaper/publication07.png",
-  },
-  {
-    id: 8,
-    image: "src/assets/white_papers/whitepaper/publication08.png",
-  },
-  {
-    id: 9,
-    image: "src/assets/white_papers/whitepaper/publication09.png",
-  },
-];
-const images = [
-  "src/assets/white_papers/white_img1.png",
-  "src/assets/white_papers/white_img1.png",
-  "src/assets/white_papers/white_img1.png",
-  "src/assets/white_papers/white_img1.png",
-];
-
-const whitepapers = Array(4)
-  .fill(0)
-  .map((_, index) => ({
-    id: index + 1,
-    title: `paper ${index + 1}`, // ❌ This line is missing backticks
-    description: "Sustainability and Indian Industries: Why? Who? And How?",
-    image: images[index],
-  }));
-const reports = [
-  {
-    image: "src/assets/white_papers/whitepaper/Reportimg.png",
-    link: "https://drive.google.com/file/d/14_bJjoeW1P-PV6z1yT1fQJGUewqQOVu3/view",
-    alt: "Research Report 1",
-  },
-  {
-    image: "src/assets/white_papers/whitepaper/Reportimg02.png",
-    link: "https://drive.google.com/file/d/1Nv_eEGy89J3iLB3FkOJ2B_Gs4u8Fw-DV/view",
-    alt: "Research Report 2",
-  },
-  {
-    image: "src/assets/white_papers/whitepaper/Reportimg03.png",
-    link: "https://drive.google.com/file/d/1tn0JfKUMJynt3IyKoiwXB_IFUEMukCn_/view",
-    alt: "Research Report 3",
-  },
-];
+const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
 ---
 
 <Layout title="School of Sustainability">
@@ -127,10 +39,9 @@ const reports = [
     />
     <div class="absolute inset-0 bg-black/40 flex items-end justify-start">
       <div class="text-left text-white px-4 pb-8 pl-8">
-        <h1 class="text-3xl md:text-4xl font-bold mb-4">Knowledge Hub</h1>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">{hero.title}</h1>
         <p class="text-lg md:text-xl max-w-2xl">
-          Discover cutting-edge research, publications, and insights in
-          sustainability and innovation
+          {hero.subtitle}
         </p>
       </div>
     </div>
@@ -224,19 +135,6 @@ const reports = [
     <div class="grid md:grid-cols-3 gap-8">
       {
         publications.map((pub) => {
-          // Add links for each publication by ID
-          const links = {
-            1: "https://drive.google.com/file/d/1USnz62sTmUMwZIrVRN9areiZpqb0J03c/view",
-            2: "https://drive.google.com/file/d/12ZljGw6dnRBLqCbMSfjXsFDcz3zMNteG/view",
-            3: "https://drive.google.com/file/d/15-Id07NqgD2JR_Djmoptek121gNBwwtV/view",
-            4: "https://drive.google.com/file/d/172GtQVTq1HxRETYGCdL3ci_oT1Ya1OrL/view",
-            5: "https://drive.google.com/file/d/1Nv_eEGy89J3iLB3FkOJ2B_Gs4u8Fw-DV/view",
-            6: "https://drive.google.com/file/d/1_mWvpiGaB0EKmA2WyepAG8cdhq_Skj3Q/view",
-            7: "https://drive.google.com/file/d/1VjKz9qmiTnbJOB3FBz5w2jF-57_zBhyE/view",
-            8: "https://drive.google.com/file/d/1Wfl71neNsG9kiE1e0Y_jTb8JX49AeZOj/view",
-            9: "https://drive.google.com/file/d/1EyUCvEQID_t4cibtVrxKfpa5lXBgbyYF/view",
-          };
-
           const content = (
             <div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <img
@@ -251,9 +149,9 @@ const reports = [
 
           return (
             <div class="group cursor-pointer" key={pub.id}>
-              {links[pub.id] ? (
+              {pub.link ? (
                 <a
-                  href={links[pub.id]}
+                  href={pub.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   class="block"
@@ -276,7 +174,7 @@ const reports = [
     <div class="grid md:grid-cols-3 gap-8 items-start">
       <div class="md:col-span-1">
         <img
-          src="src/assets/white_papers/whitepaper/Newsletter.png"
+          src={newsletter.image}
           alt="Newsletter preview"
           class="w-full h-96 object-contain mx-auto"
           loading="lazy"
@@ -285,14 +183,10 @@ const reports = [
       <div class="md:col-span-2">
         <div class="mb-6">
           <time class="text-lg text-gray-600 font-medium" datetime="2025-04-01">
-            Tuesday, April 1, 2025
+            {newsletter.date}
           </time>
           <p class="text-lg text-gray-700 mt-4 leading-relaxed">
-            Stay updated with the latest research findings, sustainability
-            initiatives, and innovation breakthroughs. Our newsletter delivers
-            curated content directly to your inbox, featuring expert insights
-            and cutting-edge developments in environmental science and
-            sustainable technology.
+            {newsletter.description}
           </p>
         </div>
 
@@ -343,9 +237,8 @@ const reports = [
     </div>
   </section>
 
-  <!-- Report Section -->
-
-  <section id="report" class="py-16">
+  <!-- Reports Section -->
+  <section id="reports" class="py-16">
     <h2 class="text-4xl font-bold mb-8 text-gray-900">Research Reports</h2>
 
     <div
@@ -377,7 +270,6 @@ const reports = [
                   class="w-full h-96 object-contain mx-auto"
                   loading="lazy"
                 />
-
                 <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
               </div>
             </a>
@@ -387,14 +279,14 @@ const reports = [
     </div>
   </section>
 
-  <!-- White Paper Section -->
+  <!-- White Papers Section -->
   <section id="whitepaper" class="py-16">
     <h2 class="text-3xl font-bold mb-8 text-gray-900">White Papers</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       {
-        whitepapers.flat().map((paper) => (
+        whitepapers.map((paper) => (
           <a
-            href="https://drive.google.com/file/d/1VLdMH9nUTTukH-cuc-KY-sTNLgC1DoLo/view"
+            href={paper.link}
             target="_blank"
             rel="noopener noreferrer"
             key={paper.id}
