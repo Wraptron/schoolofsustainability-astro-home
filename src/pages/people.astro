@@ -6,14 +6,14 @@ import Newletter from "../components/Newletter.astro";
 import "../styles/global.css";
 
 // Team photos
-import peoplecover from "../assets/IOER Conference Group Photo (1).svg";
+import peoplecover from "../assets/IOER Conference Group Photo 2.jpg";
 import Rajnish from "../assets/Rajnish-Kumarv2 1.svg";
-import satyaseshadri from "../assets/Satyanarayanan Seshadri 1.svg";
+import satyaseshadri from "../assets/Satyanarayanan Seshadri 4.jpg";
 import charutaphoto from "../assets/resource (2) 1.svg";
 import rahulphoto from "../assets/resource (1) 1.svg";
 import sivaphoto from "../assets/resource 1.svg";
 import vishakha from "../assets/resource (4) 1.svg";
-import jennifer from "../assets/Dolly Sweetlin Jennifer.png";
+import jennifer from "../assets/Dolly Sweetlin Jennifer Compressed.jpg";
 
 // Social icons
 import webglobe from "../assets/web logo.svg";
@@ -21,38 +21,38 @@ import linkedin from "../assets/LinkedIn.svg";
 import twitter from "../assets/x twitter logo small 2.svg";
 
 // Associate faculty photos
-import associatefac1 from "../assets/AssociateFaculty/1 (1).png";
-import associatefac2 from "../assets/AssociateFaculty/2.svg";
+import associatefac1 from "../assets/AssociateFaculty/1 Compressed.jpg";
+import associatefac2 from "../assets/AssociateFaculty/2 Compressed.jpg";
 import associatefac3 from "../assets/AssociateFaculty/3.svg";
 import associatefac4 from "../assets/AssociateFaculty/4.svg";
 import associatefac5 from "../assets/AssociateFaculty/5.svg";
 import associatefac6 from "../assets/AssociateFaculty/6.svg";
-import associatefac7 from "../assets/AssociateFaculty/Ethayaraja Mani.jpeg";
+import associatefac7 from "../assets/AssociateFaculty/Ethayaraja Mani Compressed.jpg";
 import associatefac8 from "../assets/AssociateFaculty/7.svg";
 import associatefac9 from "../assets/AssociateFaculty/himanshu.png";
 import associatefac10 from "../assets/AssociateFaculty/8.svg";
-import associatefac11 from "../assets/AssociateFaculty/Jitendra Sangwai.jpg";
+import associatefac11 from "../assets/AssociateFaculty/Jitendra Sangwai Compressed.jpg";
 import associatefac12 from "../assets/AssociateFaculty/Krishna Malakar.jpg";
-import associatefac13 from "../assets/AssociateFaculty/Krishna Vasudevan.jpg";
+import associatefac13 from "../assets/AssociateFaculty/Krishna Vasudevan Compressed.jpg";
 import associatefac14 from "../assets/AssociateFaculty/Mohanakrishnan Logan.jpg";
 import associatefac15 from "../assets/AssociateFaculty/rao-pp.jpg";
-import associatefac16 from "../assets/AssociateFaculty/Nitin Muralidharan.png";
+import associatefac16 from "../assets/AssociateFaculty/Nitin Muralidharan Compressed.jpg";
 import associatefac17 from "../assets/AssociateFaculty/Preeti Aghalayam resized.jpg";
-import associatefac18 from "../assets/AssociateFaculty/Ravi Kumar N V.jpg";
-import associatefac19 from "../assets/AssociateFaculty/Ravindra Gettu.jpg";
-import associatefac20 from "../assets/AssociateFaculty/Sachin Gunthe.png";
+import associatefac18 from "../assets/AssociateFaculty/Ravi Kumar N Compressed.jpg";
+import associatefac19 from "../assets/AssociateFaculty/Ravindra Gettu Compressed.jpg";
+import associatefac20 from "../assets/AssociateFaculty/Sachin Gunthe Compressed.jpg";
 import associatefac21 from "../assets/AssociateFaculty/Sankha Karmakar.jpg";
 import associatefac22 from "../assets/AssociateFaculty/Santosh Kumar Sahu.jpg";
 import associatefac23 from "../assets/AssociateFaculty/Sivakumar Palaniappan.jpg";
 import associatefac24 from "../assets/AssociateFaculty/Smita Srivastava.jpg";
 import associatefac25 from "../assets/AssociateFaculty/sreeram k k.jpg";
-import associatefac26 from "../assets/AssociateFaculty/Sriram Venkatachalam.jpg";
+import associatefac26 from "../assets/AssociateFaculty/Sriram VenkatachalamCompressed.jpg";
 import associatefac27 from "../assets/AssociateFaculty/Swathi sudakar.jpg";
 import associatefac28 from "../assets/AssociateFaculty/Tiju Thomas.jpg";
-import associatefac29 from "../assets/AssociateFaculty/Venkatarathnam G.jpg";
-import associatefac30 from "../assets/AssociateFaculty/Venkatraman Srinivasan.jpg";
-import associatefac31 from "../assets/AssociateFaculty/Vinu R.png";
-
+import associatefac29 from "../assets/AssociateFaculty/Venkatarathnam G Compressed.jpg";
+import associatefac30 from "../assets/AssociateFaculty/Venkatraman Srinivasan Compressed.jpg";
+import associatefac31 from "../assets/AssociateFaculty/Vinu R Compressed.jpg";
+                                                                                                                                                                                                  
 // Affiliate faculty photos
 import afffac1 from "../assets/A.svg";
 import afffac2 from "../assets/B.svg";
@@ -536,7 +536,7 @@ const advisors = [
           Leadership Team
         </h2>
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 sm:gap-10"
+          class="grid grid-cols-1 w-6xl items-center  sm:grid-cols-2 lg:grid-cols-2 gap-8 sm:gap-10"
         >
           {
             teamMembers.map((member) => (
@@ -546,7 +546,7 @@ const advisors = [
                     src={member.image.src}
                     alt={member.name}
                     class="w-full h-64 sm:h-72 md:h-80"
-                  />
+                  />    
                   <div class="absolute bottom-4 right-4 flex gap-3">
                     {member.linkedin && (
                       <a
@@ -575,10 +575,10 @@ const advisors = [
                   </div>
                 </div>
                 <div class="p-6">
-                  <h3 class="text-lg sm:text-lg font-bold mb-2">
+                  <h3 class="text-xs sm:text-lg  mb-2">
                     {member.name}
                   </h3>
-                  <p class="text-gray-600 text-base sm:text-lg">
+                  <p class="text-gray-600 text-xs sm:text-lg">
                     {member.position}
                   </p>
                 </div>
@@ -639,7 +639,7 @@ const advisors = [
                     </div>
                   </div>
                   <div class="p-4 sm:p-6">
-                    <h3 class="text-lg sm:text-xl font-bold mb-2">
+                    <h3 class="text-xs sm:text-xl  mb-2">
                       {member.name}
                     </h3>
                     <p class="text-gray-600 text-sm sm:text-base">
@@ -700,7 +700,7 @@ const advisors = [
                     )}
                   </div>
                   <div class="p-4 sm:p-6">
-                    <h3 class="text-lg sm:text-xl font-bold mb-2">
+                    <h3 class="text-xs sm:text-xl  mb-2">
                       {faculty.name}
                     </h3>
                     <p class="text-gray-600 text-sm sm:text-base">
@@ -764,7 +764,7 @@ const advisors = [
                     )}
                   </div>
                   <div class="p-4 sm:p-6">
-                    <h3 class="text-lg sm:text-xl font-bold mb-2">
+                    <h3 class="text-xs sm:text-xl  mb-2">
                       {fellow.name}
                     </h3>
                     <p class="text-gray-600 text-sm sm:text-base">
@@ -787,7 +787,7 @@ const advisors = [
             Advisors
           </h2>
           <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-8"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-[105%] xl:grid-cols-5 gap-6 sm:gap-8"
           >
             {
               advisors.map((advisor) => (
@@ -796,7 +796,7 @@ const advisors = [
                     <img
                       src={advisor.image.src}
                       alt={advisor.name}
-                      class="w-full h-48 sm:h-56 md:h-64 object-cover"
+                      class="w-screen h-52 sm:h-56 md:h-64 object-cover"
                     />
                     <a
                       href={advisor.website}
@@ -808,7 +808,7 @@ const advisors = [
                     </a>
                   </div>
                   <div class="p-4 sm:p-6">
-                    <h3 class="text-base sm:text-lg font-bold mb-2">
+                    <h3 class="text-xs sm:text-lg  mb-2">
                       {advisor.name}
                     </h3>
                     <p class="text-gray-600 text-sm sm:text-base">
