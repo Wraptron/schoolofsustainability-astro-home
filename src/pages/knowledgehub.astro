@@ -22,7 +22,9 @@ const imageMap = {
 // Process articles with imported images
 const articles = knowledgeData.articles.map((article) => ({
   ...article,
-  image: imageMap[article.image as keyof typeof imageMap] || { src: article.image },
+  image: imageMap[article.image as keyof typeof imageMap] || {
+    src: article.image,
+  },
 }));
 
 const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
@@ -57,12 +59,12 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
   <div
     class="flex flex-wrap justify-center items-center gap-2 md:gap-4 text-emerald-600 text-lg md:text-xl"
   >
-    <a
+    <!-- <a
       href="#articles"
       class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1"
     >
       Articles
-    </a>
+    </a> -->
     <span class="text-emerald-400" aria-hidden="true">↓</span>
     <a
       href="#publications"
@@ -96,7 +98,7 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
 
 <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
   <!-- Articles Section -->
-  <section id="articles" class="py-16">
+  <!-- <section id="articles" class="py-16">
     <h2 class="text-3xl font-bold mb-8 text-gray-900">Latest Articles</h2>
     <div class="grid md:grid-cols-2 gap-8">
       {
@@ -127,11 +129,11 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
         ))
       }
     </div>
-  </section>
+  </section> -->
 
   <!-- Publications Section -->
   <section id="publications" class="py-16">
-    <h2 class="text-3xl font-bold mb-8 text-gray-900">Featured Publications</h2>
+    <h2 class="text-3xl font-bold mb-8 text-gray-900">Publications</h2>
     <div class="grid md:grid-cols-3 gap-8">
       {
         publications.map((pub) => {
@@ -157,6 +159,7 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
                   class="block"
                 >
                   {content}
+                  {pub.details}
                 </a>
               ) : (
                 content
@@ -256,7 +259,7 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
     <div class="grid md:grid-cols-3 gap-8">
       {
         reports.map((report, index) => (
-          <div  class="group cursor-pointer">
+          <div class="group cursor-pointer">
             <a
               href={report.link}
               target="_blank"
@@ -291,10 +294,10 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
             rel="noopener noreferrer"
             class="group relative overflow-hidden rounded-lg bg-gray-100 aspect-[3/4] cursor-pointer block"
           >
-            <div class="w-full h-full bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center">
+            <div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <div class="text-center p-4">
-                <img src={paper.image}  />
-                <h3 class="font-semibold text-gray-900"></h3>
+                <img src={paper.image} />
+                <h3 class="font-semibold text-gray-900" />
               </div>
             </div>
             <div class="absolute inset-0 bg-black/70 text-white p-4 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">

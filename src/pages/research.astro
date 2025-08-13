@@ -1,8 +1,11 @@
 ---
+// Refactored Astro component with separated data and functions
 import Layout from "@/layouts/Layout.astro";
 import Footer from "@/components/Footer.astro";
 import Newletter from "@/components/Newletter.astro";
 import "../styles/global.css";
+
+// Import images
 import cover from "../../public/images/banner.webp";
 import project1 from "../assets/project1.svg";
 import projectcover from "../assets/wind-farms-fields.jpg";
@@ -11,6 +14,33 @@ import projectbackgrond from "../assets/reseach_images/research.jpg";
 import project4 from "../assets/reseach_images/Consultancy Projects.jpg";
 import project5 from "../assets/reseach_images/Patents Filed.jpg";
 import project6 from "../assets/reseach_images/Patents Granted.jpg";
+
+// Import separated data
+import { centersData, researchProjectsData } from "../Data/research.js";
+import { formatResearchProjects, truncateText } from "../utils/helpers.js";
+
+// Process the data
+const centers = centersData;
+const researchProjects = [
+  {
+    ...researchProjectsData[0],
+    image: project1,
+  },
+  {
+    ...researchProjectsData[1],
+    image: project4,
+  },
+  {
+    ...researchProjectsData[2],
+    image: project5,
+  },
+  {
+    ...researchProjectsData[3],
+    image: project6,
+  }
+];
+
+const formattedProjects = formatResearchProjects(researchProjects);
 ---
 
 <Layout title="School of Sustainability">
@@ -54,61 +84,36 @@ import project6 from "../assets/reseach_images/Patents Granted.jpg";
     <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6">
       Research & Development
     </h2>
-    <div class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-6 sm:gap-8 ">
-      {
-        [
-          {
-            image: project1,
-            title: "Sponsored Projects",
-            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=392541364&single=true",
-          },
-          {
-            image: project4,
-            title: "Consultancy Projects",
-            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=591462497&single=true",
-          },
-          {
-            image: project5,
-            title: "Patents Filed",
-            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=1624878732&single=true",
-          },
-          {
-            image: project6,
-            title: "Patents Granted",
-            url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRc2gej6kzZ2lUM2fgMSwuSuHYRKXuj0uGOYcHmTb6I7ohMl94A8E1EB4Qw0cC6xw/pubhtml?gid=1624878732&single=true",
-          },
-        ].map((project, index) => (
-          <article class="bg-gray-100 rounded-xl overflow-hidden hover:shadow-lg transition-shadow group ">
+    <div class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-6 sm:gap-8">
+      {formattedProjects.map((project) => (
+        <article class="bg-gray-100 rounded-xl overflow-hidden hover:shadow-lg transition-shadow group">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block"
+            data-project-id={project.id}
+          >
+            <img
+              src={project.image.src}
+              alt={project.title}
+              class="w-full h-48 sm:h-56 md:h-64 object-cover p-4 group-hover:scale-105 transition-transform cursor-pointer"
+              loading="lazy"
+            />
+          </a>
+          <div class="p-4 sm:p-6">
             <a
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="block"
+              class="text-base sm:text-lg font-medium text-blue-600 hover:text-blue-800 underline transition-colors block"
+              data-project-id={project.id}
             >
-              <img
-                src={project.image.src}
-                alt={project.title}
-                class="w-full h-48 sm:h-56 md:h-64 object-cover p-4 group-hover:scale-105 transition-transform cursor-pointer"
-                loading="lazy"
-              />
+              {project.title}
             </a>
-            <div class="p-4 sm:p-6">
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-base sm:text-lg font-medium text-blue-600 hover:text-blue-800 underline transition-colors block"
-              >
-                {project.title}
-              </a>
-              {/* <p class="text-sm sm:text-base text-gray-600 mt-2">
-                View detailed information and data about our{" "}
-                {project.title.toLowerCase()} in a new tab.
-              </p> */}
-            </div>
-          </article>
-        ))
-      }
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
@@ -145,6 +150,7 @@ import project6 from "../assets/reseach_images/Patents Granted.jpg";
             Discover how our projects drive sustainability forward
           </p>
           <button
+            id="viewProjectsBtn"
             class="bg-white text-black font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-full shadow-lg transform hover:scale-105 transition-all duration-200 text-sm sm:text-base"
           >
             VIEW PROJECTS
@@ -155,10 +161,15 @@ import project6 from "../assets/reseach_images/Patents Granted.jpg";
     <div class="h-12 sm:h-16 lg:h-20 xl:h-24 bg-transparent"></div>
   </section>
 
-  <!-- Affiliated Centers Section (4 columns layout) -->
+  <!-- Affiliated Centers Section -->
   <section id="centers" class="py-12 sm:py-16 md:py-20 relative">
     <div class="container mx-auto px-4">
-      <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-8">Affiliated Centers</h2>
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-0">
+          Affiliated Centers
+        </h2>
+        
+      </div>
 
       <!-- Background Image -->
       <div class="absolute inset-0 z-0">
@@ -170,66 +181,74 @@ import project6 from "../assets/reseach_images/Patents Granted.jpg";
         />
       </div>
 
-      <!-- Cards Grid - 4 columns on large screens -->
-      <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-        {
-          [
-            { name: "ABCD Center", logo: "/images/ABCD Center.png", link: "https://abcd-centre.org/" },
-            { name: "Aqua MAP Centre", logo: "/images/Aqua MAP Centre.png", link: "https://aquamap.iitm.ac.in/" },
-            { name: "Architected Material & Design Group", logo: "/images/Architected Material & Design Group.png", link: "https://www.archmatdesiitm.com/" },
-            { name: "Carbon Zero Challenge", logo: "/images/Carbon Zero Challenge.png", link: "https://czeroc.in/" },
-            { name: "CCSD", logo: "/images/CCSD.png", link: "https://web.iitm.ac.in/ccsd/" },
-            { name: "Center for Resource Efficiency", logo: "/images/Center for resource Efficiency.png", link: "https://resourceefficiency.org/" },
-            { name: "Zero Emission Trucking", logo: "/images/Centre of Excellence for Zero Emission Trucking.png", link: "https://zeroemissiontrucking.org/" },
-            { name: "CNDE", logo: "/images/CNDE.png", link: "https://www.cnde.in/" },
-            { name: "Correlative Microscopy", logo: "/images/Correlative Microscopy.png", link: "https://ioe.iitm.ac.in/project/correlative-microscopy/" },
-            { name: "CTAP", logo: "/images/CTAP.png", link: "https://hss.iitm.ac.in/ctap/" },
-            { name: "CUBE", logo: "/images/CUBE.png", link: "https://cubeiitm.org/" },
-            { name: "Extra Terrestrial Manufacturing", logo: "/images/Extra Terrestrial Manufacturing.png", link: "https://ioe.iitm.ac.in/project/extra-terrestrial-manufacturing/" },
-            { name: "GFL", logo: "/images/GFL.png", link: "https://ioe.iitm.ac.in/project/geophysical-flows/#project" },
-            { name: "HTIC", logo: "/images/HTIC.png", link: "https://www.hticiitm.org/" },
-          ].map((center) => (
-            <div class="bg-white/90 backdrop-blur-sm hover:bg-white/95 transition-all duration-300 p-3 sm:p-4 rounded-lg cursor-pointer group shadow-lg hover:shadow-xl border border-white/20">
-              <a
-                href={center.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="block"
-              >
+      <!-- Centers Grid -->
+      <div id="centersGrid" class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+        {centers.map((center) => (
+          <div class="center-card bg-white/90 backdrop-blur-sm hover:bg-white/95 transition-all duration-300 p-3 sm:p-4 rounded-lg cursor-pointer group shadow-lg hover:shadow-xl border border-white/20 relative overflow-hidden"
+               data-center-name={center.name.toLowerCase()}
+               data-center-detail={center.detail.toLowerCase()}>
+            <a
+              href={center.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block relative"
+              data-center-id={center.id}
+            >
+              <!-- Default Content (Always Visible) -->
+              <div class="default-content transition-opacity duration-300 group-hover:opacity-0">
                 <!-- Logo -->
                 <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden mx-auto mb-3">
-                  <img src={center.logo} alt={center.name} class="w-full h-full object-contain" />
+                  <img 
+                    src={center.logo} 
+                    alt={center.name} 
+                    class="w-full h-full object-contain"
+                    loading="lazy"
+                  />
                 </div>
                 
                 <!-- Name -->
                 <div class="text-center">
-                  <h3 style="font-size: 25px;" class="text-xs sm:text-sm font-medium text-gray-800 group-hover:text-gray-900 line-clamp-2 leading-tight">
-
+                  <h3 class="text-xs sm:text-sm font-medium text-gray-800 line-clamp-2 leading-tight">
                     {center.name}
                   </h3>
                 </div>
-                
-                <!-- External link indicator -->
-                {/* <div class="flex justify-center mt-2"> */}
-                  {/* <svg
-                    class="w-4 h-4 text-gray-400 group-hover:text-white transition duration-200"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              </div>
+
+              <!-- Hover Content (Details) -->
+              <div class="hover-content absolute inset-0 p-3 sm:p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 backdrop-blur-sm flex flex-col justify-center">
+                <div class="text-center">
+                  <!-- Small Logo on Hover -->
+                  <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden mx-auto mb-2">
+                    <img 
+                      src={center.logo} 
+                      alt={center.name} 
+                      class="w-full h-full object-contain"
+                      loading="lazy"
                     />
-                  </svg> */}
-                {/* </div> */}
-              </a>
-            </div>
-          ))
-        }
+                  </div>
+                  
+                  <!-- Center Name -->
+                  <h3 class="text-xs sm:text-sm font-bold text-gray-800 mb-2 line-clamp-1">
+                    {center.name}
+                  </h3>
+                  
+                  <!-- Full Details -->
+                  <p class="text-xs text-gray-700 leading-tight overflow-y-auto max-h-32 scrollbar-thin">
+                    {center.detail}
+                  </p>
+                  
+                  <!-- Visit Link Indicator -->
+                  <div class="mt-2 text-xs text-blue-600 font-medium">
+                    Click to visit →
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        ))}
       </div>
+
+     
     </div>
   </section>
 
@@ -239,10 +258,165 @@ import project6 from "../assets/reseach_images/Patents Granted.jpg";
 </Layout>
 
 <style>
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Custom scrollbar for hover details */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #9CA3AF #F3F4F6;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #F3F4F6;
+    border-radius: 2px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #9CA3AF;
+    border-radius: 2px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #6B7280;
+  }
+
+  /* Enhanced hover effects */
+  .center-card {
+    transition: all 0.3s ease;
+  }
+  
+  .center-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Smooth content transitions */
+  .default-content,
+  .hover-content {
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .hover-content {
+    backdrop-filter: blur(8px);
+  }
 </style>
+
+<script>
+  // Import utility functions for client-side functionality
+  import { scrollToSection, handleExternalLink, trackEvent } from "../utils/helpers.js";
+  
+  // Initialize when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    // Handle smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        scrollToSection(targetId);
+      });
+    });
+
+    // Handle external link tracking
+    const externalLinks = document.querySelectorAll('a[target="_blank"]');
+    externalLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        const url = this.getAttribute('href');
+        const linkName = this.textContent.trim() || this.getAttribute('data-center-id') || this.getAttribute('data-project-id');
+        trackEvent('external_link_click', { url, link_name: linkName });
+      });
+    });
+
+    // Search functionality
+    const searchInput = document.getElementById('centerSearch');
+    const centersGrid = document.getElementById('centersGrid');
+    const noResults = document.getElementById('noResults');
+    const centerCards = document.querySelectorAll('.center-card');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        centerCards.forEach(card => {
+          const name = card.getAttribute('data-center-name');
+          const detail = card.getAttribute('data-center-detail');
+          
+          if (name.includes(searchTerm) || detail.includes(searchTerm)) {
+            card.style.display = 'block';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Show/hide no results message
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      });
+    }
+
+    // Sort functionality
+    const sortButton = document.getElementById('sortCenters');
+    let sortAscending = true;
+
+    if (sortButton) {
+      sortButton.addEventListener('click', function() {
+        const cards = Array.from(centerCards);
+        
+        cards.sort((a, b) => {
+          const nameA = a.getAttribute('data-center-name');
+          const nameB = b.getAttribute('data-center-name');
+          
+          if (sortAscending) {
+            return nameA.localeCompare(nameB);
+          } else {
+            return nameB.localeCompare(nameA);
+          }
+        });
+
+        // Re-append sorted cards to the grid
+        cards.forEach(card => centersGrid.appendChild(card));
+        
+        // Update button text and toggle sort direction
+        sortAscending = !sortAscending;
+        this.textContent = sortAscending ? 'Sort A-Z' : 'Sort Z-A';
+      });
+    }
+
+    // View Projects button
+    const viewProjectsBtn = document.getElementById('viewProjectsBtn');
+    if (viewProjectsBtn) {
+      viewProjectsBtn.addEventListener('click', function() {
+        scrollToSection('research');
+        trackEvent('view_projects_click', { source: 'hero_section' });
+      });
+    }
+  });
+</script>
