@@ -81,7 +81,7 @@ const formattedProjects = formatResearchProjects(researchProjects);
 
   <!-- Research & Development Section -->
   <section id="research" class="container mx-auto px-4 py-12 sm:py-16 md:py-20">
-    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6">
+    <h2 class="text-xl sm:text-2xl text-center md:text-3xl font-bold mb-6">
       Research & Development
     </h2>
     <div class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-6 sm:gap-8">
@@ -97,7 +97,7 @@ const formattedProjects = formatResearchProjects(researchProjects);
             <img
               src={project.image.src}
               alt={project.title}
-              class="w-full h-48 sm:h-56 md:h-64 object-cover p-4 group-hover:scale-105 transition-transform cursor-pointer"
+              class="w-full h-48 sm:h-56 md:h-64 object-cover p-4 group-hover:scale-105 transition-transform cursor-pointer rounded-3xl"
               loading="lazy"
             />
           </a>
@@ -106,7 +106,7 @@ const formattedProjects = formatResearchProjects(researchProjects);
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-base sm:text-lg font-medium text-blue-600 hover:text-blue-800 underline transition-colors block"
+              class="text-base sm:text-lg font-medium  transition-colors block"
               data-project-id={project.id}
             >
               {project.title}

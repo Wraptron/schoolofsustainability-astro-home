@@ -65,28 +65,28 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
     >
       Articles
     </a> -->
-    <span class="text-emerald-400" aria-hidden="true">↓</span>
+
     <a
       href="#publications"
       class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1"
     >
       Publications
     </a>
-    <span class="text-emerald-400" aria-hidden="true">↓</span>
+    <span class="text-emerald-400" aria-hidden="true">|</span>
     <a
       href="#newsletter"
       class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1"
     >
       Newsletter
     </a>
-    <span class="text-emerald-400" aria-hidden="true">↓</span>
+    <span class="text-emerald-400" aria-hidden="true">|</span>
     <a
       href="#reports"
       class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1"
     >
       Reports
     </a>
-    <span class="text-emerald-400" aria-hidden="true">↓</span>
+    <span class="text-emerald-400" aria-hidden="true">|</span>
     <a
       href="#whitepaper"
       class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1"
@@ -133,7 +133,9 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
 
   <!-- Publications Section -->
   <section id="publications" class="py-16">
-    <h2 class="text-3xl font-bold mb-8 text-gray-900">Publications</h2>
+    <h2 class="text-3xl font-bold mb-8 text-gray-900 text-center">
+      Publications
+    </h2>
     <div class="grid md:grid-cols-3 gap-8">
       {
         publications.map((pub) => {
@@ -173,7 +175,9 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
 
   <!-- Newsletter Section -->
   <section id="newsletter" class="py-16">
-    <h2 class="text-3xl font-bold mb-8 text-gray-900">Newsletter</h2>
+    <h2 class="text-3xl font-bold mb-8 text-gray-900 text-center">
+      Newsletter
+    </h2>
     <div class="grid md:grid-cols-3 gap-8 items-start">
       <div class="md:col-span-1">
         <img
@@ -242,7 +246,9 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
 
   <!-- Reports Section -->
   <section id="reports" class="py-16">
-    <h2 class="text-4xl font-bold mb-8 text-gray-900">Research Reports</h2>
+    <h2 class="text-4xl font-bold mb-8 text-gray-900 text-center">
+      Research Reports
+    </h2>
 
     <div
       class="bg-gradient-to-r from-[#064924] to-[#519335] text-white rounded-lg p-8 md:p-12 mb-8"
@@ -284,7 +290,9 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
 
   <!-- White Papers Section -->
   <section id="whitepaper" class="py-16">
-    <h2 class="text-3xl font-bold mb-8 text-gray-900">White Papers</h2>
+    <h2 class="text-3xl font-bold mb-8 text-gray-900 text-center">
+      White Papers
+    </h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       {
         whitepapers.map((paper) => (

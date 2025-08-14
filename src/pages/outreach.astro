@@ -76,13 +76,13 @@ import Event3 from "../assets/outreach_images/Events/IITM Swadeshi Shodh Sanstha
               class="font-medium hover:text-green-700 transition-colors cursor-pointer"
               >Events</a
             >
-            <span class="hidden sm:inline">↓</span>
+            <span class="hidden sm:inline">|</span>
             <a
               href="#media"
               class="font-medium hover:text-green-700 transition-colors cursor-pointer"
               >Media</a
             >
-            <span class="hidden sm:inline">↓</span>
+            <span class="hidden sm:inline">|</span>
             <a
               href="#initiatives"
               class="font-medium hover:text-green-700 transition-colors cursor-pointer"
@@ -94,94 +94,145 @@ import Event3 from "../assets/outreach_images/Events/IITM Swadeshi Shodh Sanstha
     </section>
 
     <!-- Events Section -->
-<section class="py-8 sm:py-12" id="events">
-  <div class="container mx-auto px-4">
-    <!-- Events Header -->
-    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-      <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900">Events</h2>
-      <div class="flex flex-col sm:flex-row gap-2 sm:gap-5 text-sm sm:text-base font-semibold text-gray-600">
-        <div>Upcoming / Past</div>
-        <div>Year: 2025</div>
+    <section class="py-8 sm:py-12" id="events">
+      <div class="container mx-auto px-4">
+        <!-- Events Header -->
+        <div
+          class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8"
+        >
+          <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900">
+            Events
+          </h2>
+          <div
+            class="flex flex-col sm:flex-row gap-2 sm:gap-5 text-sm sm:text-base font-semibold text-gray-600"
+          >
+            <div>Upcoming / Past</div>
+            <div>Year: 2025</div>
+          </div>
+        </div>
+
+        <!-- Events Grid -->
+        <div class="space-y-8">
+          <!-- Event Card 1 -->
+          <article
+            class="border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <div class="w-full md:w-1/2 h-52 md:h-auto">
+              <img
+                src={Event1.src}
+                alt="Event 1 banner"
+                class="w-full h-[350px] object-cover"
+              />
+            </div>
+            <div class="w-full md:w-1/2 p-6 flex flex-col justify-between">
+              <div>
+                <h3
+                  class="text-xl font-light text-[#00A63E] mb-2 hover:underline"
+                >
+                  Identity and Beliefs Dissonance
+                </h3>
+                <div
+                  class="flex flex-wrap items-center text-gray-700 gap-4 text-xs sm:text-base mb-4"
+                >
+                  <p class="flex items-center gap-1">📅 24 July 2025</p>
+                  <p class="flex items-center gap-1">
+                    📍 Mahatma Hall, HSB 357
+                  </p>
+                  <p class="flex items-center gap-1">⏰ 03:00 PM – 04:00 PM</p>
+                </div>
+                <p class="text-gray-700 mb-3 text-sm line-clamp-3">
+                  The School of Sustainability at IIT Madras is a hub for
+                  interdisciplinary learning and research. […]
+                </p>
+                <button
+                  class="mt-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-sm"
+                  >More Info</button
+                >
+              </div>
+              <span class="text-gray-400 font-semibold mt-4">PASSED</span>
+            </div>
+          </article>
+
+          <!-- Event Card 2 -->
+          <article
+            class="border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <div class="w-full md:w-1/2 h-52 md:h-auto">
+              <img
+                src={Event2.src}
+                alt="Event 2 banner"
+                class="w-full h-[500px] object-cover"
+              />
+            </div>
+            <div class="w-full md:w-1/2 p-6 flex flex-col justify-between">
+              <div>
+                <h3
+                  class="text-5xl sm:text-xl font-light text-[#00A63E] mb-2 hover:underline"
+                >
+                  SPARC Workshop on Hydrogen and Carbon Capture, Utilization and
+                  Storage (CCUS) Value Chains: Fundamentals & Systems
+                  Engineering
+                </h3>
+                <div
+                  class="flex flex-wrap items-center text-gray-700 gap-4 text-xs sm:text-base mb-4"
+                >
+                  <p class="flex items-center gap-1">📅 6 & 7 August 2025</p>
+                  <p class="flex items-center gap-1">📍Hall 3, ICSR , IITM</p>
+                  <p class="flex items-center gap-1">⏰ 09:00 AM – 5:30 PM</p>
+                </div>
+                <p class="text-gray-700 mb-3 text-sm line-clamp-3">
+                  The School of Sustainability at IIT Madras is a hub for
+                  interdisciplinary learning and research. […]
+                </p>
+                <button
+                  class="mt-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-sm"
+                  >More Info</button
+                >
+              </div>
+              <span class="text-gray-400 font-semibold mt-4">PASSED</span>
+            </div>
+          </article>
+
+          <!-- Event Card 3 -->
+          <article
+            class="border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <div class="w-full md:w-1/2 h-60 md:h-auto">
+              <img
+                src={Event3.src}
+                alt="Event 3 banner"
+                class="w-full h-[350px] object-cover"
+              />
+            </div>
+            <div class="w-full md:w-1/2 p-6 flex flex-col justify-between">
+              <div>
+                <h3
+                  class="text-xl font-light text-[#00A63E] mb-2 hover:underline"
+                >
+                  Brainstorming Session: Policy Directions for the Future
+                </h3>
+                <div
+                  class="flex flex-wrap items-center text-gray-700 gap-4 text-sm sm:text-base mb-4"
+                >
+                  <p class="flex items-center gap-1">📅 22 July 2025</p>
+                  <p class="flex items-center gap-1">📍 Hall 2, IC&SR, IITM</p>
+                  <p class="flex items-center gap-1">⏰ 10:00 AM – 1:00 PM</p>
+                </div>
+                <p class="text-gray-700 mb-3 text-sm line-clamp-3">
+                  The School of Sustainability at IIT Madras is a hub for
+                  interdisciplinary learning and research. […]
+                </p>
+                <button
+                  class="mt-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-sm"
+                  >More Info</button
+                >
+              </div>
+              <span class="text-gray-400 font-semibold mt-4">PASSED</span>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
-
-    <!-- Events Grid -->
-    <div class="space-y-8">
-      <!-- Event Card 1 -->
-      <article class="border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row">
-        <div class="w-full md:w-1/2 h-52 md:h-auto">
-          <img src={Event1.src} alt="Event 1 banner" class="w-full h-[350px] object-cover" />
-        </div>
-        <div class="w-full md:w-1/2 p-6 flex flex-col justify-between">
-          <div>
-            <h3 class="text-xl font-light text-[#00A63E] mb-2 hover:underline">
-              Identity and Beliefs Dissonance
-            </h3>
-            <div class="flex flex-wrap items-center text-gray-700 gap-4 text-xs sm:text-base mb-4">
-              <p class="flex items-center gap-1">📅 24 July 2025</p>
-              <p class="flex items-center gap-1 ">📍 Mahatma Hall, HSB 357</p>
-              <p class="flex items-center gap-1">⏰ 03:00 PM – 04:00 PM</p>
-            </div>
-            <p class="text-gray-700 mb-3 text-sm line-clamp-3">
-              The School of Sustainability at IIT Madras is a hub for interdisciplinary learning and research. […]
-            </p>
-            <button class="mt-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-sm">More Info</button>
-          </div>
-          <span class="text-gray-400 font-semibold mt-4">PASSED</span>
-        </div>
-      </article>
-
-      <!-- Event Card 2 -->
-      <article class="border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row">
-        <div class="w-full md:w-1/2 h-52 md:h-auto">
-          <img src={Event2.src} alt="Event 2 banner" class="w-full h-[500px] object-cover" />
-        </div>
-        <div class="w-full md:w-1/2 p-6 flex flex-col justify-between">
-          <div>
-            <h3 class="text-5xl sm:text-xl font-light text-[#00A63E] mb-2 hover:underline">
-              SPARC Workshop on Hydrogen and Carbon Capture, Utilization and Storage (CCUS) Value Chains: Fundamentals & Systems Engineering
-            </h3>
-            <div class="flex flex-wrap items-center text-gray-700 gap-4 text-xs sm:text-base mb-4">
-              <p class="flex items-center gap-1">📅 6 & 7 August 2025</p>
-              <p class="flex items-center gap-1 ">📍Hall 3, ICSR , IITM</p>
-              <p class="flex items-center gap-1">⏰ 09:00 AM – 5:30 PM</p>
-            </div>
-      <p class="text-gray-700 mb-3 text-sm line-clamp-3">
-              The School of Sustainability at IIT Madras is a hub for interdisciplinary learning and research. […]
-            </p>
-            <button class="mt-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-sm">More Info</button>
-          </div>
-          <span class="text-gray-400 font-semibold mt-4">PASSED</span>
-        </div>
-      </article>
-
-      <!-- Event Card 3 -->
-      <article class="border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row">
-        <div class="w-full md:w-1/2 h-60 md:h-auto">
-          <img src={Event3.src} alt="Event 3 banner" class="w-full h-[350px] object-cover" />
-        </div>
-        <div class="w-full md:w-1/2 p-6 flex flex-col justify-between">
-          <div>
-            <h3 class="text-xl font-light text-[#00A63E] mb-2 hover:underline">
-              Brainstorming Session: Policy Directions for the Future
-            </h3>
-            <div class="flex flex-wrap items-center text-gray-700 gap-4 text-sm sm:text-base mb-4">
-              <p class="flex items-center gap-1">📅 22 July 2025</p>
-              <p class="flex items-center gap-1">📍 Hall 2, IC&SR, IITM</p>
-              <p class="flex items-center gap-1">⏰ 10:00 AM – 1:00 PM</p>
-            </div>
-            <p class="text-gray-700 mb-3 text-sm line-clamp-3">
-              The School of Sustainability at IIT Madras is a hub for interdisciplinary learning and research. […]
-            </p>
-            <button class="mt-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-sm">More Info</button>
-          </div>
-          <span class="text-gray-400 font-semibold mt-4">PASSED</span>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <!-- Media Section -->
     <section class="py-8 sm:py-12 bg-gray-50" id="media">
