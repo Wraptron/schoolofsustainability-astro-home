@@ -176,12 +176,14 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
     <h2 class="text-3xl font-bold mb-8 text-gray-900">Newsletter</h2>
     <div class="grid md:grid-cols-3 gap-8 items-start">
       <div class="md:col-span-1">
-        <img
-          src={newsletter.image}
-          alt="Newsletter preview"
-          class="w-full h-96 object-contain mx-auto"
-          loading="lazy"
-        />
+        <a href={newsletter.link} target="_blank" rel="noopener noreferrer">
+          <img
+            src={newsletter.image}
+            alt="Newsletter preview"
+            class="w-full h-96 object-contain mx-auto cursor-pointer hover:opacity-80 transition-opacity"
+            loading="lazy"
+          />
+        </a>
       </div>
       <div class="md:col-span-2">
         <div class="mb-6">
