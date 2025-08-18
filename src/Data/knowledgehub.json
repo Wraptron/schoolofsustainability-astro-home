@@ -21,28 +21,28 @@
       "image": "/images/whitepaper/publication04.png",
       "alt": "Publication 4",
       "link": "https://drive.google.com/file/d/172GtQVTq1HxRETYGCdL3ci_oT1Ya1OrL/view",
-      "details":"Assessing changes in global fire regimes"
+      "details": "Assessing changes in global fire regimes"
     },
     {
       "id": 4,
       "image": "/images/whitepaper/publication01.png",
       "alt": "Publication by Charuta",
       "link": "https://drive.google.com/file/d/1USnz62sTmUMwZIrVRN9areiZpqb0J03c/view",
-      "details":"Learning from the past: collaborating across times for landscapemanagement for conservation"
+      "details": "Learning from the past: collaborating across times for landscape management for conservation"
     },
     {
       "id": 2,
       "image": "/images/whitepaper/publication02.png",
       "alt": "Publication by Santosh",
       "link": "https://drive.google.com/file/d/12ZljGw6dnRBLqCbMSfjXsFDcz3zMNteG/view",
-      "details":"Understanding the presence of Cannabis across the Holocene in Central India"
+      "details": "Understanding the presence of Cannabis across the Holocene in Central India"
     },
     {
       "id": 3,
       "image": "/images/whitepaper/publication03.png",
       "alt": "Research Screenshot",
       "link": "https://drive.google.com/file/d/15-Id07NqgD2JR_Djmoptek121gNBwwtV/view",
-      "details":"Energy Intensity Policies Should be Measure-Specific: A Learning from Indian Manufacturing"
+      "details": "Energy Intensity Policies Should be Measure-Specific: A Learning from Indian Manufacturing"
     },
     {
       "id": 5,
@@ -89,13 +89,13 @@
     },
     {
       "id": 2,
-      "image": "/images/whitepaper/Reportimg02.png",
-      "link": "https://drive.google.com/file/d/1Nv_eEGy89J3iLB3FkOJ2B_Gs4u8Fw-DV/view",
+      "image": "/images/whitepaper/Industry_Dialogue_ESG.jpg",
+      "link": "https://drive.google.com/file/d/1ySuF0V81JATH6tOCKLD_FZdCG3lx3pQB/view",
       "alt": "Research Report 2"
     },
     {
       "id": 3,
-      "image": "/images/whitepaper/Reportimg03.png",
+      "image": "/images/whitepaper/Razanatsoa_2025_DiverseK_ Madagascar_Workshop_Report.jpg",
       "link": "https://drive.google.com/file/d/1tn0JfKUMJynt3IyKoiwXB_IFUEMukCn_/view",
       "alt": "Research Report 3"
     }
@@ -103,42 +103,29 @@
   "whitepapers": [
     {
       "id": 1,
-      "title": "/White Paper 1",
+      "title": "White Paper 1",
       "description": "Sustainability and Indian Industries: Why? Who? And How?",
       "image": "/images/white_papers/white_img1.png",
       "link": "https://drive.google.com/file/d/1VLdMH9nUTTukH-cuc-KY-sTNLgC1DoLo/view"
     },
     {
       "id": 2,
-      "title": "/White Paper 2",
-      "description": "Sustainability and Indian Industries: Why? Who? And How?",
-      "image": "/images/white_papers/white_img1.png",
-      "link": "https://drive.google.com/drive/u/1/folders/15YfUeouh1-3T7QeRqgBMXnwFsc2yiQqQ"
-    },
-    {
-      "id": 3,
-      "title": "/White Paper 3",
-      "description": "Sustainability and Indian Industries: Why? Who? And How?",
-      "image": "/images/white_papers/white_img1.png",
-      "link": "https://drive.google.com/file/d/1VLdMH9nUTTukH-cuc-KY-sTNLgC1DoLo/view"
-    },
-    {
-      "id": 4,
-      "title": "/White Paper 4",
-      "description": "Sustainability and Indian Industries: Why? Who? And How?",
-      "image": "/images/white_papers/white_img1.png",
-      "link": "https://drive.google.com/file/d/1VLdMH9nUTTukH-cuc-KY-sTNLgC1DoLo/view"
+      "image": "/images/white_papers/White _Paper _ FLARE _Working _Group 2024.png",
+      "title": "Knowledge Hub",
+      "subtitle": "The Fire science Learning AcRoss the Earth System (FLARE) Working Group",
+      "link": "https://drive.google.com/file/d/1mLCyV2jt8CJoMyuEngatCtwUz5PQxcNJ/view"
     }
   ],
   "newsletter": {
-    "image": "/assets/Newletter_First_2025_01.jpg",
+    "image": "/images/white_papers/Newletter_First_2025_01.jpg",
     "date": "Tuesday, April 1, 2025",
     "description": "Stay updated with the latest research findings, sustainability initiatives, and innovation breakthroughs. Our newsletter delivers curated content directly to your inbox, featuring expert insights and cutting-edge developments in environmental science and sustainable technology.",
     "link": "https://sustainability.iitm.ac.in/api/resource?id=/drive-resources/15gz66kf-UADwiZ6MLoFNM3YTN1qnScxxHO2usqN0944/knowledge-hub/1FlaQuYwvtxq4YSAm4gj9tMi21LB2uQJ1.pdf"
   },
   "hero": {
-    "image": "/assets/Newletter_First_2025_01.jpg",
+    "image": "/images/white_papers/White _Paper _ FLARE _Working _Group 2024.png",
     "title": "Knowledge Hub",
-    "subtitle": "Discover cutting-edge research, publications, and insights in sustainability and innovation"
+    "subtitle": "The Fire science Learning AcRoss the Earth System (FLARE) Working Group",
+    "link": "https://drive.google.com/file/d/1mLCyV2jt8CJoMyuEngatCtwUz5PQxcNJ/view"
   }
 }
