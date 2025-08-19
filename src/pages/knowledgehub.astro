@@ -40,7 +40,7 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
       loading="eager"
     />
     <div class="absolute inset-0 bg-black/40 flex items-end justify-start">
-      <div class="text-left text-white px-4 pb-8 pl-8">
+      <div class="text-left text-white px-8 pb-8">
         <h1 class="text-3xl md:text-4xl font-bold mb-4">{hero.title}</h1>
         <p class="text-lg md:text-xl max-w-2xl">
           {hero.subtitle}
@@ -52,122 +52,95 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
 
 <!-- Navigation Tabs -->
 <nav
-  class="flex justify-center items-center mt-10 p-6"
+  class="flex justify-center items-center mt-8 p-8"
   role="navigation"
   aria-label="Content sections"
 >
   <div
-    class="flex flex-wrap justify-center items-center gap-2 md:gap-4 text-emerald-600 text-lg md:text-xl"
+    class="flex flex-wrap justify-center items-center gap-4 text-emerald-600 text-xl"
   >
-    <!-- <a
-      href="#articles"
-      class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1"
-    >
-      Articles
-    </a> -->
-
     <a
       href="#publications"
-      class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1"
+      class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-4 py-2"
     >
       Publications
     </a>
     <span class="text-emerald-400" aria-hidden="true">|</span>
     <a
       href="#newsletter"
-      class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1"
+      class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-4 py-2"
     >
       Newsletter
     </a>
     <span class="text-emerald-400" aria-hidden="true">|</span>
     <a
       href="#reports"
-      class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1"
+      class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-4 py-2"
     >
       Reports
     </a>
     <span class="text-emerald-400" aria-hidden="true">|</span>
     <a
       href="#whitepaper"
-      class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-2 py-1"
+      class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-4 py-2"
     >
       White Paper
     </a>
   </div>
 </nav>
 
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <!-- Articles Section -->
-  <!-- <section id="articles" class="py-16">
-    <h2 class="text-3xl font-bold mb-8 text-gray-900">Latest Articles</h2>
-    <div class="grid md:grid-cols-2 gap-8">
-      {
-        articles.map((article) => (
-          <article class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-            <img
-              src={article.image.src}
-              alt={article.title}
-              class="w-full h-56 object-cover"
-              loading="lazy"
-            />
-            <div class="p-6">
-              <time
-                class="text-sm text-gray-500 font-medium"
-                datetime="2025-04-01"
-              >
-                {article.date}
-              </time>
-              <h3 class="text-xl font-semibold mt-2 mb-3 text-gray-900 line-clamp-2">
-                {article.title}
-              </h3>
-              <p class="text-gray-600 line-clamp-3">{article.excerpt}</p>
-              <button class="mt-4 text-emerald-600 hover:text-emerald-700 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded">
-                Read More →
-              </button>
-            </div>
-          </article>
-        ))
-      }
-    </div>
-  </section> -->
-
+<main class="max-w-7xl mx-auto px-8">
   <!-- Publications Section -->
   <section id="publications" class="py-16">
-    <h2 class="text-3xl font-bold mb-8 text-gray-900">Publications</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      {
-        publications.map((pub) => {
-          const content = (
-            <div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <img
-                src={pub.image}
-                alt={pub.alt}
-                class="w-full h-96 object-contain mx-auto"
-                loading="lazy"
-              />
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
-            </div>
-          );
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-gray-900">Publications</h2>
+      <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
+        {
+          publications.map((pub, index) => {
+            const content = (
+              <div class="relative overflow-hidden rounded-2xl bg-white/40 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div class="relative overflow-hidden rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100">
+                  <img
+                    src={pub.image}
+                    alt={pub.alt}
+                    class="w-full h-80 object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <div class="p-6 bg-gradient-to-b from-white to-gray-50/80">
+                  {pub.details && (
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                      {pub.details}
+                    </p>
+                  )}
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 h-1 border-2 border-[#3DAA6F] hover:bg-[#3DAA6F] font-semibold rounded-md" />
+              </div>
+            );
 
-          return (
-            <div class="group cursor-pointer">
-              {pub.link ? (
-                <a
-                  href={pub.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="block"
-                >
-                  {content}
-                  {pub.details}
-                </a>
-              ) : (
-                content
-              )}
-            </div>
-          );
-        })
-      }
+            return (
+              <div
+                class="publication-card animate-fade-in-up"
+                style={`animation-delay: ${index * 100}ms`}
+              >
+                {pub.link ? (
+                  <a
+                    href={pub.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="block focus:outline-none focus:ring-4 focus:ring-green-500/20 rounded-2xl transition-all duration-300 group "
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  content
+                )}
+              </div>
+            );
+          })
+        }
+      </div>
     </div>
   </section>
 
@@ -186,17 +159,17 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
         </a>
       </div>
       <div class="md:col-span-2">
-        <div class="mb-6">
+        <div class="mb-8">
           <time class="text-lg text-gray-600 font-medium" datetime="2025-04-01">
             {newsletter.date}
           </time>
-          <p class="text-lg text-gray-700 mt-4 leading-relaxed">
+          <p class="text-sm text-gray-700 mt-4 leading-relaxed">
             {newsletter.description}
           </p>
         </div>
 
         <!-- Newsletter Signup Form -->
-        <form class="space-y-4" aria-label="Newsletter subscription">
+        <form class="space-y-6" aria-label="Newsletter subscription">
           <div>
             <label
               for="newsletter-name"
@@ -232,7 +205,7 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
           <div class="flex justify-end">
             <button
               type="submit"
-              class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
+              class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] font-semibold rounded-md text-xl px-12 py-4 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
             >
               SUBSCRIBE
             </button>
@@ -244,20 +217,7 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
 
   <!-- Reports Section -->
   <section id="reports" class="py-16">
-    <h2 class="text-4xl font-bold mb-8 text-gray-900">Research Reports</h2>
-
-    <div
-      class="bg-gradient-to-r from-[#064924] to-[#519335] text-white rounded-lg p-8 md:p-12 mb-8"
-    >
-      <p class="text-xl leading-relaxed">
-        Our comprehensive research reports provide in-depth analysis of
-        sustainability challenges and innovative solutions. These documents
-        represent collaborative efforts between leading researchers, industry
-        experts, and policy makers to address critical environmental and social
-        issues through evidence-based recommendations and actionable insights.
-      </p>
-    </div>
-
+    <h2 class="text-3xl font-bold mb-8 text-gray-900">Research Reports</h2>
     <div class="grid md:grid-cols-3 gap-8">
       {
         reports.map((report, index) => (
@@ -268,14 +228,14 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
               rel="noopener noreferrer"
               class="block"
             >
-              <div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F]">
                 <img
                   src={report.image}
                   alt={report.alt}
                   class="w-full h-96 object-contain mx-auto"
                   loading="lazy"
                 />
-                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+                <div class="absolute inset-0 bg-green/0 group-hover:bg-green/10 transition-colors" />
               </div>
             </a>
           </div>
@@ -287,24 +247,25 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
   <!-- White Papers Section -->
   <section id="whitepaper" class="py-16">
     <h2 class="text-3xl font-bold mb-8 text-gray-900">White Papers</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       {
         whitepapers.map((paper, index) => (
-          <div class="group cursor-pointer">
+          <div class="group">
             <a
               href={paper.link}
               target="_blank"
               rel="noopener noreferrer"
-              class="group relative overflow-hidden rounded-lg bg-gray-100 aspect-[3/4] cursor-pointer block"
+              class="block border-2 border-[#3DAA6F] rounded-lg hover:bg-[#3DAA6F] transition-all duration-300 overflow-hidden group cursor-pointer "
             >
-              <div class="relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <div class="text-center p-4">
-                  <img src={paper.image} />
-                  <h3 class="font-semibold text-gray-900" />
+              <div class="relative bg-white aspect-[3/4] flex flex-col">
+                <div class="flex-1 p-4 flex items-center justify-center">
+                  <img
+                    src={paper.image}
+                    alt={paper.alt || `White paper ${index + 1}`}
+                    class="max-w-full max-h-full object-contain"
+                    loading="lazy"
+                  />
                 </div>
-              </div>
-              <div class="absolute inset-0 bg-black/70 text-white p-4 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p class="text-sm leading-relaxed">{paper.description}</p>
               </div>
             </a>
           </div>
@@ -319,7 +280,6 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
 <Footer />
 
 <style>
-  /* Custom utilities for line clamping if not available in your Tailwind config */
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
