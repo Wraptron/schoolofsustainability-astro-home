@@ -5,9 +5,6 @@ import Footer from "../components/Footer.astro";
 import Newletter from "../components/Newletter.astro";
 import "../styles/global.css";
 
-// Import team data from JSON file
-import teamData from "../data/people.json";
-
 // Team photos
 
 import peoplecover from "../assets/IOER Conference Group Photo 2.jpg";
@@ -75,65 +72,87 @@ import advisor4 from "../assets/03.svg";
 import advisor5 from "../assets/04.svg";
 
 // Team data structure for better maintainability
-const teamMembers = [
+// const teamMembers = [
+
+// ];
+
+const coreTeam = [
   {
     name: "Rajnish Kumar",
     position: "Head, School of Sustainability",
     image: Rajnish,
-    linkedin: "",
     website: "https://che.iitm.ac.in/rajnish/",
+    email: "rajnish@iitm.ac.in",
     icon: webglobe,
+    highlight: true,
   },
   {
     name: "Satyanarayanan Seshadri",
     position: "Associate Head, School of Sustainability",
     image: satyaseshadri,
     website: "https://energyconsortium.org/member/satyanarayanan-seshadri/",
-    icon: linkedin,
+    email: "satya@iitm.ac.in",
+    icon: webglobe,
+    highlight: true,
   },
-];
-
-const coreTeam = [
   {
     name: "Charuta Kulkarni",
-    position: "Head, School of Sustainability",
+    position: "Team Member",
     image: charutaphoto,
+    email: "ckulkarni@gradcenter.cuny.edu",
     linkedin: "https://www.linkedin.com/in/charuta-kulkarni-ph-d-61749b1a/",
-    // website: "https://che.iitm.ac.in",
     icon: linkedin,
-  },
-  {
-    name: "Dolly Sweetlin Jennifer",
-    position: "Senior Project Scientist",
-    image: jennifer,
-    linkedin:
-      "https://www.linkedin.com/in/dolly-sweetlin-jennifer-035311189?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-    // website: "https://energyconsortium.org",
-    icon: linkedin,
-  },
-  {
-    name: "Rahul Muralidharan",
-    position: "Associate Head, School of Sustainability",
-    image: rahulphoto,
-    linkedin: "https://in.linkedin.com/in/rahul-muralidharan-70629418a",
-    // website: "https://energyconsortium.org",
-    icon: linkedin,
+    highlight: false,
   },
   {
     name: "Siva Barathi A",
-    position: "Associate Head, School of Sustainability",
+    position: "Team Member",
     image: sivaphoto,
+    email: "ic39984@imail.iitm.ac.in",
     linkedin: "https://www.linkedin.com/in/siva-barathi-annamalai-24959616",
-    website: "",
     icon: linkedin,
+    highlight: false,
   },
   {
     name: "Vishakha Shankar",
-    position: "Associate Head, School of Sustainability",
+    position: "Team Member",
     image: vishakha,
+    email: "ic10964@imail.iitm.ac.in",
     linkedin: "https://www.linkedin.com/in/vishakhashankar/",
     icon: linkedin,
+    highlight: false,
   },
+  {
+    name: "Iswatha Raju",
+    position: "Team Member",
+    // image: iswatha,
+    email: "ic36486@imail.iitm.ac.in",
+    highlight: false,
+  },
+  {
+    name: "Dolly Sweetlin Jennifer",
+    position: "Senior Project Scientist, School of Sustainability",
+    image: jennifer,
+    email: "ic39384@imail.iitm.ac.in",
+    linkedin: "https://www.linkedin.com/in/dolly-sweetlin-jennifer-035311189",
+    icon: linkedin,
+    highlight: false,
+  },
+  {
+    name: "Rahul Muralidharan",
+    position: "Research & Development Specialist, Energy Consortium, IITM",
+    image: rahulphoto,
+    email: "rd_ec@icsrpis.iitm.ac.in",
+    linkedin: "https://in.linkedin.com/in/rahul-muralidharan-70629418a",
+    icon: linkedin,
+    highlight: false,
+  },
+  // {
+  //   name: "Siva Barathi A",
+  //   position: "Associate Head, School of Sustainability",
+  //   image: sivaphoto,
+  //   website: "",
+  // },
 ];
 
 const associateFaculty = [
@@ -361,11 +380,19 @@ const associateFaculty = [
 const affiliateFellows = [
   {
     image: afffac1,
+    name: "Ajay Shriram Patil",
+    position: "Associate Member",
+    website:
+      "https://www.linkedin.com/in/ajay-patil-375aa69/?originalSubdomain=in",
+    email: "ajay.shriram.patil@gmail.com",
+    loading: "lazy",
+  },
+  {
+    image: afffac1,
     name: "Anuradda Ganesh",
     position: "Research Fellow",
-    linkedin:
+    website:
       "https://www.linkedin.com/in/anuradda-ganesh-fellow-inae-8b535064/",
-    // website: "https://energyconsortium.org",
     loading: "lazy",
   },
   {
@@ -379,33 +406,29 @@ const affiliateFellows = [
     image: afffac3,
     name: "E. Nandakumar",
     position: "Visiting Fellow",
-    linkedin: "https://www.linkedin.com/in/e-nandakumar/",
-    // website: "https://energyconsortium.org",
+    website: "https://www.linkedin.com/in/e-nandakumar/",
     loading: "lazy",
   },
   {
     image: afffac4,
     name: "Kaushal Kumar Jha",
     position: "Research Associate",
-    linkedin: "https://www.linkedin.com/in/dr-kaushal-jha/",
-    // website: "https://energyconsortium.org",
+    website: "https://www.linkedin.com/in/dr-kaushal-jha/",
     loading: "lazy",
   },
   {
     image: afffac5,
     name: "Madhavan Nampoothiri",
     position: "Post-doc Fellow",
-    linkedin: "https://www.linkedin.com/in/madhavan-nampoothiri-95564a2/",
+    website: "https://energyconsortium.org",
     loading: "lazy",
-    // website: "https://energyconsortium.org",
   },
   {
     image: afffac6,
     name: "Nikhil Tambe",
     position: "Senior Researcher",
-    linkedin: "https://www.linkedin.com/in/nikhil-tambe-61b7b47/",
+    website: "https://www.linkedin.com/in/nikhil-tambe-61b7b47/",
     loading: "lazy",
-    // website: "https://energyconsortium.org",
   },
   {
     image: afffac7,
@@ -418,54 +441,54 @@ const affiliateFellows = [
     image: afffac8,
     name: "Parthiban V",
     position: "Deputy Chief Manager",
-    linkedin: "https://www.linkedin.com/in/parthiban-v-73173026/",
+    website: "https://www.linkedin.com/in/parthiban-v-73173026/",
     loading: "lazy",
-    // website: "https://energyconsortium.org",
   },
   {
     image: afffac9,
     name: "Raghuttama Rao",
     position: "Principal Investigator",
-    linkedin: "https://www.linkedin.com/in/raghuttama-rao-350b072/",
+    website: "https://gdciitm.org/teams/r-raghuttama-rao/",
     loading: "lazy",
-    // website: "https://energyconsortium.org",
   },
 ];
 
 const advisors = [
   {
     image: advisor1,
-    name: "Thalappil Pradeep",
-    position: "Chemistry",
-    website: "https://www.chem.iitm.ac.in/faculty/pradeep/",
-    loading: "lazy",
-  },
-  {
-    image: advisor2,
     name: "Ligy Philip",
     position: "Civil Engineering",
+    email: "pradeep@iitm.ac.in",
     website: "https://civil.iitm.ac.in/faculty/ligy/",
     loading: "lazy",
   },
   {
-    image: advisor3,
+    image: advisor2,
     name: "Mahesh Panchagnula",
     position: "Applied Mechanics",
     website: "https://home.iitm.ac.in/mvp/",
     loading: "lazy",
   },
   {
-    image: advisor4,
+    image: advisor3,
     name: "Muraleedharan VR",
     position: "Humanities and Social Sciences",
     website: "https://hss.iitm.ac.in/muraleedharan-vr/",
     loading: "lazy",
   },
   {
-    image: advisor5,
+    image: advisor4,
     name: "Raghunathan Rengaswamy",
     position: "Advisor",
     website: "https://rbcdsai.iitm.ac.in/people/raghunathan-rengaswamy/",
+    loading: "lazy",
+  },
+  {
+    image: advisor5,
+    name: "Thalappil Pradeep",
+    position: "Chemistry",
+    email: "ligy@iitm.ac.in",
+    website: "https://www.chem.iitm.ac.in/faculty/pradeep/",
     loading: "lazy",
   },
 ];
@@ -534,61 +557,6 @@ const advisors = [
 
     <!-- Leadership Team Section -->
     <section class="py-12 sm:py-16 md:py-20">
-      <div class="container mx-auto px-4">
-        <h3 class="text-3xl font-bold mb-8">Leadership Team</h3>
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 sm:gap-10"
-        >
-          {
-            teamMembers.map((member) => (
-              <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                  <img
-                    src={member.image.src}
-                    alt={member.name}
-                    class="w-full h-64 sm:h-72 md:h-80"
-                  />
-                  <div class="absolute bottom-4 right-4 flex gap-3">
-                    {member.linkedin && (
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
-                      >
-                        <img
-                          src={linkedin.src}
-                          alt="LinkedIn"
-                          class="w-6 h-6"
-                        />
-                      </a>
-                    )}
-                    {member.website && (
-                      <a
-                        href={member.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
-                      >
-                        <img src={webglobe.src} alt="Website" class="w-6 h-6" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-                <div class="p-4">
-                  <h6 class="text-base text-center font-semibold text-gray-900 mb-2">
-                    {member.name}
-                  </h6>
-                  <p class="text-base text-center text-gray-600">
-                    {member.position}
-                  </p>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-
       <!-- Core Team Section -->
       <section id="core-team" class="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -602,27 +570,13 @@ const advisors = [
               coreTeam.map((member) => (
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                   <div class="relative">
-                    <img
+                    {/* <img
                       src={member.image.src}
                       alt={member.name}
                       class="w-full h-48 object-cover"
-                    />
+                    /> */}
 
                     <div class="absolute bottom-4 right-4 flex gap-2">
-                      {member.linkedin && (
-                        <a
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
-                        >
-                          <img
-                            src={linkedin.src}
-                            alt="LinkedIn"
-                            class="w-5 h-5"
-                          />
-                        </a>
-                      )}
                       {member.website && (
                         <a
                           href={member.website}
@@ -669,22 +623,8 @@ const advisors = [
                     <img
                       src={faculty.image.src}
                       alt={faculty.name}
-                      class="w-full h-48 object-cover"
+                      class="w-full h-full object-cover"
                     />
-                    {faculty.linkedin && (
-                      <a
-                        href={faculty.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="absolute bottom-4 right-14 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
-                      >
-                        <img
-                          src={linkedin.src}
-                          alt="LinkedIn"
-                          class="w-5 h-5"
-                        />
-                      </a>
-                    )}
 
                     {faculty.website && (
                       <a
@@ -733,21 +673,6 @@ const advisors = [
                       alt={fellow.name}
                       class="w-full h-48 sm:h-56 md:h-64 object-cover"
                     />
-                    {fellow.linkedin && (
-                      <a
-                        href={fellow.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="absolute bottom-4 right-14 bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
-                      >
-                        <img
-                          src={linkedin.src}
-                          alt="LinkedIn"
-                          class="w-6 h-6"
-                        />
-                      </a>
-                    )}
-
                     {fellow.website && (
                       <a
                         href={fellow.website}
@@ -765,6 +690,7 @@ const advisors = [
                     </h6>
                     <p class="text-base text-center text-gray-600">
                       {fellow.position}
+                      <span class="text-sm ">{fellow.email}</span>
                     </p>
                   </div>
                 </div>
