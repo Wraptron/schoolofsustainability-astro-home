@@ -21,6 +21,7 @@ import webglobe from "../assets/web logo.svg";
 import linkedin from "../assets/LinkedIn.svg";
 
 // Associate faculty photos
+import associatefac0 from "../assets/AssociateFaculty/Arunachalam_N.webp";
 import associatefac1 from "../assets/AssociateFaculty/1 Compressed.jpg";
 import associatefac2 from "../assets/AssociateFaculty/2 Compressed.jpg";
 import associatefac3 from "../assets/AssociateFaculty/3.svg";
@@ -54,6 +55,7 @@ import associatefac30 from "../assets/AssociateFaculty/Venkatraman Srinivasan Co
 import associatefac31 from "../assets/AssociateFaculty/Vinu R Compressed.jpg";
 
 // Affiliate faculty photos
+import affac0 from "../assets/0A.webp";
 import afffac1 from "../assets/A.svg";
 import afffac2 from "../assets/B.svg";
 import afffac3 from "../assets/C.svg";
@@ -65,16 +67,13 @@ import afffac8 from "../assets/Parthiban.jpg";
 import afffac9 from "../assets/H.svg";
 
 // Advisor photos
-import advisor1 from "../assets/05.svg";
-import advisor2 from "../assets/01.svg";
-import advisor3 from "../assets/02.svg";
-import advisor4 from "../assets/03.svg";
-import advisor5 from "../assets/04.svg";
+import advisor5 from "../assets/05.svg";
+import advisor1 from "../assets/01.svg";
+import advisor2 from "../assets/02.svg";
+import advisor3 from "../assets/03.svg";
+import advisor4 from "../assets/04.svg";
 
 // Team data structure for better maintainability
-// const teamMembers = [
-
-// ];
 
 const coreTeam = [
   {
@@ -156,6 +155,14 @@ const coreTeam = [
 ];
 
 const associateFaculty = [
+  {
+    image: associatefac0,
+    name: "Anubhab Roy",
+    position: "Applied Mechanics",
+    website: "https://home.iitm.ac.in/anubhab",
+    loading: "lazy",
+  },
+
   {
     image: associatefac1,
     name: "Anubhab Roy",
@@ -379,7 +386,7 @@ const associateFaculty = [
 
 const affiliateFellows = [
   {
-    image: afffac1,
+    image: affac0,
     name: "Ajay Shriram Patil",
     position: "Associate Member",
     website:
@@ -570,11 +577,11 @@ const advisors = [
               coreTeam.map((member) => (
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                   <div class="relative">
-                    {/* <img
-                      src={member.image.src}
+                    <img
+                      src={member}
                       alt={member.name}
                       class="w-full h-48 object-cover"
-                    /> */}
+                    />
 
                     <div class="absolute bottom-4 right-4 flex gap-2">
                       {member.website && (
