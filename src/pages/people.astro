@@ -8,12 +8,13 @@ import "../styles/global.css";
 // Team photos
 
 import peoplecover from "../assets/IOER Conference Group Photo 2.jpg";
-import Rajnish from "../assets/Rajnish-Kumarv2 1.svg";
+import Rajnish from "../assets/Rajnish-Kumarv2.png";
 import satyaseshadri from "../assets/Satyanarayanan Seshadri 4.jpg";
 import charutaphoto from "../assets/resource (2) 1.svg";
 import rahulphoto from "../assets/resource (1) 1.svg";
 import sivaphoto from "../assets/resource 1.svg";
 import vishakha from "../assets/resource (4) 1.svg";
+import iswatha from "../assets/iswatha.jpg";
 import jennifer from "../assets/Dolly Sweetlin Jennifer Compressed.jpg";
 
 // Social icons
@@ -28,7 +29,9 @@ import associatefac3 from "../assets/AssociateFaculty/3.svg";
 import associatefac4 from "../assets/AssociateFaculty/4.svg";
 import associatefac5 from "../assets/AssociateFaculty/5.svg";
 import associatefac6 from "../assets/AssociateFaculty/6.svg";
+import associatefac32 from "../assets/AssociateFaculty/Chandan.WEBP";
 import associatefac7 from "../assets/AssociateFaculty/Ethayaraja Mani Compressed.jpg";
+import associatefac33 from "../assets/AssociateFaculty/Guhan.WEBP";
 import associatefac8 from "../assets/AssociateFaculty/7.svg";
 import associatefac9 from "../assets/AssociateFaculty/himanshu.png";
 import associatefac10 from "../assets/AssociateFaculty/8.svg";
@@ -103,6 +106,31 @@ const coreTeam = [
     icon: linkedin,
     highlight: false,
   },
+   {
+    name: "Dolly Sweetlin Jennifer",
+    position: "Senior Project Scientist, School of Sustainability",
+    image: jennifer,
+    email: "ic39384@imail.iitm.ac.in",
+    linkedin: "https://www.linkedin.com/in/dolly-sweetlin-jennifer-035311189",
+    icon: linkedin,
+    highlight: false,
+  },
+  {
+    name: "Iswatha Raju",
+    position: "Team Member",
+    image: iswatha,
+    email: "ic36486@imail.iitm.ac.in",
+    highlight: false,
+  },
+  {
+    name: "Rahul Muralidharan",
+    position: "Research & Development Specialist, Energy Consortium, IITM",
+    image: rahulphoto,
+    email: "rd_ec@icsrpis.iitm.ac.in",
+    linkedin: "https://in.linkedin.com/in/rahul-muralidharan-70629418a",
+    icon: linkedin,
+    highlight: false,
+  },
   {
     name: "Siva Barathi A",
     position: "Team Member",
@@ -121,31 +149,9 @@ const coreTeam = [
     icon: linkedin,
     highlight: false,
   },
-  {
-    name: "Iswatha Raju",
-    position: "Team Member",
-    // image: iswatha,
-    email: "ic36486@imail.iitm.ac.in",
-    highlight: false,
-  },
-  {
-    name: "Dolly Sweetlin Jennifer",
-    position: "Senior Project Scientist, School of Sustainability",
-    image: jennifer,
-    email: "ic39384@imail.iitm.ac.in",
-    linkedin: "https://www.linkedin.com/in/dolly-sweetlin-jennifer-035311189",
-    icon: linkedin,
-    highlight: false,
-  },
-  {
-    name: "Rahul Muralidharan",
-    position: "Research & Development Specialist, Energy Consortium, IITM",
-    image: rahulphoto,
-    email: "rd_ec@icsrpis.iitm.ac.in",
-    linkedin: "https://in.linkedin.com/in/rahul-muralidharan-70629418a",
-    icon: linkedin,
-    highlight: false,
-  },
+  
+ 
+  
   // {
   //   name: "Siva Barathi A",
   //   position: "Associate Head, School of Sustainability",
@@ -206,10 +212,24 @@ const associateFaculty = [
     loading: "lazy",
   },
   {
+    image: associatefac32,
+    name: "Chandan Sarangi",
+    position: "Civil Engineering",
+    website: "https://civil.iitm.ac.in/faculty/chandansarangi/",
+    loading: "lazy",
+  },
+  {
     image: associatefac7,
     name: "Ethayaraja Mani",
     position: "Department of Chemical Engineering",
     website: "https://che.iitm.ac.in/~ethaya/",
+    loading: "lazy",
+  },
+  {
+    image: associatefac33,
+    name: "Guhan Jayaraman",
+    position: "Biotechnology",
+    website: "https://biotech.iitm.ac.in/innerfaculty.php?fname=Guhan%20Jayaraman",
     loading: "lazy",
   },
   {
@@ -578,7 +598,7 @@ const advisors = [
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                   <div class="relative">
                     <img
-                      src={member}
+                      src={member.image ? member.image.src : ""}
                       alt={member.name}
                       class="w-full h-48 object-cover"
                     />
