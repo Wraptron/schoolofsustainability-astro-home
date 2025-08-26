@@ -8,7 +8,7 @@ import "../styles/global.css";
 // Team photos
 
 import peoplecover from "../assets/IOER Conference Group Photo 2.jpg";
-import Rajnish from "../assets/Rajnish-Kumarv2.png";
+import Rajnish from "../assets/Rajnish-Kumarv.png";
 import satyaseshadri from "../assets/Satyanarayanan Seshadri 4.jpg";
 import charutaphoto from "../assets/resource (2) 1.svg";
 import rahulphoto from "../assets/resource (1) 1.svg";
@@ -38,7 +38,7 @@ import associatefac10 from "../assets/AssociateFaculty/8.svg";
 import associatefac11 from "../assets/AssociateFaculty/Jitendra Sangwai Compressed.jpg";
 import associatefac12 from "../assets/AssociateFaculty/Krishna Malakar.jpg";
 import associatefac13 from "../assets/AssociateFaculty/Krishna Vasudevan Compressed.jpg";
-import associatefac14 from "../assets/AssociateFaculty/Mohanakrishnan Logan.jpg";
+import associatefac14 from "../assets/AssociateFaculty/Mohanakrishnan.jpg";
 import associatefac15 from "../assets/AssociateFaculty/rao-pp.jpg";
 import associatefac16 from "../assets/AssociateFaculty/Nitin Muralidharan Compressed.jpg";
 import associatefac17 from "../assets/AssociateFaculty/Preeti Aghalayam resized.jpg";
@@ -61,8 +61,10 @@ import associatefac35 from "../assets/AssociateFaculty/Nirav Patel.png";
 import associatefac36 from "../assets/AssociateFaculty/Rahul Marathe.png";
 import associatefac37 from "../assets/AssociateFaculty/Raja.png";
 import associatefac38 from "../assets/AssociateFaculty/Rohit Batra.png";
+import associatefac39 from "../assets/AssociateFaculty/Shiva Nagendra.jpg";
+
 // Affiliate faculty photos
-import affac0 from "../assets/0A.webp";
+import affac0 from "../assets/0AA.jpg";
 import afffac1 from "../assets/A.svg";
 import afffac2 from "../assets/B.svg";
 import afffac3 from "../assets/C.svg";
@@ -378,6 +380,13 @@ const associateFaculty = [
     website: "https://sites.google.com/view/sksahuiitm/home",
     loading: "lazy",
   },
+   {
+    image: associatefac39,
+    name: "Shiva Nagendra SM",
+    position: "Civil Engineering",
+    website: "https://civil.iitm.ac.in/faculty/snagendra/ ",
+    loading: "lazy",
+  },
   {
     image: associatefac23,
     name: "Dr. Sivakumar Palaniappan",
@@ -691,7 +700,7 @@ const advisors = [
                     <img
                       src={faculty.image.src}
                       alt={faculty.name}
-                      class="w-full h-full object-cover"
+                      class="w-full h-64 object-cover"
                     />
 
                     {faculty.website && (
@@ -739,7 +748,7 @@ const advisors = [
                     <img
                       src={fellow.image.src}
                       alt={fellow.name}
-                      class="w-full h-48 sm:h-56 md:h-64 object-cover"
+                      class="w-full h-64 sm:h-56 md:h-64 object-cover"
                     />
                     {fellow.website && (
                       <a
