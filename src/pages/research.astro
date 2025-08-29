@@ -1,11 +1,8 @@
 ---
-// Refactored Astro component with separated data and functions
 import Layout from "@/layouts/Layout.astro";
 import Footer from "@/components/Footer.astro";
 import Newletter from "@/components/Newletter.astro";
 import "../styles/global.css";
-
-// Import images
 import cover from "../../public/images/banner.webp";
 import project1 from "../assets/project1.svg";
 import projectcover from "../assets/wind-farms-fields.jpg";
@@ -14,12 +11,10 @@ import projectbackgrond from "../assets/reseach_images/research.jpg";
 import project4 from "../assets/reseach_images/Consultancy Projects.jpg";
 import project5 from "../assets/reseach_images/Patents Filed.jpg";
 import project6 from "../assets/reseach_images/Patents Granted.jpg";
-
-// Import separated data
 import { centersData, researchProjectsData } from "../Data/research.js";
 import { formatResearchProjects, truncateText } from "../utils/helpers.js";
 
-// Process the data
+
 const centers = centersData;
 const researchProjects = [
   {
@@ -161,14 +156,13 @@ const formattedProjects = formatResearchProjects(researchProjects);
     <div class="h-12 sm:h-16 lg:h-20 xl:h-24 bg-transparent"></div>
   </section>
 
-  <!-- Affiliated Centers Section -->
+  <!--Affiliated Centers -->
   <section id="centers" class="py-12 sm:py-16 md:py-20 relative">
     <div class="container mx-auto px-4">
       <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
         <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-0">
           Affiliated Centers
         </h2>
-        
       </div>
 
       <!-- Background Image -->
@@ -182,22 +176,46 @@ const formattedProjects = formatResearchProjects(researchProjects);
       </div>
 
       <!-- Centers Grid -->
-      <div id="centersGrid" class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+      <div id="centersGrid" class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 transition-all duration-300">
         {centers.map((center) => (
-          <div class="center-card bg-white/90 backdrop-blur-sm hover:bg-white/95 transition-all duration-300 p-3 sm:p-4 rounded-lg cursor-pointer group shadow-lg hover:shadow-xl border border-white/20 relative overflow-hidden"
+          <div class="center-card relative bg-white/90 backdrop-blur-sm hover:bg-white/95 transition-all duration-300 p-3 sm:p-4 rounded-lg cursor-pointer group shadow-lg hover:shadow-xl border border-white/20"
                data-center-name={center.name.toLowerCase()}
-               data-center-detail={center.detail.toLowerCase()}>
-            <a
-              href={center.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="block relative"
-              data-center-id={center.id}
-            >
-              <!-- Default Content (Always Visible) -->
-              <div class="default-content transition-opacity duration-300 group-hover:opacity-0">
-                <!-- Logo -->
-                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden mx-auto mb-3">
+               data-center-detail={center.detail.toLowerCase()}
+               data-center-id={center.id}
+               tabindex="0">
+            
+            <!-- Main Card Content -->
+            <div class="card-content transition-all duration-300">
+              <!-- Logo -->
+              <div class="w-12 h-12 sm:w-14 sm:h-14 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden mx-auto mb-3">
+                <img 
+                  src={center.logo} 
+                  alt={center.name} 
+                  class="w-full h-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+              
+              <!-- Name -->
+              <div class="text-center">
+                <h3 class="text-xs sm:text-sm font-medium text-gray-800 line-clamp-2 leading-tight">
+                  {center.name}
+                </h3>
+              </div>
+            </div>
+
+            {/* <!-- Centered Tooltip within Grid Area --> */}
+
+            <div class="center-tooltip absolute bg-white border border-gray-200 rounded-xl shadow-2xl p-6 w-80 opacity-0 invisible transition-all duration-300 pointer-events-none z-50 scale-95">
+              
+              {/* <!-- Close button --> */}
+              <button class="tooltip-close absolute top-4 right-4 w-8 h-8 bg-gray-800 text-white rounded-full text-sm flex items-center justify-center hover:bg-gray-900 transition-colors z-10">
+                ×
+              </button>
+              
+              {/* <!-- Tooltip Header --> */}
+              <div class="flex items-center gap-4 mb-6 pr-10">
+                <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
                   <img 
                     src={center.logo} 
                     alt={center.name} 
@@ -205,50 +223,58 @@ const formattedProjects = formatResearchProjects(researchProjects);
                     loading="lazy"
                   />
                 </div>
-                
-                <!-- Name -->
-                <div class="text-center">
-                  <h3 class="text-xs sm:text-sm font-medium text-gray-800 line-clamp-2 leading-tight">
-                    {center.name}
-                  </h3>
-                </div>
+                <h4 class="font-bold text-gray-800 text-lg leading-tight">
+                  {center.name}
+                </h4>
               </div>
 
-              <!-- Hover Content (Details) -->
-              <div class="hover-content absolute inset-0 p-3 sm:p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 backdrop-blur-sm flex flex-col justify-center">
-                <div class="text-center">
-                  <!-- Small Logo on Hover -->
-                  <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden mx-auto mb-2">
-                    <img 
-                      src={center.logo} 
-                      alt={center.name} 
-                      class="w-full h-full object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                  
-                  <!-- Center Name -->
-                  <h3 class="text-xs sm:text-sm font-bold text-gray-800 mb-2 line-clamp-1">
-                    {center.name}
-                  </h3>
-                  
-                  <!-- Full Details -->
-                  <p class="text-xs text-gray-700 leading-tight overflow-y-auto max-h-32 scrollbar-thin">
+              {/* <!-- Details Section --> */}
+              <div class="space-y-4">
+                {/* <!-- Center Type --> */}
+                <div class="border-b border-gray-100 pb-3">
+                  <div class="text-sm text-gray-600 mb-2 font-medium">Center Type</div>
+                  <div class="text-base font-medium text-gray-800">Research & Development</div>
+                </div>
+                
+                {/* <!-- Focus Area --> */}
+                <div class="border-b border-gray-100 pb-3">
+                  <div class="text-sm text-gray-600 mb-2 font-medium">Focus Area</div>
+                  <div class="text-base font-medium text-gray-800">Sustainability Sciences</div>
+                </div>
+                
+                {/* <!-- Description --> */}
+                <div class="border-b border-gray-100 pb-3">
+                  <div class="text-sm text-gray-600 mb-2 font-medium">Description</div>
+                  <div class="text-base text-gray-700 leading-relaxed max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
                     {center.detail}
-                  </p>
-                  
-                  <!-- Visit Link Indicator -->
-                  <div class="mt-2 text-xs text-blue-600 font-medium">
-                    Click to visit →
+                  </div>
+                </div>
+                
+                {/* <!-- Quick Actions --> */}
+                <div class="pt-2">
+                  <div class="text-sm text-gray-600 mb-3 font-medium">Quick Actions</div>
+                  <div class="flex gap-3">
+                    <a
+                      href={center.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white text-sm rounded-lg hover:bg-green-700 transition-colors font-medium"
+                    >
+                      Visit Center →
+                    </a>
+                    <button class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 text-sm rounded-lg hover:bg-gray-200 transition-colors font-medium">
+                      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
+                      </svg>
+                      Share
+                    </button>
                   </div>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
         ))}
       </div>
-
-     
     </div>
   </section>
 
@@ -279,10 +305,53 @@ const formattedProjects = formatResearchProjects(researchProjects);
     overflow: hidden;
   }
 
-  /* Custom scrollbar for hover details */
+  .center-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    z-index: 50;
+    max-width: 320px;
+    min-width: 280px;
+  }
+
+  #centersGrid:has(.center-card:hover) .center-card:not(:hover) {
+    filter: blur(4px);
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+
+  #centersGrid:has(.center-card:hover) .center-card:hover {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.02);
+    z-index: 60;
+  }
+
+  .center-card:hover .center-tooltip,
+  .center-card:focus-within .center-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+  }
+
+  /* Position tooltip relative to the grid container */
+  #centersGrid {
+    position: relative;
+  }
+
+  .center-card:hover .center-tooltip {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  /* Custom scrollbar for tooltip content */
   .scrollbar-thin {
     scrollbar-width: thin;
-    scrollbar-color: #9CA3AF #F3F4F6;
+    scrollbar-color: #d1d5db #f3f4f6;
   }
   
   .scrollbar-thin::-webkit-scrollbar {
@@ -290,43 +359,137 @@ const formattedProjects = formatResearchProjects(researchProjects);
   }
   
   .scrollbar-thin::-webkit-scrollbar-track {
-    background: #F3F4F6;
+    background: #f3f4f6;
     border-radius: 2px;
   }
   
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    background: #9CA3AF;
+    background: #d1d5db;
     border-radius: 2px;
   }
   
   .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    background: #6B7280;
+    background: #9ca3af;
   }
 
-  /* Enhanced hover effects */
+  /* Responsive behavior for grid-centered tooltip */
+  @media (max-width: 768px) {
+    .center-tooltip {
+      width: 90vw !important;
+      max-width: 90vw !important;
+      padding: 1.5rem !important;
+      position: fixed !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) scale(1) !important;
+    }
+
+    #centersGrid:has(.center-card:hover) .center-card:not(:hover) {
+      filter: blur(2px);
+      opacity: 0.3;
+    }
+  }
+
+  /* Animation for grid-centered tooltip */
+  @keyframes gridTooltipSlideIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .center-card:hover .center-tooltip {
+    animation: gridTooltipSlideIn 0.3s ease-out;
+  }
+
+  /* Additional CSS for blur effects */
+  #centersGrid.has-active-tooltip .center-card:not(.active-tooltip-card) {
+    filter: blur(4px);
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+
+  #centersGrid.has-active-tooltip .center-card.active-tooltip-card {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.02);
+    z-index: 60;
+  }
+
+  /* Fallback for browsers that don't support :has() selector */
+  @supports not selector(:has(*)) {
+    .center-card:hover ~ .center-card,
+    .center-card:hover ~ * .center-card {
+      filter: blur(4px);
+      opacity: 0.4;
+      transform: scale(0.95);
+    }
+  }
+
+  /* Focus states for accessibility */
+  .center-card:focus {
+    outline: 2px solid #3daa6f;
+    outline-offset: 2px;
+  }
+
+  .center-card:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Animation for grid-centered tooltip */
+  @keyframes gridTooltipSlideIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .center-card:hover .center-tooltip {
+    animation: gridTooltipSlideIn 0.3s ease-out;
+  }
+
+  /* Smooth transitions for all cards */
   .center-card {
-    transition: all 0.3s ease;
-  }
-  
-  .center-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Smooth content transitions */
-  .default-content,
-  .hover-content {
-    transition: opacity 0.3s ease-in-out;
+  /* Enhanced button styles */
+  .tooltip-close:hover {
+    background-color: #ef4444;
+    transform: scale(1.1);
   }
-  
-  .hover-content {
-    backdrop-filter: blur(8px);
+
+  /* Prevent text selection on tooltip */
+  .center-tooltip {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  /* Allow text selection in description */
+  .center-tooltip .text-sm.text-gray-700 {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
   }
 </style>
 
 <script>
   // Import utility functions for client-side functionality
   import { scrollToSection, handleExternalLink, trackEvent } from "../utils/helpers.js";
+
+  // Declare activeTooltip variable for tooltip management
+  let activeTooltip = null;
   
   // Initialize when DOM is loaded
   document.addEventListener('DOMContentLoaded', function() {
@@ -350,18 +513,52 @@ const formattedProjects = formatResearchProjects(researchProjects);
       });
     });
 
-    // Search functionality
+    });
+
+    // Close tooltips on scroll 
+    window.addEventListener('scroll', function() {
+      if (activeTooltip) {
+        hideGridCenteredTooltip(activeTooltip);
+      }
+    });
+
+    // Handle window resize to reposition tooltip
+    window.addEventListener('resize', function() {
+      if (activeTooltip) {
+        const activeCard = document.querySelector('.active-tooltip-card');
+        if (activeCard) {
+          // Reposition the tooltip
+          const gridRect = centersGrid.getBoundingClientRect();
+          const centerX = gridRect.left + gridRect.width / 2;
+          const centerY = gridRect.top + gridRect.height / 2;
+          
+          activeTooltip.style.left = centerX + 'px';
+          activeTooltip.style.top = centerY + 'px';
+        }
+      }
+    });
+
+    // View Projects button
+    const viewProjectsBtn = document.getElementById('viewProjectsBtn');
+    if (viewProjectsBtn) {
+      viewProjectsBtn.addEventListener('click', function() {
+        scrollToSection('research');
+        trackEvent('view_projects_click', { source: 'hero_section' });
+      });
+    }
+
+    // Search functionality (if search input exists)
     const searchInput = document.getElementById('centerSearch');
     const centersGrid = document.getElementById('centersGrid');
     const noResults = document.getElementById('noResults');
-    const centerCards = document.querySelectorAll('.center-card');
+    const centerCardsList = document.querySelectorAll('.center-card');
 
     if (searchInput) {
-      searchInput.addEventListener('input', function() {
+      searchInput.addEventListener('input', function() {      
         const searchTerm = this.value.toLowerCase().trim();
         let visibleCount = 0;
 
-        centerCards.forEach(card => {
+        centerCardsList.forEach(card => {
           const name = card.getAttribute('data-center-name');
           const detail = card.getAttribute('data-center-detail');
           
@@ -374,49 +571,18 @@ const formattedProjects = formatResearchProjects(researchProjects);
         });
 
         // Show/hide no results message
-        if (visibleCount === 0) {
-          noResults.classList.remove('hidden');
-        } else {
-          noResults.classList.add('hidden');
+        if (noResults) {
+          if (visibleCount === 0) {
+            noResults.classList.remove('hidden');
+          } else {
+            noResults.classList.add('hidden');
+          }
         }
       });
     }
+;
 
-    // Sort functionality
-    const sortButton = document.getElementById('sortCenters');
-    let sortAscending = true;
-
-    if (sortButton) {
-      sortButton.addEventListener('click', function() {
-        const cards = Array.from(centerCards);
-        
-        cards.sort((a, b) => {
-          const nameA = a.getAttribute('data-center-name');
-          const nameB = b.getAttribute('data-center-name');
-          
-          if (sortAscending) {
-            return nameA.localeCompare(nameB);
-          } else {
-            return nameB.localeCompare(nameA);
-          }
-        });
-
-        // Re-append sorted cards to the grid
-        cards.forEach(card => centersGrid.appendChild(card));
-        
-        // Update button text and toggle sort direction
-        sortAscending = !sortAscending;
-        this.textContent = sortAscending ? 'Sort A-Z' : 'Sort Z-A';
-      });
-    }
-
-    // View Projects button
-    const viewProjectsBtn = document.getElementById('viewProjectsBtn');
-    if (viewProjectsBtn) {
-      viewProjectsBtn.addEventListener('click', function() {
-        scrollToSection('research');
-        trackEvent('view_projects_click', { source: 'hero_section' });
-      });
-    }
-  });
+function hideGridCenteredTooltip(activeTooltip: any) {
+throw new Error("Function not implemented.");
+}
 </script>
