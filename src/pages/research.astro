@@ -14,7 +14,6 @@ import project6 from "../assets/reseach_images/Patents Granted.jpg";
 import { centersData, researchProjectsData } from "../Data/research.js";
 import { formatResearchProjects, truncateText } from "../utils/helpers.js";
 
-
 const centers = centersData;
 const researchProjects = [
   {
@@ -204,16 +203,14 @@ const formattedProjects = formatResearchProjects(researchProjects);
               </div>
             </div>
 
-            {/* <!-- Centered Tooltip within Grid Area --> */}
-
             <div class="center-tooltip absolute bg-white border border-gray-200 rounded-xl shadow-2xl p-6 w-80 opacity-0 invisible transition-all duration-300 pointer-events-none z-50 scale-95">
               
-              {/* <!-- Close button --> */}
+              <!-- Close button -->
               <button class="tooltip-close absolute top-4 right-4 w-8 h-8 bg-gray-800 text-white rounded-full text-sm flex items-center justify-center hover:bg-gray-900 transition-colors z-10">
                 ×
               </button>
               
-              {/* <!-- Tooltip Header --> */}
+              <!-- Tooltip Header -->
               <div class="flex items-center gap-4 mb-6 pr-10">
                 <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
                   <img 
@@ -228,21 +225,21 @@ const formattedProjects = formatResearchProjects(researchProjects);
                 </h4>
               </div>
 
-              {/* <!-- Details Section --> */}
+              <!-- Details Section -->
               <div class="space-y-4">
-                {/* <!-- Center Type --> */}
+                <!-- Center Type -->
                 <div class="border-b border-gray-100 pb-3">
                   <div class="text-sm text-gray-600 mb-2 font-medium">Center Type</div>
                   <div class="text-base font-medium text-gray-800">Research & Development</div>
                 </div>
                 
-                {/* <!-- Focus Area --> */}
+                <!-- Focus Area -->
                 <div class="border-b border-gray-100 pb-3">
                   <div class="text-sm text-gray-600 mb-2 font-medium">Focus Area</div>
                   <div class="text-base font-medium text-gray-800">Sustainability Sciences</div>
                 </div>
                 
-                {/* <!-- Description --> */}
+                <!-- Description -->
                 <div class="border-b border-gray-100 pb-3">
                   <div class="text-sm text-gray-600 mb-2 font-medium">Description</div>
                   <div class="text-base text-gray-700 leading-relaxed max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
@@ -250,7 +247,7 @@ const formattedProjects = formatResearchProjects(researchProjects);
                   </div>
                 </div>
                 
-                {/* <!-- Quick Actions --> */}
+                <!-- Quick Actions -->
                 <div class="pt-2">
                   <div class="text-sm text-gray-600 mb-3 font-medium">Quick Actions</div>
                   <div class="flex gap-3">
@@ -261,14 +258,8 @@ const formattedProjects = formatResearchProjects(researchProjects);
                       class="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white text-sm rounded-lg hover:bg-green-700 transition-colors font-medium"
                     >
                       Visit Center →
-                    </a>
-                    <button class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 text-sm rounded-lg hover:bg-gray-200 transition-colors font-medium">
-                      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
-                      </svg>
-                      Share
-                    </button>
-                  </div>
+                    </a>  
+                    </div>
                 </div>
               </div>
             </div>
@@ -490,7 +481,8 @@ const formattedProjects = formatResearchProjects(researchProjects);
 
   // Declare activeTooltip variable for tooltip management
   let activeTooltip = null;
-  
+  const centersGrid = document.getElementById('centersGrid');
+
   // Initialize when DOM is loaded
   document.addEventListener('DOMContentLoaded', function() {
     // Handle smooth scrolling for navigation links
@@ -513,76 +505,97 @@ const formattedProjects = formatResearchProjects(researchProjects);
       });
     });
 
+    // Close tooltip on clicking close button
+    document.querySelectorAll('.tooltip-close').forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const tooltip = this.closest('.center-tooltip');
+        const card = tooltip.closest('.center-card');
+        if (tooltip) {
+          tooltip.style.opacity = '0';
+          tooltip.style.visibility = '';
+          tooltip.style.pointerEvents = '';
+          card.classList.remove('active-tooltip-card');
+          activeTooltip = null;
+        }
+      });
     });
 
-    // Close tooltips on scroll 
-    window.addEventListener('scroll', function() {
-      if (activeTooltip) {
-        hideGridCenteredTooltip(activeTooltip);
+  });
+
+  // Close tooltips on scroll 
+  window.addEventListener('scroll', function() {
+    if (activeTooltip) {
+      hideGridCenteredTooltip(activeTooltip);
+    }
+  });
+
+  // Handle window resize to reposition tooltip
+  window.addEventListener('resize', function() {
+    if (activeTooltip) {
+      const activeCard = document.querySelector('.active-tooltip-card');
+      if (activeCard) {
+        const gridRect = centersGrid.getBoundingClientRect();
+        const centerX = gridRect.left + gridRect.width / 2;
+        const centerY = gridRect.top + gridRect.height / 2;
+        activeTooltip.style.left = centerX + 'px';
+        activeTooltip.style.top = centerY + 'px';
       }
-    });
+    }
+  });
 
-    // Handle window resize to reposition tooltip
-    window.addEventListener('resize', function() {
-      if (activeTooltip) {
-        const activeCard = document.querySelector('.active-tooltip-card');
-        if (activeCard) {
-          // Reposition the tooltip
-          const gridRect = centersGrid.getBoundingClientRect();
-          const centerX = gridRect.left + gridRect.width / 2;
-          const centerY = gridRect.top + gridRect.height / 2;
-          
-          activeTooltip.style.left = centerX + 'px';
-          activeTooltip.style.top = centerY + 'px';
+  // View Projects button
+  const viewProjectsBtn = document.getElementById('viewProjectsBtn');
+  if (viewProjectsBtn) {
+    viewProjectsBtn.addEventListener('click', function() {
+      scrollToSection('research');
+      trackEvent('view_projects_click', { source: 'hero_section' });
+    });
+  }
+
+  // Search functionality (if search input exists)
+  const searchInput = document.getElementById('centerSearch');
+  const centerCardsList = document.querySelectorAll('.center-card');
+  const noResults = document.getElementById('noResults');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      centerCardsList.forEach(card => {
+        const name = card.getAttribute('data-center-name');
+        const detail = card.getAttribute('data-center-detail');
+
+        if (name.includes(searchTerm) || detail.includes(searchTerm)) {
+          card.style.display = 'block';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Show/hide no results message
+      if (noResults) {
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
         }
       }
     });
+  }
 
-    // View Projects button
-    const viewProjectsBtn = document.getElementById('viewProjectsBtn');
-    if (viewProjectsBtn) {
-      viewProjectsBtn.addEventListener('click', function() {
-        scrollToSection('research');
-        trackEvent('view_projects_click', { source: 'hero_section' });
-      });
+  function hideGridCenteredTooltip(activeTooltip) {
+    if (activeTooltip) {
+      activeTooltip.style.opacity = '';
+      activeTooltip.style.visibility = '';
+      activeTooltip.style.pointerEvents = '';
+      const activeCard = document.querySelector('.active-tooltip-card');
+      if (activeCard) {
+        activeCard.classList.remove('active-tooltip-card');
+      }
+      activeTooltip = null;
     }
-
-    // Search functionality (if search input exists)
-    const searchInput = document.getElementById('centerSearch');
-    const centersGrid = document.getElementById('centersGrid');
-    const noResults = document.getElementById('noResults');
-    const centerCardsList = document.querySelectorAll('.center-card');
-
-    if (searchInput) {
-      searchInput.addEventListener('input', function() {      
-        const searchTerm = this.value.toLowerCase().trim();
-        let visibleCount = 0;
-
-        centerCardsList.forEach(card => {
-          const name = card.getAttribute('data-center-name');
-          const detail = card.getAttribute('data-center-detail');
-          
-          if (name.includes(searchTerm) || detail.includes(searchTerm)) {
-            card.style.display = 'block';
-            visibleCount++;
-          } else {
-            card.style.display = 'none';
-          }
-        });
-
-        // Show/hide no results message
-        if (noResults) {
-          if (visibleCount === 0) {
-            noResults.classList.remove('hidden');
-          } else {
-            noResults.classList.add('hidden');
-          }
-        }
-      });
-    }
-;
-
-function hideGridCenteredTooltip(activeTooltip: any) {
-throw new Error("Function not implemented.");
-}
+  }
 </script>
