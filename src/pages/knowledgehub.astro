@@ -94,7 +94,8 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
   <section id="publications" class="py-16">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-3xl font-bold mb-8 text-gray-900">Publications</h2>
-      <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
+      <!-- Wrap in #publicationGrid so tooltip CSS/JS works -->
+      <div id="publicationGrid" class="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
         {
           publications.map((pub, index) => {
             const content = (
@@ -108,13 +109,6 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
                   />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <div class="p-6 bg-gradient-to-b from-white to-gray-50/80">
-                  {pub.details && (
-                    <p class="text-sm text-gray-600 leading-relaxed">
-                      {pub.details}
-                    </p>
-                  )}
-                </div>
                 <div class="absolute bottom-0 left-0 right-0 h-1 border-2 border-[#3DAA6F] hover:bg-[#3DAA6F] font-semibold rounded-md" />
               </div>
             );
@@ -123,19 +117,59 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
               <div
                 class="publication-card animate-fade-in-up"
                 style={`animation-delay: ${index * 100}ms`}
+                data-pub-name={pub.alt}
+                data-pub-detail={pub.details || ""}
               >
-                {pub.link ? (
-                  <a
-                    href={pub.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="block focus:outline-none focus:ring-4 focus:ring-green-500/20 rounded-2xl transition-all duration-300 group "
-                  >
+               
+                  
                     {content}
-                  </a>
-                ) : (
-                  content
-                )}
+                 
+
+                <!-- Tooltip -->
+                <div class="publication-tooltip absolute bg-white border border-gray-200 rounded-xl shadow-2xl p-6 w-80 opacity-0 invisible transition-all duration-300 pointer-events-none z-50 scale-95">
+                  <!-- Close button -->
+                  <button class="tooltip-close absolute top-4 right-4 w-8 h-8 bg-gray-800 text-white rounded-full text-sm flex items-center justify-center hover:bg-gray-900 transition-colors z-10">
+                    ×
+                  </button>
+
+                  <!-- Tooltip Header -->
+                  <div class="flex items-center gap-4 mb-6 pr-10">
+                    <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
+                      <img 
+                        src={pub.image} 
+                        alt={pub.alt} 
+                        class="w-full h-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                    
+                    <!-- Description -->
+                    <div class="border-b border-gray-100 pb-3">
+                      <div class="text-sm text-gray-600 mb-2 font-medium">Description</div>
+                      <div class="text-base text-gray-700 leading-relaxed max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+                        {pub.details}
+                      </div>
+                    </div>
+                    
+                    <!-- Quick Actions -->
+                    <div class="pt-2">
+                      <div class="text-sm text-gray-600 mb-3 font-medium">Quick Actions</div>
+                      <div class="flex gap-3">
+                        {pub.link && (
+                          <a
+                            href={pub.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white text-sm rounded-lg hover:bg-green-700 transition-colors font-medium"
+                          >
+                            View Publication →
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             );
           })
@@ -144,6 +178,7 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
     </div>
   </section>
 
+  
   <!-- Newsletter Section -->
   <section id="newsletter" class="py-16">
     <h2 class="text-3xl font-bold mb-8 text-gray-900">Newsletter</h2>
@@ -293,4 +328,354 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+  .publication-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    z-index: 50;
+    max-width: 320px;
+    min-width: 280px;
+  }
+
+#publicationGrid.has-active-tooltip .publication-card:not(.active-tooltip-card) {
+    filter: blur(4px);
+    opacity: 0.4;
+    transform: scale(0.95);
+}
+
+  #publicationGrid:has(.publication-card:hover) .publication-card:hover {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.02);
+    /* z-index: 60; */
+  }
+
+  .publication-card:hover .publication-tooltip,
+  .publication-card:focus-within .publication-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+  }
+
+  /* Position tooltip relative to the grid container */
+  #publicationGrid {
+    position: relative;
+  }
+
+  .publication-card:hover .publication-tooltip {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  /* Custom scrollbar for tooltip content */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #d1d5db #f3f4f6;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 2px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 2px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+  }
+
+  /* Responsive behavior for grid tooltip */
+  @media (max-width: 768px) {
+    .publication-tooltip {
+      width: 90vw !important;
+      max-width: 40vw !important;
+      padding: 1.5rem !important;
+      position: fixed !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) scale(1) !important;
+    }
+
+    #publicationGrid:has(.publication-card:hover) .publication-card:not(:hover) {
+      filter: blur(2px);
+      opacity: 0.3;
+    }
+  }
+
+  /* Animation for grid tooltip */
+  @keyframes gridTooltipSlideIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .publication-card:hover .publication-tooltip {
+    animation: gridTooltipSlideIn 0.3s ease-out;
+  }
+
+  /* Additional CSS for blur effects */
+  #publicationGrid.has-active-tooltip .publication-card:not(.active-tooltip-card) {
+    filter: blur(4px);
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+
+  #publicationGrid.has-active-tooltip .publication-card.active-tooltip-card {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.02);
+    z-index: 60;
+  }
+
+  /* Fallback for browsers that don't support :has() selector */
+  @supports not selector(:has(*)) {
+    .publication-card:hover ~ .publication-card,
+    .publication-card:hover ~ * .publication-card {
+      filter: blur(4px);
+      opacity: 0.4;
+      transform: scale(0.95);
+    }
+  }
+
+  /* Focus states for accessibility */
+  .publication-card:focus {
+    outline: 2px solid #3daa6f;
+    outline-offset: 2px;
+  }
+
+  .publication-card:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Animation for grid tooltip */
+  @keyframes gridTooltipSlideIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .publication-card:hover .publication-tooltip {
+    animation: gridTooltipSlideIn 0.3s ease-out;
+  }
+
+  /* Smooth transitions for all cards */
+  .publication-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Enhanced button styles */
+  .tooltip-close:hover {
+    background-color: #ef4444;
+    transform: scale(1.1);
+  }
+
+  /* Prevent text selection on tooltip */
+  .publication-tooltip {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  /* Allow text selection in description */
+  .publication-tooltip .text-sm.text-gray-700 {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+  }
 </style>
+
+<script>
+import { scrollToSection,trackEvent } from "../utils/helpers.js";
+
+  // Declare activeTooltip variable for tooltip management
+ let activeTooltip: HTMLElement | null = null;
+  const publicationGrid = document.getElementById('publicationGrid');
+
+  // Initialize when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    // Handle smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        scrollToSection(targetId);
+      });
+    });
+
+    // Handle external link tracking
+    const externalLinks = document.querySelectorAll('a[target="_blank"]');
+    externalLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        const url = this.getAttribute('href');
+        const linkName = this.textContent.trim() || this.getAttribute('data-pub-id') || this.getAttribute('data-project-id');
+        trackEvent('external_link_click', { url, link_name: linkName });
+      });
+
+      
+    });
+
+    // Close tooltip on clicking close button
+    document.querySelectorAll('.tooltip-close').forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const tooltip = this.closest('.publication-tooltip');
+        const card = tooltip.closest('.publication-card');
+        // console.log('Close button clicked', { tooltip, card }); 
+        
+        if (tooltip) {
+          hideGridCenteredTooltip(tooltip);
+        } else if (activeTooltip) {
+          hideGridCenteredTooltip(activeTooltip);
+        }
+      });
+    });
+initializePublicationCards();
+  });
+  function initializePublicationCards() {
+     const publicationCards = document.querySelectorAll<HTMLElement>('.publication-card');
+    publicationCards.forEach(card => {
+      const tooltip = card.querySelector<HTMLElement>('.publication-tooltip');
+      
+      if (tooltip) {
+        // Hover to show tooltip
+        card.addEventListener('mouseenter', function() {
+          showGridCenteredTooltip(tooltip, card);
+        });
+        
+        // Click to show tooltip (for mobile)
+        // card.addEventListener('click', function(e) {
+        //   e.preventDefault();
+        //   showGridCenteredTooltip(tooltip, card);
+        // });
+        
+        card.addEventListener('mouseleave', function() {
+          setTimeout(() => {
+            if (!tooltip.matches(':hover')) {
+              hideGridCenteredTooltip(tooltip);
+            }
+          }, 100);
+        });
+      }
+    });
+  }
+  
+
+  // Close tooltips on scroll 
+  window.addEventListener('scroll', function() {
+    if (activeTooltip) {
+      hideGridCenteredTooltip(activeTooltip);
+    }
+  });
+
+  // Handle window resize to reposition tooltip
+  window.addEventListener('resize', function() {
+    if (activeTooltip && publicationGrid) {
+      const activeCard = document.querySelector('.active-tooltip-card');
+      if (activeCard) {
+        const gridRect = publicationGrid.getBoundingClientRect();
+        const pubX = gridRect.left + gridRect.width / 2;
+        const pubY = gridRect.top + gridRect.height / 2;
+        activeTooltip.style.left = pubX + 'px';
+        activeTooltip.style.top = pubY + 'px';
+      }
+    }
+  });
+
+  // View Projects button
+  const viewProjectsBtn = document.getElementById('viewProjectsBtn');
+  if (viewProjectsBtn) {
+    viewProjectsBtn.addEventListener('click', function() {
+      scrollToSection('research');
+      trackEvent('view_projects_click', { source: 'hero_section' });
+    });
+  }
+
+  
+ 
+function showGridCenteredTooltip(tooltip: HTMLElement, card: HTMLElement) {
+  if (!tooltip || !card) return;
+    // Hide any existing active tooltip first
+    if (activeTooltip && activeTooltip !== tooltip) {
+      hideGridCenteredTooltip(activeTooltip);
+    }
+
+    // Set the new active tooltip
+    activeTooltip = tooltip;
+    
+    // Show the tooltip
+    tooltip.style.opacity = '1';
+    tooltip.style.visibility = 'visible';
+    tooltip.style.pointerEvents = 'auto';
+    
+    // Add active classes
+    card.classList.add('active-tooltip-card');
+    if (publicationGrid) {
+      publicationGrid.classList.add('has-active-tooltip');
+    }
+  }
+
+
+  function hideGridCenteredTooltip(tooltip:HTMLElement) {
+    if (tooltip && publicationGrid && activeTooltip) {
+      tooltip.style.opacity = '0';
+      tooltip.style.visibility = 'hidden';
+      tooltip.style.pointerEvents = 'none';
+      
+      const allActiveCards = document.querySelectorAll('.active-tooltip-card');
+      allActiveCards.forEach(card => {
+        card.classList.remove('active-tooltip-card');
+      });
+      
+      if (publicationGrid) {
+        publicationGrid.classList.remove('has-active-tooltip');
+      }
+// console.log('Hiding tooltip, grid classes:', publicationGrid.className);
+// console.log('Active cards found:', document.querySelectorAll('.active-tooltip-card').length);
+      if (activeTooltip === tooltip) {
+        activeTooltip = null;
+      }
+    }
+  }
+  document.addEventListener('click', function(e) {
+    if (activeTooltip) {
+      const target = e.target as HTMLElement | null;
+if (!target) return;
+      // Check if click is outside both the tooltip and its card
+      const clickedCard = target.closest('.publication-card');
+      const clickedTooltip = target.closest('.publication-tooltip');
+      const activeCard = document.querySelector('.active-tooltip-card');
+      
+      // If clicking outside the active card and tooltip, close it
+      if (!clickedTooltip && clickedCard !== activeCard) {
+        hideGridCenteredTooltip(activeTooltip);
+      }
+    }
+  })
+
+</script>
+
+
