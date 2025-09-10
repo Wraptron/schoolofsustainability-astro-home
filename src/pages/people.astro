@@ -569,6 +569,17 @@ const advisors = [
     loading: "lazy",
   },
 ];
+const scholars = [
+  { name: "Falak Naz", img: "/images/scholars/falak.jpg" },
+  { name: "Lagnajita Paul", img: "/images/scholars/lagnajita.jpg" },
+  { name: "Malavika Vipin", img: "/images/scholars/malavika.jpg" },
+  { name: "Ruthramoorthy S", img: "/images/scholars/ruthramoorthy.jpg" },
+];
+const researchers = [
+  { name: "Gokula Krishnan J. G.", img: "" },
+  { name: "Seenivasan Periyasamy.", img: "" },
+  { name: "Sudharshan Saranathan", img: "" },
+];
 ---
 
 <!-- <Navbar /> -->
@@ -815,6 +826,80 @@ const advisors = [
           </div>
         </div>
       </section>
+      <!--phd scholar section-->
+      <section class="py-12 bg-white">
+  <h2 class="text-3xl font-bold text-center mb-10">PhD Scholars</h2>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+    {scholars.map((scholar) => (
+      <div class="flex flex-col items-center text-center">
+        <div class="w-32 h-32 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden">
+          {scholar.img && scholar.img.trim() !== "" ? (
+            <img
+              src={scholar.img}
+
+              loading="lazy"
+            />
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+              class="w-12 h-12 text-gray-500"
+            >
+              <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+              <path d="M8 14l3-3 5 5H8z" />
+              <circle cx="10" cy="10" r="1.5" />
+            </svg>
+          )}
+        </div>
+        <p class="mt-3 text-sm font-medium text-black">{scholar.name}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+
+
+
+<!--researcher section -->
+<section class="py-12 bg-white">
+  <h2 class="text-3xl font-bold text-center mb-10">Researchers</h2>
+
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+    {researchers.map((r) => (
+      <div class="flex flex-col items-center text-center">
+        <div class="w-32 h-32 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden">
+          {r.img ? (
+            <img
+              src={r.img}
+              alt={r.name}
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          ) : (
+            // Placeholder icon (like your screenshot)
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              class="w-12 h-12 text-gray-500"
+            >
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 
+              1.1.9 2 2 2h14c1.1 0 2-.9 
+              2-2V5c0-1.1-.9-2-2-2zm0 
+              16H5V5h14v14zM8.5 13.5l2.5 
+              3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+            </svg>
+          )}
+        </div>
+        <p class="mt-3 text-sm font-medium text-black">{r.name}</p>
+      </div>
+    ))}
+  </div>
+</section>
 
       <Newletter />
       <Footer />

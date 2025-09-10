@@ -1,0 +1,2644 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import NewLetter from "../components/Newletter.astro";
+import Home from "../components/Home.astro";
+import "../styles/global.css";
+
+// Import assets
+import naturesvg from "../assets/outreach_images/resource.webp";
+import naturesvg2 from "../assets/outreach_images/outreach_event.webp";
+import naturesvg3 from "../assets/Copy of EE Instrumentation Facility Visit 1 1.svg";
+import indu from "../assets/Indu Photos 1.svg";
+import kamaimage from "../assets/WhatsApp Image 2025-05-05 at 21.43.22_281d4de7.jpg";
+import summit from "../assets/Summit on Sustainability .jpg";
+import stem from "../assets/stem1.svg";
+import school from "../assets/school.svg";
+import andrew from "../assets/outreach_images/hero_section.svg";
+import Newletter from "../components/Newletter.astro";
+import Media1 from "../assets/outreach_images/IITM.webp";
+import Media2 from "../assets/outreach_images/IIT-madras-1.jpg";
+import Media3 from "../assets/outreach_images/Media3.webp";
+
+import Event1 from "../assets/outreach_images/Events/Event1.jpeg";
+import Event2 from "../assets/outreach_images/Events/2025_08_06.png";
+import Event3 from "../assets/outreach_images/Events/IITM Swadeshi Shodh Sansthan.jpeg";
+import Event4 from "../assets/outreach_images/Events/bizcon.png";
+import Event5 from "../assets/outreach_images/Events/sustain1.png";
+import Event6 from "../assets/outreach_images/Events/sustain2.png";
+import Event7 from "../assets/outreach_images/Events/SfIB.jpg";
+import Event8 from "../assets/outreach_images/Events/Roundtable.jpg";
+import Event9 from "../assets/outreach_images/Events/Gamified.jpg";
+import Event10 from "../assets/outreach_images/Events/Teaching.jpg";
+import Event11 from "../assets/outreach_images/Events/Biopolymers.jpg";
+import Event12 from "../assets/outreach_images/Events/DoHSS.jpg";
+import Event13 from "../assets/outreach_images/Events/pistiko.jpg";
+import Event14 from "../assets/outreach_images/Events/kizuhiro.jpg";
+import Event15 from "../assets/outreach_images/Events/iCED.jpg";
+import Event16 from "../assets/outreach_images/Events/ICSSRConference.jpg";
+import Event17 from "../assets/outreach_images/Events/Environment and Health.png";
+import Event18 from "../assets/outreach_images/Events/Certificate Distribution.jpg";
+import Event19 from "../assets/outreach_images/Events/CSR-Summit.png";
+import Event20 from "../assets/outreach_images/Events/SfIB Cohort 2.png";
+import Event21 from "../assets/outreach_images/Events/IITM.png";
+import Event22 from "../assets/outreach_images/Events/UNSYD-IITM.png";
+import Event23 from "../assets/outreach_images/Events/Advanced.png";
+import Event24 from "../assets/outreach_images/Events/SfIB Cohort 2 (1).png";
+import Event25 from "../assets/outreach_images/Events/MoU_NCSCM.jpg";
+import Event26 from "../assets/outreach_images/Events/World Sustainability Day CZC.jpg";
+import Event27 from "../assets/outreach_images/Events/ESG Workshop_Mumbai.jpeg";
+import Event28 from "../assets/outreach_images/Events/Battery Circularity.jpg";
+import Event29 from "../assets/outreach_images/Events/Picture1.png";
+import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
+// import Event31 from "../assets/outreach_images/Events/groupphoto.jpg";
+---
+
+<Layout title="School of Sustainability">
+  <!-- <Navbar /> -->
+
+  <main class="overflow-x-hidden">
+    <!-- Hero Section -->
+    <section class="relative">
+      <div class="relative w-full">
+        <!-- Responsive Image Container -->
+        <div
+          class="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[85vh]"
+        >
+          <img
+            src={andrew.src}
+            alt="Hero Image showcasing outreach activities"
+            class="w-full h-full object-cover"
+            loading="eager"
+          />
+          <!-- Dark Overlay for Better Text Readability -->
+          <div class="absolute inset-0 bg-opacity-30"></div>
+        </div>
+
+        <!-- Text Overlay - Positioned at Bottom Left -->
+        <div
+          class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-8 md:left-8 lg:bottom-10 lg:left-10 z-10"
+        >
+          <h2
+            class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight drop-shadow-lg"
+          >
+            <span class="block">Engaging minds.</span>
+            <span class="block">Empowering change.</span>
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Breadcrumb -->
+    <section class="bg-gray-50 py-8 sm:py-12 md:py-16 lg:py-20">
+      <div class="container mx-auto px-4">
+        <nav
+          class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 text-green-600"
+          aria-label="Page sections"
+        >
+          <div
+            class="flex items-center gap-2 sm:gap-4 text-base sm:text-lg md:text-xl mt-3"
+          >
+            <a
+              href="#events"
+              class="font-medium hover:text-green-700 transition-colors cursor-pointer"
+              >Events</a
+            >
+            <span class="hidden sm:inline">|</span>
+            <a
+              href="#media"
+              class="font-medium hover:text-green-700 transition-colors cursor-pointer"
+              >Media</a
+            >
+            <span class="hidden sm:inline">|</span>
+            <a
+              href="#initiatives"
+              class="font-medium hover:text-green-700 transition-colors cursor-pointer"
+              >Initiative</a
+            >
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="py-8 sm:py-12" id="events">
+      <div class="container mx-auto px-4">
+        <!-- Events Header -->
+        <div
+          class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8"
+        >
+          <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900">
+            Events
+          </h2>
+          <div
+            class="flex flex-col sm:flex-row gap-2 sm:gap-5 text-sm sm:text-base font-semibold text-gray-600"
+          >
+            <button
+              id="upcomingBtn"
+              class="px-3 py-1 rounded-lg hover:text-blue-600">Upcoming</button
+            >
+            <button
+              id="pastBtn"
+              class="px-3 py-1 rounded-lg hover:text-blue-600">Past</button
+            >
+            
+          </div>
+        </div>
+
+        <!-- Events Grid -->
+        <div class="space-y-8">
+          <!--upcoming cards 1 -->
+          <article
+            class="event upcoming border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/WhatsApp Image 2025-09-08 at 11.46.43_d1a902f7.jpg"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div class="w-full md:w-2/3 p-6 flex flex-col justify-between">
+              <!-- Date Badge (top left, above title) -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="text-xl md:text-2xl font-bold leading-none"
+                  >22</span
+                >
+                <span class="text-xs md:text-sm mt-1">Sep 2025</span>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-3">
+                International Conference: Cities of Care - Call for abstracts is
+                out!
+              </h3>
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+  With its 2025 edition hosted in the Alps, International Mountain Counference provides
+  an excellent opportunity for experts from different disciplines to discuss mountain-related
+  issues in a cross-disciplinary setting. The key goals of the conference are to synthesize and
+  enhance our understanding of mountain ecosystems that are highly vulnerable to climate change,
+  with shifts in biodiversity, ecosystem services, and land use affecting sustainability at local,
+  regional, and global scales. As part of Past Global Changes (PAGES) DiverseK Working Group,
+  a School of Sustainability member will convene a conference session, "Managing mountain
+  ecosystems in a changing climate: integrating long-term data" that is concetualized to explore
+  integration of ecological, climatic, and land-use data with local knowledge for the sustainable
+  management of mountain regions. The session will address current trends in mountain ecosystems
+  including climate impacts on vegetation and forest management, need for incorporating long-term
+  ecological and historical land-use data, and evaluation of adaptive policy scenarios with
+  stakeholder engagement. More info athttps://imc2025.info/
+</p>
+
+
+              
+            </div>
+          </article>
+
+          <!--upcoming cards 2 -->
+          <article
+            class="event upcoming border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/WhatsApp Image 2025-09-08 at 11.46.43_ed64cbff.jpg"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content with Badge -->
+            <div
+              class="w-full md:w-2/3 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Date Badge (moved here) -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >24</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jul 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-3">
+                International Conference: Cities of Care - Call for abstracts is
+                out!
+              </h3>
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                As cities grapple with the accelerating impacts of climate
+                change, resource scarcity, and socio-economic fragmentation, the
+                complex interdependencies between water, food, and waste systems
+                demand urgent empirical and policy attention. These domains,
+                often siloed in both academic inquiry and urban governance,
+                intersect in critical ways – shaping human health, ecological
+                resilience, and sustainable urban development. The Cities of
+                Care Conference – co-convened by the UofT India Foundation, the
+                School of Cities, University of Toronto and the School of
+                Sustainability, IIT Madras will be held in Chennai, India, on
+                January 30–31, 2026. This convening seeks to deepen
+                interdisciplinary research and catalyze dialogue among
+                academics, practitioners, and decision-makers to advance
+                evidence-based and actionable pathways for more equitable and
+                regenerative urban futures. We invite abstracts for original
+                research that contribute to theoretical and methodological
+                advances and innovative governance strategies for strengthening
+                urban systems in the areas of water, food, and/or waste systems.
+                Submission Deadline: September 22, 2025 To know more and submit
+                your abstract:
+                https://schoolofcities.utoronto.ca/event/cities-of-care/
+              </p>
+
+              <!-- Event Details -->
+
+              
+            </div>
+          </article>
+          <!-- Event Card 1 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src={Event1.src}
+                alt="Event 1 banner"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content with Badge -->
+            <div
+              class="w-full md:w-2/3 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Date Badge (moved here) -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >24</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jul 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-3">
+                Identity and Beliefs Dissonance
+              </h3>
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                Engaging talk on Identity and Beliefs Dissonance by Dr. Aparna
+                Anand. She is a lecturer of Economics & Education at Teachers
+                College, Columbia University. She works in the fields of
+                development economics, and experimental and behavioral
+                economics. She is interested in the economics of education in
+                developing countries, own child labor substitution, occupational
+                identity, and dissonance in beliefs about returns to education.
+                In a recent research, she looked at how improved infrastructure
+                such as access to piped water affects the empowerment of women
+                and their mental health.
+              </p>
+
+              <!-- Event Details -->
+
+             
+            </div>
+          </article>
+
+          <!-- Event Card 2 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src={Event2.src}
+                alt="Event 2 banner"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content with Badge -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >6–7</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Aug 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="block"
+                  >SPARC Workshop on Hydrogen Carbon Capture,</span
+                >
+                <span class="block"
+                  >Utilization and Storage (CCUS) Value Chains:</span
+                >
+                <span class="block">Fundamentals & Systems Engineering</span>
+              </h3>
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                The two-day workshop offers an in-depth exploration of hydrogen
+                and carbon capture, utilization, and storage (CCUS)
+                technologies. It covers the fundamentals, production routes, and
+                value chain integration of hydrogen and CCUS, along with
+                sustainable system design and infrastructure planning. Emphasis
+                will be placed on applying systems engineering
+                principles—including dynamic modeling, techno-economic analysis,
+                and optimization tools—for managing and evaluating integrated
+                energy systems. The workshop is designed to equip researchers
+                and professionals with practical tools and decision-support
+                frameworks essential for navigating the complexities of clean
+                energy systems.
+              </p>
+
+              <!-- Event Details -->
+
+              <!-- Footer: More Info + Status -->
+              <div class="flex items-center justify-between">
+                <a
+                  href="#"
+                  class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-sm"
+                >
+                  More Info
+                </a>
+                <span class="text-gray-400 font-semibold">PASSED</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Event Card 3 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src={Event3.src}
+                alt="Event 3 banner"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content with Badge -->
+            <div
+              class="w-full md:w-1/2 p-4 sm:p-6 flex flex-col justify-between relative"
+            >
+              <!-- Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >22</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jul 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                Brainstorming Session: Policy Directions for the Future
+              </h3>
+
+              <!-- Event Details -->
+              <div
+                class="flex flex-wrap items-center text-gray-700 gap-3 sm:gap-6 text-xs sm:text-sm mb-3 sm:mb-4"
+              >
+                <p class="font-serif text-base leading-relaxed text-black mb-4">
+                  Diverse IITM entities including CAMS IITM Fitech Innovation
+                  Lab, School of Sustainability, IITM-Rotary Centre for Social
+                  Development join hands with Swadeshi Shodh Sansthan to
+                  brainstorm policy directions for India's future. The key
+                  themes include New Education Policy, Healthcare, Industry 5.0,
+                  Critical Review of Monetary Policy, Integration of Policies,
+                  Blue economy, M-Commerce, Indigenous Production, Promotion of
+                  Heritage & Culture, Local products for Global Consumption.
+                </p>
+              </div>
+
+              <!-- Description -->
+
+              
+            </div>
+          </article>
+
+          <!-- Event Card 4 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src={Event4.src}
+                alt="bizcon"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >10</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jul 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                IJBC <span class="text-gray-900">BizCon2025</span> in partnership
+                with
+                <span class="text-gray-900">IITM School of Sustainability!</span
+                >
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                Hosted by Indo-Japan Business Council (IJBC), the 4th
+                India-Japan Business Conference aims to strengthen the growing
+                partnership between the two nations, focusing on accelerating
+                collaborations in technology, trade, and sustainability. Under
+                the theme “Accelerating Indo-Japan Partnerships in Technology,
+                Trade, and Sustainability,” this conference seeks to provide a
+                platform for business leaders, policymakers, and industry
+                experts to explore the vast potential for cooperation between
+                both nations. Special emphasis will be placed on SMEs, fostering
+                innovation, and leveraging shared strengths to enhance global
+                competitiveness. As an academic partner, IIT Madras School of
+                Sustainability will support IJBC in stimulating meaningful
+                conversations on technology, policy and business model
+                transformation.
+              </p>
+
+              
+            </div>
+          </article>
+
+          <!-- Event Card 5 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src={Event5.src}
+                alt="bizcon"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >23</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jul 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-1xl font-semibold text-gray-900 mb-3"
+              >
+                SustainX <span class="text-gray-900">ACE 2025 & 4th CO2 </span>
+
+                <span class="text-gray-900">
+                  Conference Registration closes on June 15th!</span
+                >
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                Exclusively planned for showcasing cutting-edge research by
+                students and early-career researchers across India, the 2-day
+                conference will hold presentations and flash talks alongside the
+                plenary address, keynote speeches, and panel discussions.
+                Presenters and participants will have an opportunity to interact
+                with a diverse and dynamic audience (academia, industry
+                representatives, officials from relevant ministries, think tanks
+                and non-profits, and financial institutions from India and
+                abroad), deeply invested in CCUS, renewable energy systems,
+                climate policy, and green and sustainable finance. The
+                conference will be preceded by a thematic symposium (21-22
+                June), hosting insightful lectures from experts chartering new
+                territories of decarbonization and energy transitionsTo know
+                more including the illustrious speakers, check out the
+              </p>
+
+              
+            </div>
+          </article>
+
+          <!-- Event Card 6 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src={Event6.src}
+                alt="bizcon"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >21</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-1xl font-semibold text-gray-900 mb-3"
+              >
+                SustainX <span class="text-gray-900">ACE 2025 & 4th CO2 </span>
+
+                <span class="text-gray-900">
+                  Symposium Registration closes on June 15th!</span
+                >
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                SustainX - ACE 2025 & 4th CO2India Meet is a national platform
+                to explore innovative strategies for a low-carbon future. It’s a
+                unique chance for students & researchers to learn from top
+                experts, comprehend climate-smart technologies and their social
+                and environmental dimensions, and dive into real-world
+                sustainability topics. From capturing carbon to understanding
+                how finance and communities shape energy transition, the
+                Symposium covers it all! Join us to connect, share ideas, and be
+                part of the journey. The symposium will be followed by a
+                Conference (23-24 June), exclusively planned for showcasing
+                cutting-edge research by student and early-career researchers
+                across India. To know more including the illustrious speakers,
+                check out the
+              </p>
+
+              
+            </div>
+          </article>
+
+          <!--Event care 7 -->
+
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src={Event7.src}
+                alt="bizcon"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >06</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-1xl font-semibold text-gray-900 mb-3"
+              >
+                Sustainability for <span class="text-gray-900">
+                  Indian Businesses</span
+                >
+
+                <span class="text-gray-900"> Cohort 3 commences!</span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                With climate-related risks & associated multi-level esource
+                pressures posing a real threat to industry worldwide, bringing
+                sustainability into planning & execution is an opportunity for
+                growth for industries. Be it value-driven, compliance-driven or
+                mandate-driven, there is a growing realization within India's
+                corporate sector that value can be created & reinvested through
+                facilitating sustainable pathways. However, the notion of a
+                trade-off between sustainability & profitability continues,
+                necessitating both “top-down” & "bottom-up" reforms in all the
+                four pillars of sustainability - Mitigation, Adaptation,
+                Recovery, & Innovation. The 6-week Executive Education program
+                "Sustainability for Indian Businesses" is designed to help
+                industry professionals practically align Sustainable Development
+                Goals with core business strategies. By bridging knowledge &
+                application gaps, individuals & industries will unlock new
+                avenues for growth & contribute towards India’s nationally
+                determined contributions & its green, climate-resilient future.
+                Enroll before May 26, 2025!
+              </p>
+
+              
+            </div>
+          </article>
+
+          <!--Event care 8 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src={Event8.src}
+                alt="bizcon"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >02</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                Sustainability for
+                <span class="text-gray-900">Indian Businesses</span>
+                <span class="text-gray-900"> Cohort 3 commences!</span>
+                <span class="block text-gray-900">
+                  Roundtable on Sustainability in the Built Environment in
+                  partnership with Schmidt Sciences and TLC2
+                </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                The built environment accounts for nearly 40% of global
+                greenhouse gas emissions, making sustainable transformation a
+                critical priority. The 2-day roundtable, funded by Schmidt
+                Sciences, will bring together experts from academia, industry,
+                and policy to explore actionable strategies for a more
+                sustainable construction and operation practices. The
+                discussions will span five thematic sessions: Energy, Design,
+                Automation & Digital Technologies, Materials, and Business
+                Models & Policy. The event aims to identify and promote scalable
+                solutions, address adoption barriers, and outline research
+                priorities to accelerate India’s transition toward a low-carbon,
+                sustainable built environment.
+              </p>
+
+              
+            </div>
+          </article>
+
+          <!--Event care 9 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src={Event9.src}
+                alt="bizcon"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >02</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                Games
+                <span class="text-gray-900">for Good Governance</span>
+                <span class="text-gray-900"> Sustainable Urban Futures!</span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                School of Sustainability is organizing a simulated gamified
+                workshop in collaboration with an urban futures studio based in
+                FLAME University! If you are working on shaping urban futures,
+                join us for a stimulating yet fun gaming experience like you'd
+                never had before! Through thematic games woven around the themes
+                of Affordable and Sustainable Buildings, Participatory and
+                Inclusive Governance, Energy Transition & Urban Decarbonization,
+                and Disaster Preparedness and Urban Resilience, we can
+                revolutionize the way we educate each other, build disaster
+                preparedness and urban resilience in the language we all
+                understand the most: Play!
+              </p>
+
+              
+            </div>
+          </article>
+
+          <!--Event care 10 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src={Event10.src}
+                alt="bizcon"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >21</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                Training Program:
+                <span class="text-gray-900"
+                  >The Use of Al/ML for Environmental Audit</span
+                >
+                <span class="text-gray-900"> iCED, Jaipur</span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                School of Sustainability is organizing a simulated gamified
+                workshop in collaboration with an urban futures studio based in
+                FLAME University! If you are working on shaping urban futures,
+                join us for a stimulating yet fun gaming experience like you'd
+                never had before! Through thematic games woven around the themes
+                of Affordable and Sustainable Buildings, Participatory and
+                Inclusive Governance, Energy Transition & Urban Decarbonization,
+                and Disaster Preparedness and Urban Resilience, we can
+                revolutionize the way we educate each other, build disaster
+                preparedness and urban resilience in the language we all
+                understand the most: Play!
+              </p>
+
+              
+            </div>
+          </article>
+
+          <!--Event care 11 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src={Event11.src}
+                alt="bizcon"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                Short Course:
+                <span class="text-gray-900"
+                  >Biopolymers for Sustainable Circular Economy</span
+                >
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                Join us for an exclusive short course by Dr Antonio Capezza, KTH
+                Royal Institute of Technology, Sweden, co-hosted by Department
+                of Civil Engineering and School of Sustainability IIT Madras!
+                Don't miss the opportunity to gain insights into cutting-edge
+                biopolymer research and its real-world applications!
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 12 -->
+          <article
+            class="event upcoming border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/Tamil Nadu LandUse.jpg"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >Tamil Nadu LandUse 2025 – International Conference on
+                  Research & Innovation for a Sustainable Future!
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                Hosted by the Tamil Nadu State Land Use Research Board under the
+                Tamil Nadu State Planning Commission in partnership with Centre
+                for Innovation in Governance TNCIG, School of Sustainability IIT
+                Madras, and WRI India, the conference aims to catalyse systemic
+                thinking and innovation, foster interdisciplinary collaboration,
+                and promote actionable research to address Tamil Nadu’s most
+                pressing land use and climate resilience challenges. ositioned
+                as a global platform, the conference will bring together
+                researchers, policymakers, practitioners, and civil society
+                leaders to co-create solutions for a climate-smart, inclusive
+                and sustainable future of Tamil Nadu’s land and marine
+                resources. To know more, visit
+                https://tnslurb.tn.gov.in/tnlanduse2025/
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 13 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/DoHSS Conference poster.jpg"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >14th DoHSS Annual Academic Conference on Risk, Precarity, and
+                  Vulnerability 2025
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                The Department of Humanities and Social Sciences, IIT Madras
+                cordially invites you to the Annual Academic Conference 2025,
+                generously supported by School of Sustainability IIT Madras. Led
+                by distinguished scholars from India and abroad, this year’s
+                conference will be an insightful academic gathering with
+                engaging presentations and thought-provoking discussions on
+                critical issues in the humanities and social sciences.
+              </p>
+
+             
+            </div>
+          </article>
+          <!--Event care 14 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/Invited Talk_11-3-2025.jpg"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >Invited Talk: The Quest Towards Sustainable Energy Transition
+                  – ‘Are We Getting There?
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                "Co-hosted by the Department of Chemical Engineering and School
+                of Sustainability IIT Madras, Professor Stratos Pistikopoulos
+                FREng (Director, Texas A&M Energy Institute, Dow Chemical Chair,
+                University Distinguished Professor, Artie McFerrin Department of
+                Chemical Engineering, Texas A&M University, United States) will
+                talk about all about sustainable energy transitions. The
+                abstract of their talk: Decarbonization, electrification,
+                net-carbon neutrality and low-carbon technology constitute
+                important drivers in energy transition efforts. Open challenges
+                toward such a societal and industrial goal include: (i) how to
+                tame the impact of intermittency of many renewable technologies
+                and the critical role of energy storage, (ii) the need for
+                rigorous life-cycle based carbon accounting, (iii) understanding
+                the material transition requirements as an enabler for the
+                energy transition, and (iv) managing the costs of the various
+                technologies relevant to the transition at different and
+                evolving technology readiness levels. Here, we will attempt to
+                provide a systematic framework of how to address such challenges
+                in a holistic, integrated way toward realistic and sustainable
+                energy transition scenarios. We will discuss the salient
+                interactions in energy-material-mobility transition, the
+                potential opportunities of industrial electrification, carbon
+                capture and utilization and the hydrogen economy, and the role
+                of policy especially in the context of circular economy. A
+                comprehensive multi-scale energy systems engineering approach
+                will be presented as the ‘glue’ to navigate and connect the
+                various pieces of the puzzle in energy transition."
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 15 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/Invited Talk_4-3-2025.jpg"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >Invited Talk: Electrolyte Engineering for Efficient Green
+                  Hydrogen Production
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                The Department of Chemical Engineering and School of
+                Sustainability co-hosted a scholarly seminar by Prof. Kazuhiro
+                Takanabe from School of Engineering, The University of Tokyo. In
+                this seminar, Prof. Takanabe help us delve into discoveries
+                concerning non-noble metal electrocatalysts at non-extreme pH,
+                specifically focusing on their efficiency in both the oxygen
+                evolution reaction (OER) and hydrogen evolution reaction (HER).
+                The resultant cell performance, factoring in the series
+                resistance, achieved a 1 A cm−2 at a voltage of approximately
+                2.0 V or lower. This achievement stands competitively against
+                the top-class commercial alkaline electrolyzers. Finally unique
+                dynamic characteristics of electrocatalyst will be discussed
+                under mixed buffer conditions, where selective OER was achieved
+                in the presence of chloride ions. These findings not only
+                highlight the feasibility of non-extreme pH electrochemical
+                electrolyzers in industrial applications but also underscore the
+                potential for further advancements and optimizations. The
+                demonstrated success serves as a compelling indicator of the
+                viability of our approach and opens avenues for refining
+                non-extreme pH electrolysis for even greater efficiency and
+                applicability in industrial settings.
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 16 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/MoU_iCED.jpg"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+             <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >New Partnership: International Centre for Environment Audit
+                  and Sustainable Development (iCED)
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                "iCED is a Central Government organisation under C&AG of India,
+                a Global Training Facility (GTF) in Environment Audit &
+                Sustainable Development. As part of at-large IIT Madras MoU,
+                School of Sustainability has joined hands with iCED in
+                developing and implementing capacity building programs and
+                research collaboration in the areas of mutual interest,
+                particularly those pertaining to emerging trends of
+                Environmental Audit and Governance, Climate Resilience,
+                Sustainable Development, Artificial Intelligence and Machine
+                Learning. "
+              </p>
+
+              
+            </div>
+          </article>
+
+          <!--Event care 17 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/ICSSR Conference_Emerging Issues in Blue Economy.jpg"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >ICSSR Conference: Emerging Issues in Blue Economy
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                Hosted by IIT Madras, the conference on "Emerging Issues in Blue
+                Economy" aims to address critical challenges and opportunities
+                in the sustainable development of marine and coastal
+                ecosystems.With India's aspirations towards Vision Viksit Bharat
+                @2047, this conference provides a platform for thought leaders,
+                researchers, and practitioners to contribute to shaping policies
+                and strategies for a resilient, vibrant, and inclusive Blue
+                Economy. By focusing on themes such as vulnerability and
+                resilience, food security and livelihood, technology adoption,
+                policy and governance and fishing communities this conference
+                will facilitate discussions on evidence-based solutions and
+                foster collaborations among stakeholders. Participants will gain
+                insights from keynote sessions, peer networking, and the
+                opportunity to contribute to a high-impact edited book. Early
+                career researchers including PhD scholars will particularly
+                benefit from connecting with domain experts and building
+                networks to advance their academic and professional pursuits in
+                the critical field of Blue Economy.
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 18 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/Invited Talk_5 Feb_Environment and Health.png"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >Invited Talk: Environment and Health
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                Co-hosted by the American Centre Chennai and School of
+                Sustainability, IIT Madras, the session will feature Dr. Jay
+                Lemery, MD, a leading expert in climate and health. Dr. Lemery
+                is the Climate & Health Foundation Endowed Chair in Climate
+                Medicine and Professor of Emergency Medicine at the University
+                of Colorado School of Medicine. He also serves as the Chief of
+                the Section of Wilderness and Environmental Medicine and is on
+                the faculty of the Colorado School of Public Health. A past
+                president of the Wilderness Medical Society, Dr. Lemery brings
+                extensive experience in climate medicine, environmental health,
+                and emergency response. Dr. Lemery is currently the medical
+                director for the US National Science Foundation’s Polar Research
+                Program, and director of the Cryosphere Austere Medicine
+                Platform at the University of Colorado. He was the medical
+                director for emergency medical services for the U.S. Antarctic
+                Program from 2014 to 2016. He is a member of the Council on
+                Foreign Relations and was elected to the US National Academy of
+                Medicine in 2021.
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 19 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/SfIB Cohort 2 Certificate Distribution.jpg"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >The School of Sustainability congratulates Sustainability for
+                  Indian Businesses Cohort 2!
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                November through January, the 8-week comprehensive Executive
+                Education Certificate Program "Sustainability for Indian
+                Businesses" became the platform for 30 industry professionals
+                from the diverse sectors and career levels to build confidence
+                and competence in actioning sustainability in their respective
+                business ecosystems. Apart from equipping with a practical
+                scenario-building toolkit and familiarizing with India’s
+                changing policy landscape, "Sustainability for Indian
+                Businesses" imparted a systemic view of sustainability, they
+                say!
+              </p>
+
+             
+            </div>
+          </article>
+          <!--Event care 20 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/CSR-Summit-Save-the-date.png"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >School of Sustainability is at CSR Summit 2024!
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                Over the years, IIT Madras has built a culture of collaborating
+                with industry to create a lasting impact across diverse themes
+                such as agriculture, healthcare, environment, skilling and
+                education. IIT Madras' flagship CSR Summit celebrates
+                industry-academia ties through a day full of insightful panel
+                discussions, CxOs roundtable, and networking sessions with
+                leaders in industry and academia.
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 21 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/SfIB Cohort 2 Certificate Distribution.jpg"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >Sustainability for Indian Businesses Cohort 2 - In-person
+                  Interaction
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                Excited to host the participants of our 8-week Executive
+                Education Certificate Program, Sustainability for Indian
+                Businesses! An action-packed day for the participants with a
+                wholesome IIT Madras experience where they will interact with
+                the course faculty and partake in the series of
+                Sustainability-themed events happening on campus.
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 22 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/UNSYD-IITM_Workshop 2_Flyer.png"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >International Workshop: Industrial Ecology and Data Science
+                  for Sustainable Manufacturing in India
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                Co-organized by Purdue University, USA and IIT Madras, India,
+                the two-day workshop will bring together experts from academia,
+                industry and government working in the area of advanced data
+                science, sustainability, manufacturing and industrial ecology,
+                to identify the convergence pathways for sustainable
+                manufacturing in India. Day 1 will host the dedicated segments
+                on Industrial Ecology, Process Systems Engineering & Data
+                Science (related to Sustainability, and Sustainability/Policy
+                tracks, followed by a number of case studies from Indian
+                Industries while Day 2 is planned to hold a series of discussion
+                sessions to bring out the key learnings.
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 23 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/Advanced Ceramics for Sustainability.png"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >International Workshop: Expanding Capacities for the Delivery
+                  of New Energy Technologies
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                As part of a successful Indian Institute of Technology Madras
+                (IIT Madras)-University of Sydney (USYD) Ignition Grant the John
+                Grill Institute for Project Leadership, the Net Zero Institute
+                and the School of Sustainability at IIT-Madras will be hosting a
+                series of hybrid workshops exploring the building of
+                capabilities in projects with a net-zero focus. The first hybrid
+                workshop took place at IIT Madras on June 24-25, 2024, where the
+                challenges facing project leadership on projects with a net-zero
+                focus were identified and elucidated. The second workshop will
+                take place at USYD on December 3-4, 2024 and look at solutions
+                to strengthen leadership in this field.
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 24 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/SfIB Cohort 2.png"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >International Conference on Advanced Ceramics for
+                  Sustainability
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                "The International Conference on Advanced Ceramics for
+                Sustainability (Cera4s) explores the potential of advanced
+                ceramics to address global sustainability challenges. The
+                conference delves into three key themes: Energy, Environment,
+                and Health. It is intended to have five special sessions that
+                will showcase cutting-edge research in these areas, which enable
+                fostering collaboration among leading researchers, industry
+                experts and scientists. Nestled in the vibrant city of Chennai,
+                India, it will be held at IIT Madras, a premier institute of
+                technology which is an institution of national importance
+                providing a perfect backdrop for this forward-looking
+                conference. In association with the School of Sustainability,
+                IIT Madras and the Ceramics Technologies for Futuristic Mobility
+                (IoE Research Center), and co-organised by AC Tech, Anna
+                University, InCerS Tamil Nadu Chapter and C-MET, Hyderabad this
+                event promises a stimulating exchange of ideas, exploration of
+                cutting-edge advancements, and collaboration opportunities to
+                shape the future of sustainable ceramics."
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 25 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/MoU_NCSCM.jpg"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >Sustainability for Indian Businesses Executive Education
+                  Program
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                "Registrations open till November 5, 2024. With climate-related
+                risks and associated multi-level resource pressures posing a
+                real threat to industry worldwide, bringing sustainability into
+                planning and execution is an opportunity of growth for
+                industries. Be it value-driven, compliance-driven or
+                mandate-driven, there is a growing realization within the
+                industrial sector in India that value can be created in
+                facilitating sustainable pathways and reinvested towards the
+                growth of companies and industry at large. The trade-off between
+                sustainability and profitability, however, continues to be a
+                hurdle and both “top-down” and “bottom-up” reforms are warranted
+                in all the four pillars of sustainability – Mitigation,
+                Adaptation, Recovery, and Innovation – and their effectual and
+                just implementation to achieve Sustainable Development Goals
+                (SDGs). The goal of the program is to familiarize learners with
+                the multi-dimensional nature of sustainability in connection
+                with its real-world implications. Through communicating the
+                existing (and upcoming) toolkit for imagining sustainable
+                Industry Landscape in India at the backdrop of India’s changing
+                policy frameworks, the course inculcates a systemic view into
+                sustainability in tandem with equipping learners to ideate
+                practical sustainable scenarios for their respective
+                businesses."
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 26 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/World Sustainability Day CZC.jpg"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >New Partnership: National Centre for Sustainable Coastal
+                  Management of MoEF&CC!
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                National Center for Sustainable Coastal Management the Ministry
+                of Environment, Forest, and Climate Change, Government of India
+                has entered into an MoU with School of Sustainability and Energy
+                Consortium IIT Madras to advance sustainable energy solutions,
+                aligning with SDG7 (Affordable and Clean Energy) and SDG14 (Life
+                Below Water). Leveraging IIT Madras’s technological expertise
+                and NCSCM’s focus on coastal and marine sustainability, this
+                partnership targets an environmentally responsible energy
+                transition that will aid India’s Blue Economy aspirations while
+                protecting marine ecosystems and supporting coastal communities.
+                Key collaboration areas identified are: Offshore Wind Energy,
+                Deep-Sea Carbon Sequestration and Seawater-Based Cooling. This
+                partnership brings a unique blend of technological innovation
+                and sustainability expertise, enhancing India’s ability to
+                implement large-scale, sustainable solutions for energy
+                transition in coastal and offshore areas.
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 27 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/ESG Workshop_Mumbai.jpeg"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >Carbon Zero Challenge 4.0 & Grand Expo
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                Carbon Zero Challenge teams showcase their cutting-edge products
+                and prototypes at the Grand Expo. A chance to witness
+                eco-innovations that are shaping a sustainable future! The top 5
+                teams from the 4th cohort of Carbon Zero Challenge (CZC 4.0) are
+                selected and awarded seed grants of up to INR 10 Lakhs. This
+                year’s event coincides with World Sustainability Day, making it
+                the perfect opportunity to celebrate breakthrough eco-innovative
+                solutions! Let’s come together to encourage these brilliant
+                minds and be part of the movement towards a sustainable future!
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 28 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/Battery Circularity.jpg"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >Industry Dialogue on ESG: Reporting Challenges and the Path
+                  Forward
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+             <p class="font-serif text-base leading-relaxed text-black mb-4">
+                ESG reporting is the disclosure of the impact of a business on
+                environmental, social, and corporate governance and a collection
+                of factors that can materially affect a business. As ESG
+                reporting gains momentum in India, the regulatory framework
+                matures. India has a range of ESG challenges, like many other
+                developing countries, due to its population size, socioeconomic
+                diversity, and aspirations of economic success. Yet, India has
+                evolved a lot in the ESG space and is improving rapidly, given
+                the strong direction set by the market regulator, the Securities
+                and Exchange Board of India (SEBI). Compared with leading
+                economies and keeping in line with global trends, India fares
+                highly in ESG disclosures and is one of the countries where
+                reporting is mandatory instead of voluntary. The central focus
+                of this proposed workshop is how we accelerate ESG reporting and
+                its challenges. In the previous edition of this workshop held in
+                Chennai on 24th May 2024, several challenges were identified by
+                industry members representing various sectors, including
+                automobiles, fertilizer, cement, finance and manufacturing.
+                These include data inconsistencies and measurement accuracies to
+                document and report key metrics, the need for ESG knowledge
+                across the workforce, including awareness and skilling needs,
+                and ensuring fairness across industries and sectors in comparing
+                relevant metrics, cost of regulatory compliance as well as cost
+                of implementing technologies to achieve net-zero.
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 29 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/Battery Circularity.jpg"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >Seminar Series: Circular Economy: Battery Reuse, Repurpose
+                  and Recycling
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                "The ambitious e-mobility mission of the Government of India is
+                accelerating the growth of the electric vehicles market, where
+                the bottleneck is the risk associated with material supply. To
+                address this, it has become essential to develop a Circular
+                Battery ecosystem through recycling/reusing the spent batteries
+                not only to maintain material circularity but also to mitigate
+                the environmental impacts. It is important to have discussions
+                on the battery management policy, reusing strategies, current
+                recycling practices and the challenges to handle tonnes of mixed
+                as well as complex composition of battery waste streams. This
+                seminar will bring people from various key stakeholder
+                industries and researchers from academia together for discussion
+                about these issues in the circular economy of battery and
+                identify potential research scopes and development of key
+                enablers. 𝐊𝐞𝐲 𝐭𝐨𝐩𝐢𝐜𝐬: • e-Mobility Roadmap of India • Battery
+                management policy • Reuse/Repurpose strategies • Battery Aadhar
+                • Current recycling practices and challenges • Handling complex
+                battery waste streams • Potential research areas and development
+                enablers"
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 30 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/Picture1.png"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >The School of Sustainability congratulates its first cohort
+                  of Sustainability for Indian Businesses!
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                During the month of June 2024, the Executive Education
+                Certificate Program "Sustainability for Indian Businesses"
+                became the platform for as many as 110 industry professionals
+                from the diverse sectors and career levels to build confidence
+                and competence in actioning sustainability in their respective
+                business ecosystems. Apart from equipping with a practical
+                scenario-building toolkit and familiarizing with India’s
+                changing policy landscape, "Sustainability for Indian
+                Businesses" imparted a systemic view of sustainability, they
+                say!
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 31 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/Invited Talk_5-6-24.jpg"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >Invited Talk: Healthy Citizens, Peaceful Societies and A
+                  Healthier Planet
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                Prof. Lawrence Surendra, Lund University, Sweden speaks about
+                how interconnectedness between social and environmetal factors
+                is crucial for a climate-resilient planet.
+              </p>
+
+              
+            </div>
+          </article>
+          <!--Event care 32 -->
+          <article
+            class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row"
+          >
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 flex items-center justify-center">
+              <img
+                src="src/assets/outreach_images/Events/FPV Roundtable 1_Group Photo.JPG"
+                class="max-h-[500px] w-auto object-center"
+              />
+            </div>
+
+            <!-- Right Content -->
+            <div
+              class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
+            >
+              <!-- Green Date Badge -->
+              <div
+                class="inline-flex flex-col items-center justify-center
+             text-black rounded-md
+             px-4 py-2 shadow-md w-fit mb-4"
+              >
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
+                  >03</span
+                >
+                <span class="block text-[10px] sm:text-xs md:text-sm"
+                  >Jun 2025</span
+                >
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
+              >
+                <span class="text-gray-900"
+                  >Floating Photovoltaics Roundtable with GIZ and MNRE
+                </span>
+                <span class="text-gray-900"> </span>
+                <span class="block text-gray-900"> </span>
+              </h3>
+
+              <!-- Event Details -->
+
+              <!-- Description -->
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
+                With climate change pushing the world towards sustainable and
+                clean energy solutions, generating energy from renewable sources
+                such as the sun and the wind has come to the forefront. Floating
+                Photovoltaics (FPVs) have emerged as a promising option,
+                primarily due to the fact that land is becoming increasingly
+                scarce and land prices for solar installations are soaring in
+                many parts of the world. Despite their potential, the widespread
+                adoption of FPVs is fraught with a number of structural,
+                environmental, financial and management issues. The FPV
+                Roundtable to be held at Indian Institute of Technology Madras
+                will be the multi-stakeholder platform to develop the shared
+                vision for mainstreaming FPV in India.
+              </p>
+
+              
+            </div>
+          </article>
+
+          
+         
+        </div>
+      </div>
+    </section>
+
+    <!-- Media Section -->
+    <section class="py-8 sm:py-12 bg-gray-50" id="media">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl sm:text-3xl font-semibold mb-6 text-gray-900">
+          Media
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Large Featured Media -->
+          <article
+            class="relative group rounded-lg overflow-hidden cursor-pointer"
+          >
+            <img
+              src={Media1.src}
+              alt="Featured sustainability event coverage"
+              class="w-full h-64 sm:h-80 lg:h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent group-hover:from-black/80 transition-all duration-300"
+            >
+            </div>
+            <div
+              class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300"
+            >
+              <p
+                class="text-white text-sm sm:text-base lg:text-lg font-medium leading-relaxed"
+              >
+                IIT Madras opens Centre of Excellence for Sustainability aiming
+                to tackle global challenges
+              </p>
+            </div>
+            <button
+              class="absolute bottom-4 right-4 text-white opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-200"
+              aria-label="Share this media content"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a3.268 3.268 0 000-1.4l7.05-4.11a2.99 2.99 0 10-.96-1.68l-7.06 4.12a2.99 2.99 0 100 4.78l7.05 4.11c.52-.48 1.2-.77 1.96-.77a3 3 0 100-6z"
+                ></path>
+              </svg>
+            </button>
+          </article>
+
+          <!-- Two Smaller Media Items -->
+          <div class="grid grid-cols-1 gap-6">
+            <!-- Media Item 1 -->
+            <article
+              class="relative group rounded-lg overflow-hidden cursor-pointer"
+            >
+              <img
+                src={Media2.src}
+                alt="Summit on Sustainability coverage"
+                class="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent group-hover:from-black/80 transition-all duration-300"
+              >
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-3 sm:p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300"
+              >
+                <p class="text-white text-sm sm:text-base font-medium">
+                  IIT Madras launches School of Sustainability
+                </p>
+              </div>
+              <button
+                class="absolute bottom-3 right-3 text-white opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-200"
+                aria-label="Share this media content"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a3.268 3.268 0 000-1.4l7.05-4.11a2.99 2.99 0 10-.96-1.68l-7.06 4.12a2.99 2.99 0 100 4.78l7.05 4.11c.52-.48 1.2-.77 1.96-.77a3 3 0 100-6z"
+                  ></path>
+                </svg>
+              </button>
+            </article>
+            <div class="grid grid-cols-1 gap-6">
+              <!-- Media Item 1 -->
+              <article
+                class="relative group rounded-lg overflow-hidden cursor-pointer"
+              >
+                <img
+                  src={Media3.src}
+                  alt="Summit on Sustainability coverage"
+                  class="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent group-hover:from-black/80 transition-all duration-300"
+                >
+                </div>
+                <div
+                  class="absolute bottom-0 left-0 right-0 p-3 sm:p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300"
+                >
+                  <p class="text-white text-sm sm:text-base font-medium">
+                    The shape of climate justice in a warming India
+                  </p>
+                </div>
+                <button
+                  class="absolute bottom-3 right-3 text-white opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-200"
+                  aria-label="Share this media content"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a3.268 3.268 0 000-1.4l7.05-4.11a2.99 2.99 0 10-.96-1.68l-7.06 4.12a2.99 2.99 0 100 4.78l7.05 4.11c.52-.48 1.2-.77 1.96-.77a3 3 0 100-6z"
+                    ></path>
+                  </svg>
+                </button>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Initiatives Section -->
+      <section class="py-8 sm:py-12" id="initiatives">
+        <div class="container mx-auto px-4">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-gray-900">
+            Initiatives
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- Initiative Card 1 -->
+            <article
+              class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer group"
+            >
+              <div class="overflow-hidden rounded-t-lg">
+                <img
+                  src={stem.src}
+                  alt="STEM education initiative"
+                  class="w-full h-48 sm:h-60 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6">
+                <p
+                  class="mb-6 text-gray-700 text-base sm:text-lg leading-relaxed group-hover:text-gray-900 transition-colors"
+                >
+                  Electronic kits distribution
+                </p>
+                <div class="text-center">
+                  <button
+                    class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
+                  >
+                    Learn More
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Initiative Card 2 -->
+            <article
+              class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer group"
+            >
+              <div class="overflow-hidden rounded-t-lg">
+                <img
+                  src={school.src}
+                  alt="School outreach initiative"
+                  class="w-full h-48 sm:h-60 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6">
+                <p
+                  class="mb-6 text-gray-700 text-base sm:text-lg leading-relaxed group-hover:text-gray-900 transition-colors"
+                >
+                  Rural Technology Centres/ Rural Interaction Centres
+                </p>
+                <div class="text-center">
+                  <button
+                    class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
+                  >
+                    Learn More
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Entrepreneurship Section -->
+          <div>
+            <h3 class="text-2xl sm:text-3xl font-bold mb-8 text-gray-900">
+              Entrepreneurship
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Venture Studios Card -->
+              <a
+                href="https://indusdc.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="border-2 border-green-400 p-6 rounded-lg hover:bg-green-50 hover:border-green-500 transition-all duration-200 group hover:shadow-lg hover:scale-[1.02]"
+              >
+                <h4
+                  class="text-xl sm:text-2xl font-semibold mb-3 text-gray-900 group-hover:text-green-700 transition-colors"
+                >
+                  Sustainability Venture Studios
+                </h4>
+                <p
+                  class="text-gray-600 text-base sm:text-lg break-all group-hover:text-green-600 transition-colors"
+                >
+                  https://indusdc.com/
+                </p>
+              </a>
+
+              <!-- Competitions Card -->
+              <a
+                href="https://czeroc.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="border-2 border-green-400 p-6 rounded-lg hover:bg-green-50 hover:border-green-500 transition-all duration-200 group hover:shadow-lg hover:scale-[1.02]"
+              >
+                <h4
+                  class="text-xl sm:text-2xl font-semibold mb-3 text-gray-900 group-hover:text-green-700 transition-colors"
+                >
+                  Competitions
+                </h4>
+                <p
+                  class="text-gray-600 text-base sm:text-lg break-all group-hover:text-green-600 transition-colors"
+                >
+                  https://czeroc.in/
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact & Newsletter Section -->
+      <Newletter />
+      <Footer />
+    </section>
+  </main>
+  <script>
+    const upcomingBtn = document.getElementById("upcomingBtn");
+    const pastBtn = document.getElementById("pastBtn");
+    const events = document.querySelectorAll(".event");
+
+    function filterEvents(type: string) {
+      events.forEach((event) => {
+        const el = event as HTMLElement;
+        if (el.classList.contains(type)) {
+          el.style.display = "flex"; // show
+        } else {
+          el.style.display = "none"; // hide
+        }
+      });
+    }
+
+    // Show only upcoming by default
+    filterEvents("upcoming");
+
+    // Button clicks
+    if (upcomingBtn) {
+      upcomingBtn.addEventListener("click", () => filterEvents("upcoming"));
+    }
+    if (pastBtn) {
+      pastBtn.addEventListener("click", () => filterEvents("past"));
+    }
+  </script>
+
+  <style>
+    /* Utility class for text truncation */
+    .line-clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Ensure proper container constraints */
+    .container {
+      max-width: 1400px;
+    }
+
+    /* Smooth scrolling for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Focus styles for better accessibility */
+    button:focus,
+    input:focus,
+    a:focus {
+      outline: 2px solid #10b981;
+      outline-offset: 2px;
+    }
+  </style>
+</Layout>
