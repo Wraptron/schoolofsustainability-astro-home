@@ -125,24 +125,30 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
     <section class="py-8 sm:py-12" id="events">
       <div class="container mx-auto px-4">
         <!-- Events Header -->
-        <div
-          class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8"
-        >
-          <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900">
+        <div class="mb-8">
+          <!-- Title -->
+          <h2
+            class="text-2xl sm:text-3xl font-semibold text-gray-900 border-l-4 border-green-600 pl-2 mb-4"
+          >
             Events
           </h2>
+
+          <!-- Tabs -->
           <div
-            class="flex flex-col sm:flex-row gap-2 sm:gap-5 text-sm sm:text-base font-semibold text-gray-600"
+            class="flex justify-center gap-6 text-sm sm:text-base font-semibold"
           >
             <button
               id="upcomingBtn"
-              class="px-3 py-1 rounded-lg hover:text-blue-600">Upcoming</button
+              class="px-3 text-gray-400 cursor-pointer hover:text-green-700"
             >
+              Upcoming
+            </button>
             <button
               id="pastBtn"
-              class="px-3 py-1 rounded-lg hover:text-blue-600">Past</button
+              class="px-3 text-gray-400 cursor-pointer hover:text-green-700"
             >
-            
+              Past
+            </button>
           </div>
         </div>
 
@@ -156,7 +162,7 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
             <div class="w-full md:w-1/2 flex items-center justify-center">
               <img
                 src="/images/outreach_images/WhatsApp Image 2025-09-08 at 11.46.43_d1a902f7.jpg"
-                class="max-h-[500px] w-auto object-center rounded-xl "
+                class="max-h-[500px] w-auto object-center rounded-xl"
               />
             </div>
 
@@ -168,7 +174,7 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
              text-black rounded-md
              px-4 py-2 shadow-md w-fit mb-4"
               >
-                <span class="text-xl md:text-2xl font-bold leading-none"
+                <span class="block text-sm sm:text-base md:text-lg font-bold"
                   >22</span
                 >
                 <span class="text-xs md:text-sm mt-1">Sep 2025</span>
@@ -182,23 +188,31 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
 
               <!-- Description -->
               <p class="font-serif text-base leading-relaxed text-black mb-4">
-  With its 2025 edition hosted in the Alps, International Mountain Counference provides
-  an excellent opportunity for experts from different disciplines to discuss mountain-related
-  issues in a cross-disciplinary setting. The key goals of the conference are to synthesize and
-  enhance our understanding of mountain ecosystems that are highly vulnerable to climate change,
-  with shifts in biodiversity, ecosystem services, and land use affecting sustainability at local,
-  regional, and global scales. As part of Past Global Changes (PAGES) DiverseK Working Group,
-  a School of Sustainability member will convene a conference session, "Managing mountain
-  ecosystems in a changing climate: integrating long-term data" that is concetualized to explore
-  integration of ecological, climatic, and land-use data with local knowledge for the sustainable
-  management of mountain regions. The session will address current trends in mountain ecosystems
-  including climate impacts on vegetation and forest management, need for incorporating long-term
-  ecological and historical land-use data, and evaluation of adaptive policy scenarios with
-  stakeholder engagement. More info athttps://imc2025.info/
-</p>
-
-
-              
+                With its 2025 edition hosted in the Alps, International Mountain
+                Counference provides an excellent opportunity for experts from
+                different disciplines to discuss mountain-related issues in a
+                cross-disciplinary setting. The key goals of the conference are
+                to synthesize and enhance our understanding of mountain
+                ecosystems that are highly vulnerable to climate change, with
+                shifts in biodiversity, ecosystem services, and land use
+                affecting sustainability at local, regional, and global scales.
+                As part of Past Global Changes (PAGES) DiverseK Working Group, a
+                School of Sustainability member will convene a conference
+                session, "Managing mountain ecosystems in a changing climate:
+                integrating long-term data" that is concetualized to explore
+                integration of ecological, climatic, and land-use data with
+                local knowledge for the sustainable management of mountain
+                regions. The session will address current trends in mountain
+                ecosystems including climate impacts on vegetation and forest
+                management, need for incorporating long-term ecological and
+                historical land-use data, and evaluation of adaptive policy
+                scenarios with stakeholder engagement. More info
+                <a
+                  href="athttps://imc2025.info/"
+                  class="text-blue-600 underline"
+                  target="_blank">https://imc2025.info/</a
+                >
+              </p>
             </div>
           </article>
 
@@ -210,7 +224,7 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
             <div class="w-full md:w-1/2 flex items-center justify-center">
               <img
                 src="/images/outreach_images/WhatsApp Image 2025-09-08 at 11.46.43_ed64cbff.jpg"
-                class="max-h-[500px] w-auto object-center rounded-xl "
+                class="max-h-[500px] w-auto object-center rounded-xl"
               />
             </div>
 
@@ -260,12 +274,15 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 urban systems in the areas of water, food, and/or waste systems.
                 Submission Deadline: September 22, 2025 To know more and submit
                 your abstract:
-                https://schoolofcities.utoronto.ca/event/cities-of-care/
+                <a
+                  href="https://schoolofcities.utoronto.ca/event/cities-of-care/"
+                  class="text-blue-600 underline"
+                  target="_blank"
+                  >https://schoolofcities.utoronto.ca/event/cities-of-care/</a
+                >
               </p>
 
               <!-- Event Details -->
-
-              
             </div>
           </article>
           <!-- Event Card 1 -->
@@ -274,12 +291,12 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
           >
             <!-- Left Image -->
             <div class="w-full md:w-1/2 flex items-center justify-center">
-  <img
-    src={Event1.src}
-    alt="Event 1 banner"
-    class="max-h-[500px] w-auto object-center rounded-xl"
-  />
-</div>
+              <img
+                src={Event1.src}
+                alt="Event 1 banner"
+                class="max-h-[500px] w-auto object-center rounded-xl"
+              />
+            </div>
 
             <!-- Right Content with Badge -->
             <div
@@ -319,8 +336,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
               </p>
 
               <!-- Event Details -->
-
-             
             </div>
           </article>
 
@@ -383,19 +398,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 frameworks essential for navigating the complexities of clean
                 energy systems.
               </p>
-
-              <!-- Event Details -->
-
-              <!-- Footer: More Info + Status -->
-              <div class="flex items-center justify-between">
-                <a
-                  href="#"
-                  class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-sm"
-                >
-                  More Info
-                </a>
-                <span class="text-gray-400 font-semibold">PASSED</span>
-              </div>
             </div>
           </article>
 
@@ -454,8 +456,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
               </div>
 
               <!-- Description -->
-
-              
             </div>
           </article>
 
@@ -519,8 +519,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 conversations on technology, policy and business model
                 transformation.
               </p>
-
-              
             </div>
           </article>
 
@@ -551,7 +549,7 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                   >23</span
                 >
                 <span class="block text-[10px] sm:text-xs md:text-sm"
-                  >Jul 2025</span
+                  >June 2025</span
                 >
               </div>
 
@@ -582,11 +580,15 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 climate policy, and green and sustainable finance. The
                 conference will be preceded by a thematic symposium (21-22
                 June), hosting insightful lectures from experts chartering new
-                territories of decarbonization and energy transitionsTo know
-                more including the illustrious speakers, check out the
+                territories of decarbonization and energy transitions. To know
+                more, check out the website:
+                <a
+                  href="https://ge.iitm.ac.in/sustainx-ace2025-4thco2indiameet#hero"
+                  class="text-blue-600 underline"
+                >
+                  https://ge.iitm.ac.in/sustainx-ace2025-4thco2indiameet#hero</a
+                >
               </p>
-
-              
             </div>
           </article>
 
@@ -648,10 +650,11 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 Conference (23-24 June), exclusively planned for showcasing
                 cutting-edge research by student and early-career researchers
                 across India. To know more including the illustrious speakers,
-                check out the
+                check out the website:
+                <a href="https://ge.iitm.ac.in/sustainx-ace2025-4thco2indiameet#hero"
+                  class="text-blue-600 underline"
+                  >https://ge.iitm.ac.in/sustainx-ace2025-4thco2indiameet#hero</a>
               </p>
-
-              
             </div>
           </article>
 
@@ -721,8 +724,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 determined contributions & its green, climate-resilient future.
                 Enroll before May 26, 2025!
               </p>
-
-              
             </div>
           </article>
 
@@ -761,9 +762,7 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
               <h3
                 class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3"
               >
-                Sustainability for
-                <span class="text-gray-900">Indian Businesses</span>
-                <span class="text-gray-900"> Cohort 3 commences!</span>
+                
                 <span class="block text-gray-900">
                   Roundtable on Sustainability in the Built Environment in
                   partnership with Schmidt Sciences and TLC2
@@ -787,8 +786,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 priorities to accelerate India’s transition toward a low-carbon,
                 sustainable built environment.
               </p>
-
-              
             </div>
           </article>
 
@@ -849,8 +846,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 preparedness and urban resilience in the language we all
                 understand the most: Play!
               </p>
-
-              
             </div>
           </article>
 
@@ -913,8 +908,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 preparedness and urban resilience in the language we all
                 understand the most: Play!
               </p>
-
-              
             </div>
           </article>
 
@@ -971,8 +964,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 Don't miss the opportunity to gain insights into cutting-edge
                 biopolymer research and its real-world applications!
               </p>
-
-              
             </div>
           </article>
           <!--Event care 12 -->
@@ -1027,16 +1018,20 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 Madras, and WRI India, the conference aims to catalyse systemic
                 thinking and innovation, foster interdisciplinary collaboration,
                 and promote actionable research to address Tamil Nadu’s most
-                pressing land use and climate resilience challenges. ositioned
+                pressing land use and climate resilience challenges. Positioned
                 as a global platform, the conference will bring together
                 researchers, policymakers, practitioners, and civil society
                 leaders to co-create solutions for a climate-smart, inclusive
                 and sustainable future of Tamil Nadu’s land and marine
                 resources. To know more, visit
-                https://tnslurb.tn.gov.in/tnlanduse2025/
+                <a
+                  href="https://tnslurb.tn.gov.in/tnlanduse2025/"
+                  class="text-blue-600 underline"
+                  target="_blank"
+                >
+                  tnslurb.tn.gov.in/tnlanduse2025
+                </a>.
               </p>
-
-              
             </div>
           </article>
           <!--Event care 13 -->
@@ -1093,8 +1088,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 engaging presentations and thought-provoking discussions on
                 critical issues in the humanities and social sciences.
               </p>
-
-             
             </div>
           </article>
           <!--Event care 14 -->
@@ -1171,8 +1164,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 will be presented as the ‘glue’ to navigate and connect the
                 various pieces of the puzzle in energy transition."
               </p>
-
-              
             </div>
           </article>
           <!--Event care 15 -->
@@ -1243,8 +1234,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 non-extreme pH electrolysis for even greater efficiency and
                 applicability in industrial settings.
               </p>
-
-              
             </div>
           </article>
           <!--Event care 16 -->
@@ -1264,7 +1253,7 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
               class="w-full md:w-1/2 p-6 flex flex-col justify-between relative"
             >
               <!-- Green Date Badge -->
-             <div
+              <div
                 class="inline-flex flex-col items-center justify-center
              text-black rounded-md
              px-4 py-2 shadow-md w-fit mb-4"
@@ -1304,8 +1293,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 Sustainable Development, Artificial Intelligence and Machine
                 Learning. "
               </p>
-
-              
             </div>
           </article>
 
@@ -1373,8 +1360,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 networks to advance their academic and professional pursuits in
                 the critical field of Blue Economy.
               </p>
-
-              
             </div>
           </article>
           <!--Event care 18 -->
@@ -1384,7 +1369,7 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
             <!-- Left Image -->
             <div class="w-full md:w-1/2 flex items-center justify-center">
               <img
-                src="images/outreach_images/Invited Talk_5 Feb_Environment and Health.png"
+                src="/images/outreach_images/Invited Talk_5 Feb_Environment and Health.png"
                 class="max-h-[500px] w-auto object-center rounded-xl"
               />
             </div>
@@ -1441,8 +1426,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 Foreign Relations and was elected to the US National Academy of
                 Medicine in 2021.
               </p>
-
-              
             </div>
           </article>
           <!--Event care 19 -->
@@ -1452,7 +1435,7 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
             <!-- Left Image -->
             <div class="w-full md:w-1/2 flex items-center justify-center">
               <img
-                src="src/assets/outreach_images/SfIB Cohort 2 Certificate Distribution.jpg"
+                src="/images/outreach_images/SfIB Cohort 2 Certificate Distribution.jpg"
                 class="max-h-[500px] w-auto object-center rounded-xl"
               />
             </div>
@@ -1502,8 +1485,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 Businesses" imparted a systemic view of sustainability, they
                 say!
               </p>
-
-             
             </div>
           </article>
           <!--Event care 20 -->
@@ -1559,8 +1540,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 discussions, CxOs roundtable, and networking sessions with
                 leaders in industry and academia.
               </p>
-
-              
             </div>
           </article>
           <!--Event care 21 -->
@@ -1616,8 +1595,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 the course faculty and partake in the series of
                 Sustainability-themed events happening on campus.
               </p>
-
-              
             </div>
           </article>
           <!--Event care 22 -->
@@ -1678,8 +1655,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 Industries while Day 2 is planned to hold a series of discussion
                 sessions to bring out the key learnings.
               </p>
-
-              
             </div>
           </article>
           <!--Event care 23 -->
@@ -1740,8 +1715,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 take place at USYD on December 3-4, 2024 and look at solutions
                 to strengthen leadership in this field.
               </p>
-
-              
             </div>
           </article>
           <!--Event care 24 -->
@@ -1809,8 +1782,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 cutting-edge advancements, and collaboration opportunities to
                 shape the future of sustainable ceramics."
               </p>
-
-              
             </div>
           </article>
           <!--Event care 25 -->
@@ -1883,8 +1854,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 practical sustainable scenarios for their respective
                 businesses."
               </p>
-
-              
             </div>
           </article>
           <!--Event care 26 -->
@@ -1950,8 +1919,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 implement large-scale, sustainable solutions for energy
                 transition in coastal and offshore areas.
               </p>
-
-              
             </div>
           </article>
           <!--Event care 27 -->
@@ -2009,8 +1976,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 solutions! Let’s come together to encourage these brilliant
                 minds and be part of the movement towards a sustainable future!
               </p>
-
-              
             </div>
           </article>
           <!--Event care 28 -->
@@ -2058,7 +2023,7 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
               <!-- Event Details -->
 
               <!-- Description -->
-             <p class="font-serif text-base leading-relaxed text-black mb-4">
+              <p class="font-serif text-base leading-relaxed text-black mb-4">
                 ESG reporting is the disclosure of the impact of a business on
                 environmental, social, and corporate governance and a collection
                 of factors that can materially affect a business. As ESG
@@ -2084,8 +2049,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 relevant metrics, cost of regulatory compliance as well as cost
                 of implementing technologies to achieve net-zero.
               </p>
-
-              
             </div>
           </article>
           <!--Event care 29 -->
@@ -2154,8 +2117,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 battery waste streams • Potential research areas and development
                 enablers"
               </p>
-
-              
             </div>
           </article>
           <!--Event care 30 -->
@@ -2215,8 +2176,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 Businesses" imparted a systemic view of sustainability, they
                 say!
               </p>
-
-              
             </div>
           </article>
           <!--Event care 31 -->
@@ -2269,8 +2228,6 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 how interconnectedness between social and environmetal factors
                 is crucial for a climate-resilient planet.
               </p>
-
-              
             </div>
           </article>
           <!--Event care 32 -->
@@ -2331,13 +2288,8 @@ import Event30 from "../assets/outreach_images/Events/Invited Talk_5-6-24.jpg";
                 will be the multi-stakeholder platform to develop the shared
                 vision for mainstreaming FPV in India.
               </p>
-
-              
             </div>
           </article>
-
-          
-         
         </div>
       </div>
     </section>
