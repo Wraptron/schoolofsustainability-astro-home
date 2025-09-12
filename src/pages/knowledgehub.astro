@@ -67,13 +67,7 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
     </a>
     <span class="text-emerald-400" aria-hidden="true">|</span>
     <a
-      href="#newsletter"
-      class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-4 py-2"
-    >
-      Newsletter
-    </a>
-    <span class="text-emerald-400" aria-hidden="true">|</span>
-    <a
+    
       href="#reports"
       class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-4 py-2"
     >
@@ -81,10 +75,19 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
     </a>
     <span class="text-emerald-400" aria-hidden="true">|</span>
     <a
+      
       href="#whitepaper"
       class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-4 py-2"
     >
-      White Paper
+      White Papers
+    </a>
+    <span class="text-emerald-400" aria-hidden="true">|</span>
+    <a
+      
+        href="#newsletter"
+      class="hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 rounded px-4 py-2"
+    >
+      Newsletters
     </a>
   </div>
 </nav>
@@ -93,7 +96,9 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
   <!-- Publications Section -->
   <section id="publications" class="py-16">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-bold mb-8 text-gray-900">Publications</h2>
+              <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                Publications
+              </h2>
       <!-- Wrap in #publicationGrid so tooltip CSS/JS works -->
       <div id="publicationGrid" class="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
         {
@@ -181,7 +186,7 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
   
   <!-- Newsletter Section -->
   <section id="newsletter" class="py-16">
-    <h2 class="text-3xl font-bold mb-8 text-gray-900">Newsletter</h2>
+           <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Newsletter</h2>
     <div class="grid md:grid-cols-3 gap-8 items-start">
       <div class="md:col-span-1">
         <a href={newsletter.link} target="_blank" rel="noopener noreferrer">
@@ -195,10 +200,12 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
       </div>
       <div class="md:col-span-2">
         <div class="mb-8">
-          <time class="text-lg text-gray-600 font-medium" datetime="2025-04-01">
+          <time class="text-base md:text-lg text-gray-600 font-medium" datetime="2025-04-01">
             {newsletter.date}
           </time>
-          <p class="text-sm text-gray-700 mt-4 leading-relaxed">
+          <p
+          class="text-base md:text-lg text-gray-700 text-justify leading-relaxed mb-8"
+        >
             {newsletter.description}
           </p>
         </div>
@@ -252,7 +259,8 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
 
   <!-- Reports Section -->
   <section id="reports" class="py-16">
-    <h2 class="text-3xl font-bold mb-8 text-gray-900">Research Reports</h2>
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
+Research Reports</h2>
     <div class="grid md:grid-cols-3 gap-8">
       {
         reports.map((report, index) => (
@@ -281,7 +289,8 @@ const { publications, reports, whitepapers, newsletter, hero } = knowledgeData;
 
   <!-- White Papers Section -->
   <section id="whitepaper" class="py-16">
-    <h2 class="text-3xl font-bold mb-8 text-gray-900">White Papers</h2>
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+White Papers</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       {
         whitepapers.map((paper, index) => (

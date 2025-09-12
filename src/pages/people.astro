@@ -112,7 +112,7 @@ const coreTeam = [
     icon: linkedin,
     highlight: false,
   },
-   {
+  {
     name: "Dolly Sweetlin Jennifer",
     position: "Senior Project Scientist, School of Sustainability",
     image: jennifer,
@@ -155,9 +155,7 @@ const coreTeam = [
     icon: linkedin,
     highlight: false,
   },
-  
- 
-  
+
   // {
   //   name: "Siva Barathi A",
   //   position: "Associate Head, School of Sustainability",
@@ -231,7 +229,7 @@ const associateFaculty = [
     website: "https://che.iitm.ac.in/~ethaya/",
     loading: "lazy",
   },
-  
+
   {
     image: associatefac8,
     name: "Ganga Prasath S",
@@ -243,7 +241,8 @@ const associateFaculty = [
     image: associatefac33,
     name: "Guhan Jayaraman",
     position: "Biotechnology",
-    website: "https://biotech.iitm.ac.in/innerfaculty.php?fname=Guhan%20Jayaraman",
+    website:
+      "https://biotech.iitm.ac.in/innerfaculty.php?fname=Guhan%20Jayaraman",
     loading: "lazy",
   },
   {
@@ -253,7 +252,7 @@ const associateFaculty = [
     website: "https://www.goyalresearch.com/",
     loading: "lazy",
   },
-  
+
   {
     image: associatefac10,
     name: "Indumathi M. Nambi",
@@ -292,7 +291,7 @@ const associateFaculty = [
   {
     image: associatefac34,
     name: "Murali Jagannathan",
-    position: "Civil Engineerin",
+    position: "Civil Engineering",
     website: "https://civil.iitm.ac.in/faculty/muralij/",
     loading: "lazy",
   },
@@ -324,7 +323,7 @@ const associateFaculty = [
     website: "https://che.iitm.ac.in/preeti/",
     loading: "lazy",
   },
-   {
+  {
     image: associatefac36,
     name: "Rahul Marathe R",
     position: "Management Studies",
@@ -335,7 +334,8 @@ const associateFaculty = [
     image: associatefac37,
     name: "Rajagopalan Srinivasan",
     position: "Chemical Engineering",
-    website: "https://che.iitm.ac.in/faculty.php?fname=Dr.%20Rajagopalan%20Srinivasan",
+    website:
+      "https://che.iitm.ac.in/faculty.php?fname=Dr.%20Rajagopalan%20Srinivasan",
     loading: "lazy",
   },
   {
@@ -380,7 +380,7 @@ const associateFaculty = [
     website: "https://sites.google.com/view/sksahuiitm/home",
     loading: "lazy",
   },
-   {
+  {
     image: associatefac39,
     name: "Shiva Nagendra SM",
     position: "Civil Engineering",
@@ -461,7 +461,7 @@ const affiliateFellows = [
     position: "Associate Member",
     website:
       "https://www.linkedin.com/in/ajay-patil-375aa69/?originalSubdomain=in",
-    email: "ajay.shriram.patil@gmail.com",
+    email: "",
     loading: "lazy",
   },
   {
@@ -648,7 +648,7 @@ const researchers = [
       <!-- Core Team Section -->
       <section id="core-team" class="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-          <h3 class="text-3xl sm:text-4xl font-bold mb-12 text-gray-900">
+          <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
             Core Team
           </h3>
           <div
@@ -700,7 +700,9 @@ const researchers = [
       <!-- Associate Faculty Section -->
       <section id="associate-faculty" class="py-12 sm:py-16 md:py-20">
         <div class="container mx-auto px-4">
-          <h3 class="text-3xl font-bold mb-8">Associate Faculty</h3>
+          <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+            Associate Faculty
+          </h3>
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8"
           >
@@ -746,7 +748,7 @@ const researchers = [
         class="py-12 sm:py-16 md:py-20 bg-gray-50"
       >
         <div class="container mx-auto px-4">
-          <h3 class="text-3xl sm:text-3xl md:text-4xl font-bold mb-8">
+          <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
             Affiliate Fellows
           </h3>
           <div
@@ -790,7 +792,9 @@ const researchers = [
       <!-- Advisors Section -->
       <section id="advisors" class="py-12 sm:py-16 md:py-20">
         <div class="container mx-auto px-4">
-          <h3 class="text-3xl font-bold mb-12 text-gray-900">Advisors</h3>
+          <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+            Advisors
+          </h3>
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8"
           >
@@ -827,151 +831,171 @@ const researchers = [
         </div>
       </section>
       <!--phd scholar section-->
-      <section class="py-12 bg-white">
-  <h2 class="text-3xl font-bold text-center mb-10">PhD Scholars</h2>
+      <section id="advisors" class="py-12 sm:py-16 md:py-20">
+        <div class="container mx-auto px-4">
+          <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+            PhD Scholars
+          </h3>
 
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-    {scholars.map((scholar) => (
-      <div class="flex flex-col items-center text-center">
-        <div class="w-32 h-32 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden">
-          {scholar.img && scholar.img.trim() !== "" ? (
-            <img
-              src={scholar.img}
-
-              loading="lazy"
-            />
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-              class="w-12 h-12 text-gray-500"
-            >
-              <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
-              <path d="M8 14l3-3 5 5H8z" />
-              <circle cx="10" cy="10" r="1.5" />
-            </svg>
-          )}
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8"
+          >
+            {
+              scholars.map((scholar) => (
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                  <div class="relative aspect-square">
+                    {scholar.img && scholar.img.trim() !== "" ? (
+                      <img src={scholar.img} loading="lazy" />
+                    ) : (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        class="w-12 h-12 text-gray-500"
+                      >
+                        <rect
+                          x="4"
+                          y="4"
+                          width="16"
+                          height="16"
+                          rx="2"
+                          ry="2"
+                        />
+                        <path d="M8 14l3-3 5 5H8z" />
+                        <circle cx="10" cy="10" r="1.5" />
+                      </svg>
+                    )}
+                  </div>
+                  <p class="mt-3 text-sm font-medium text-black">
+                    {scholar.name}
+                  </p>
+                </div>
+              ))
+            }
+          </div>
         </div>
-        <p class="mt-3 text-sm font-medium text-black">{scholar.name}</p>
-      </div>
-    ))}
-  </div>
-</section>
 
+        <!--researcher section -->
+        <section id="advisors" class="py-12 sm:py-16 md:py-20">
+          <div class="container mx-auto px-4">
+            <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              Researchers
+            </h3>
 
-
-
-<!--researcher section -->
-<section class="py-12 bg-white">
-  <h2 class="text-3xl font-bold text-center mb-10">Researchers</h2>
-
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-    {researchers.map((r) => (
-      <div class="flex flex-col items-center text-center">
-        <div class="w-32 h-32 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden">
-          {r.img ? (
-            <img
-              src={r.img}
-              alt={r.name}
-              class="w-full h-full object-cover"
-              loading="lazy"
-            />
-          ) : (
-            // Placeholder icon (like your screenshot)
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              class="w-12 h-12 text-gray-500"
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8"
             >
-              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 
+              {
+                researchers.map((r) => (
+                  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="relative aspect-square">
+                      {r.img ? (
+                        <img
+                          src={r.img}
+                          alt={r.name}
+                          class="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      ) : (
+                        // Placeholder icon (like your screenshot)
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          class="w-12 h-12 text-gray-500"
+                        >
+                          <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 
               1.1.9 2 2 2h14c1.1 0 2-.9 
               2-2V5c0-1.1-.9-2-2-2zm0 
               16H5V5h14v14zM8.5 13.5l2.5 
-              3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-            </svg>
-          )}
-        </div>
-        <p class="mt-3 text-sm font-medium text-black">{r.name}</p>
-      </div>
-    ))}
-  </div>
-</section>
+              3.01L14.5 12l4.5 6H5l3.5-4.5z"
+                          />
+                        </svg>
+                      )}
+                    </div>
+                    <p class="mt-3 text-sm font-medium text-black">{r.name}</p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
 
-      <Newletter />
-      <Footer />
-    </section>
-  </main>
+          <Newletter />
+          <Footer />
+        </section>
+      </section>
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
+      <style>
+        html {
+          scroll-behavior: smooth;
+        }
 
-    /* Enhanced scroll padding to account for sticky navigation */
-    section[id] {
-      scroll-margin-top: 100px;
-    }
+        /* Enhanced scroll padding to account for sticky navigation */
+        section[id] {
+          scroll-margin-top: 100px;
+        }
 
-    /* Active navigation state */
-    nav a:hover {
-      transform: translateY(-1px);
-    }
-  </style>
+        /* Active navigation state */
+        nav a:hover {
+          transform: translateY(-1px);
+        }
+      </style>
 
-  <script>
-    // Add active state management for navigation links
-    document.addEventListener("DOMContentLoaded", function () {
-      const navLinks = document.querySelectorAll('nav a[href^="#"]');
-      const sections = document.querySelectorAll("section[id]");
+      <script>
+        // Add active state management for navigation links
+        document.addEventListener("DOMContentLoaded", function () {
+          const navLinks = document.querySelectorAll('nav a[href^="#"]');
+          const sections = document.querySelectorAll("section[id]");
 
-      // Function to update active navigation link
-      function updateActiveNav() {
-        const scrollPos = window.scrollY + 120; // Account for sticky nav height
+          // Function to update active navigation link
+          function updateActiveNav() {
+            const scrollPos = window.scrollY + 120; // Account for sticky nav height
 
-        sections.forEach((section) => {
-          const htmlSection = section as HTMLElement;
-          const sectionTop = htmlSection.offsetTop;
-          const sectionHeight = htmlSection.offsetHeight;
-          const sectionId = section.getAttribute("id");
+            sections.forEach((section) => {
+              const htmlSection = section as HTMLElement;
+              const sectionTop = htmlSection.offsetTop;
+              const sectionHeight = htmlSection.offsetHeight;
+              const sectionId = section.getAttribute("id");
 
-          if (
-            scrollPos >= sectionTop &&
-            scrollPos < sectionTop + sectionHeight
-          ) {
-            navLinks.forEach((link) => {
-              link.classList.remove("text-green-800", "bg-green-50");
-              if (link.getAttribute("href") === `#${sectionId}`) {
-                link.classList.add("text-green-800", "bg-green-50");
+              if (
+                scrollPos >= sectionTop &&
+                scrollPos < sectionTop + sectionHeight
+              ) {
+                navLinks.forEach((link) => {
+                  link.classList.remove("text-green-800", "bg-green-50");
+                  if (link.getAttribute("href") === `#${sectionId}`) {
+                    link.classList.add("text-green-800", "bg-green-50");
+                  }
+                });
               }
             });
           }
-        });
-      }
 
-      // Add smooth scrolling and active state on click
-      navLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          const targetId = (link.getAttribute("href") ?? "").substring(1);
-          const targetSection = document.getElementById(targetId);
+          // Add smooth scrolling and active state on click
+          navLinks.forEach((link) => {
+            link.addEventListener("click", (e) => {
+              e.preventDefault();
+              const targetId = (link.getAttribute("href") ?? "").substring(1);
+              const targetSection = document.getElementById(targetId);
 
-          if (targetSection) {
-            const offsetTop = targetSection.offsetTop - 100; // Account for sticky nav
-            window.scrollTo({
-              top: offsetTop,
-              behavior: "smooth",
+              if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 100; // Account for sticky nav
+                window.scrollTo({
+                  top: offsetTop,
+                  behavior: "smooth",
+                });
+              }
             });
-          }
-        });
-      });
+          });
 
-      // Update active nav on scroll
-      window.addEventListener("scroll", updateActiveNav);
-      updateActiveNav(); // Initial call
-    });
-  </script>
-</Layout>
+          // Update active nav on scroll
+          window.addEventListener("scroll", updateActiveNav);
+          updateActiveNav(); // Initial call
+        });
+      </script>
+    </section>
+  </main></Layout
+>
